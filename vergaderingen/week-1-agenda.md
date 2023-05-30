@@ -3,10 +3,10 @@
 ## Genodigden
 
 - Quenten Schoonderwoerd (Voorzitter)
+- Bram Tersteeg (Notulist)
 - Tingting Li
 - Sundous Kanaan
 - Melvin Idema
-- Bram Tersteeg
 - Safouane Messaoudi
 - Jeffrey Ullers
 - Jesse de Groot
@@ -75,10 +75,6 @@
 ### Rondvraag
 
 ### Einde
-
-
-
-
 
 <!-- Afspreken hoe we opleveren
 Afspreken waar we de iteraties opleveren (locatie voor meeting)
