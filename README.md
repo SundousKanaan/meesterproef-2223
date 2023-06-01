@@ -1,38 +1,35 @@
-# create-svelte
+# Meesterproef
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Moscow
 
-## Creating a project
+### Must have
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Deelnemers kunnen challenges selecteren en bewaren
+- Deelnemers kunnen inschrijven voor een challenge
+- Deelnemers kunnen samen met andere TIOC leden aan een challenge deelnemen
+- Deelnemers kunnen het werk dat ze hebben gemaakt voor een challenge uploaden en laten beoordelen door een jury.
+- Deelnemers kunnen feedback en rating ontvangen van de challenge owner.
+- Deelnemers kunnen hun eigen uitslag en die van andere TIOC leden na afloop van een challenge bekijken.
+- Challengehouders kunnen in overleg met TIOC een challengepagina aanmaken.
+- De aangemaakte challengepagina moet aantrekkelijk gemaakt kunnen worden door video's, gifs, beeldmateriaal en tekst toe te voegen.
+- De aangemaakte challengepagina moet bestanden kunnen bevatten die nodig zijn voor de challenge.
+- Challengehouders kunnen een challenge promoten.
+- Challengehouders kunnen zien wie zich heeft ingeschreven voor hun challenge.
+- Challengehouders kunnen de bijdragen van deelnemers beoordelen om de uitslag te bepalen.
+- Challengehouders kunnen de uitslag samen met TIOC publiceren.
+- Challengehouders kunnen de bijdragen van deelnemers openbaar zetten op de TIOC website.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+### Should have
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- Deelnemers en challengehouders kunnen met behulp van een share-functionaliteit hun bijdragen of challenges delen op verschillende social media platforms.
+- (Realtime) aftellen tot de opening van een challenge en bestanden beschikbaar stellen.
+- Page-transition API (is voor Browser Tech, progressive enhancement, en voor CSSttR)
 
-## Developing
+### Could have
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- 
 
-```bash
-npm run dev
+### Won't have
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- Werkende security voor bijdragen van deelnemers.
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
