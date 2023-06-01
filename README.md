@@ -2,7 +2,7 @@
 
 ## Moscow
 
-### Must have
+### Must haves
 
 - Deelnemers kunnen challenges selecteren en bewaren
 - Deelnemers kunnen inschrijven voor een challenge
