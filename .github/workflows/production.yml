@@ -11,7 +11,9 @@ on:
 
 jobs:
   build-and-deploy:
-    environment: production
+    environment:
+      name: production
+      url: https://tioc.cringe.zip
     runs-on: self-hosted
     steps:
       - name: Checkout code
