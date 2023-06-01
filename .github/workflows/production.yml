@@ -1,0 +1,37 @@
+name: Production Deployment
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    environment: production
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      #- name: Build Docker image
+      #  run: docker buildx build -t svelte-app:${{ github.sha }} -f Dockerfile.dev .
+      - name: Deploy to production server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ~
+            if [ ! -d "svelte-${{ github.ref_name }}" ]; then
+              git clone git@github.com:DutchEllie/meesterproef-2223.git svelte-${{ github.ref_name }}
+            fi
+            cd svelte-${{ github.ref_name }}
+            git pull origin ${{ github.ref_name }}
+            echo "${{ secrets.ENV_FILE }}" > .env
+            docker compose -f docker-compose-prod.yml build
+            docker compose -f docker-compose-prod.yml up -d
