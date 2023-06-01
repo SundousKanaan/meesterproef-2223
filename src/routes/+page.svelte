@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+        import '../app.css'
+        import Header from '../lib/Header.svelte'
+        import yolo from '../lib/Header.svelte'
+
+</script>
+<Header/>
+<main>
+<h1>hey am i in the right route?</h1>
+</main>
+<footer>
+
+</footer>
