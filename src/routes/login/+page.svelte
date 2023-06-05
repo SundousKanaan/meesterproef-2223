@@ -2,10 +2,21 @@
 	import type { User } from '$lib/types';
 	import { goto } from '$app/navigation';
 	import UserStore from '$lib/user';
-	
+	import type { LayoutData } from './$types';
+
+	export let data: LayoutData;
+
+	let loggedIn = false;
+
+	// 
+	if(data && data.user) {
+		console.log(data.user);
+		loggedIn = true;
+	}
 
 	let email = '';
 	let password = '';
+
 	async function login() {
 		const res = await fetch('/login', {
 			method: 'POST',
@@ -13,17 +24,15 @@
 			body: JSON.stringify({ identifier: email, password })
 		});
 		if (res.ok) {
-			const data: { user: User; jwt: string } = await res.json();
-			
+			const data: { user: User } = await res.json();
+
 			if (data) {
-				$UserStore = data.user;
-				goto('/');
+				//$UserStore = data.user;
+				goto('/login');
 			}
 		} else {
-			const data: { message: { messages: { message: string }[] }[] } = await res.json();
-			if (data?.message?.[0]?.messages?.[0]?.message) {
-				alert(data.message[0].messages[0].message);
-			}
+			const { error } = await res.json();
+			console.log(error);
 		}
 	}
 </script>
@@ -41,6 +50,9 @@
 	<div class="my-3">
 		<button class="submit" type="submit">Login</button>
 	</div>
+	{#if loggedIn}
+		<p class="text-green-900">You're already logged in!</p>
+	{/if}
 </form>
 
 <style lang="postcss">
