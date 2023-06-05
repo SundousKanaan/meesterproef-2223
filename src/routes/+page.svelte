@@ -42,7 +42,7 @@
 					<li>
 						<a href="https://www.instagram.com/institute_of_creativity">
 							<img
-								src="https://tioc-cdn.ams3.digitaloceanspaces.com/icon_instagram_black_3b621aef08.svg?w=48&q=75"
+								src="/instagram-icon.svg"
 								alt=""
 							/>
 						</a>
@@ -50,7 +50,7 @@
 					<li>
 						<a href="http://www.youtube.com/instituteofcreativity">
 							<img
-								src="https://tioc-cdn.ams3.digitaloceanspaces.com/icon_youtube_black_affc45f1b7.svg?w=48&q=75"
+								src="/youtuob-icon.svg"
 								alt=""
 							/>
 						</a>
@@ -58,7 +58,7 @@
 					<li>
 						<a href="/www.linkedin.com/tioc">
 							<img
-								src="https://tioc-cdn.ams3.digitaloceanspaces.com/icon_linkedin_black_7594063366.svg?w=48&q=75"
+								src="/linkdin-icon.svg"
 								alt=""
 							/>
 						</a>
@@ -66,7 +66,7 @@
 					<li>
 						<a href="http://www.twitter.com/tioc">
 							<img
-								src="https://tioc-cdn.ams3.digitaloceanspaces.com/icon_twitter_black_b9d42f456d.svg?w=48&q=75"
+								src="/twitter-icon.svg"
 								alt=""
 							/>
 						</a>
@@ -100,8 +100,7 @@
 		z-index: 2;
 
 		background-color: #fff;
-		background-image: url(../static/footer_background_yellow_01.png);
-		background-image: url(https://tioc.nl/images/img_footer_background_yellow_01.png);
+		background-image: url(/footer_background_yellow_01.png);
 		background-position: bottom center;
 		background-repeat: repeat-x;
 	}
