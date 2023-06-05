@@ -115,7 +115,8 @@
 
 		gap: 2rem;
 		margin: 0 auto;
-		padding: 1rem 2rem;
+		padding: 1rem;
+        padding-right: 0;
 
 		background-color: #ffeb66;
 	}
