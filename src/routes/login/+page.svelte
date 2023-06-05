@@ -2,7 +2,7 @@
 	import type { User } from '$lib/types';
 	import { goto } from '$app/navigation';
 	import UserStore from '$lib/user';
-	import type { LayoutData } from './$types';
+	import type { LayoutData } from '../$types';
 
 	export let data: LayoutData;
 

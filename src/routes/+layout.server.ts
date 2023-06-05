@@ -18,6 +18,7 @@ export const load: LayoutServerLoad = async ({ cookies }) => {
 	}
 
 	return {
-		user: await user.json()
+		user: await user.json(),
+		jwt: sessionid
 	}
 }
