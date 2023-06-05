@@ -47,7 +47,7 @@
 							/>
 						</a>
 					</li>
-                    <li>
+					<li>
 						<a href="http://www.youtube.com/instituteofcreativity">
 							<img
 								src="https://tioc-cdn.ams3.digitaloceanspaces.com/icon_youtube_black_affc45f1b7.svg?w=48&q=75"
@@ -55,7 +55,7 @@
 							/>
 						</a>
 					</li>
-                    <li>
+					<li>
 						<a href="/www.linkedin.com/tioc">
 							<img
 								src="https://tioc-cdn.ams3.digitaloceanspaces.com/icon_linkedin_black_7594063366.svg?w=48&q=75"
@@ -63,7 +63,7 @@
 							/>
 						</a>
 					</li>
-                    <li>
+					<li>
 						<a href="http://www.twitter.com/tioc">
 							<img
 								src="https://tioc-cdn.ams3.digitaloceanspaces.com/icon_twitter_black_b9d42f456d.svg?w=48&q=75"
@@ -78,124 +78,113 @@
 </footer>
 
 <style>
-    footer{
-    width: 100%;
-    min-height: 400px;
-    max-height: fit-content;
+	footer {
+		width: 100%;
+		min-height: 400px;
+		max-height: fit-content;
 
+		background-color: #ffeb66;
+		padding-top: 15rem;
 
-    background-color: #ffeb66;
+		position: relative;
+	}
 
-    /* padding-top: 20rem; */
-    padding-top: 15rem;
+	footer::before {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 15rem;
 
-    position: relative;
-}
+		position: absolute;
+		top: 0;
+		z-index: 2;
 
-footer::before{
-    content: "";
-    display: block;
-    width: 100%;
-    /* height: 20rem; */
-    height: 15rem;
+		background-color: #fff;
+		background-image: url(../static/footer_background_yellow_01.png);
+		background-image: url(https://tioc.nl/images/img_footer_background_yellow_01.png);
+		background-position: bottom center;
+		background-repeat: repeat-x;
+	}
 
-    position: absolute;
-    top: 0;
-    z-index: 2;
+	section {
+		width: 100%;
 
+		display: flex;
+		align-items: baseline;
+		flex-wrap: wrap;
 
-    background-color: #fff;
-    /* background-image: url(https://uploads.sitepoint.com/wp-content/uploads/2018/07/1578355340background-rotate.png); */
-    background-image: url(../static/footer_background_yellow_01.png);
-    background-image: url(https://tioc.nl/images/img_footer_background_yellow_01.png);
-    background-position: bottom center;
-    background-repeat: repeat-x;
-    /* background-size: cover; */
-    /* background-size: 100% 90%; */
-}
+		gap: 2rem;
+		margin: 0 auto;
+		padding: 1rem 2rem;
 
-section {
-    width: 100%;
+		background-color: #ffeb66;
+	}
 
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
+	@media (min-width: 992px) {
+		section {
+			width: 100%;
+			max-width: 120rem;
+			max-width: 75rem;
+			padding: 2rem;
+			justify-content: space-between;
+		}
+	}
 
-    gap: 2rem;
-    margin: 0 auto;
-    padding: 1rem 2rem;
+	ul {
+		list-style: none;
+		line-height: 2;
+		font-family: Open Sans, sans-serif;
+		min-width: 5rem;
+		max-width: 30rem;
+	}
 
-    background-color: #ffeb66;
+	@media (max-width: 575.99px) {
+		ul {
+			width: calc(50% - 2rem);
+		}
+	}
 
-}
+	ul > li {
+		width: 100%;
+	}
 
-@media (min-width: 992px) {
-    section{
-        width: 100%;
-        max-width: 120rem;
-        max-width: 75rem;
-        padding: 2rem;
-        justify-content: space-between;
-    }
-}
+	ul li a {
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+		color: black;
+		cursor: pointer;
+		word-wrap: break-word;
+	}
 
-ul {
-    list-style: none;
-    line-height: 2;
-    font-family: Open Sans,sans-serif;
-    /* font-size: 1.6rem; */
+	ul li a:hover {
+		color: #707070;
+	}
 
-    min-width: 5rem;
-    max-width: 30rem;
-}
+	ul li p:first-child {
+		font-weight: 700;
+	}
 
-@media (max-width: 575.99px) {
-    ul{
-        width: calc(50% - 2rem);
-    }
-}
+	ul li ul {
+		display: flex;
+		flex-wrap: nowrap;
+		gap: 0.5rem;
+	}
 
-ul > li{
-    width: 100%;
-}
+	ul li ul li {
+		width: 15px;
+	}
 
-ul li a{
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-    word-wrap: break-word;
-}
-
-ul li a:hover{
-    color: #707070;
-}
-
-ul li p:first-child{
-    font-weight: 700;
-}
-
-ul li ul{
-    display: flex;
-    flex-wrap: nowrap;
-    gap: .5rem;
-}
-
-ul li ul li{
-    width: 15px;
-}
-
-ul li ul li a img{
-    inset: 0px;
-    box-sizing: border-box;
-    padding: 0px;
-    border: none;
-    margin: auto;
-    display: block;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    max-height: 100%;
-}
+	ul li ul li a img {
+		inset: 0px;
+		box-sizing: border-box;
+		padding: 0px;
+		border: none;
+		margin: auto;
+		display: block;
+		min-width: 100%;
+		max-width: 100%;
+		min-height: 100%;
+		max-height: 100%;
+	}
 </style>
