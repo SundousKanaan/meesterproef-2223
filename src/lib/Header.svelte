@@ -120,6 +120,8 @@
     align-items: center;
     min-height: 5em;
     padding: 0 1em;
+    position: relative;
+    z-index: 4;
 }
 
 header button.menu-hider{
