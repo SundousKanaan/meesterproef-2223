@@ -188,3 +188,8 @@
 		max-height: 100%;
 	}
 </style>
+<script>
+        import '../app.css'
+        import Header from '../lib/Header.svelte'
+
+</script>
