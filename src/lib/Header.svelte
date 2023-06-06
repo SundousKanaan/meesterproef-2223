@@ -227,12 +227,16 @@ header a img {
         flex-direction: row!important;;
     }
 
-    header.active nav ul {
+    header.active > nav > ul {
         display: flex;
         gap: 0em;
         flex-direction: column;
         height: 100%;
         overflow-y:scroll;
+    }
+
+    header.active > nav > ul::-webkit-scrollbar{
+        display:none;
     }
 
     header.active nav ul li {
@@ -264,6 +268,10 @@ header a img {
     header.active nav ul li:last-of-type>div {
         display: flex;
         flex: 0 0 100%;
+    }
+
+    header.active nav ul li:last-of-type>div {
+        overflow:unset;
     }
 
     header.active nav ul li:last-of-type p {
@@ -354,8 +362,7 @@ header nav ul li:hover>div:hover {
     box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, .25);
 }
 
-header nav ul p:hover,
-header a:hover {
+header nav ul p:hover, header a:hover {
     color: yellow;
 }
 }
