@@ -1,4 +1,6 @@
 <script>
+	import { browser } from "$app/environment";
+
     let active = false;
     let loggedIn = false;
     /**
@@ -20,6 +22,10 @@
     function toggleOpen(id) {
         openItem = openItem === id ? null : id;
     }
+
+    // Idk, I think this is properly done? Idk if this is normal in Svelte, but it works.
+    // Done to fix an issue where the body would scroll when the menu is open.
+    $: if (browser) document.body.classList.toggle('body-no-scroll', active);
 </script>
 
 
