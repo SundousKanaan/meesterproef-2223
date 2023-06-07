@@ -8,8 +8,12 @@
 
 <section class="hero">
 	<div>
-		<EditableField><h1>Title</h1></EditableField>
-		<p>Challenge description</p>
+		<EditableField preview="Click to edit title..."  let:value={val}>
+			<h1>{val}</h1>
+		</EditableField>
+		<EditableField preview="Click to edit description..."  let:value={val}>
+			<p>{val}</p>
+		</EditableField>
 	</div>
 	<img src="/hero-img.png" alt="Some guy screaming into a megaphone for some reason.">
 </section>
