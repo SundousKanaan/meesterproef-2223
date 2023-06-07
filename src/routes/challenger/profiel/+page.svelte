@@ -62,7 +62,7 @@
 		border-top: none;
 	}
 
-	@media (min-width: 1000px){
+	@media (min-width: 1200px){
 		main{
 			grid-template-columns: 20em 1fr;
 		}
@@ -76,10 +76,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-
-		/* background-color: rgba(255, 0, 0, 0.308); */
-
-		/* border-right: solid .1em var(--gray-font); */
 	}
 
 	section > *{

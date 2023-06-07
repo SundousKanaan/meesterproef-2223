@@ -17,7 +17,7 @@
 <style lang="css">
 
     section{
-        background-color: lightblue;
+        /* background-color: lightblue; */
         padding: 1em;
         border-left: solid .1em var(--gray-font);
 

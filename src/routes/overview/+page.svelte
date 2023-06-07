@@ -4,4 +4,4 @@
     export let data: PageData;
 </script>
 
-<h1>Hoi</h1>
+<h1>Hoi {data}</h1>

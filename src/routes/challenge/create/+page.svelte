@@ -1,14 +1,23 @@
 <script lang="ts">
 	import EditBar from './components/EditBar.svelte';
-	import EditableField from './components/EditableField.svelte';
+
+	let title: string;
+	let description: string;
+
+	async function handleContentClick(e: Event) {
+		e.preventDefault();
+	}
+
 </script>
 
 <EditBar />
 
 <section class="hero">
 	<div>
-		<EditableField class="title" preview="Click to edit title..." tag="h1" />
-		<EditableField class="description" preview="Click to edit description..." tag="p" />
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<h1 class="title" contenteditable="true" on:click={handleContentClick} bind:innerText={title}>Click to edit title...</h1>
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<p class="description" contenteditable="true" on:click={handleContentClick} bind:innerText={description}>Click to edit description...</p>
 		<button class="join-challenge">Join Challenge</button>
 	</div>
 	<button class="edit-image">Edit Image</button>
@@ -19,7 +28,7 @@
 	.hero {
 		position: relative;
 		width: 100%;
-		height: 30em;
+		min-height: 30em;
 	}
 
 	.hero > img {
@@ -57,13 +66,21 @@
 		padding-bottom: 2em;
 	}
 
-	div > :global(.title) {
+	.title {
 		margin-bottom: 1em;
+		width: 20em;
+		font-weight: 600;
 	}
 
-	div > :global(.description) {
+	.description {
 		margin-bottom: 1em;
-		height: 10em;
+		min-height: 10em;
+	}
+
+	*[contenteditable="true"] {
+		border: black 2px dashed;
+		padding: 0.4em;
+		/* width: 40em; */
 	}
 
 	h1 {
