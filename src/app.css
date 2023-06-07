@@ -9,12 +9,12 @@
 
 @font-face {
     font-family: "Optima";
-    src: url('fonts/optima_bold.woff') format('woff'),
-         url('fonts/optima_bold.woff2') format('woff2'),
-         url('fonts/optima_regular.woff') format('woff'),
-         url('fonts/optima_regular.woff2') format('woff2'),
-         url('fonts/optima_italic.woff') format('woff'),
-         url('fonts/optima_italic.woff2') format('woff2');
+    src: url('/fonts/optima_bold.woff') format('woff'),
+         url('/fonts/optima_bold.woff2') format('woff2'),
+         url('/fonts/optima_regular.woff') format('woff'),
+         url('/fonts/optima_regular.woff2') format('woff2'),
+         url('/fonts/optima_italic.woff') format('woff'),
+         url('/fonts/optima_italic.woff2') format('woff2');
 }
 
 body{
