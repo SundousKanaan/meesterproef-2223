@@ -1,13 +1,14 @@
 <script lang="ts">
-    import type { PageData } from './$types';
-    
-    export let data: PageData;
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 
     import '../../app.css';
     import FeaturedChallenges from "$lib/featuredChallenges.svelte";
     import TopThreeChallenges from "$lib/topThreeChallenges.svelte";
 
 </script>
+
 <main>
     <section class="boxed">
         <h1>Challenges</h1>

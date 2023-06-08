@@ -4,6 +4,38 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@font-face {
+    font-family: "Optima";
+    src: url('/fonts/optima_bold.woff') format('woff'),
+         url('/fonts/optima_bold.woff2') format('woff2'),
+         url('/fonts/optima_regular.woff') format('woff'),
+         url('/fonts/optima_regular.woff2') format('woff2'),
+         url('/fonts/optima_italic.woff') format('woff'),
+         url('/fonts/optima_italic.woff2') format('woff2');
+}
+
+body{
+    display: grid;
+    overflow-x: hidden;
+}
+
+.body-no-scroll {
+    overflow: hidden;
+}
+
+:root{
+    --optima: Optima;
+    --gray-font: #73738C;
+    --blue-button: #21BDE5;
+    --theme-color: #F7CE46;
+    --black: #000000;
+    --white: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.199);
+    --shadow-button: 0 0 .5em var(--shadow-color);
+    --padding-button: .5em 1em;
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
@@ -11,7 +43,7 @@ main {
     display: flex;
     flex-direction: column;
     padding: 2em 1em;
-    background:
+    /* background: */
 }
 
 .boxed {

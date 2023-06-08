@@ -177,7 +177,7 @@
 	}
 
 	ul li ul li {
-		width: 15px;
+		width: 25px;
 	}
 
 	ul li ul li a img {

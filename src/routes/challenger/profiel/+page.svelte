@@ -1,8 +1,20 @@
 <script lang="ts">
+	import Challenges from "./components/Challenges.svelte";
+
 	let username: string;
+	let location: string;
+	let followers: number;
+	let profielViews: number;
+
+	username = "HvA";
+	followers=0;
+	profielViews=0;
+	location="Amsterdam";
 </script>
 
 <main>
+	<Challenges username={username} />
+
 	<section>
 		<div>
 			<span>
@@ -14,6 +26,25 @@
 				<img src="/edit-pen.svg" alt="edit pen icon">
 			</button>
 		</div>
+
+		<h3>{username}</h3>
+		<p class="location">{location}</p>
+
+		<table>
+			<tr>
+				<td>Followers</td>
+				<td>{followers}</td>
+			</tr>
+			<tr>
+				<td>Profiel views</td>
+				<td>{profielViews}</td>
+			</tr>
+		</table>
+
+		<a href="/challenger/profiel">Profiel</a>
+		<a href="/">Edit profiel</a>
+		<a href="/">Settings</a>
+		<a href="/">Sign out</a>
 	</section>
 </main>
 
@@ -21,30 +52,40 @@
 	main {
 		width: 90%;
 		height: fit-content;
-		/* background-color: rgba(255, 0, 0, 0.308); */
-		margin: 0 auto;
+
+		justify-self: center;
 
 		display: grid;
-		grid-template-columns: 20em 1fr;
-		gap: 1em;
+		grid-template-columns: 1fr;
+
+		border: solid .1em var(--gray-font);
+		border-top: none;
+	}
+
+	@media (min-width: 1200px){
+		main{
+			grid-template-columns: 20em 1fr;
+		}
 	}
 
 	section {
+		height: fit-content;
 		grid-area: 1/1/2/2;
-		padding-top: 1em;
+		padding: 1em 0;
 
 		display: flex;
 		flex-direction: column;
-		gap: 1em;
+		align-items: center;
+	}
 
-		background-color: rgba(255, 0, 0, 0.308);
+	section > *{
+		margin-top: .5em;
 	}
 
 	section div{
 		width: 15em;
 		border-radius: 50%;
 		aspect-ratio: 1/1;
-		align-self: center;
 
 		position: relative;
 	}
@@ -68,11 +109,70 @@
 	section div > button{
 		appearance: none;
 		--webkit-appearance: none;
-		width: 1em;
+		width: 3em;
 		aspect-ratio: 1/1;
+		border-radius: 50%;
+		box-shadow: var(--shadow-button);
 
-		background-color: #;
+		background-color: var(--theme-color);
+
+		position: absolute;
+		bottom: 2.5em;
+		right: -.5em;
+		z-index: 2;
+
+		display: grid;
+		place-content: center;
 	}
 
+	h3{
+		font-size: 2em;
+		font-family: var(--optima);
+		font-weight: bold;
+	}
+
+	.location{
+		position: relative;
+		padding-left: 1.5em;
+	}
+	.location::before{
+		content: url(/location-icon.svg);
+		width: 2em;
+		aspect-ratio: 1/1;
+
+		position: absolute;
+		left: 0;
+	}
+
+	section table{
+		width: 100%;
+	}
+
+	section table td:first-of-type{
+		font-weight: bold;
+		color: var(--gray-font);
+		padding-left: 1em;
+	}
+
+	section table td:last-of-type{
+		font-weight: bolder;
+	}
+
+	section a{
+		width: 100%;
+		height: 3em;
+		align-self: start;
+		border-top: solid .1em var(--gray-font);
+		padding: 0 1em;
+
+		margin: 0%;
+
+		display: flex;
+		align-items: center;
+	}
+
+	section a:last-of-type{
+		height: 100%;
+	}
 
 </style>
