@@ -5,6 +5,7 @@
 
     import '../../app.css';
     import FeaturedChallenges from "$lib/featuredChallenges.svelte";
+    import TopThreeChallenges from "$lib/topThreeChallenges.svelte";
 
 </script>
 <main>
@@ -55,10 +56,17 @@
             </fieldset>
         </form>
     </section>
+    <span class="divider"></span>
     <FeaturedChallenges/>
+    <span class="divider"></span>
+    <TopThreeChallenges/>
 </main>
 
 <style>
+
+.divider{
+    height:4em;
+}
 h1{
     position:absolute;
     left:-9999em;
@@ -88,6 +96,7 @@ fieldset:last-of-type{
     flex-wrap:wrap;
     gap:.5em;
     font-size:.8em;
+    align-items: center;
 }
 fieldset:last-of-type label input[type="checkbox"]{
     display:none;
@@ -100,5 +109,15 @@ fieldset:last-of-type label:has(input[type="checkbox"]:checked){
 }
 fieldset:last-of-type label:last-of-type {
     margin-right: auto;
+}
+input, fieldset, button, select {
+    border: none;
+}
+
+main > *{
+    gap:2em;
+}
+main{
+    overflow:hidden;
 }
 </style>

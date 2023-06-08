@@ -26,14 +26,14 @@
 <!-- <svelte:window on:resize={() => windowWidth = window.innerWidth} /> -->
 
 <header class={active ? 'active' : ''}>
-    <a href="#"><img src="logo_tioc_yellow.svg" alt=""></a>
+    <a href="../../../"><img src="logo_tioc_yellow.svg" alt=""></a>
     <!-- {#if menuShown} -->
     <!-- A button with the class to hide the navigation. it must be readable for people with screenreaders by using aria-->
     <button class="menu-hider" aria-label="hide navigation" on:click={() => active = !active}></button>
     <nav>
         <ul>
             <li class={openItem === 'item1' ? 'open' : ''} on:click={() => toggleOpen('item1')}>
-                <a href="#">Home</a>
+                <a href="../../../">Home</a>
             </li>
             <li class={openItem === 'item2' ? 'open' : ''} on:click={() => toggleOpen('item2')}>
                 <p>Learn</p>
@@ -51,7 +51,7 @@
             <li class={openItem === 'item4' ? 'open' : ''} on:click={() => toggleOpen('item4')}>
                 <p>Grow</p>
                 <div>
-                    <a href="#">Challenges</a>
+                    <a href="/overview">Challenges</a>
                     <a href="#">Workshops</a>
                 </div>
             </li>
