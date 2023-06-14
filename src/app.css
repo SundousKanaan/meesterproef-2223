@@ -36,19 +36,84 @@ body{
     --shadow-color: rgba(0, 0, 0, 0.199);
     --shadow-button: 0 0 .5em var(--shadow-color);
     --padding-button: .5em 1em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+
+    /*
+    ** THEME
+    */
+    --primary-900: #6A5201;
+    --primary-800: #977402;
+    --primary-700: #BE9409;
+    --primary-600: #E1B114;
+    --primary-500: #F7CE46;
+    --primary-400: #F8D254;
+    --primary-300: #F9DE85;
+    --primary-200: #FEF3CD;
+    --primary-100: #FFF9E6;
+
+    --neutral-900: #3B372B;
+    --neutral-800: #575347;
+    --neutral-700: #88857C;
+    --neutral-600: #B1AFA9;
+    --neutral-500: #B1B0A9;
+    --neutral-400: #C5C3BF;
+    --neutral-300: #D8D7D4;
+    --neutral-200: #F3F3F1;
+    --neutral-100: #FBFAF9;
+
+    --accent-danger-900: #690C0C;
+    --accent-danger-800: #8F0F0F;
+    --accent-danger-700: #B31212;
+    --accent-danger-600: #D61515;
+    --accent-danger-500: #F71818;
+    --accent-danger-400: #F93A3A;
+    --accent-danger-300: #F95B5B;
+    --accent-danger-200: #F97D7D;
+    --accent-danger-100: #F99E9E;
+
+    --accent-success-900: #0C4A0C;
+    --accent-success-800: #0F6A0F;
+    --accent-success-700: #128B12;
+    --accent-success-600: #15AB15;
+    --accent-success-500: #18CC18;
+    --accent-success-400: #3AE03A;
+    --accent-success-300: #5BF45B;
+    --accent-success-200: #7DF87D;
+    --accent-success-100: #9EFB9E;
+
+    --accent-warning-900: #6A5201;
+    --accent-warning-800: #977402;
+    --accent-warning-700: #BE9409;
+    --accent-warning-600: #E1B114;
+    --accent-warning-500: #F7CE46;
+    --accent-warning-400: #F8D254;  
+    --accent-warning-300: #F9DE85;
+    --accent-warning-200: #FEF3CD;
+    --accent-warning-100: #FFF9E6;
+
+    --accent-info-900: #0C4A4A;
+    --accent-info-800: #0F6A6A;
+    --accent-info-700: #128B8B;
+    --accent-info-600: #15ABAB;
+    --accent-info-500: #18CCCC;
+    --accent-info-400: #3AE0E0;
+    --accent-info-300: #5BF4F4;
+    --accent-info-200: #7DF8F8;
+    --accent-info-100: #9EFBFB;
+
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+    --pi: 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535940812848111745028410270193852110555964462294895493038196442881097566593344612847564823378678316527;
+
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    padding: 2em 1em;
-    /* background: */
-}
-
+/* Wat the fuck is dit, please remove ASAP dit is echt matig bro */
 .boxed {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
     padding: 1em 0;
 }
+
+/* TODO: Get yo shit together bro */
