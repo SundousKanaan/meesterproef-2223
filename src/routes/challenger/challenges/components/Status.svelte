@@ -26,10 +26,10 @@
 	}
 
 	.status {
-		display: flex;
-		border-radius: 9999px;
-		width: fit-content;
-		padding: 1px 0.5em;
+		box-sizing: border-box;
+		display: inline-flex;
+		border-radius: 100px;
+		padding: 1px 0.75em 3px 0.5em;
 		align-items: center;
 		text-transform: capitalize;
 	}

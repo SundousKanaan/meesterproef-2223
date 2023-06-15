@@ -1,27 +1,30 @@
 <script lang="ts">
     import { ChallengeStatus } from '$lib/challenge';
+    import { IconSize } from '$lib/Icon';
 
     import Icon from '$lib/Icon.svelte';
     import Status from './Status.svelte';
 
-    export let background: string;
+    export let background: string = "https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+    export let title: string = "XSS Vulnerability";
+    export let status: ChallengeStatus = ChallengeStatus.OPEN;
 </script>
 
 <article style="background-image: url({background})">
     <div class="content">
         <div class="info">
-            <span class="tag"><Icon icon="profile" /> 250</span>
-            <span class="tag"><Icon icon="trend"/> 10%</span>
+            <span class="tag"><Icon size={IconSize.SMALL} icon="profile" /> 250</span>
+            <span class="tag"><Icon size={IconSize.SMALL} icon="trend"/> 10%</span>
         </div>
-        <h1>Fix XSS vulnerability</h1>
-        <Status status={ChallengeStatus.OPEN} />
-    </div>
-    <div class="bar">
-        <div class="loader">
-            Handed in products: 66
-            <span class="percentage">66%</span>
+        <h1>{title}</h1>
+        <Status status={status} />
+        <div class="bar">
+            <div class="loader">
+                Handed in products: 66
+                <span class="percentage">66%</span>
+            </div>
+            <span class="total">78 <Icon size={IconSize.SMALL} icon="document" /></span>
         </div>
-        <span class="total">78 <Icon icon="document" /></span>
     </div>
 </article>
 
@@ -31,14 +34,15 @@
         position: relative;
 
         border-radius: 6px;
-        border: 1px solid var(--neutral-900);
+        border: 1px solid var(--neutral-400);
         width: 100%;
-        aspect-ratio: 16/9;
+        aspect-ratio: 37/23;
         padding: 21px;
         padding-bottom: 0;
 
         background-size: cover;
         background-position: center;
+        overflow: hidden;
     }
 
     article:before {
@@ -55,13 +59,16 @@
         position: relative;
         display: flex;
         flex-direction: column;
+        align-items: start;
         height: 100%;
     }
 
     .info {
         display: flex;
+        width: 100%;
         justify-content: space-between;
         margin-bottom: auto;
+        font-size: 14px;
     }
 
     .info .tag {
@@ -69,7 +76,9 @@
         display: flex;
         gap: 8px;
         align-items: center;
-        background-color: var(--neutral-300);
+        background-color: var(--neutral-100);
+        box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
+        border-radius: 12px;
         padding: 12px;
         overflow: hidden;
     }
@@ -77,7 +86,7 @@
     h1 {
         color: var(--neutral-100);
         margin-bottom: 12px;
-        font-size: clamp(16px, 4vw, 32px);
+        font-size: clamp(16px, 4vw, 24px);
     }
 
     .bar {
@@ -88,10 +97,11 @@
         width: calc(100% + 42px);
         left: -21px;
         background: var(--neutral-100);
-        border-bottom-left-radius: 6px;
-        border-bottom-right-radius: 6px;
-
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        color: var(--neutral-900);
         margin-top: 21px;
+        font-size: 14px;
     }
 
     .bar .loader {
@@ -102,7 +112,8 @@
         width: 66%;
         padding: 0 12px;
         background-color: var(--primary-300);
-    
+        color: var(--primary-900);
+
         overflow: hidden;
     }
 
@@ -113,5 +124,6 @@
     .total {
         display: flex;
         align-items: center;
+        margin-right: 8px;
     }
 </style>

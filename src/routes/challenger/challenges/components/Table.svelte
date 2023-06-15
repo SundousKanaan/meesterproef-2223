@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { ChallengeStatus } from '$lib/challenge';
 	import type { Challenge } from '$lib/challenge';
-	import SvelteTable from 'svelte-table';
-	import type { TableColumn} from 'svelte-table';
+	import ChallengeBlock from '../../profiel/components/ChallengeBlock.svelte';
 	import Status from './Status.svelte';
 
 	const challenges: Challenge[] = [
@@ -78,72 +77,89 @@
 			creators_last_week: 220,
 			entries_last_week: 0
 		}
-
-
 	];
-
-	const columns:  = [
-		key: 'title', 
-		label: 'Title',
-		value: v => v.title,
-		sortable: true,
-	]
-
-
 	var filteredChallenges: Challenge[] = challenges;
 	var selectedStatus: string;
 
+	function emojiFromStatus(status: ChallengeStatus) {
+		switch(status) {
+			case ChallengeStatus.OPEN:
+				return '🔓';
+			case ChallengeStatus.CLOSED:
+				return '🔒';
+			case ChallengeStatus.PUBLISHED:
+				return '📰';
+			case ChallengeStatus.DRAFT:
+				return '📝';
+			case ChallengeStatus.FINISHED:
+				return '🏁';
+			case ChallengeStatus.HIDDEN:
+				return '👻';
+			default:
+				return '🌎';
+		}
+	}
+
 	async function statusFilter() {
-		if(selectedStatus === 'ALL')
-			filteredChallenges = challenges;
-		else if(selectedStatus){
+		if (selectedStatus === 'ALL') filteredChallenges = challenges;
+		else if (selectedStatus) {
 			filteredChallenges = challenges.filter((challenge) => challenge.status === selectedStatus);
 		}
 	}
 </script>
 
-<table>
-	<tr>
-		<th>Title</th>
-		<th>Start Datum</th>
-		<th>Eind Datum</th>
-		<th>
-			<select
-				bind:value={selectedStatus}
-				on:change={(e) => {
-					statusFilter();
-				}}
-			>
-				<option value="ALL" disabled selected>Status</option>
-				<option value="ALL">All</option>
-				<option value="OPEN">Open</option>
-				<option value="CLOSED">Closed</option>
-				<option value="PUBLISHED">Published</option>
-				<option value="DRAFT">Draft</option>
-				<option value="FINISHED">Finished</option>
-				<option value="HIDDEN">Hidden</option>
-			</select>
-		</th>
-		<th>Creators</th>
-		<th>Entries</th>
-		<th />
-	</tr>
-	{#each filteredChallenges as challenge}
+<div class="wrapper"> 
+	<table>
 		<tr>
-			<td>{challenge.title}</td>
-			<td>{challenge.start_date}</td>
-			<td>{challenge.end_date}</td>
-			<td><Status status={challenge.status} /></td>
-			<td>{challenge.creators} | {(challenge.creators / challenge.creators_last_week).toFixed(2)}%</td>
-			<td>{challenge.entries} | {(challenge.entries / challenge.entries_last_week).toFixed(2)}%</td>
-			<td>
-				<a href="/challenges/{challenge.id}">Bekijk</a>
-			</td>
+			<th>Title</th>
+			<th>Start Datum</th>
+			<th>Eind Datum</th>
+			<th>
+				<select
+					bind:value={selectedStatus}
+					on:change={(e) => {
+						statusFilter();
+					}}
+				>
+					<option value="ALL" disabled selected>Status</option>
+					<option value="ALL">All</option>
+					<option value="OPEN">Open</option>
+					<option value="CLOSED">Closed</option>
+					<option value="PUBLISHED">Published</option>
+					<option value="DRAFT">Draft</option>
+					<option value="FINISHED">Finished</option>
+					<option value="HIDDEN">Hidden</option>
+				</select>
+			</th>
+			<th>Creators</th>
+			<th>Entries</th>
+			<th />
 		</tr>
-	{/each}
-</table>
+		{#each filteredChallenges as challenge}
+			<tr>
+				<td class="title" title="{challenge.title}">{emojiFromStatus(challenge.status)} {challenge.title}</td>
+				<td>{challenge.start_date}</td>
+				<td>{challenge.end_date}</td>
+				<td><Status status={challenge.status} /></td>
+				<td
+					>{challenge.creators} | {(challenge.creators / challenge.creators_last_week).toFixed(
+						2
+					)}%</td
+				>
+				<td>{challenge.entries} | {(challenge.entries / challenge.entries_last_week).toFixed(2)}%</td>
+				<td>
+					<a href="/challenges/{challenge.id}">Bekijk</a>
+				</td>
+			</tr>
+		{/each}
+	</table>
+</div>
 
 <style>
+	.wrapper {
+		overflow-x: scroll;
+	}
+
 	table {
 		width: 100%;
 		border-collapse: collapse;
@@ -154,8 +170,16 @@
 		padding: 0.5rem;
 		text-align: left;
 		border: 1px solid var(--neutral-300);
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		max-width: 30em;
 	}
 
+	td.title {
+		max-width: 25ch;
+	}	
+	
 	th > select {
 		content: '';
 		width: 100%;
