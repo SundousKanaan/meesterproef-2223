@@ -61,27 +61,29 @@
     .info {
         display: flex;
         justify-content: space-between;
-        height: 20px;
         margin-bottom: auto;
     }
 
     .info .tag {
-        display: block;
+        box-sizing: border-box;
+        display: flex;
+        gap: 8px;
+        align-items: center;
         background-color: var(--neutral-300);
         padding: 12px;
+        overflow: hidden;
     }
 
     h1 {
         color: var(--neutral-100);
         margin-bottom: 12px;
-        font-size: 2em;
+        font-size: clamp(16px, 4vw, 32px);
     }
 
     .bar {
         position: relative;
         display: flex;
         justify-content: space-between;
-        align-items: center;
         height: 32px;
         width: calc(100% + 42px);
         left: -21px;
@@ -106,5 +108,10 @@
 
     .bar .loader .percentage {
         margin-left: auto;
+    }
+
+    .total {
+        display: flex;
+        align-items: center;
     }
 </style>
