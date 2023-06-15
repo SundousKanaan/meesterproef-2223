@@ -1,36 +1,53 @@
 
 
 <section>
-	<span class="full-circle">
-		<span class="part-circle"></span>
+	<div class="clock">
+		<svg viewBox="0 0 36 36" class="circular-chart">
+  <path class="circle-bg"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"/>
+  <path class="circle"
+        stroke-dasharray="0, 100"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"/>
+</svg>
 
-	</span>
+	</div>
 </section>
 
+
 <style>
-	section {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		/* height: 100vh; */
+	
+	.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+}
 
-		height: 10rem;
-		width: 10rem;
-		background-color: #BAE4E8;
-		border-radius: 50%;
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
 
-	}
+.circle {
+  fill: none;
+  stroke: #4bc0c0;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
 
-	.full-circle {
-		height: 10rem;
-		width: 1rem;
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+  100% {
+    stroke-dasharray: 50 100; /* The first number should be the percentage of the circle you want to fill */
+  }
+}
 
-		background-color: blue;
-
-		transform: 
-
-	}
-
-	.part-circle {
-	}
 </style>
