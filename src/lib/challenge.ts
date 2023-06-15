@@ -15,4 +15,13 @@ export interface Challenge {
 	start_date: string;
 	end_date: string;
 	status: ChallengeStatus;
+
+	creators: number;
+	entries: number;
+	creators_last_week: number;
+	entries_last_week: number;
 }
+
+// TODO: in the future, this is best for getting stuff from the db
+//export class ChallengeImpl implements Challenge {
+//}

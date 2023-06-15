@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { ChallengeStatus } from '$lib/challenge';
 	import type { Challenge } from '$lib/challenge';
+	import SvelteTable from 'svelte-table';
+	import type { TableColumn} from 'svelte-table';
 	import Status from './Status.svelte';
 
 	const challenges: Challenge[] = [
@@ -10,7 +12,11 @@
 			description: 'Description 1',
 			start_date: '02-07-2023',
 			end_date: '05-08-2023',
-			status: ChallengeStatus.OPEN
+			status: ChallengeStatus.OPEN,
+			creators: 256,
+			entries: 12,
+			creators_last_week: 220,
+			entries_last_week: 0
 		},
 		{
 			id: '2',
@@ -18,7 +24,11 @@
 			description: 'Description 2',
 			start_date: '01-07-2023',
 			end_date: '07-08-2023',
-			status: ChallengeStatus.CLOSED
+			status: ChallengeStatus.CLOSED,
+			creators: 256,
+			entries: 12,
+			creators_last_week: 220,
+			entries_last_week: 0
 		},
 		{
 			id: '3',
@@ -26,7 +36,11 @@
 			description: 'Description 3',
 			start_date: '27-06-2023',
 			end_date: '30-07-2023',
-			status: ChallengeStatus.PUBLISHED
+			status: ChallengeStatus.PUBLISHED,
+			creators: 256,
+			entries: 12,
+			creators_last_week: 220,
+			entries_last_week: 0
 		},
 		{
 			id: '4',
@@ -34,7 +48,11 @@
 			description: 'Description 4',
 			start_date: '20-06-2023',
 			end_date: '10-07-2023',
-			status: ChallengeStatus.DRAFT
+			status: ChallengeStatus.DRAFT,
+			creators: 256,
+			entries: 12,
+			creators_last_week: 220,
+			entries_last_week: 0
 		},
 		{
 			id: '5',
@@ -42,7 +60,11 @@
 			description: 'Description 5',
 			start_date: '20-06-2023',
 			end_date: '10-07-2023',
-			status: ChallengeStatus.FINISHED
+			status: ChallengeStatus.FINISHED,
+			creators: 256,
+			entries: 12,
+			creators_last_week: 220,
+			entries_last_week: 0
 		},
 		{
 			id: '6',
@@ -50,11 +72,23 @@
 			description: 'Description 6',
 			start_date: '29-05-2023',
 			end_date: '30-06-2023',
-			status: ChallengeStatus.HIDDEN
+			status: ChallengeStatus.HIDDEN,
+			creators: 256,
+			entries: 12,
+			creators_last_week: 220,
+			entries_last_week: 0
 		}
 
 
 	];
+
+	const columns:  = [
+		key: 'title', 
+		label: 'Title',
+		value: v => v.title,
+		sortable: true,
+	]
+
 
 	var filteredChallenges: Challenge[] = challenges;
 	var selectedStatus: string;
@@ -100,8 +134,8 @@
 			<td>{challenge.start_date}</td>
 			<td>{challenge.end_date}</td>
 			<td><Status status={challenge.status} /></td>
-			<td>Creators</td>
-			<td>Entries</td>
+			<td>{challenge.creators} | {(challenge.creators / challenge.creators_last_week).toFixed(2)}%</td>
+			<td>{challenge.entries} | {(challenge.entries / challenge.entries_last_week).toFixed(2)}%</td>
 			<td>
 				<a href="/challenges/{challenge.id}">Bekijk</a>
 			</td>
