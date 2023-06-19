@@ -1,9 +1,11 @@
-<script>
+<script lang="ts">
 	import { ChallengeStatus } from '$lib/challenge';
 
 	import Table from './components/Table.svelte';
 	import MobileCard from './components/MobileCard.svelte';
 	import { dev } from '$app/environment';
+
+	const numChallenges = 2;
 
 	const currentHour = new Date().getHours();
 
@@ -17,6 +19,13 @@
 		introText = 'Welterusten';
 	}
 
+	var table: boolean = numChallenges > 10 ? true : false;
+
+	async function sadness(e: Event) {
+		e.preventDefault();
+		table = !table;
+	}
+
 </script>
 
 <main>
@@ -28,26 +37,28 @@
 	<div class="bar-boven-de-tabel-die-de-zoekbalk-bevat-enzo">
 		<h2>Challenges</h2>
 		<div>
-			<img src="/instagram-icon.svg" alt="Temporary logo bc bruh">
+			<button on:click={sadness}>
+				<img src="/instagram-icon.svg" alt="Temporary logo bc bruh">
+			</button>
 
 			<input placeholder="Zoeken..." type="text" name="searchbar" />
 		</div>
 	</div>
 
+	{#if table}
+
 	<div class="div-table-table-div">
 		<Table />
 	</div>
 
-	{#if dev}
-		<br />
-		<br />
-	{/if}
+	{:else}
 
 	<section class="mobile-cards-section">
 		<MobileCard title="Lorem ipsum doler sit amet sit edoler ipsum lorem" background="https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"/>
 		<MobileCard status={ChallengeStatus.DRAFT} background="https://images.pexels.com/photos/2097/desk-office-pen-ruler.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"/>
 		<MobileCard status={ChallengeStatus.PUBLISHED} background="https://images.pexels.com/photos/2097/desk-office-pen-ruler.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"/>
 	</section>
+	{/if}
 </main>
 
 <style>
@@ -69,11 +80,19 @@
 		display: grid;
 		width: 100%;
 		grid-column: 2/16;
-		display: none;
 	}
 
 	h2 {
 		font-size: 1rem;
+	}
+
+	button {
+		appearance: none;
+		border: none;
+		background-color: transparent;
+		height: fit-content;
+		width: fit-content;
+		padding: 0px;
 	}
 
 	.bar-boven-de-tabel-die-de-zoekbalk-bevat-enzo {
@@ -115,13 +134,13 @@
 	}
 
 	@media only screen and (min-width: 1024px) {
-		.mobile-cards-section {
+		/* .mobile-cards-section {
 			display: none;
-		}
+		} */
 
-		.div-table-table-div {
+		/* .div-table-table-div {
 			display: block;
-		}
+		} */
 	}
 
 	/* tablet size */
