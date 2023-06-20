@@ -14,6 +14,8 @@
 	<Slider icon="fire" titel={slider_proces} />
 	<Slider icon="rocket" titel={slider_creativity} />
 	<h3>The final result:</h3>
+	<div>stars</div>
+	<h3>Feedback</h3>
 	<textarea name="feedback" id="feedback" cols="30" rows="10" placeholder="Write a feedback ..." />
 	<button type="submit" value="Save">Save</button>
 </form>
