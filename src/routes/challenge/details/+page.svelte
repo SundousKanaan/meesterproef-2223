@@ -75,7 +75,7 @@
 	}
 
 	.timeline-wrapper {
-		width: 70rem;
+		width: 50rem;
 		margin-right: auto;
 		margin-left: auto;
 		margin-top: 2rem;
