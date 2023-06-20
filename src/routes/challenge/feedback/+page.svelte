@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Feedback from './components/Feedback.svelte';
+	import Feedback from './components/Feedback-form.svelte';
+	import Team_users from './components/Team_users.svelte';
 </script>
 
 <section>
@@ -7,6 +8,13 @@
 	<div>3</div>
 	<div>4</div>
 	<Feedback />
+
+	<div>
+		<h2>Team members:</h2>
+		<ul>
+			<Team_users />
+		</ul>
+	</div>
 </section>
 
 <style>
@@ -22,8 +30,22 @@
 			'form';
 
 		grid-template-columns: 1fr;
-		/* grid-template-rows: 5vw 10em 30em auto ; */
 		gap: 1em;
 		background-color: rgba(0, 255, 255, 0.211);
+	}
+
+	section > div{
+		padding: 1em;
+		border: solid .5px black;
+		border-radius: .5em;
+	}
+
+	section > div h2{
+		margin-bottom: .5em;
+	}
+
+	section > div ul{
+		display: flex;
+		flex-direction: column;
 	}
 </style>
