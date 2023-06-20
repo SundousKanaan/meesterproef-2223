@@ -7,7 +7,7 @@
 		icon: string | undefined;
 		title: string;
 	}[] = [];
-	export let highLightCurrentDate: boolean = true;
+	//export let highLightCurrentDate: boolean = true;
 	export let spaceRelativeToTime: boolean = true;
 
 	const monthNames = [
@@ -175,6 +175,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		width: 2rem;
 		/* min-height: fit-content;
 		justify-content: center; */
 	}
