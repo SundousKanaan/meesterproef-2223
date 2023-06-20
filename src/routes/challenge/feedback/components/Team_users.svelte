@@ -2,6 +2,8 @@
 	export const firstName: string = 'Sundous';
 	export const lastName: string = 'Kanaan';
 	export const location: string = 'Japan';
+	export const userImage: string = '/fire-emoji.svg';
+	export const education: string = 'CMD';
 
 	interface Rol {
 		id: number;
@@ -9,32 +11,32 @@
 	}
 
 	let rolls: Rol[] = [
-		{ id: 1, rol: ['film', 'baka'] },
-		{ id: 2, rol: ['UX/UI', 'art'] }
+		{ id: 1, rol: ['film', 'frontender'] },
+		{ id: 2, rol: ['UX/UI', 'frontender', 'designer'] }
 	];
 </script>
 
 <li class="teamUser">
 	<a href="/">
 		<div>
-			<img src="/fire-emoji.svg" alt="" />
+			<img src={userImage} alt="{firstName} {lastName} profile image" />
 		</div>
 		<div>
 			<span>
 				<h3>{firstName} {lastName}</h3>
 				<p>{location}</p>
 			</span>
-			<p>School</p>
+			<p>{education}</p>
 			<span>
 				<h3>Rol:</h3>
 				<ul>
-					{#each rolls as rol (rol.id)}
-						<li>
+					<li>
+						{#each rolls as rol (rol.id)}
 							{#each rol.rol as userrol}
 								<p>{userrol}</p>
 							{/each}
-						</li>
-					{/each}
+						{/each}
+					</li>
 				</ul>
 			</span>
 		</div>
@@ -63,25 +65,25 @@
 		bottom: -0.5em;
 	}
 
-    li a{
-        width: inherit;
-        height: fit-content;
-        display: flex;
+	li a {
+		width: inherit;
+		height: fit-content;
+		display: flex;
 		flex-direction: row;
 		align-items: center;
-        gap: 1em;
+		gap: 1em;
 
-        color: black;
-    }
+		color: black;
+	}
 
 	li a > div:first-of-type {
 		--size: 4em;
 		width: var(--size);
 		height: var(--size);
 		border-radius: 50%;
-        background-color: white;
+		background-color: white;
 
-        flex-shrink: 0;
+		flex-shrink: 0;
 	}
 
 	li a > div:first-of-type img {
@@ -125,22 +127,23 @@
 	li a > div:last-of-type span:last-of-type {
 		display: flex;
 		flex-direction: row;
-		align-items: center;
+		align-items: start;
 		gap: 0.5em;
 	}
 
 	li a > div:last-of-type span:last-of-type ul li {
-        display: flex;
-        gap: .5em;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5em;
 		border: none;
 		margin: none;
 	}
 	li a > div:last-of-type span:last-of-type ul li p {
 		text-transform: capitalize;
-        font-size: .9em;
+		font-size: 0.9em;
 		padding: 0.2em 0.5em;
 		border-radius: 0.5em;
 		background-color: var(--theme-secondary);
-        color: white;
+		color: white;
 	}
 </style>
