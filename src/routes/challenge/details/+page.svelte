@@ -2,13 +2,15 @@
 	import type { Challenge } from "$lib/challenge";
 	import { ChallengeStatus } from "$lib/challenge";
 	import EntriesPie from "./components/EntriesPie.svelte";
+	import Timeline from "$lib/Timeline.svelte";
+	import Icon from "$lib/Icon.svelte";
 
 	const challenge: Challenge = {
 			id: '1',
 			title: 'How to create an immersive experience for Retail?',
 			description: 'Description 1',
-			start_date: '02-07-2023',
-			end_date: '05-08-2023',
+			start_date: '2023-06-02',
+			end_date: '2023-08-05',
 			status: ChallengeStatus.OPEN,
 			creators: 256,
 			entries: 12,
@@ -29,9 +31,37 @@
 	<div>
 		<EntriesPie></EntriesPie>
 	</div>
-
-
 </div>
+
+<div class="timeline-wrapper">
+
+<Timeline
+	dates={[
+		{
+			date: new Date(challenge.start_date),
+			icon: 'trend',
+			title: "Start"
+		},
+		{
+			date: new Date("2023-06-30"),
+			icon: 'trend',
+			title: "Deadline"
+		},
+		{
+			date: new Date("2023-07-20"),
+			icon: 'trend',
+			title: "Evaluation"
+		},
+		{
+			date: new Date(challenge.end_date),
+			icon: 'trend',
+			title: "Winners"
+		},
+	]}
+	spaceRelativeToTime={true}
+></Timeline>
+</div>
+	
 
 <style>
 	.wrapper {
@@ -42,5 +72,12 @@
 	img {
 		width: 100%;
 
+	}
+
+	.timeline-wrapper {
+		width: 70rem;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 2rem;
 	}
 </style>
