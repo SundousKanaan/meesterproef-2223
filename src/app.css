@@ -31,12 +31,14 @@ body{
     --gray-font: #73738C;
     --blue-button: #21BDE5;
     --theme-color: #F7CE46;
+    --theme-color-secondary: #FFF19D;
+    --theme-secondary:#32A5C3;
     --black: #000000;
     --white: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.199);
     --shadow-button: 0 0 .5em var(--shadow-color);
     --padding-button: .5em 1em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    --font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 main {
