@@ -4,11 +4,12 @@
 	export let data: PageData;
 
 	import PastChallenges from '$lib/pastChallenges.svelte';
+	import WinnerScoreboard from '$lib/winnerScoreboard.svelte';
 </script>
 
 <main>
-	<h2>Past challenges</h2>
 	<PastChallenges />
+	<WinnerScoreboard />
 </main>
 
 <style>
