@@ -12,7 +12,7 @@
         display: inline-block;
         width: 25px;
         height: 25px;
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
     }
@@ -27,6 +27,15 @@
 
     .icon-document {
         background-image: url('/icons/document.png');
+    }
+
+    .icon-table-view {
+        background-image: url('/icons/table-view.svg');
+    
+    }
+
+    .icon-card-view {
+        background-image: url('/icons/card-view.svg');
     }
 
     .icon-size-small {
