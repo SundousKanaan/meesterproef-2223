@@ -1,8 +1,7 @@
 <script lang="ts">
 	export let titel: string;
 	export let icon: string = 'hearteyes';
-	export let level: string = 'bad'
-
+	export let level: string = 'So bad';
 	let iconURL: string;
 
 	switch (icon) {
@@ -20,41 +19,82 @@
 		}
 	}
 
-	let sliderValue: number = 1;
-	let color:string;
-	let weight:string;
-	let score:number = 0;
+	let sliderValue: number;
+	sliderValue = 0;
+	let color: string;
+	let weight: string;
+	let score: number = 0;
+
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
+
+	interface Ranking {
+		rank: string;
+	}
+
+	let rankings: Ranking[] = [
+		{ rank: 'so bad' },
+		{ rank: 'bad' },
+		{ rank: 'good' },
+		{ rank: 'super' },
+		{ rank: 'amazing' },
+		{ rank: 'So amazing' }
+	];
+
+	$: {
+		console.log('sliderValue:', sliderValue);
+	}
 
 	function handleSliderInput(event: Event) {
-		
-		if (sliderValue >= 0 && sliderValue <= 25) {
-			level="bad";
-			color="black";
-			weight="lighter";
-			score=1
-		} else if (sliderValue >= 25 && sliderValue <= 50) {
-			level="good";
-			color="black";
-			weight="lighter"
-		} else if (sliderValue >= 50 && sliderValue <= 75) {
-			level="super";
-			color="black";
-			weight="lighter";
+		sliderValue = Number((event.target as HTMLInputElement).value);
+		dispatch('sliderInput', sliderValue); // Dispatch the event with the current sliderValue
+
+		if (sliderValue == 0 && sliderValue < rankings.length) {
+			level = rankings[sliderValue].rank;
+			color = 'black';
+			weight = 'lighter';
+		} else if (sliderValue == 1 && sliderValue < rankings.length) {
+			level = rankings[sliderValue].rank;
+			color = 'black';
+			weight = 'lighter';
+		} else if (sliderValue == 2 && sliderValue < rankings.length) {
+			level = rankings[sliderValue].rank;
+			color = 'black';
+			weight = 'lighter';
+		} else if (sliderValue == 3 && sliderValue < rankings.length) {
+			level = rankings[sliderValue].rank;
+			color = 'black';
+			weight = 'lighter';
+		} else if (sliderValue == 4 && sliderValue < rankings.length) {
+			level = rankings[sliderValue].rank;
+			color = 'red';
+			weight = 'bolder';
 		} else {
-			level= "amazing";
-			color="red";
-			weight="bolder";
+			level = rankings[sliderValue].rank;
+			color = 'red';
+			weight = 'bolder';
 		}
 	}
 </script>
 
 <label>
 	<h3>{titel}:</h3>
-	<p style:color={color} style:font-weight={weight}>{level}</p>
-	<input type="range" class="{icon}" on:input={handleSliderInput} bind:value={sliderValue} required/>
+	<p style:color style:font-weight={weight}>{level}</p>
+	<input
+		type="range"
+		min="0"
+		max="5"
+		step="1"
+		class={icon}
+		on:input={handleSliderInput}
+		bind:value={sliderValue}
+		required
+	/>
 </label>
-<!-- min="1" max="5" step="0" -->
+
+<!-- min="1" max="5" step="1" -->
 <style>
+
 	label {
 		width: 100%;
 		height: fit-content;
@@ -74,6 +114,11 @@
 	label p {
 		text-transform: capitalize;
 		justify-self: end;
+
+		padding: .25em .5em;
+		border-radius: .5em;
+
+		background-color: white;
 	}
 
 	label input[type='range'] {
@@ -88,17 +133,19 @@
 		background: rgba(145, 145, 145, 0.198);
 		background-image: linear-gradient(
 			to right,
-			rgba(145, 145, 145, 0.198) 0 5%,
-			black 0 5.5%,
-			rgba(145, 145, 145, 0.198) 0 26%,
-			black 0 26.5%,
-			rgba(145, 145, 145, 0.198) 0 50%,
-			black 0 50.5%,
-			rgba(145, 145, 145, 0.198) 0 75%,
-			black 0 75.5%,
+			rgba(145, 145, 145, 0.198) 0 23%,
+			black 0 23.5%,
+			rgba(145, 145, 145, 0.198) 0 41%,
+			black 0 41.5%,
+			rgba(145, 145, 145, 0.198) 0 60%,
+			black 0 60.5%,
+			rgba(145, 145, 145, 0.198) 0 77%,
+			black 0 77.5%,
 			rgba(255, 255, 255, 0.198) 0 99%,
 			black 0 99.5%
 		);
+
+		overscroll-behavior-x: contain;
 	}
 	label input[type='range']:focus {
 		outline: none;
@@ -113,7 +160,7 @@
 
 	label input[type='range']::-webkit-slider-thumb {
 		-webkit-appearance: none;
-		--size:8vw;
+		--size: 3em;
 		height: var(--size);
 		width: var(--size);
 		border-radius: 50%;
@@ -134,8 +181,9 @@
 	}
 
 	label input[type='range']::-moz-range-thumb {
-		width: 3em;
-		height: 3em;
+		--size: 2.5em;
+		height: var(--size);
+		width: var(--size);
 		border-radius: 50%;
 		background: transparent;
 		background-position: center;
@@ -181,4 +229,8 @@
 	label input[type='range'].rocket:hover::-moz-range-thumb {
 		transform: scale(1.8);
 	}
+
+	/* @media (prefers-reduced-motion) {
+		styles to apply if a user's device settings are set to reduced motion
+	} */
 </style>
