@@ -8,20 +8,25 @@
     export let background: string = "https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
     export let title: string = "XSS Vulnerability";
     export let status: ChallengeStatus = ChallengeStatus.OPEN;
+    export let creators: number = 0;
+    export let entries: number = 0;
+    export let trend: number = 0;
+
+    let totalEntriesPercentage = entries / creators * 100;
 </script>
 
 <article style="background-image: url({background})">
     <div class="content">
         <div class="info">
-            <span class="tag"><Icon size={IconSize.SMALL} icon="profile" /> 250</span>
-            <span class="tag"><Icon size={IconSize.SMALL} icon="trend"/> 10%</span>
+            <span class="tag"><Icon size={IconSize.SMALL} icon="profile" /> {creators}</span>
+            <span class="tag"><Icon size={IconSize.SMALL} icon="trend"/> {trend}</span>
         </div>
         <h1>{title}</h1>
         <Status status={status} />
-        <div class="bar">
+        <div class="bar" style="--percentage: {totalEntriesPercentage}%">
             <div class="loader">
-                Handed in products: 66
-                <span class="percentage">66%</span>
+                Handed in products: {entries}
+                <span class="percentage">{totalEntriesPercentage}%</span>
             </div>
             <span class="total">78 <Icon size={IconSize.SMALL} icon="document" /></span>
         </div>
@@ -102,6 +107,10 @@
         color: var(--neutral-900);
         margin-top: 21px;
         font-size: 14px;
+        
+        white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
     }
 
     .bar .loader {
@@ -109,7 +118,7 @@
         display: flex;
         align-items: center;
         height: 100%;
-        width: 66%;
+        width: var(--percentage, 0);
         padding: 0 12px;
         background-color: var(--primary-300);
         color: var(--primary-900);
