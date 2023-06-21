@@ -12,6 +12,8 @@
     <p>Browse through the challenges</p>
 </section>
 
+<a href="#" class="meerInformatie">All categories</a>
+<input type="search" placeholder="Find entries">
 
 <section class="boxed">
     <article class="challenge-block">
