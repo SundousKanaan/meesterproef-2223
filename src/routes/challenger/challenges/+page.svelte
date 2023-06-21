@@ -155,7 +155,6 @@
 					<Icon icon="table-view" />
 				</button>
 			{/if}
-			<input placeholder="Zoeken..." type="text" name="searchbar" />
 		</div>
 	</div>
 
