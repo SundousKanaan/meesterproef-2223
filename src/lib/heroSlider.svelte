@@ -1,22 +1,25 @@
 <script>
-
+    const pageTitle = 'Immersive Retail Experience'
+    const pageDescription = 'How to create an Immersive Retail Experience for Asics shoes Europe'
+    const participants = 123
+    const breadcrumbs = ['home', 'challenges', 'challengeDetail'];
 </script>
 
 <section class="hero">
     <div>
         <ul class="breadcrumbs">
             <li>
-                <a href="#">test</a>
+                <a href="#">{breadcrumbs[0]}</a>
             </li>
             <li>
-                <a href="#">test2</a>
+                <a href="#">{breadcrumbs[1]}</a>
             </li>
             <li>
-                <a href="#">test3</a>
+                <a href="#">{breadcrumbs[2]}</a>
             </li>
         </ul>
-        <h1>Immersive Retail Experience</h1>
-        <h2>How to create an Immersive Retail Experience for Asics shoes Europe</h2>
+        <h1>{pageTitle}</h1>
+        <h2>{pageDescription}</h2>
         <div class="button-wrapper">
             <button class="cta">Enroll</button>
             <button class="secondary-cta">Cooperative enrollment</button>
@@ -25,7 +28,7 @@
             <img src="/man1.jpg" alt=""/>
             <img src="/man2.jpg" alt=""/>
             <img src="/man3.jpg" alt=""/>
-            <p><span>number</span> have already enrolled!</p>
+            <p><span>{participants}</span> have already enrolled!</p>
         </div>
     </div>
     <div>
@@ -44,11 +47,10 @@
 
     .hero {
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
         flex-wrap: wrap;
         width: 100%;
-        height: 70dvh;
         margin-bottom: 2em;
         background-image: url('/hero_no_content.jpg');
         background-size: cover;
@@ -88,9 +90,12 @@
     .hero > div {
         display: flex;
         flex-direction: column;
-        padding: 6em;
+        padding: 1.3em;
         padding-top: 3.5em;
-        padding-bottom: 2.5em;
+    }
+
+    .hero > div:first-of-type {
+        order: 2;
     }
 
     .hero > div:last-of-type {
@@ -98,12 +103,12 @@
     }
 
     .hero > div:last-of-type img {
-        width: 30em;
+        width: 20em;
     }
 
     .hero > div h1 {
-        font-size: 2.5em;
-        width: 14em;
+        font-size: 2em;
+        width: 10em;
         margin-bottom: .6em;
         padding-left: 0.2em;
         color: var(--white);
@@ -112,7 +117,7 @@
 
     .hero > div h2 {
         font-size: 2em;
-        width: 14em;
+        width: 10em;
         margin-bottom: .6em;
         padding-left: 0.2em;
         color: var(--yellow);
@@ -146,6 +151,7 @@
 
     .hero div .button-wrapper {
         display: flex;
+        flex-direction: column;
         gap: 1em;
         margin-top: 1em;
     }
@@ -153,7 +159,7 @@
     .hero div > div {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         margin-top: 1em;
         width: 100%;
     }
@@ -175,5 +181,56 @@
 
     .hero div > div p {
         color: var(--white);
+    }
+
+    @media screen and (min-width: 768px) {
+        .hero {
+            justify-content: space-evenly;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .hero > div {
+            padding: 6em;
+            padding-bottom: 3.5em;
+        }
+
+        .hero > div h1 {
+            font-size: 2.5em;
+            width: 14em;
+            margin-bottom: .6em;
+            padding-left: 0.2em;
+            color: var(--white);
+            background-color: var(--black);
+        }
+
+        .hero > div h2 {
+            font-size: 2em;
+            width: 14em;
+            margin-bottom: .6em;
+            padding-left: 0.2em;
+            color: var(--yellow);
+            background-color: var(--black);
+        }
+
+        .hero > div:first-of-type {
+            order: -1;
+        }
+
+        .hero > div:last-of-type {
+            justify-content: center;
+        }
+
+        .hero > div:last-of-type img {
+            width: 100%;
+        }
+
+        .hero div > div {
+            align-items: center;
+        }
+
+        .hero div .button-wrapper {
+            flex-direction: row;
+        }
     }
 </style>

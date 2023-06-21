@@ -23,6 +23,7 @@
     } 
     
     .cta-section h2 {
+        width: 100%;
         font-size: 2em;
     }
 
@@ -34,14 +35,6 @@
         padding: 1em 2em 1em 2em;
     }
 
-    .secondary-cta {
-        width: 20em;
-        color: var(--black);
-        border: .25em solid var(--cta-color);
-        padding: .8em 1.8em .8em 1.8em;
-    }
-
-    .secondary-cta:hover,
     .cta:hover {
         background-color: var(--hover);
     }

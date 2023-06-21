@@ -1,9 +1,14 @@
-<script>
-
+<script lang="ts">
+    
 </script>
 
 <section class="challenge-info">
     <article>
+        <ul>
+            <li class="active">Detail challenge</li>
+            <li>Selection criteria</li>
+            <li>Resources</li>
+        </ul>
         <h2>About the Immersive Retail Experience Challenge</h2>
         <p>Are you interested in the exciting world of web development? Whether you're a beginner or have some experience, it's crucial to be aware of the potential risks that can lurk in the shadows of the internet. One such risk is known as XSS (Cross-Site Scripting) vulnerability..</p>
     </article>
@@ -68,9 +73,7 @@
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
-        margin: 0 auto;
         width: 80%;
-        padding: 6em;
     }
 
     .challenge-info article:first-of-type {
@@ -110,16 +113,44 @@
         margin-right: 1em;
     }
 
+    .challenge-info article:first-of-type > ul {
+        display: flex;
+        margin-left: 1em;
+        gap: 3em;
+    }
+
+    .challenge-info article:first-of-type > ul li {
+        margin-bottom: 1em;
+        cursor: pointer;
+    }
+
+    .challenge-info article:first-of-type > ul li.active {
+        border-top: 3px solid var(--black);
+        border-left: 3px solid var(--black);
+        border-right: 3px solid var(--black);
+        padding-top: .5em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .challenge-info article:first-of-type > ul li:not(.active) {
+        padding-bottom: .5em;
+        border-bottom: 3px solid var(--black);
+    }
+
     .challenge-info aside {
         display: flex;
         flex: 50%;
         justify-content: center;
     }
 
-    .challenge-info aside ul li {
-        margin-bottom: .5em;
+    .challenge-info aside > ul li {
         margin-top: .5em;
         display: flex;
+    }
+
+    .challenge-info aside > ul li:not(:last-of-type) {
+        margin-bottom: 1.5em;
     }
 
     .challenge-info aside ul li .wrapper h3 {
@@ -135,4 +166,34 @@
         background-image: url('/klodder.svg');
         background-repeat: no-repeat;
     }
+
+    @media screen and (min-width: 768px) { 
+        .challenge-info {
+            margin: 0 auto;
+            padding: 6em;
+        }
+
+        .challenge-info aside {
+            display: flex;
+            flex: 50%;
+            justify-content: center;
+        }
+
+        .challenge-info article:first-of-type {
+            flex: 50%;
+        }
+
+        .challenge-info article:first-of-type p {
+            width: 90%;
+        }
+
+        .challenge-info article:first-of-type > ul {
+            gap: 6em;
+        }
+
+        .challenge-info article:first-of-type > ul {
+            justify-content: center;
+        }
+    }
+
 </style>
