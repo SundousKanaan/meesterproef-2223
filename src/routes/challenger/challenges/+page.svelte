@@ -104,6 +104,7 @@
 			entries_last_week: 0
 		}
 	];
+
 	var filteredChallenges: Challenge[] = challenges;
 	var selectedStatus: string;
 
@@ -114,20 +115,11 @@
 		}
 	}
 
-	function handleViewToggle() {
-		if ($page.url.searchParams.get('view') === 'TABLE') {
-			$page.url.searchParams.set('view', 'CARDS');
-			goto(`?${$page.url.searchParams.toString()}`);
-			} else {
-			$page.url.searchParams.set('view', 'TABLE');
-			goto(`?${$page.url.searchParams.toString()}`);
-		}
-
 	var table: boolean = numChallenges > 10 ? true : false;
 
-	async function sadness(e: Event) {
+	async function handleViewToggle(e: Event) {
 		e.preventDefault();
-		table = !table;t
+		table = !table;
 	}
 
 </script>
@@ -238,6 +230,11 @@
 		height: fit-content;
 		width: fit-content;
 		padding: 0px;
+
+		cursor: pointer;
+		aspect-ratio: 1;
+		height: 100%;
+		border-radius: 6px;
 	}
 
 	.bar-boven-de-tabel-die-de-zoekbalk-bevat-enzo {
