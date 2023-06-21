@@ -10,6 +10,8 @@
 	import Table from './components/Table.svelte';
 	import MobileCard from './components/MobileCard.svelte';
 
+	const numChallenges = 2;
+
 	const currentHour = new Date().getHours();
 
 	var introText = 'Goedemorgen';
@@ -120,6 +122,12 @@
 			$page.url.searchParams.set('view', 'TABLE');
 			goto(`?${$page.url.searchParams.toString()}`);
 		}
+
+	var table: boolean = numChallenges > 10 ? true : false;
+
+	async function sadness(e: Event) {
+		e.preventDefault();
+		table = !table;t
 	}
 
 </script>
@@ -132,6 +140,7 @@
 	
 	<div class="bar-boven-de-tabel-die-de-zoekbalk-bevat-enzo">
 		<h2>Challenges</h2>
+
 		<div>			
 			<select
 					bind:value={selectedStatus}
@@ -145,7 +154,7 @@
 					{/each}
 			</select>
 			
-			{#if $page.url.searchParams.get('view') === 'TABLE'}
+			{#if table}
 				<button class="view-type-button" on:click={handleViewToggle}>
 					<Icon icon="card-view" />
 				</button>
@@ -154,12 +163,11 @@
 					<Icon icon="table-view" />
 				</button>
 			{/if}
-
 			<input placeholder="Zoeken..." type="text" name="searchbar" />
 		</div>
 	</div>
-	
-	{#if $page.url.searchParams.get('view') === 'TABLE'}
+
+	{#if table}
 		<div class="div-table-table-div">
 			<Table challenges={filteredChallenges}/>
 		</div>
@@ -221,6 +229,15 @@
 
 	h2 {
 		font-size: 1rem;
+	}
+
+	button {
+		appearance: none;
+		border: none;
+		background-color: transparent;
+		height: fit-content;
+		width: fit-content;
+		padding: 0px;
 	}
 
 	.bar-boven-de-tabel-die-de-zoekbalk-bevat-enzo {

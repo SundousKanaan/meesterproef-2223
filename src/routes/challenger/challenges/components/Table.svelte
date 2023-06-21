@@ -7,7 +7,7 @@
 	export let challenges: Challenge[] = [];
 
 	function emojiFromStatus(status: ChallengeStatus) {
-		switch(status) {
+		switch (status) {
 			case ChallengeStatus.OPEN:
 				return '🔓';
 			case ChallengeStatus.CLOSED:
@@ -26,7 +26,7 @@
 	}
 </script>
 
-<div class="wrapper"> 
+<div class="wrapper">
 	<table>
 		<tr>
 			<th>Title</th>
@@ -39,16 +39,25 @@
 		</tr>
 		{#each challenges as challenge}
 			<tr>
-				<td class="title" title="{challenge.title}">{emojiFromStatus(challenge.status)} {challenge.title}</td>
+				<td class="title" title={challenge.title}
+					>{emojiFromStatus(challenge.status)} {challenge.title}</td
+				>
 				<td>{challenge.start_date}</td>
 				<td>{challenge.end_date}</td>
 				<td><Status status={challenge.status} /></td>
-				<td
-					>{challenge.creators} | {(challenge.creators / challenge.creators_last_week).toFixed(
-						2
-					)}%</td
+
+				<td class={challenge.creators_last_week - challenge.creators > 0 ? 'matig' : 'minder-matig'}>{challenge.creators}</td>
+				<td class={challenge.entries_last_week - challenge.entries > 0 ? 'matig' : 'minder-matig'}>{challenge.entries}</td>
+				<!-- <td
+					class={challenge.creators_last_week - challenge.creators > 0 ? 'matig' : 'minder-matig'}
 				>
-				<td>{challenge.entries} | {(challenge.entries / challenge.entries_last_week).toFixed(2)}%</td>
+					{challenge.creators} | {(challenge.creators - challenge.creators_last_week).toFixed(
+						0
+					)}</td
+				>
+				<td
+					>{challenge.entries} | {(challenge.entries - challenge.entries_last_week).toFixed(0)}</td
+				> -->
 				<td>
 					<a href="/challenges/{challenge.id}">Bekijk</a>
 				</td>
@@ -80,8 +89,8 @@
 
 	td.title {
 		max-width: 25ch;
-	}	
-	
+	}
+
 	th > select {
 		content: '';
 		width: 100%;
@@ -97,5 +106,19 @@
 	th {
 		background-color: rgba(255, 208, 39, 0.48);
 		color: black;
+	}
+
+	.matig {
+		/* background-color: #ffd0d0; */
+		text-align: center;
+		word-spacing: 100%;
+		padding: 0px;
+	}
+
+	.minder-matig {
+		/* background-color: #d2ffc2; */
+		text-align: center;
+		word-spacing: 100%;
+		padding: 0px;
 	}
 </style>
