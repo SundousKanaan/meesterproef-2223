@@ -551,6 +551,11 @@
 </section>
 
 <style>
+	article {
+		background-color: white;
+		box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
+	}
+
 	em {
 		font-size: 0.8em;
 		color: #73738c;

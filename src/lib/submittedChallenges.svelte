@@ -7,7 +7,7 @@
 </script>
 
 <section class="boxed">
-	<h2>All Submitted Challenges</h2>
+	<h2>Submitted Challenges</h2>
 </section>
 
 <section class="boxed">
@@ -97,9 +97,44 @@
 		</figure>
 	</article>
 </section>
-<a href="#" class="laadMeer">Load more challenges</a>
+<section class="boxed">
+	<a href="#" class="laadMeer">Load more challenges</a>
+</section>
 
 <style>
+	.boxed:last-child {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.boxed:last-child > a {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 15px 20px;
+		gap: 8px;
+
+		background: white;
+		border: 1px solid #000000;
+		/* Shadow (XS) */
+
+		font-family: 'Open Sans';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 19.2px;
+		line-height: 22px;
+		/* identical to box height, or 115% */
+
+		text-transform: capitalize;
+
+		color: black;
+	}
+
+	.boxed:last-child > a:hover {
+		background: #d9d9d9;
+	}
 	em {
 		font-size: 0.8em;
 		color: #73738c;
@@ -190,7 +225,6 @@
 	a.laadMeer {
 		padding: 1em;
 		background-color: slategray;
-		width: 100%;
 		text-decoration: none;
 		color: black;
 		text-align: center;
@@ -310,7 +344,7 @@
 		background-color: rgba(0, 0, 0, 0.7);
 		padding: 10px;
 		color: white;
-		transition: visibility 0s linear 0.3s, opacity 0.3s;
+		transition: opacity 0.3s;
 	}
 
 	.boxed article .overlay h4 {
