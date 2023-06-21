@@ -5,11 +5,13 @@
 
 	import PastChallenges from '$lib/pastChallenges.svelte';
 	import WinnerScoreboard from '$lib/winnerScoreboard.svelte';
+	import SubmittedChallenges from '$lib/submittedChallenges.svelte';
 </script>
 
 <main>
 	<PastChallenges />
 	<WinnerScoreboard />
+	<SubmittedChallenges />
 </main>
 
 <style>

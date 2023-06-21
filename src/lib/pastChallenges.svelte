@@ -12,14 +12,15 @@
 			<figcaption>
 				<div class="bookmark">
 					<svg
-						width="33"
+						width="32"
 						height="32"
-						viewBox="0 0 33 32"
+						viewBox="0 0 32 32"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<path
-							d="M28.1197 6.14666C27.4387 5.46533 26.6301 4.92485 25.7401 4.5561C24.8502 4.18735 23.8963 3.99756 22.933 3.99756C21.9697 3.99756 21.0158 4.18735 20.1259 4.5561C19.2359 4.92485 18.4273 5.46533 17.7463 6.14666L16.333 7.55999L14.9197 6.14666C13.5441 4.77107 11.6784 3.99827 9.733 3.99827C7.78763 3.99827 5.92193 4.77107 4.54634 6.14666C3.17075 7.52225 2.39795 9.38795 2.39795 11.3333C2.39795 13.2787 3.17075 15.1444 4.54634 16.52L5.95967 17.9333L16.333 28.3067L26.7063 17.9333L28.1197 16.52C28.801 15.839 29.3415 15.0304 29.7102 14.1405C30.079 13.2505 30.2688 12.2966 30.2688 11.3333C30.2688 10.37 30.079 9.41613 29.7102 8.52619C29.3415 7.63624 28.801 6.82767 28.1197 6.14666V6.14666Z"
+							d="M27.7867 6.14666C27.1057 5.46533 26.2971 4.92485 25.4071 4.5561C24.5172 4.18735 23.5633 3.99756 22.6 3.99756C21.6367 3.99756 20.6828 4.18735 19.7929 4.5561C18.9029 4.92485 18.0943 5.46533 17.4133 6.14666L16 7.55999L14.5867 6.14666C13.2111 4.77107 11.3454 3.99827 9.4 3.99827C7.45462 3.99827 5.58892 4.77107 4.21333 6.14666C2.83774 7.52225 2.06494 9.38795 2.06494 11.3333C2.06494 13.2787 2.83774 15.1444 4.21333 16.52L5.62666 17.9333L16 28.3067L26.3733 17.9333L27.7867 16.52C28.468 15.839 29.0085 15.0304 29.3772 14.1405C29.746 13.2505 29.9358 12.2966 29.9358 11.3333C29.9358 10.37 29.746 9.41613 29.3772 8.52619C29.0085 7.63624 28.468 6.82767 27.7867 6.14666V6.14666Z"
+							fill="#FF4B4B"
 							stroke="black"
 							stroke-width="2"
 							stroke-linecap="round"
@@ -28,6 +29,7 @@
 					</svg>
 				</div>
 				<div class="sponsorLogo">
+					<p>Sponsored by:</p>
 					<svg
 						width="145"
 						height="48"
@@ -647,13 +649,18 @@
 
 	article figure img {
 		background: gray;
-		height: 100%;
+		height: 232px;
+		width: 100%;
+	}
+
+	.boxed:nth-child(2) article:first-of-type figure img:first-of-type {
+		background: gray;
+		height: 410px;
 		width: 100%;
 	}
 
 	article figure {
 		position: relative;
-		height: 12em;
 	}
 
 	figcaption {
@@ -677,6 +684,7 @@
 		display: flex;
 		flex-direction: row;
 		gap: 0.5em;
+		box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
 	}
 
 	.sponsorLogo {
@@ -684,9 +692,18 @@
 		top: 1em;
 		left: 50%;
 		transform: translateX(-50%);
-		background: white;
 		display: flex;
 		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 0px;
+		gap: 8px;
+		color: white;
+
+		font-style: normal;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
 	}
 
 	.bookmark {
@@ -699,9 +716,10 @@
 		display: flex;
 		flex-direction: row;
 		gap: 0.5em;
+		box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
 	}
 
-	@media (max-width: 750px) {
+	@media (max-width: 768px) {
 		.boxed {
 			display: flex;
 			flex-direction: column;
@@ -712,9 +730,10 @@
 		.boxed article {
 			margin-bottom: 20px;
 			width: 80%;
+			background-color: white;
 		}
 
-		.boxed:first-of-type {
+		.boxed:nth-child(2) {
 			display: none;
 		}
 	}
