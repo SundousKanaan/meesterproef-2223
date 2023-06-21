@@ -156,6 +156,7 @@
 				<span>{date.date.getDate()} / {monthNames[date.date.getMonth()]}</span>
 			</div>
 
+			<!-- Kan possibly progress bar zijn (html element)-->
 			<div
 				class="timeline-line"
 				style:--progress={date.progress}%
