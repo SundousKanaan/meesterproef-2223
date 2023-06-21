@@ -4,6 +4,7 @@
 	import EntriesPie from './components/EntriesPie.svelte';
 	import Timeline from '$lib/Timeline.svelte';
 	import Icon from '$lib/Icon.svelte';
+	import ReviewCard from './components/ReviewCard.svelte';
 
 	const challenge: Challenge = {
 		id: '1',
@@ -63,7 +64,11 @@
 	</div>
 </div>
 
-<div class="timeline-wrapper" />
+<div class="review-buttons-wrappertje">
+	<ReviewCard type="speed"></ReviewCard>
+	<ReviewCard type="extensive"></ReviewCard>
+	<ReviewCard type="medals"></ReviewCard>
+</div>
 
 <style>
 	.wrapper {
@@ -84,7 +89,15 @@
 	}
 
 	.timeline-wrapper > h2 {
-		margin-left: -0.5rem;
+		margin-left: -0.5rem;		/* I am sorry */
 		margin-bottom: 0.75rem;
+	}
+
+	.review-buttons-wrappertje {
+		padding: 2rem 4rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 1rem;
+
 	}
 </style>
