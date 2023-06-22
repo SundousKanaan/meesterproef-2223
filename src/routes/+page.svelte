@@ -1,5 +1,10 @@
-<script>
-    import HeroSlider from "$lib/Hero.svelte";
+<!-- <script>
+    import Buttons from "$lib/Buttons.svelte";
+
+    function test() {
+        console.log("test");
+    }
 </script>
 
-<HeroSlider/>
+<Buttons buttonType="yes" handleFunction={test}></Buttons>
+ -->
