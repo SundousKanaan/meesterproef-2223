@@ -22,10 +22,16 @@
 	onMount(() => {
 		inputRef = document.getElementById('file-input') as HTMLInputElement;
 	});
+
+	export let DragType: 'image' | 'zip';
 </script>
 
 <div class="drop-area" on:dragover={handleDragOver} on:drop={handleDrop}>
-	<img src="/image-icon.svg" alt="svg icon" />
+	{#if DragType === 'image'}
+		<img src="/image-icon.svg" alt="svg icon" />
+	{:else if DragType === 'zip'}
+		<img src="/folder-icon.svg" alt="svg icon" />
+	{/if}
 	<div>
 		<p>Drag and drop images, or</p>
 		<input class="file-input" type="file" on:change={handleInputChange} multiple />
@@ -53,7 +59,7 @@
 <style>
 	.drop-area {
 		width: 100%;
-		height: 15em;
+		/* height: 20em; */
 		border: dashed 0.1em rgba(128, 128, 128, 0.39);
 		display: flex;
 		flex-direction: column;
@@ -63,14 +69,18 @@
 		transition: border-color 0.3s ease;
 		position: relative;
 		overflow: hidden;
+        padding: 1em;
 	}
 
+    @media (min-width: 1050px){
 	@supports (aspect-ratio: 16/9) {
 		.drop-area {
-			height: auto;
-			aspect-ratio: 16/9;
+			height: 20em;
+			/* aspect-ratio: 16/9; */
+            padding: 0;
 		}
 	}
+    }
 
 	.drop-area:hover {
 		border-color: #555;
@@ -84,7 +94,7 @@
 		height: 100%;
 		opacity: 0;
 
-        cursor: pointer;
+		cursor: pointer;
 	}
 
 	.browse-button {
@@ -117,18 +127,18 @@
 		font-size: 14px;
 		color: #333;
 
-        display: flex;
-        align-items: center;
+		display: flex;
+		align-items: center;
 	}
 
 	.file-list li::before {
-		content: "";
+		content: '';
 		width: 1.5em;
 		height: 1.5em;
 		display: inline-block;
-        background-image: url(/image-icon.svg);
-        background-size: cover;
-        background-repeat: no-repeat;
+		background-image: url(/image-icon.svg);
+		background-size: cover;
+		background-repeat: no-repeat;
 		margin-right: 4px;
 	}
 
@@ -160,4 +170,5 @@
 		color: #6e6e6e;
 		list-style: inside;
 	}
+
 </style>

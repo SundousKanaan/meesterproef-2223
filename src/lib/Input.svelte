@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let placeholder_Text: string = 'Write somthing ...';
 
-	export let inputType: 'text' | 'date' | 'url';
+	export let inputType: 'text' | 'date' | 'url' | 'textarea';
 </script>
 
 <input type={inputType} class={inputType} placeholder={placeholder_Text} />

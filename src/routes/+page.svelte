@@ -10,4 +10,4 @@
 </script>
 
 <Input inputType="url" placeholder_Text = {placeholder_Text} />
-<DragenDropp />
+<!-- <DragenDropp /> -->
