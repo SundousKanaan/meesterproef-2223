@@ -180,4 +180,42 @@
 		width: 23.5em;
 		height: 15em;
 	}
+
+	@media (max-width: 60em) {
+		.grouping {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			margin-left: 0.5em;
+			align-items: flex-end;
+		}
+
+		.plaatsing {
+			flex-direction: column;
+			align-items: center;
+			gap: 1em;
+			width: 30%;
+		}
+
+		.prijsDetail {
+			flex-direction: column;
+			align-items: center;
+			gap: 0.0625em;
+		}
+
+		.image-1 {
+			width: 100%;
+			height: 100%;
+		}
+
+		.image-2 {
+			width: 100%;
+			height: 100%;
+		}
+
+		.image-3 {
+			width: 100%;
+			height: 100%;
+		}
+	}
 </style>
