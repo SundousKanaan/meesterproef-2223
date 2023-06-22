@@ -6,28 +6,7 @@
 		date: Date;
 		icon: string | undefined;
 		title: string;
-	}[] = [
-		{
-			date: new Date('2023-06-01'),
-			icon: 'icon-1',
-			title: 'Submission Start'
-		},
-		{
-			date: new Date('2023-06-10'),
-			icon: 'icon-2',
-			title: 'Submission Deadline'
-		},
-		{
-			date: new Date('2023-06-22'),
-			icon: 'icon-3',
-			title: 'Evaluation'
-		},
-		{
-			date: new Date('2023-06-28'),
-			icon: 'icon-4',
-			title: 'Winners Announced'
-		}
-	];
+	}[] = [];
 	//export let highLightCurrentDate: boolean = true;
 	export let spaceRelativeToTime: boolean = true;
 
