@@ -188,9 +188,11 @@ main{
     flex-direction:row;
     flex-wrap:wrap;
     gap:0;
+    max-width:75em;
+    margin:0 auto;
 }
 main aside{
-    border:1px solid gray;
+    border:1px solid rgb(196, 196, 196);
     display:block;
     height:calc(100dvh - 6em);
     flex:0 1 20em;
@@ -247,7 +249,7 @@ aside nav{
     display:flex;
     flex-direction:column;
     margin-top:1em;
-    border-top:1px solid gray;
+    border-top:1px solid  rgb(196, 196, 196);
 }
 aside nav a{
     height:2.5em;
@@ -256,13 +258,12 @@ aside nav a{
     margin:0 auto;
     width:100%;
     text-align:left;
-    border-bottom:1px solid gray;
+    border-bottom:1px solid  rgb(196, 196, 196);
     padding-left:1em;
 }
 
 main > section{
     flex:1 1 20em;
-    border:1px solid gray;
     padding:1em;
     display:flex;
     flex-wrap:wrap;
@@ -290,11 +291,11 @@ main section > div{
 main section > div button{
     padding:1em;
     border:none;
-    border-bottom:.2em solid black;
+    border-bottom:.2em solid rgb(199, 199, 199);
     background:white;
 }
 main section > div button.active{
-    border:.2em solid black;
+    border:.2em solid rgb(199, 199, 199);
     border-bottom:unset;
 }
 
@@ -358,7 +359,7 @@ main section > article figure figcaption div p{
 
 .grid-container > div{
     height:12em;
-    border: 1px solid black;
+    border: 1px solid rgb(199, 199, 199);
     background:red;
 }
 
@@ -380,6 +381,23 @@ div > div button{
 div > div button:last-of-type{
     background:transparent;
     opacity:.5;
+}
+div > div button:last-of-type:hover{
+    position:relative;
+    color: white
+}
+div > div button:last-of-type:hover::after{
+    content:"Stop with the challenge";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:grid;
+    place-content: center;
+    color:red;
+    border:.1em solid red;
+    transform:scale(0.95);
 }
 
 div div span{
