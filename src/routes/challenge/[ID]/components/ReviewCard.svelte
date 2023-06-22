@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Buttons from "$lib/Buttons.svelte";
 	export let type: 'speed' | 'extensive' | 'medals' = 'speed';
 </script>
 
@@ -22,13 +23,12 @@
 		{/if}
 	</p>
 
-	<!-- Tingting when button component pleasseeeeee -->
 	{#if type == 'speed'}
-		<button>Speed review</button>
+		<Buttons variant="start-yellow">Speed review</Buttons>
 	{:else if type == 'extensive'}
-		<button>Extensive review</button>
+		<Buttons variant="start-blue">Extensive review</Buttons>
 	{:else}
-		<button>Give medals</button>
+		<Buttons variant="start-grey">Give medals</Buttons>
 	{/if}
 </article>
 
@@ -40,7 +40,7 @@
 		padding: 3rem;
 
 		display: grid;
-		grid-template-rows: 2rem 1fr 1fr;
+		grid-template-rows: 4rem 1fr 1fr;
 	}
 
 	h2 {
@@ -50,5 +50,11 @@
 	button {
 		margin-top: 1rem;
 		min-height: 4rem;
+	}
+
+	@media only screen and (max-width: 1000px) {
+		article {
+			padding: 2rem 1rem;
+		}
 	}
 </style>

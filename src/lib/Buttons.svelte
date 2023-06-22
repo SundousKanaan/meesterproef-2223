@@ -1,5 +1,6 @@
 <script lang="ts">
-    export let buttonType: 
+    export let variant: 
+    "primary" |
     "start-yellow" |	
     "start-blue" |
     "start-grey" |
@@ -13,25 +14,46 @@
     "yes" |
     "no";
 
-    export let handleFunction = () => {};
+    export let handleClick = () => {};
+
+    export let size: "small" | "medium" | "large" | "none" = "none";
+    export let hasIcon: boolean = false;
 
 </script>
 
-<button class="{buttonType}" on:click={handleFunction}><slot/></button>
-
+<button class="{variant} size-{size} icon-{hasIcon}" on:click={handleClick}><slot/></button>
 
 <style>
+.size-small {
+  font-size: 1rem;
+  padding: 8px 21px !important;
+}
+
+.icon-true {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.size-medium {
+  font-size: 1rem;
+  padding: 8px 42px;
+}
+
+.size-large {
+  font-size: 1.2rem !important;
+  padding: 1.5rem !important;
+}
 
 button{
-  width: 12rem;
   background-color: #21bde5;
   color: #fff;
-  height: 5rem;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   padding: 1rem;
   font-weight: 700;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 button:hover{
@@ -39,11 +61,11 @@ button:hover{
 }
 
 
-.start-yellow{
+
+.start-yellow,
+.primary {
   background-color: #F7CE46;
   color: #000000;
-  min-width: 12rem;
-  height: 4rem;
 }
 
 .start-yellow:hover{
@@ -58,8 +80,8 @@ button:hover{
 .start-grey{
   background-color: #B1AFA9;
   color: #000000;
-  min-width: 12rem;
-  height: 4rem;
+  aspect-ratio: 3 / 1;
+  cursor: pointer;
 }
 
 .details{
