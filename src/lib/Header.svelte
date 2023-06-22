@@ -31,104 +31,91 @@
 <!-- <svelte:window on:resize={() => windowWidth = window.innerWidth} /> -->
 
 <header class={active ? 'active' : ''}>
-	<a href="#"><img src="/logo_tioc_yellow.svg" alt="" /></a>
-	<!-- {#if menuShown} -->
-	<!-- A button with the class to hide the navigation. it must be readable for people with screenreaders by using aria-->
-	<button class="menu-hider" aria-label="hide navigation" on:click={() => (active = !active)} />
-	<nav>
-		<ul>
-			<li class={openItem === 'item1' ? 'open' : ''} on:click={() => toggleOpen('item1')}>
-				<a href="#">Home</a>
-			</li>
-			<li class={openItem === 'item2' ? 'open' : ''} on:click={() => toggleOpen('item2')}>
-				<p>Learn</p>
-				<div>
-					<a href="#">Articles</a>
-				</div>
-			</li>
-			<li class={openItem === 'item3' ? 'open' : ''} on:click={() => toggleOpen('item3')}>
-				<p>Discover</p>
-				<div>
-					<a href="#">Creatives</a>
-					<a href="#">Inspiration</a>
-				</div>
-			</li>
-			<li class={openItem === 'item4' ? 'open' : ''} on:click={() => toggleOpen('item4')}>
-				<p>Grow</p>
-				<div>
-					<a href="#">Challenges</a>
-					<a href="#">Workshops</a>
-				</div>
-			</li>
-			<li class={openItem === 'item5' ? 'open' : ''} on:click={() => toggleOpen('item5')}>
-				<p>About TIOC</p>
-				<div>
-					<a href="#">What we do</a>
-					<a href="#">Team TIOC</a>
-					<a href="#">Partners</a>
-					<a href="#">Sponsors</a>
-					<a href="#">Contact</a>
-				</div>
-			</li>
-			<li class={openItem === 'item6' ? 'open' : ''} on:click={() => toggleOpen('item6')}>
-				<p>Register</p>
-				<div>
-					<a href="#">Why join?</a>
-					<a href="#">FAQ</a>
-				</div>
-			</li>
-			{#if loggedIn}
-				<li>
-					<img src="" alt="" class="avatar" />
-					<p>Naam hier</p>
-					<div>
-						<ul>
-							<li><a href="#">Portfolio</a></li>
-							<li><a href="#">My profile</a></li>
-							<li><a href="#">Settings</a></li>
-							<li><a href="#" on:click={logOut}>Sign out</a></li>
-							<!-- add on:click event -->
-						</ul>
-					</div>
-				</li>
-			{:else}
-				<li>
-					<p>Welkom gebruiker</p>
-					<div>
-						<ul>
-							<li><a href="#" on:click|preventDefault={logIn}>Log in</a></li>
-							<li><a href="#">Registreer</a></li>
-						</ul>
-					</div>
-				</li>
-			{/if}
-		</ul>
-	</nav>
-	<!-- {/if} -->
-	<button class="menu-button" on:click={() => (active = !active)}>
-		<svg
-			width="2em"
-			height="2em"
-			viewBox="0 0 24 24"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-			stroke="#fff"
-		>
-			<g id="SVGRepo_bgCarrier" stroke-width="0" />
+    <a href="../../../"><img src="logo_tioc_yellow.svg" alt=""></a>
+    <!-- {#if menuShown} -->
+    <!-- A button with the class to hide the navigation. it must be readable for people with screenreaders by using aria-->
+    <button class="menu-hider" aria-label="hide navigation" on:click={() => active = !active}></button>
+    <nav>
+        <ul>
+            <li class={openItem === 'item1' ? 'open' : ''} on:click={() => toggleOpen('item1')}>
+                <a href="../../../">Home</a>
+            </li>
+            <li class={openItem === 'item2' ? 'open' : ''} on:click={() => toggleOpen('item2')}>
+                <p>Learn</p>
+                <div>
+                    <a href="#">Articles</a>
+                </div>
+            </li>
+            <li class={openItem === 'item3' ? 'open' : ''} on:click={() => toggleOpen('item3')}>
+                <p>Discover</p>
+                <div>
+                    <a href="#">Creatives</a>
+                    <a href="#">Inspiration</a>
+                </div>
+            </li>
+            <li class={openItem === 'item4' ? 'open' : ''} on:click={() => toggleOpen('item4')}>
+                <p>Grow</p>
+                <div>
+                    <a href="/overview">Challenges</a>
+                    <a href="#">Workshops</a>
+                </div>
+            </li>
+            <li class={openItem === 'item5' ? 'open' : ''} on:click={() => toggleOpen('item5')}>
+                <p>About TIOC</p>
+                <div>
+                    <a href="#">What we do</a>
+                    <a href="#">Team TIOC</a>
+                    <a href="#">Partners</a>
+                    <a href="#">Sponsors</a>
+                    <a href="#">Contact</a>
+                </div>
+                </li>
+                <li class={openItem === 'item6' ? 'open' : ''} on:click={() => toggleOpen('item6')}>
+                    <p>Register</p>
+                    <div>
+                        <a href="#">Why join?</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </li>
+                {#if loggedIn}
+                <li>
+                    <img src="" alt="" class="avatar">
+                    <p>Naam hier</p>
+                    <div>
+                        <ul>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">My profile</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#" on:click={logOut}>Sign out</a></li> <!-- add on:click event -->
+                        </ul>
+                    </div>
+                </li>
+            {:else}
+                <li>
+                    <p>Welkom gebruiker</p>
+                    <div>
+                        <ul>
+                            <li><a href="#" on:click|preventDefault={logIn}>Log in</a></li>
+                            <li><a href="#">Registreer</a></li>
+                        </ul>
+                    </div>
+                </li>
+            {/if}
+        </ul>
+    </nav>
+    <!-- {/if} -->
+    <button class="menu-button" on:click={() => active = !active}>
+        <svg width="2em" height="2em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
 
-			<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-
-			<g id="SVGRepo_iconCarrier">
-				<path
-					fill-rule="evenodd"
-					clip-rule="evenodd"
-					d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"
-					fill="#fff"
-				/>
-			</g>
-		</svg>
-	</button>
-</header>
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+            
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            
+            <g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z" fill="#fff"/> </g>
+            
+            </svg>
+        </button>
+    </header>
 
 <style>
 	header {
