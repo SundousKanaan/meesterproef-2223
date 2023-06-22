@@ -196,11 +196,6 @@
 		margin-top: 4em;
 	}
 
-	.boxed:nth-child(2) {
-		display: grid;
-		grid-template-columns: 2fr 1fr;
-	}
-
 	.boxed > h2,
 	.boxed > p {
 		width: 100%;
@@ -325,37 +320,31 @@
 		box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
 	}
 
-	.boxed article:hover img {
-		opacity: 0.8;
+	/* tekst in de challenge blokken */
+	.challenge-block {
+		position: relative;
 	}
 
-	.boxed article:hover .overlay {
-		visibility: visible;
-		opacity: 1;
+	.challenge-block figure {
+		position: relative;
 	}
 
-	.boxed article .overlay {
-		visibility: hidden;
-		opacity: 0;
+	.challenge-block .overlay {
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		width: 100%;
-		background-color: rgba(0, 0, 0, 0.7);
 		padding: 10px;
 		color: white;
-		transition: opacity 0.3s;
+		width: 100%;
 	}
 
-	.boxed article .overlay h4 {
+	.challenge-block .overlay h4,
+	.challenge-block .overlay p {
 		margin: 0;
-		font-size: 16px;
+		text-shadow: 0 0 3px black;
 	}
 
-	.boxed article .overlay p {
-		margin: 0;
-		font-size: 14px;
-	}
+	/* einde tekst in de challenge blokken */
 
 	@media (max-width: 750px) {
 		.boxed {
@@ -363,19 +352,19 @@
 			flex-direction: column;
 			align-items: center;
 			max-width: unset;
+			margin: 0 0.5em;
 		}
 
 		.boxed:nth-child(2) {
 			display: none;
 		}
 
-		.boxed article {
-			margin-bottom: 20px;
-			width: 80%;
-		}
-
 		.boxed:first-of-type {
-			display: none;
+			margin-top: 1em;
+		}
+		.challenge-block {
+			margin-bottom: 0.5em;
+			width: 100%;
 		}
 	}
 

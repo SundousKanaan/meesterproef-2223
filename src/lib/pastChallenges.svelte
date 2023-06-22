@@ -638,6 +638,14 @@
 
 	.boxed article {
 		flex: 1 1 30%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: fit-content;
+	}
+
+	.boxed article figure {
+		height: 50%;
 	}
 
 	a.meerInformatie {
@@ -664,6 +672,20 @@
 		padding: 1em;
 		border: 0.1875em solid black;
 		background-color: white;
+		width: 50%;
+		text-decoration: none;
+		color: black;
+		text-align: center;
+	}
+
+	.boxed:nth-child(2)
+		> :first-of-type
+		> .group
+		> .container
+		> a.meerInformatie:first-of-type:hover {
+		padding: 1em;
+		border: 0.1875em solid black;
+		background-color: #d9d9d9;
 		width: 50%;
 		text-decoration: none;
 		color: black;
@@ -747,7 +769,6 @@
 			display: flex;
 			flex-direction: column;
 			gap: 0.5em;
-			margin: 0.5em;
 			flex-wrap: wrap;
 			width: 100%;
 		}
@@ -771,7 +792,7 @@
 			flex: 100%;
 		}
 
-		.boxedfirst-of-type {
+		.boxed:first-of-type {
 			margin-top: 0em;
 		}
 
