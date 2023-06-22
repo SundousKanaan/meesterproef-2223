@@ -1,8 +1,69 @@
-<script>
+<svelte:head>
+    <title>Your challenges</title> 
+</svelte:head>
 
+<script>
+    import Article from '$lib/Article.svelte';
+    let challenges = [
+        {
+            imgSrc: 'https://images.pexels.com/photos/13730872/pexels-photo-13730872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            peopleCount: 25,
+            title: 'Web development',
+            description: 'Within the AUAS program, people are only expected to create a safe online environment. Some people don\'t know what XXS vulnerability is. That\'s why this challenge has been added for people who need to make their applications more secure.',
+            timeline: 'May 1, 2023 - June 30, 2023',
+            organization: 'UAUS'
+        },
+        {
+            imgSrc: 'https://images.pexels.com/photos/261628/pexels-photo-261628.jpeg',
+            peopleCount: 30,
+            title: 'Graphic design',
+            description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
+            timeline: 'June 1, 2023 - July 31, 2023',
+            organization: 'DesignCo'
+        },
+        {
+            imgSrc: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg',
+            peopleCount: 15,
+            title: 'Mobile App Development',
+            description: 'The challenge is to build a mobile app that helps users manage their time and tasks more effectively. We are looking for unique and user-friendly solutions.',
+            timeline: 'July 1, 2023 - August 31, 2023',
+            organization: 'AppDev'
+        },
+        {
+            imgSrc: 'https://images.pexels.com/photos/1181356/pexels-photo-1181356.jpeg',
+            peopleCount: 20,
+            title: 'Data Science',
+            description: 'The challenge is to use our provided dataset to build a machine learning model that can predict customer churn. We are looking for accurate and efficient solutions.',
+            timeline: 'August 1, 2023 - September 30, 2023',
+            organization: 'DataInc'
+        }
+    ];
 </script>
 
 <main>
+    <section>
+        <h1>Your challenges</h1>
+        <p>View and update the current challenges you signed up for</p>
+        <div>
+            <button class="active">
+                Active challenges
+            </button><button>
+                Finished challenges
+            </button><button>
+                Signed up
+            </button>
+        </div>
+        {#each challenges as challenge (challenge.title)}
+        <Article 
+            imgSrc={challenge.imgSrc} 
+            peopleCount={challenge.peopleCount} 
+            title={challenge.title} 
+            description={challenge.description} 
+            timeline={challenge.timeline} 
+            organization={challenge.organization}
+        />
+    {/each}
+    </section>
     <aside>
         <div>
             <img src="" alt="">
@@ -32,141 +93,13 @@
             <a href="#">Sign out</a>
         </nav>
     </aside>
-    <section>
-        <h1>Your challenges</h1>
-        <p>View and update the current challenges you signed up for</p>
-        <div>
-            <button class="active">
-                Active challenges
-            </button><button>
-                Finished challenges
-            </button><button>
-                Signed up
-            </button>
-        </div>
-        <article>
-            <figure>
-                <img src="https://images.pexels.com/photos/13730872/pexels-photo-13730872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                <figcaption>
-                    <div>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <p>25 people already uploaded their work</p>
-                    </div>
-                </figcaption>
-            </figure>
-            <div>
-                <h2>Web development</h2>
-                <p>Within the AUAS program, people are only expected to create a safe online environment. Some people don't know what XXS vulnerability is. That's why this challenge has been added for people who need to make their applications more secure.</p>
-                <p>tijdlijn</p>
-                <div>
-                    <button>Add your journey</button>
-                    <span>or</span>
-                <button>Miss your chance of winning</button>
-                </div>
-                <h3>UAUS</h3>
-            </div>
-        </article>
-        <article>
-            <figure>
-                <img src="https://images.pexels.com/photos/13730872/pexels-photo-13730872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                <figcaption>
-                    <div>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <p>25 people already uploaded their work</p>
-                    </div>
-                </figcaption>
-            </figure>
-            <div>
-                <h2>Web development</h2>
-                <p>Within the AUAS program, people are only expected to create a safe online environment. Some people don't know what XXS vulnerability is. That's why this challenge has been added for people who need to make their applications more secure.</p>
-                <p>tijdlijn</p>
-                <div>
-                    <button>Add your journey</button>
-                    <span>or</span>
-                <button>Miss your chance of winning</button>
-                </div>
-                <h3>UAUS</h3>
-            </div>
-        </article>             <article>
-            <figure>
-                <img src="https://images.pexels.com/photos/13730872/pexels-photo-13730872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                <figcaption>
-                    <div>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <p>25 people already uploaded their work</p>
-                    </div>
-                </figcaption>
-            </figure>
-            <div>
-                <h2>Web development</h2>
-                <p>Within the AUAS program, people are only expected to create a safe online environment. Some people don't know what XXS vulnerability is. That's why this challenge has been added for people who need to make their applications more secure.</p>
-                <p>tijdlijn</p>
-                <div>
-                    <button>Add your journey</button>
-                    <span>or</span>
-                <button>Miss your chance of winning</button>
-                </div>
-                <h3>UAUS</h3>
-            </div>
-        </article>
-        <article>
-            <figure>
-                <img src="https://images.pexels.com/photos/13730872/pexels-photo-13730872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                <figcaption>
-                    <div>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <p>25 people already uploaded their work</p>
-                    </div>
-                </figcaption>
-            </figure>
-            <div>
-                <h2>Web development</h2>
-                <p>Within the AUAS program, people are only expected to create a safe online environment. Some people don't know what XXS vulnerability is. That's why this challenge has been added for people who need to make their applications more secure.</p>
-                <p>tijdlijn</p>
-                <div>
-                    <button>Add your journey</button>
-                    <span>or</span>
-                <button>Miss your chance of winning</button>
-                </div>
-                <h3>UAUS</h3>
-            </div>
-        </article>         
-    </section>
 </main>
 
 <style>
+
+aside{
+    order:-1;
+}
 
 *{
     transition:.2s;
@@ -299,133 +232,7 @@ main section > div button.active{
     border-bottom:unset;
 }
 
-main section > article{
-    margin-bottom:1em;
-    flex:1 1 22em;
-    display:flex;
-    flex-direction: column;
-    position: relative;
-    box-shadow:0px 0.4px 8px rgba(0, 0, 0, 0.1);
-}
 
-main section > article > div{
-    padding:1em;
-    display:flex;
-    flex-direction:column;
-    gap:.5em;
-}
-main section > article figure{
-    height:12em;
-    background:red;
-    order:-1;
-    position:relative;
-}
-main section > article > figure > img{
-    height:100%;
-    width:100%;
-    object-fit:cover;
-}
-main section > article figure figcaption{
-    position:absolute;
-    bottom:0;
-    width:100%;
-}
-
-main section > article figure figcaption div{
-    display:flex;
-    height:3em;
-    align-items:center;
-    background:rgb(0 0 0 /.4);
-    color:white;
-}
-main section > article figure figcaption div span{
-    height:60%;
-    aspect-ratio:1/1;
-    border-radius:50%;
-    background:yellow;
-    border:inset 2px #ffeb004f;
-}
-main section > article figure figcaption div span:first-of-type{
-    margin-left:.6em;
-}
-main section > article figure figcaption div span:nth-of-type(n+2){
-margin-left:-.5em;
-}
-
-main section > article figure figcaption div p{
-    margin-left:.5em;
-    font-size:.8em;
-}
-
-.grid-container > div{
-    height:12em;
-    border: 1px solid rgb(199, 199, 199);
-    background:red;
-}
-
-div > div{
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:.5em;
-}
-
-div > div button{
-    height:4em;
-    padding:0 1em;
-    border:none;
-    background:yellow;
-    flex:1 1 10em;
-}
-div > div button:last-of-type{
-    background:transparent;
-    opacity:.5;
-}
-div > div button:last-of-type:hover{
-    position:relative;
-    color: white
-}
-div > div button:last-of-type:hover::after{
-    content:"Stop with the challenge";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    display:grid;
-    place-content: center;
-    color:red;
-    border:.1em solid red;
-    transform:scale(0.95);
-}
-
-div div span{
-    position:relative;
-}
-div div span::before, div div span::after{
-    position:absolute;
-    height:40%;
-    width:.1em;
-    top:0;
-    left:.25em;
-    content:"|";    
-}
-div div span::before{
-    top:-1em;
-}
-div div span::after{
-    top:1em;
-}
-h3{
-    position:absolute;
-    top:1em;
-    right:1em;
-    padding: .5em 3em;
-    background:white;
-    font-size:1em;
-    color:#6E98FF;
-}
 button:hover{
     font-weight:700;
     transform:scale(1.05);
