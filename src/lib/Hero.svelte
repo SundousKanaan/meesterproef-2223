@@ -1,7 +1,7 @@
 <script>
       import { onMount } from 'svelte';
-    import { currentIndex } from './stores.js';
     import HeroItem from './HeroItem.svelte';
+	import { slide, fade } from 'svelte/transition';
     
     let items = [
       {
@@ -27,9 +27,11 @@
       }
     ];
 
+    let currentIndex = 0;
+
     onMount(() => {
       const intervalId = setInterval(() => {
-        currentIndex.update(n => (n + 1) % items.length);
+        currentIndex =  (currentIndex + 1) % items.length;
       }, 5000);
       
       // Zorg ervoor dat je de interval cleart als de component wordt vernietigd
@@ -39,16 +41,33 @@
   </script>
 <section class="hero">
   <h2>Check out what's new</h2>
-  {#each items as {title, subtitle, description, link, image}, i (title)}
-    {#if $currentIndex === i}
+  {#each items as item, i}
+    {#if currentIndex == i}
+    {#if currentIndex == items.length -1}
+    <div transition:fade>
       <HeroItem 
-        title={title} 
-        subtitle={subtitle} 
-        description={description} 
-        link={link} 
-        image={image} 
-        totalItems={items.length} 
+      title={item.title} 
+      subtitle={item.subtitle} 
+      description={item.description} 
+      link={item.link} 
+      image={item.image} 
+      totalItems={items.length} 
+      bind:currentIndex={currentIndex}
       />
+    </div>
+    {:else}
+    <div transition:slide={{axis: "x"}}>
+      <HeroItem 
+      title={item.title} 
+      subtitle={item.subtitle} 
+      description={item.description} 
+      link={item.link} 
+      image={item.image} 
+      totalItems={items.length} 
+      bind:currentIndex={currentIndex}
+      />
+    </div>
+    {/if}
     {/if}
   {/each}
 </section>
@@ -70,5 +89,9 @@ section.hero > h2 {
 }
 section.hero::-webkit-scrollbar {
     display: none;
+}
+
+.hero div{
+  display:flex;
 }
 </style>
