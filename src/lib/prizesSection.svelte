@@ -4,7 +4,7 @@
 
 <section class="prizes">
     <div>
-        <img src="https://placehold.co/600x400" alt=""/>
+        <img class="projectImage" src="https://placehold.co/600x400" alt=""/>
         <ul>
             <li>
                 <div>
@@ -115,5 +115,43 @@
 
     .prizes div ul li:nth-of-type(3) div img {
         width: 50%;
+    }
+
+    @media (max-width: 60em) { 
+        .prizes {
+            width: 100%;
+            padding: 1em;
+        }
+
+        .prizes div {
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        .prizes div > .projectImage {
+            margin: 0 auto;
+            margin-top: 1em;
+            width: 90%;
+        }
+
+        .prizes div ul li:not(:first-of-type) {
+            margin-top: 1em;
+        }
+
+        .prizes div ul li:nth-of-type(1) > div:first-of-type {
+            margin-right: 0em;
+        }
+
+        .prizes div ul li:nth-of-type(2) > div:first-of-type {
+            margin-right: 1em;
+        }
+
+        .prizes div ul li:nth-of-type(3) > div:first-of-type {
+            margin-right: 2em;
+        }
+
+        .prizes div ul li div:first-of-type {
+            align-items: flex-end;
+        }
     }
 </style>

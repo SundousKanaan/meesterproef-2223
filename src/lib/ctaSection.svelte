@@ -3,9 +3,11 @@
 </script>
 
 <section class="cta-section">
-    <h2>Ready to join the ultimate challenge?</h2>
-    <p>Get started on building a website with XSS.</p>
-    <button class="cta">enroll</button>
+    <div>
+        <h2>Ready to join the ultimate challenge?</h2>
+        <p>Get started on building a website with XSS.</p>
+        <button class="cta">enroll</button>
+    </div>
 </section>
 
 <style>
@@ -21,8 +23,17 @@
         padding: 2em;
         background-color: var(--yellow);
     } 
+
+    .cta-section div {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     
-    .cta-section h2 {
+    .cta-section div h2 {
+        text-align: center;
         width: 100%;
         font-size: 2em;
     }
@@ -35,7 +46,27 @@
         padding: 1em 2em 1em 2em;
     }
 
+    .cta-section div {
+        gap: 1em;
+    }
+
     .cta:hover {
         background-color: var(--hover);
+    }
+
+    @media (max-width: 60em) { 
+        .cta-section {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .cta-section div {
+            width: 100%;
+        }
+
+        .cta-section div h2 {
+            width: 100%;
+            font-size: 2em;
+        }
     }
 </style>

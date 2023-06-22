@@ -185,7 +185,7 @@
 
     @media screen and (min-width: 768px) {
         .hero {
-            justify-content: space-evenly;
+            justify-content: space-between;
             flex-direction: row;
             align-items: center;
         }

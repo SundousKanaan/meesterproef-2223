@@ -70,9 +70,11 @@
 
 <style>
     .challenge-info {
+        margin: 0 auto;
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
+        padding-top: 4em;
         width: 80%;
     }
 
@@ -87,6 +89,7 @@
 
     .challenge-info article:last-of-type {
         width: 100%;
+        margin-bottom: 5em;
     }
 
     .challenge-info article:last-of-type h2 {
@@ -167,33 +170,57 @@
         background-repeat: no-repeat;
     }
 
-    @media screen and (min-width: 768px) { 
+    @media (max-width: 60em) { 
         .challenge-info {
-            margin: 0 auto;
-            padding: 6em;
+            margin: 0;
+            flex-direction: row;
+            padding-top: 1em;
+            width: 100%;
+        }
+
+        .challenge-info article:first-of-type,
+        .challenge-info article:last-of-type {
+            width: unset;
+            flex: 100%;
+        }
+
+        .challenge-info article:first-of-type > ul {
+            margin-left: .5em;
+            gap: 1em;
+        }
+
+        .challenge-info article:last-of-type > ul {
+            margin-left: .8em;
+        }
+
+        .challenge-info article:first-of-type > ul {
+            justify-content: flex-start;
         }
 
         .challenge-info aside {
-            display: flex;
+            justify-content: flex-start;
+            width: unset;
             flex: 50%;
-            justify-content: center;
+            margin: 1em;
         }
 
-        .challenge-info article:first-of-type {
-            flex: 50%;
+        .challenge-info article:first-of-type h2 {
+            width: 14em;
         }
 
         .challenge-info article:first-of-type p {
-            width: 90%;
+            width: 23em;
         }
 
-        .challenge-info article:first-of-type > ul {
-            gap: 6em;
+        
+        .challenge-info article:first-of-type p,
+        .challenge-info article:last-of-type p {
+            margin-left: .7em;
         }
 
-        .challenge-info article:first-of-type > ul {
-            justify-content: center;
+        .challenge-info article:first-of-type h2,
+        .challenge-info article:last-of-type h2 {
+            margin-left: .5em;
         }
     }
-
 </style>
