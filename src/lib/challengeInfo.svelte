@@ -1,16 +1,44 @@
 <script lang="ts">
-    
-</script>
+    let activeItem: string | null = null;
+    const items = ['detail', 'criteria', 'resources'];
+
+    $: {
+      if (!activeItem) {
+        setActive(items[0]);
+      }
+    }
+  
+    function setActive(item: string) {
+      activeItem = item;
+    }
+  </script>
 
 <section class="challenge-info">
     <article>
         <ul>
-            <li class="active">Detail challenge</li>
-            <li>Selection criteria</li>
-            <li>Resources</li>
-        </ul>
-        <h2>About the Immersive Retail Experience Challenge</h2>
-        <p>Are you interested in the exciting world of web development? Whether you're a beginner or have some experience, it's crucial to be aware of the potential risks that can lurk in the shadows of the internet. One such risk is known as XSS (Cross-Site Scripting) vulnerability..</p>
+            {#each items as item}
+              <li class:active={activeItem === item} on:click={() => setActive(item)}>
+                {item.charAt(0).toUpperCase() + item.slice(1)} challenge
+              </li>
+            {/each}
+          </ul>
+
+        {#if activeItem === 'detail'}
+          <h2>About the Immersive Retail Experience Challenge</h2>
+          <p>
+            Are you interested in the exciting world of web development? Whether you're a beginner or have some experience, it's crucial to be aware of the potential risks that can lurk in the shadows of the internet. One such risk is known as XSS (Cross-Site Scripting) vulnerability..
+          </p>
+        {:else if activeItem === 'criteria'}
+          <h2>Selection criteria for this challenge</h2>
+          <p>
+            As you’ve maybe read already you know that you need to know a thing or two about basic UX design and some basic skills. In the overview below we got a small overview of the skills you’ll need before you enter this challenge.
+          </p>
+        {:else if activeItem === 'resources'}
+          <h2>Challenge Resources</h2>
+          <p>
+            Download the files below for the project.
+          </p>
+        {/if}
     </article>
     <aside>
         <ul>

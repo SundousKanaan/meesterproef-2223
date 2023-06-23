@@ -65,11 +65,10 @@
 <section class="participantData">
     <div class="title-block">
         <h2>Challenge participants</h2>
-        <input type="text" placeholder="Find challenge participants" />
     </div>
     <section>
         <h3>Creator</h3>
-        <h3>Type</h3>
+        <h3>Skills</h3>
         <h3>Submission date</h3>
         <h3>Country</h3>
         <h3>Statistics</h3>
@@ -79,8 +78,10 @@
             <section class="participant-block">
                 <div class="user-block">
                     <img src={user.icon} alt="" />
-                    <h3>{user.name}</h3>
-                    <span>{user.userTag}</span>
+                    <div class="wrapper">
+                        {user.name}
+                        <span>{user.userTag}</span>
+                    </div>
                 </div>
                 <ul class="skills-block">
                     {#each user.skills as skill}
@@ -119,13 +120,6 @@
         justify-content: space-between;
     }
 
-    .participantData .title-block input {
-        position: relative;
-        display: block;
-        padding: .5em;
-        width: 18em;
-    }
-
     .participantData section:first-of-type {
         display: grid;
         border-top: 2px solid black;
@@ -137,6 +131,7 @@
 
     .participantData .participant-block {
         display: grid;
+        align-items: center;
         gap: 1em;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         border: 2px solid black;
@@ -146,9 +141,20 @@
     }
 
     .participantData .participant-block .user-block {
-        display: grid;
-        grid-template-columns: auto 2fr;
+        display: flex;
         align-items: center;
+        height: 5em;
+    }
+
+    .participantData .participant-block .user-block .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: .5em;
+    }
+
+    .participantData .participant-block .user-block .wrapper span {
+        font-size: .9em;
     }
 
     .participantData .participant-block .user-block img {
