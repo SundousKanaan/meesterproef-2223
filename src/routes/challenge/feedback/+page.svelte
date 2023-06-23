@@ -17,7 +17,8 @@
 	<div class="next">	
 	<Buttons buttonType="right"/>
 	</div>
-	<Usercard />
+	<Usercard/>
+	
 	<Feedback />
 	<div class="members">
 		<h3>Team members:</h3>
