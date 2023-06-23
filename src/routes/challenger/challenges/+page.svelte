@@ -165,7 +165,9 @@
 	{:else}
 		<section class="mobile-cards-section">
 			{#each filteredChallenges as challenge}
+			<a href="/challenge/{challenge.id}">
 			<MobileCard status={challenge.status} background={challenge.image} title={challenge.title} creators={challenge.creators} entries={challenge.entries} trend={challenge.creators - challenge.creators_last_week}/>
+			</a>
 			{/each}
 		</section>
 	{/if}
