@@ -3,9 +3,6 @@
     import Staptwo from "./components/Staptwo.svelte";
 
     import Buttons from "$lib/Buttons.svelte";
-
-
-
 </script>
 
 <section>
