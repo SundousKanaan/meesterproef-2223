@@ -29,10 +29,10 @@
 			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
 			creator: 'Safouane',
 			creatorhandle: '@Safou',
-			status: 'handed-in',
+			status: 'registered',
 			submitDate: new Date(),
 			yesno: true,
-			feedback: 5
+			feedback: undefined
 		},
 		{
 			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
@@ -45,8 +45,53 @@
 		},
 		{
 			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-			creator: 'Safouane',
-			creatorhandle: '@Safou',
+			creator: 'John',
+			creatorhandle: '@JohnDoe',
+			status: 'registered',
+			submitDate: new Date(),
+			yesno: false,
+			feedback: undefined
+		},
+		{
+			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
+			creator: 'Emily',
+			creatorhandle: '@EmilySmith',
+			status: 'handed-in',
+			submitDate: new Date(),
+			yesno: true,
+			feedback: 4
+		},
+		{
+			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
+			creator: 'David',
+			creatorhandle: '@DavidJohnson',
+			status: 'registered',
+			submitDate: new Date(),
+			yesno: true,
+			feedback: undefined
+		},
+		{
+			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
+			creator: 'Olivia',
+			creatorhandle: '@OliviaBrown',
+			status: 'handed-in',
+			submitDate: new Date(),
+			yesno: false,
+			feedback: 2
+		},
+		{
+			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
+			creator: 'Michael',
+			creatorhandle: '@MichaelWilson',
+			status: 'registered',
+			submitDate: new Date(),
+			yesno: true,
+			feedback: undefined
+		},
+		{
+			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
+			creator: 'Sophia',
+			creatorhandle: '@SophiaTaylor',
 			status: 'handed-in',
 			submitDate: new Date(),
 			yesno: true,
@@ -54,253 +99,27 @@
 		},
 		{
 			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-			creator: 'Safouane',
-			creatorhandle: '@Safou',
-			status: 'handed-in',
+			creator: 'Daniel',
+			creatorhandle: '@DanielAnderson',
+			status: 'registered',
 			submitDate: new Date(),
 			yesno: true,
-			feedback: 5
-		},
-		{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Safouane',
-		creatorhandle: '@Safou',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 5
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Safouane',
-		creatorhandle: '@Safou',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 5
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Safouane',
-		creatorhandle: '@Safou',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 5
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Safouane',
-		creatorhandle: '@Safou',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 5
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'John Doe',
-		creatorhandle: '@johndoe',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 4
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Jane Doe',
-		creatorhandle: '@janedoe',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: false,
-		feedback: 3
-	},
-	{
-			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-			creator: 'Safouane',
-			creatorhandle: '@Safou',
-			status: 'handed-in',
-			submitDate: new Date(),
-			yesno: true,
-			feedback: 5
+			feedback: undefined
 		},
 		{
 			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-			creator: 'Safouane',
-			creatorhandle: '@Safou',
+			creator: 'Mia',
+			creatorhandle: '@MiaThomas',
 			status: 'handed-in',
 			submitDate: new Date(),
-			yesno: true,
-			feedback: 5
-		},
-		{
-			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-			creator: 'Safouane',
-			creatorhandle: '@Safou',
-			status: 'handed-in',
-			submitDate: new Date(),
-			yesno: true,
-			feedback: 5
-		},
-		{
-			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-			creator: 'Safouane',
-			creatorhandle: '@Safou',
-			status: 'handed-in',
-			submitDate: new Date(),
-			yesno: true,
-			feedback: 5
-		},
-		{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Safouane',
-		creatorhandle: '@Safou',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 5
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Safouane',
-		creatorhandle: '@Safou',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 5
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Safouane',
-		creatorhandle: '@Safou',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 5
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Safouane',
-		creatorhandle: '@Safou',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 5
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'John Doe',
-		creatorhandle: '@johndoe',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 4
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Jane Doe',
-		creatorhandle: '@janedoe',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: false,
-		feedback: 3
-	},
-	{
-			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-			creator: 'Safouane',
-			creatorhandle: '@Safou',
-			status: 'handed-in',
-			submitDate: new Date(),
-			yesno: true,
-			feedback: 5
-		},
-		{
-			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-			creator: 'Safouane',
-			creatorhandle: '@Safou',
-			status: 'handed-in',
-			submitDate: new Date(),
-			yesno: true,
-			feedback: 5
-		},
-		{
-			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-			creator: 'Safouane',
-			creatorhandle: '@Safou',
-			status: 'handed-in',
-			submitDate: new Date(),
-			yesno: true,
-			feedback: 5
-		},
-		{
-			profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-			creator: 'Safouane',
-			creatorhandle: '@Safou',
-			status: 'handed-in',
-			submitDate: new Date(),
-			yesno: true,
-			feedback: 5
-		},
-		{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Safouane',
-		creatorhandle: '@Safou',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 5
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Safouane',
-		creatorhandle: '@Safou',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 5
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Safouane',
-		creatorhandle: '@Safou',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 5
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Safouane',
-		creatorhandle: '@Safou',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 5
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'John Doe',
-		creatorhandle: '@johndoe',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: true,
-		feedback: 4
-	},
-	{
-		profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
-		creator: 'Jane Doe',
-		creatorhandle: '@janedoe',
-		status: 'handed-in',
-		submitDate: new Date(),
-		yesno: false,
-		feedback: 3
-	},
-	]
+			yesno: false,
+			feedback: 3
+		}
+	];
 </script>
 
 <div class="tyfus">
-
-<img src="{challenge.image}" alt="hero or something" />
+	<img src={challenge.image} alt="hero or something" />
 </div>
 
 <div class="wrapper">
@@ -329,15 +148,18 @@
 						date: new Date(challenge.end_date),
 						icon: 'trend',
 						title: 'Winners'
-					},
-
+					}
 				]}
 				spaceRelativeToTime={true}
 			/>
 		</div>
 		<p>{challenge.description}</p>
-		<Buttons variant="primary" size="small" hasIcon>View Challenge <Icon icon="eye" size={IconSize.SMALL}/></Buttons>
-		<Buttons variant="primary" size="small" hasIcon>Edit <Icon icon="edit" size={IconSize.SMALL}/></Buttons>
+		<Buttons variant="primary" size="small" hasIcon
+			>View Challenge <Icon icon="eye" size={IconSize.SMALL} /></Buttons
+		>
+		<Buttons variant="primary" size="small" hasIcon
+			>Edit <Icon icon="edit" size={IconSize.SMALL} /></Buttons
+		>
 	</div>
 	<div>
 		<EntriesPie />
@@ -345,13 +167,13 @@
 </div>
 
 <div class="review-buttons-wrappertje">
-	<ReviewCard type="speed"></ReviewCard>
-	<ReviewCard type="extensive"></ReviewCard>
-	<ReviewCard type="medals"></ReviewCard>
+	<ReviewCard type="speed" />
+	<ReviewCard type="extensive" />
+	<ReviewCard type="medals" />
 </div>
 
 <div class="participants-wrapper">
-	<ParticipantTable participants={participants}/>
+	<ParticipantTable {participants} />
 </div>
 
 <style>
@@ -364,7 +186,6 @@
 		grid-template-columns: 1fr;
 		padding: 3rem 2rem;
 	}
-
 
 	img {
 		width: 100%;
@@ -381,7 +202,7 @@
 	}
 
 	.timeline-wrapper > h2 {
-		margin-left: -0.5rem;		/* I am sorry */
+		margin-left: -0.5rem; /* I am sorry */
 		margin-bottom: 0.75rem;
 	}
 
@@ -416,8 +237,6 @@
 		.review-buttons-wrappertje {
 			padding: 2rem 4rem;
 		}
-
-
 
 		.participants-wrapper {
 			padding: 3rem 4rem;
