@@ -80,7 +80,6 @@ button:hover{
 .start-grey{
   background-color: #B1AFA9;
   color: #000000;
-  aspect-ratio: 3 / 1;
   cursor: pointer;
 }
 
