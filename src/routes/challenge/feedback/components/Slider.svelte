@@ -92,7 +92,6 @@
 	/>
 </label>
 
-<!-- min="1" max="5" step="1" -->
 <style>
 
 	label {
@@ -229,8 +228,4 @@
 	label input[type='range'].rocket:hover::-moz-range-thumb {
 		transform: scale(1.8);
 	}
-
-	/* @media (prefers-reduced-motion) {
-		styles to apply if a user's device settings are set to reduced motion
-	} */
 </style>
