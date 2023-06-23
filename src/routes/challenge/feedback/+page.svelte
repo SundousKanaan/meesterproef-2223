@@ -1,8 +1,15 @@
 <script lang="ts">
+	import TeamUsers from './components/Team_users.svelte';
 	import Feedback from './components/Feedback-form.svelte';
-	import Team_users from './components/Team_users.svelte';
 	import Usercard from './components/Usercard.svelte';
 	import Buttons from "$lib/Buttons.svelte";
+	import type { PageData } from './$types';
+	import type { SvelteComponent } from 'svelte';
+	import FeedbackTinder from './components/FeedbackTinder.svelte';
+
+	export let data: PageData;
+
+
 </script>
 
 <section>
@@ -12,17 +19,26 @@
 	</div>
 
 	<div class="previous">
-	<Buttons buttonType="left"/>
+	<Buttons variant="left"/>
 	</div>
 	<div class="next">	
-	<Buttons buttonType="right"/>
+	<Buttons variant="right"/>
 	</div>
 	<Usercard />
-	<Feedback />
+	<div class="REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE">
+	{#if data.feedbackType == "speed"}
+
+		<FeedbackTinder></FeedbackTinder>
+	{:else if data.feedbackType == "acc" }
+		<Feedback />
+	{:else if data.feedbackType == "medals"}
+		nothing
+	{/if}
+	</div>
 	<div class="members">
 		<h3>Team members:</h3>
 		<ul>
-			<Team_users />
+			<TeamUsers />
 		</ul>
 	</div>
 </section>
@@ -81,6 +97,10 @@
 		flex-direction: column;
 	}
 
+	.REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE {
+		grid-area: 3/1/4/-1;
+	}
+
 	@media (min-width: 1200px) {
 		section {
 			width: 100%;
@@ -104,6 +124,9 @@
 
 		.members {
 			grid-area: 4/2/5/3;
+		}
+		.REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE {
+			grid-area: 3/2/4/3;
 		}
 	}
 </style>

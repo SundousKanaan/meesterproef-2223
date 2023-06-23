@@ -99,9 +99,9 @@
 	}
 
 	@media (min-width: 1200px) {
-		form {
+		/* form {
 			grid-area: 3/2/4/3;
-		}
+		} */
 	}
 
 	form h2 {
