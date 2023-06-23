@@ -12,7 +12,7 @@
         display: inline-block;
         width: 25px;
         height: 25px;
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
     }
@@ -27,6 +27,22 @@
 
     .icon-document {
         background-image: url('/icons/document.png');
+    }
+
+    .icon-table-view {
+        background-image: url('/icons/table-view.svg');
+    }
+
+    .icon-card-view {
+        background-image: url('/icons/card-view.svg');
+    }
+
+    .icon-eye {
+        background-image: url('/icons/eye.svg');
+    }
+
+    .icon-edit {
+        background-image: url('/icons/edit.svg');
     }
 
     .icon-size-small {
