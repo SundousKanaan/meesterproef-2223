@@ -16,22 +16,22 @@
         [
             {
 			date: new Date('2023-06-01'),
-			icon: 'icon-1',
+			icon: 'profile',
 			title: 'Submission Start'
 		},
 		{
 			date: new Date('2023-06-10'),
-			icon: 'icon-2',
+			icon: 'document',
 			title: 'Submission Deadline'
 		},
 		{
 			date: new Date('2023-06-22'),
-			icon: 'icon-3',
+			icon: 'profile',
 			title: 'Evaluation'
 		},
 		{
 			date: new Date('2023-06-28'),
-			icon: 'icon-4',
+			icon: 'trend',
 			title: 'Winners Announced'
 		}
         ]
