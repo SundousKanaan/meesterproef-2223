@@ -42,6 +42,7 @@
         flex-direction: column;
         gap: .5em;
     }
+    
     label{
         font-size: 1em;
     }

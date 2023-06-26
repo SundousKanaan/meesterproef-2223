@@ -7,7 +7,7 @@
 
 <section>
     <div class="process-area">
-        <Timeline />
+        process area
     </div>
     <h1>Create your challenge</h1>
     <div> 1

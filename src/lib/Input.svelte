@@ -10,6 +10,7 @@
 	input,
 	.text {
 		width: 100%;
+		height: 3em;
 		padding: 0.5em;
 		font-size: 1em;
 		border: solid 0.1em rgba(128, 128, 128, 0.39);
