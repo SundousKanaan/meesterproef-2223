@@ -55,6 +55,7 @@
 		--size: 5em;
 		width: var(--size);
 		height: var(--size);
+		position: fixed;
 	}
 
 	.previous {
@@ -86,7 +87,7 @@
 		section {
 			width: 100%;
 			grid-template-columns: 6em 30em 1fr 6em;
-			grid-template-rows: 6em 8em 40em auto;
+			grid-template-rows: 6em auto;
 
 			padding: 0;
 		}
