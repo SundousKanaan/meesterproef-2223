@@ -5,6 +5,7 @@
         icon: string | undefined;
         skills: string[];
         submissionDate: Date;
+        formattedDate: string;
         country: string;
         statistics: {
             likes: number;
@@ -17,6 +18,7 @@
             icon: '/man1.jpg',
             skills: [ 'PHP', 'Laravel', 'C+-', 'JavaScript'],
             submissionDate: new Date('2023-06-01'),
+            formattedDate: '',
             country: 'Netherlands',
             statistics: {
                 likes: 10,
@@ -29,6 +31,7 @@
             icon: '/man1.jpg',
             skills: ['UX design', 'Communication', 'HTML', 'CSS', 'JavaScript'],
             submissionDate: new Date('2023-03-02'),
+            formattedDate: '',
             country: 'Sweden',
             statistics: {
                 likes: 64,
@@ -41,6 +44,7 @@
             icon: '/man1.jpg',
             skills: ['UX design', 'HTML', 'CSS', 'JavaScript'],
             submissionDate: new Date('2023-12-02'),
+            formattedDate: '',
             country: 'Germany',
             statistics: {
                 likes: 14,
@@ -53,6 +57,7 @@
             icon: '/man1.jpg',
             skills: ['UX design', 'JavaScript'],
             submissionDate: new Date('2023-04-01'),
+            formattedDate: '',
             country: 'South Africa',
             statistics: {
                 likes: 104,
@@ -60,6 +65,11 @@
             },
         },
     ];
+
+    // Format the submissionDate property of each participant
+    participantData.forEach(participant => {
+    participant.formattedDate = participant.submissionDate.toLocaleDateString();
+});
 </script>
 
 <section class="participantData">
@@ -71,7 +81,6 @@
         <h3>Skills</h3>
         <h3>Submission date</h3>
         <h3>Country</h3>
-        <h3>Statistics</h3>
     </section>
     {#if participantData}
         {#each participantData as user}
@@ -89,13 +98,9 @@
                     {/each}
                 </ul>
                 <div>
-                    <p>{user.submissionDate}</p>
+                    <p>{user.formattedDate}</p>
                 </div>
                 <p>{user.country}</p>
-                <div class="statistics-block">
-                    <p>Likes: {user.statistics.likes}</p>
-                    <p>Views: {user.statistics.views}</p>
-                </div>
             </section>
         {/each}
     {/if}
@@ -126,18 +131,17 @@
         margin-top: 2em;
         padding-top: 1em;
         padding-bottom: 1em;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
     }
 
     .participantData .participant-block {
         display: grid;
         align-items: center;
-        gap: 1em;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
         border: 2px solid black;
         box-sizing: border-box;
-        padding: 1em;
-        padding-left: 0;
+        padding-top: 1em;
+        padding-bottom: 1em;
     }
 
     .participantData .participant-block .user-block {
@@ -184,4 +188,28 @@
         margin: .1em;
     }
     
+    @media (max-width: 60em) { 
+        .participantData section:first-of-type {
+            display: none;
+        }
+
+        .participantData .participant-block {
+            margin-top: 1em;
+            grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
+            text-align: center;
+        }
+
+        .participantData .participant-block .user-block {
+            justify-content: center;
+        }
+
+        .participantData .participant-block .skills-block {
+            justify-content: center;
+        }
+
+        .participantData .participant-block:not(:last-of-type) {
+            border-bottom: 2px solid black;
+        }
+    }
+
 </style>

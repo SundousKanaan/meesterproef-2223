@@ -3,7 +3,7 @@
     import Timeline from '$lib/Timeline.svelte';
 	import ChallengeInfo from '$lib/challengeInfo.svelte';
     import CtaSection from '$lib/ctaSection.svelte';
-    import HeroSlider from '$lib/heroSlider.svelte';
+    import HeroSlider from '$lib/heroSection.svelte';
 	import PrizesSection from '$lib/prizesSection.svelte';
 </script>
 
