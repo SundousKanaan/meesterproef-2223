@@ -1,18 +1,22 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-    import Buttons from "$lib/Buttons.svelte";
+	import Buttons from '$lib/Buttons.svelte';
+	import type { Attribute } from 'svelte/types/compiler/interfaces';
 
 	export let placeholder_Text = 'Enter item...';
+	export let placeholder_Description = 'Enter item description...';
 
 	let inputValue: string = '';
-	let itemList: string[] = [];
+	let Description_inputValue: string = '';
+	let itemList: { inputValue: string, Description_inputValue: string }[] = [];
 
 	const dispatch = createEventDispatcher();
 
 	function addItem() {
-		if (inputValue) {
-			itemList = [...itemList, inputValue];
+		if (inputValue && Description_inputValue) {
+			itemList = [...itemList, {inputValue , Description_inputValue}];
 			inputValue = '';
+			Description_inputValue = '';
 		}
 	}
 
@@ -20,27 +24,70 @@
 		itemList = itemList.filter((_, i) => i !== index);
 	}
 
-	
 	function handleKeyDown(event: KeyboardEvent) {
 		if (event.key === 'Enter') {
 			addItem();
 		}
 	}
+
+	export let listWithDescription: boolean = false;
 </script>
 
-<div class="input-list">
-	<input type="text" class="input" placeholder={placeholder_Text} bind:value={inputValue} on:keydown={handleKeyDown}/>
-	<button class="button" on:click={addItem}> + </button>
-</div>
+{#if (!listWithDescription)}
+	<div class="input-list">
+		<input
+			type="text"
+			class="input"
+			placeholder={placeholder_Text}
+			bind:value={inputValue}
+			on:keydown={handleKeyDown}
+		/>
 
-<ul class="item-list">
-	{#each itemList as item, i (itemList)}
-		<li class="item">
-			<p>{item}</p>
-			<button class="remove-button" on:click={() => removeItem(i)}> x </button>
-		</li>
-	{/each}
-</ul>
+		<button class="button" on:click={addItem}> + </button>
+	</div>
+
+	<ul class="item-list">
+		{#each itemList as item, i}
+			<li class="item">
+				<p>{item}</p>
+				<button class="remove-button" on:click={() => removeItem(i)}> X </button>
+			</li>
+		{/each}
+	</ul>
+{/if}
+
+{#if (listWithDescription)}
+	<div class="input-list">
+		<span class="listWithDescription_container">
+			<input
+				type="text"
+				class="input"
+				placeholder={placeholder_Text}
+				bind:value={inputValue}
+			/>
+			<input
+				type="text"
+				class="input"
+				placeholder={placeholder_Description}
+				bind:value={Description_inputValue}
+			/>
+		</span>
+		<button class="button" on:click={addItem}> + </button>
+	</div>
+
+	<ul class="item-list">
+		{#each itemList as item, i}
+			<li class="item Description">
+				<span>
+					<p>🗸 {item.inputValue}</p>
+					<p>{item.Description_inputValue}</p>
+				</span>
+
+				<button class="remove-button" on:click={() => removeItem(i)}> X </button>
+			</li>
+		{/each}
+	</ul>
+{/if}
 
 <style>
 	.input-list {
@@ -66,7 +113,6 @@
 		font-size: 1em;
 		border: none;
 		border-radius: 50%;
-		/* background-color: #ddd; */
 		background-color: var(--neutral-200);
 		cursor: pointer;
 	}
@@ -79,18 +125,31 @@
 	.item {
 		display: flex;
 		align-items: center;
-        justify-content: space-between;
-		margin-bottom: 0.5em;
+		justify-content: space-between;
+		padding: .5em 1em;
 
-        background-color: var(--neutral-200);
+		border-bottom: solid 0.1em var(--neutral-500);
 	}
 
 	.remove-button {
-		padding: 0.3em;
-		font-size: 0.8em;
+		height: 3em;
+		width: 3em;
+		font-size: 100%;
 		border: none;
 		background-color: transparent;
 		color: red;
 		cursor: pointer;
 	}
+
+	.listWithDescription_container {
+		width:100%;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+	}
+
+	.item.Description span{
+		width: calc(100% - 4em);
+	}
+
 </style>

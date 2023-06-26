@@ -1,42 +1,48 @@
 <script lang="ts">
-    import Stapone from "./components/Stapone.svelte";
-    import Staptwo from "./components/Staptwo.svelte";
-    import Timeline from "$lib/Timeline.svelte";
-    import Buttons from "$lib/Buttons.svelte";
+	import Stapone from './components/Stapone.svelte';
+	import Staptwo from './components/Staptwo.svelte';
+	import Timeline from '$lib/Timeline.svelte';
+	import Buttons from '$lib/Buttons.svelte';
 </script>
 
 <section>
-    <div class="process-area">
-        process area
-    </div>
-    <h1>Create your challenge</h1>
-    <div> 1
-        <Stapone />
-    </div>
+	<div class="process-area">process area</div>
+	<h1>Create your challenge</h1>
+	<div>
+		1
+		<Stapone />
+	</div>
 
-    <div> 2
-        <Staptwo />
-    </div>
+	<div>
+		2
+		<Staptwo />
+	</div>
 </section>
 
 <!-- style:display = "none" -->
 
 <style>
-    section{
-        width: 90%;
-        padding-top: 1em;
+	section {
+		width: 90%;
+		padding-top: 1em;
 
-        justify-self: center;
+		justify-self: center;
 
-        border-bottom: solid .1em black;
-    }
+		border-bottom: solid 0.1em black;
+	}
 
-    h1{
-        font-size: 2em;
-    }
+	h1 {
+		font-size: 2em;
+	}
 
-    .process-area{
-        border: solid .1em black;
-        text-align: center;
-    }
+	.process-area {
+		border: solid 0.1em black;
+		text-align: center;
+	}
+
+	@media (min-width: 1200px) {
+        section{
+            width: 60%;
+        }
+	}
 </style>
