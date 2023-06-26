@@ -281,7 +281,7 @@
 	<div class="review-buttons-wrappertje">
 		<ReviewCard title="Speed Review">
 			<p>Be critical. We advice you to let a maximum of 20 designs pass.</p>
-			<Buttons variant="start-yellow">Speed review</Buttons>
+			<Buttons href="/challenge/feedback?feedback=speed" variant="start-yellow">Speed review</Buttons>
 		</ReviewCard>
 
 		<ReviewCard title="Extensive Review">
