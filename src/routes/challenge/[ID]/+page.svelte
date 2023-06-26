@@ -13,7 +13,8 @@
 	const challenge: Challenge = {
 		id: '1',
 		title: 'How to create an immersive experience for Retail?',
-		description: 'In this exciting event, we invite innovators, designers, and retail enthusiasts to showcase their creative ideas on transforming the traditional retail landscape into an immersive and unforgettable journey for customers. Participants will be tasked with leveraging cutting-edge technologies, such as augmented reality, virtual reality, interactive displays, and personalized experiences, to craft an engaging retail environment that captivates and delights shoppers.',
+		description:
+			'In this exciting event, we invite innovators, designers, and retail enthusiasts to showcase their creative ideas on transforming the traditional retail landscape into an immersive and unforgettable journey for customers. Participants will be tasked with leveraging cutting-edge technologies, such as augmented reality, virtual reality, interactive displays, and personalized experiences, to craft an engaging retail environment that captivates and delights shoppers.',
 		image: '/Hero.jpg',
 		start_date: '2023-06-02',
 		end_date: '2023-08-05',
@@ -278,9 +279,20 @@
 	</div>
 
 	<div class="review-buttons-wrappertje">
-		<ReviewCard type="speed" />
-		<ReviewCard type="extensive" />
-		<ReviewCard type="medals" />
+		<ReviewCard title="Speed Review">
+			<p>Be critical. We advice you to let a maximum of 20 designs pass.</p>
+			<Buttons variant="start-yellow">Speed review</Buttons>
+		</ReviewCard>
+
+		<ReviewCard title="Extensive Review">
+			<p>You give extensive feedback to everyone about their work.</p>
+			<Buttons variant="start-blue">Extensive review</Buttons>
+		</ReviewCard>
+
+		<ReviewCard title="Give Medals">
+			<p>When you are done with reviewing all the designs, you can give medals to the bests.</p>
+			<Buttons variant="start-grey">Give medals</Buttons>
+		</ReviewCard>
 	</div>
 
 	<div class="participants-wrapper">
@@ -347,7 +359,7 @@
 	}
 
 	.timeline-wrapper > h2 {
-		margin-left: -0.5rem; 
+		margin-left: -0.5rem;
 		margin-bottom: 0.75rem;
 	}
 
