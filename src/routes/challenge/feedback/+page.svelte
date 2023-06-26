@@ -55,7 +55,6 @@
 		--size: 5em;
 		width: var(--size);
 		height: var(--size);
-		position: fixed;
 	}
 
 	.previous {
@@ -98,10 +97,12 @@
 
 		.previous {
 			grid-area: 2/1/3/2;
+			position: fixed;
 		}
 
 		.next {
 			grid-area: 2/4/3/-1;
+			position: fixed;
 		}
 
 		.members {

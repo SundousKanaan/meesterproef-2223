@@ -166,8 +166,8 @@
 	.usercard > span:first-of-type {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
 		align-items: center;
+		gap: 1em;
 	}
 
 	.usercard > span:first-of-type p {
@@ -176,8 +176,9 @@
 
 	.location-icon{
 		display: flex;
-		align-items: center;
+		align-items: end;
 		justify-content: space-between;
+		margin-bottom: 1em;
 	}
 
 	.location-icon p:nth-of-type(2){
