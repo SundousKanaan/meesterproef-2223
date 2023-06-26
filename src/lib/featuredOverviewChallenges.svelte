@@ -8,17 +8,17 @@
     import AllChallenges from "$lib/allChallenges.svelte";
 
 </script>
-
+<div class="grouping">
 <section class="boxed">
     <h2>Featured challenges</h2>
-    <p>Join the challenges</p>
+    <span>Join the challenges</span>
 </section>
 
 <section class="boxed">
     <article>
-        <figure>
-            <img src="{asics}" alt="The project logo of Asics"/>
-            <figcaption>
+        <figure class="featured-border">
+                <img src="{asics}" alt="The project logo of Asics"/>
+            <figcaption >
                 <div class="bookmark">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M27.7867 6.14666C27.1057 5.46533 26.2971 4.92485 25.4071 4.5561C24.5172 4.18735 23.5633 3.99756 22.6 3.99756C21.6367 3.99756 20.6828 4.18735 19.7929 4.5561C18.9029 4.92485 18.0943 5.46533 17.4133 6.14666L16 7.55999L14.5867 6.14666C13.2111 4.77107 11.3454 3.99827 9.4 3.99827C7.45462 3.99827 5.58892 4.77107 4.21333 6.14666C2.83774 7.52225 2.06494 9.38795 2.06494 11.3333C2.06494 13.2787 2.83774 15.1444 4.21333 16.52L5.62666 17.9333L16 28.3067L26.3733 17.9333L27.7867 16.52C28.468 15.839 29.0085 15.0304 29.3772 14.1405C29.746 13.2505 29.9358 12.2966 29.9358 11.3333C29.9358 10.37 29.746 9.41613 29.3772 8.52619C29.0085 7.63624 28.468 6.82767 27.7867 6.14666V6.14666Z"
@@ -70,8 +70,8 @@
         </figure>
         <div class="group">
             <div class="detail">
-                <h3>Web development</h3>
-                <caption>test</caption>
+                <h3>Asics</h3>
+                <caption>Asics</caption>
             </div>
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -362,7 +362,7 @@
 
 <section class="boxed">
     <h2>My challenges</h2>
-    <p>Your current, liked and past challenges in a list</p>
+    <span>Your current, liked and past challenges in a list</span>
 </section>
 
 <section class="boxed">
@@ -762,7 +762,7 @@
 
 <section class="boxed">
     <h2>Top 3 challenges</h2>
-    <p>Join the top 3 weekly challenges</p>
+    <span>Join the top 3 weekly challenges</span>
 </section>
 
 <section class="boxed">
@@ -968,7 +968,7 @@
         </div>
     </article>
 </section>
-
+</div>
 <AllChallenges/>
 
 <style>
@@ -1006,6 +1006,7 @@
 
     .main-container {
         display: flex;
+        flex-direction: column;
         gap: 0.5em;
     }
 
@@ -1014,7 +1015,6 @@
         flex-direction: column;
         gap: 0.5em;
     }
-
 
     .group > p {
         margin-bottom: 1em;
@@ -1058,6 +1058,7 @@
 
     .boxed article {
         flex: 1 1 30%;
+
     }
 
     a.meerInformatie {
@@ -1072,11 +1073,12 @@
 
     a.enroll {
         padding: 1em;
-        background-color: black;
+        background-color: #ffeb66;
         width: 100%;
         text-decoration: none;
-        color: white;
+        color: black;
         text-align: center;
+        box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .boxed:first-of-type > .group > .container > a.meerInformatie:first-of-type + a.enroll:first-of-type {
@@ -1090,29 +1092,39 @@
     }
 
     article figure img {
-        background: gray;
         height: 100%;
         width: 100%;
     }
 
     article {
         background-color: white;
-        box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+
     }
 
     article figure {
         position: relative;
+        /*overflow: hidden;*/
+
+
     }
 
-    figcaption {
-        position: absolute;
-        top: 0;
-        left: 0;
+    /*article figure:hover {*/
+    /*    position: relative;*/
+    /*    border: 3px solid #ffeb66;*/
+    /*}*/
+
+    article .featured-border:hover {
+        position: relative;
+        border: 3px solid #ffeb66;
+    }
+
+    .featured-border:nth-child(2) > img:first-of-type  {
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        /object-fit: cover;
+        /object-position: 50% 50%;
+        transition: transform 0.5s ease;
     }
 
     .deelnemers {
@@ -1159,10 +1171,19 @@
         flex-direction: row;
         gap: 0.5em;
         box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
-
+        cursor: pointer;
     }
 
-    @media (max-width: 750px) {
+    @media (max-width: 60em) {
+
+        .boxed:first-of-type {
+            margin-top: 1em;
+        }
+        .boxed:first-of-type *{
+            text-align: left;
+            width:100%;
+        }
+
         .boxed {
             display: flex;
             flex-direction: column;
@@ -1170,20 +1191,58 @@
             max-width: unset;
         }
 
+        .boxed h2,span {
+            text-align: center;
+
+        }
+
+        .grouping {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width:100vw;
+            padding:1em;
+        }
+
         .boxed:nth-child(2) {
-            display: none;
-            /*flex-direction: column;*/
+            display: flex;
+            flex-direction: column;
             /*align-items: center;*/
             /*max-width: unset;*/
         }
 
         .boxed article {
             margin-bottom: 20px;
-            width: 80%;
         }
 
-        .boxed:first-of-type {
-            display: none;
+        figure.featured-border{
+            position: relative;
+            border: 3px solid #ffeb66;
         }
+        article figure{
+            height:16em;
+        }
+
+        /*.grouping .boxed:nth-of-type(n+2) article{*/
+        /*    box-shadow:0 0 black;*/
+        /*}*/
+
+        /*.boxed:first-of-type {*/
+        /*    display: none;*/
+        /*}*/
+    }
+    figure{
+        overflow:hidden;
+        position:relative;
+        display:flex;
+    }
+    figure img{
+        transition:.2s;
+        object-fit:cover;
+    }
+    figure img:hover{
+        transform:scale(1.15)
     }
 </style>
