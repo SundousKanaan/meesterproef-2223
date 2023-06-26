@@ -1,37 +1,16 @@
 <script lang="ts">
 	import Buttons from "$lib/Buttons.svelte";
 	export let type: 'speed' | 'extensive' | 'medals' = 'speed';
+
+	export let title: string = 'Speed Review';
+	export let description: string = "Be critical. We advice you to let a maximum of 20 designs pass.";
 </script>
 
 <article>
 	<h2 class="title">
-		{#if type == 'speed'}
-			Speed Review
-		{:else if type == 'extensive'}
-			Extensive Review
-		{:else}
-			Give Medals
-		{/if}
+		{title}
 	</h2>
-	<p class="description">
-		{#if type == 'speed'}
-			Be critical. We advice you to let a maximum of 20 designs pass.
-		{:else if type == 'extensive'}
-			You give extensive feedback to everyone about their work.
-		{:else}
-			When you are done with reviewing all the designs, you can give medals to the bests.
-		{/if}
-	</p>
-
-	{#if type == 'speed'}
-		<a href="/challenge/feedback?feedback=speed">
-		<Buttons variant="start-yellow">Speed review</Buttons>
-		</a>
-	{:else if type == 'extensive'}
-		<Buttons variant="start-blue">Extensive review</Buttons>
-	{:else}
-		<Buttons variant="start-grey">Give medals</Buttons>
-	{/if}
+	<slot />
 </article>
 
 <style>
