@@ -24,7 +24,9 @@
 	</p>
 
 	{#if type == 'speed'}
+		<a href="/challenge/feedback?feedback=speed">
 		<Buttons variant="start-yellow">Speed review</Buttons>
+		</a>
 	{:else if type == 'extensive'}
 		<Buttons variant="start-blue">Extensive review</Buttons>
 	{:else}
