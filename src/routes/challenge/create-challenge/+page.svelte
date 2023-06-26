@@ -1,13 +1,13 @@
 <script lang="ts">
     import Stapone from "./components/Stapone.svelte";
     import Staptwo from "./components/Staptwo.svelte";
-
+    import Timeline from "$lib/Timeline.svelte";
     import Buttons from "$lib/Buttons.svelte";
 </script>
 
 <section>
     <div class="process-area">
-        proces line
+        <Timeline />
     </div>
     <h1>Create your challenge</h1>
     <div> 1
