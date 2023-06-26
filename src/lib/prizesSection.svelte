@@ -22,7 +22,9 @@
 
 <section class="prizes">
     <div>
-        <img class="projectImage" src="https://placehold.co/600x400" alt=""/>
+        <div>
+            <img src="/hero_no_content.jpg" alt="" />
+        </div>
         <ul>
             {#each items as item, index}
               <li>
@@ -61,6 +63,18 @@
     .prizes > div {
         display: flex;
         gap: 2em;
+    }
+
+    .prizes > div > div:first-of-type {
+        width: 100%;
+        height: 40dvh;
+        max-width: 40em;
+    }
+
+    .prizes > div > div:first-of-type img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .prizes div ul {

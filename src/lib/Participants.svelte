@@ -196,7 +196,11 @@
         .participantData .participant-block {
             margin-top: 1em;
             grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
+        }
+
+        .participantData .participant-block p {
             text-align: center;
+            margin-top: .5em;
         }
 
         .participantData .participant-block .user-block {
@@ -204,6 +208,7 @@
         }
 
         .participantData .participant-block .skills-block {
+            margin-bottom: .5em;
             justify-content: center;
         }
 

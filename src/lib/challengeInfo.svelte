@@ -128,12 +128,12 @@
         display: flex;
         flex-wrap: wrap;
         margin-top: .4em;
-        width: 25em;
+        max-width: 25em;
     }
 
     .challenge-info article:last-of-type ul li {
         display: flex;
-        width: 10em;
+        flex: 1 1 25%;
         margin-top: 1em;
         align-items: center;
         margin-right: 2em;
