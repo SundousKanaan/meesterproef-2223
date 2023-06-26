@@ -1,4 +1,6 @@
 <script>
+	let winnerName = 'Bart-Jan';
+	let imagePath = '/first.png';
 </script>
 
 <section class="winner">
@@ -42,12 +44,11 @@
 						</svg>
 					</div>
 					<div>
-						<p class="prijsNummer">Second place</p>
-						<p class="naamWinnaar">Bart-Jan</p>
+						<p class="prijsNummer">Third place</p>
+						<p class="naamWinnaar">{winnerName}</p>
 					</div>
 				</div>
-
-				<img src="" alt="" class="image-1" />
+				<img src={imagePath} alt="" class="image-1" />
 			</div>
 
 			<div class="plaatsing">
@@ -77,54 +78,47 @@
 						</svg>
 					</div>
 					<div>
-						<p class="prijsNummer">Second place</p>
-						<p class="naamWinnaar">Bart-Jan</p>
+						<p class="prijsNummer">First place</p>
+						<p class="naamWinnaar">{winnerName}</p>
 					</div>
 				</div>
 
-				<img src="" alt="" class="image-2" />
+				<img src={imagePath} alt="" class="image-2" />
 			</div>
 
 			<div class="plaatsing">
 				<div class="prijsDetail">
 					<div class="prijsIcoon">
 						<svg
-							width="25"
-							height="25"
-							viewBox="0 0 25 25"
+							width="33"
+							height="32"
+							viewBox="0 0 33 32"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
 						>
-							<g clip-path="url(#clip0_1411_12962)">
-								<path
-									d="M12.5 15.5C16.366 15.5 19.5 12.366 19.5 8.5C19.5 4.63401 16.366 1.5 12.5 1.5C8.63401 1.5 5.5 4.63401 5.5 8.5C5.5 12.366 8.63401 15.5 12.5 15.5Z"
-									stroke="#3A3C43"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M8.71 14.39L7.5 23.5L12.5 20.5L17.5 23.5L16.29 14.38"
-									stroke="#3A3C43"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</g>
-							<defs>
-								<clipPath id="clip0_1411_12962">
-									<rect width="24" height="24" fill="white" transform="translate(0.5 0.5)" />
-								</clipPath>
-							</defs>
+							<path
+								d="M16.4998 20C21.6545 20 25.8332 15.8213 25.8332 10.6666C25.8332 5.51199 21.6545 1.33331 16.4998 1.33331C11.3452 1.33331 7.1665 5.51199 7.1665 10.6666C7.1665 15.8213 11.3452 20 16.4998 20Z"
+								stroke="#3A3C43"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M11.4468 18.52L9.8335 30.6667L16.5002 26.6667L23.1668 30.6667L21.5535 18.5067"
+								stroke="#3A3C43"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
 						</svg>
 					</div>
 					<div>
 						<p class="prijsNummer">Second place</p>
-						<p class="naamWinnaar">Bart-Jan</p>
+						<p class="naamWinnaar">{winnerName}</p>
 					</div>
 				</div>
 
-				<img src="" alt="" class="image-3" />
+				<img src={imagePath} alt="" class="image-3" />
 			</div>
 		</div>
 	</section>
@@ -183,16 +177,19 @@
 	.image-1 {
 		width: 100%;
 		height: 14em;
+		border-bottom: 6px solid #ffeb66;
 	}
 
 	.image-2 {
 		width: 100%;
 		height: 22.4375em;
+		border: 6px solid #ffeb66;
 	}
 
 	.image-3 {
 		width: 100%;
 		height: 15em;
+		border-bottom: 6px solid #ffeb66;
 	}
 
 	.grouping {
@@ -204,28 +201,59 @@
 			flex-direction: column;
 			align-items: center;
 			gap: 1em;
-			width: 30%;
+			width: 100%;
+		}
+
+		.plaatsing:nth-child(2) {
+			order: -1;
+		}
+
+		.plaatsing:last-of-type {
+			order: -1;
 		}
 
 		.prijsDetail {
-			flex-direction: column;
+			flex-direction: row;
 			align-items: center;
 			gap: 0.0625em;
 		}
 
+		.grouping {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-end;
+			padding: 0;
+			gap: 2.25em;
+		}
+
+		.winner {
+			max-width: 75em;
+			margin: 0 auto;
+			width: 100%;
+			padding: 0.5em 0;
+			margin-bottom: 2em;
+		}
+
 		.image-1 {
 			width: 100%;
-			height: 7em;
+			height: 15em;
 		}
 
 		.image-2 {
 			width: 100%;
-			height: 12em;
+			height: 15em;
 		}
 
 		.image-3 {
 			width: 100%;
-			height: 9em;
+			height: 15em;
+		}
+
+		.image-1,
+		.image-2,
+		.image-3 {
+			object-fit: cover;
 		}
 	}
 </style>

@@ -31,9 +31,6 @@
             <p><span>{participants}</span> have already enrolled!</p>
         </div>
     </div>
-    <div>
-        <img src="/asics-logo.svg" alt=""/>
-    </div>
 </section>
 
 <style>
@@ -102,10 +99,6 @@
         justify-content: center;
     }
 
-    .hero > div:last-of-type img {
-        width: 20em;
-    }
-
     .hero > div h1 {
         font-size: 2em;
         width: 10em;
@@ -161,7 +154,6 @@
         flex-direction: row;
         align-items: flex-start;
         margin-top: 1em;
-        width: 100%;
     }
 
     .hero div > div img:nth-of-type(2) {
@@ -184,15 +176,9 @@
     }
 
     @media screen and (min-width: 768px) {
-        .hero {
-            justify-content: space-between;
-            flex-direction: row;
-            align-items: center;
-        }
-
         .hero > div {
             padding: 6em;
-            padding-bottom: 3.5em;
+            padding-bottom: 6em;
         }
 
         .hero > div h1 {
@@ -211,18 +197,6 @@
             padding-left: 0.2em;
             color: var(--yellow);
             background-color: var(--black);
-        }
-
-        .hero > div:first-of-type {
-            order: -1;
-        }
-
-        .hero > div:last-of-type {
-            justify-content: center;
-        }
-
-        .hero > div:last-of-type img {
-            width: 100%;
         }
 
         .hero div > div {

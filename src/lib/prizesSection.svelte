@@ -1,43 +1,58 @@
-<script>
-
+<script lang="ts">
+    import { onMount } from 'svelte';
+  
+    let items = [
+      { isExpanded: false },
+      { isExpanded: false },
+      { isExpanded: false } 
+    ];
+  
+    const labels = ['First', 'Second', 'Third'];
+  
+    function toggleExpand(index: number) {
+      items[index].isExpanded = !items[index].isExpanded;
+    }
+  
+    onMount(() => {
+      items.forEach(item => {
+        item.isExpanded = false;
+      });
+    });
 </script>
 
 <section class="prizes">
     <div>
-        <img class="projectImage" src="https://placehold.co/600x400" alt=""/>
+        <div>
+            <img src="/hero_no_content.jpg" alt="" />
+        </div>
         <ul>
-            <li>
+            {#each items as item, index}
+              <li>
                 <div>
-                    <img src="/medal.svg" alt=""/>
+                  <img src="/medal.svg" alt="" />
                 </div>
                 <div>
-                    <span>First place</span>
-                    <h2>Cooperate with us</h2>
+                  <span>{labels[index]} place</span>
+                  <h2 class:expanded={item.isExpanded} on:click={() => toggleExpand(index)}>Cooperate with us</h2>
                 </div>
-            </li>
-            <li>
-                <div>
-                    <img src="/medal.svg" alt=""/>
-                </div>
-                <div>
-                    <span>Second place</span>
-                    <h2>Asics Air Max</h2>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <img src="/medal.svg" alt=""/>
-                </div>
-                <div>
-                    <span>Third place</span>
-                    <h2>Asics voucher</h2>
-                </div>
-            </li>
-        </ul>
+                {#if item.isExpanded}
+                  <p>Description of the prize</p>
+                {/if}
+              </li>
+            {/each}
+          </ul>
     </div>
 </section>
 
 <style>
+    h2 {
+        cursor: pointer;
+    }
+
+    .prizes div ul li div h2.expanded:last-of-type:after {
+        background-image: url('/arrow-down.svg');
+    }
+
     .prizes {
         display: flex;
         justify-content: center;
@@ -48,6 +63,18 @@
     .prizes > div {
         display: flex;
         gap: 2em;
+    }
+
+    .prizes > div > div:first-of-type {
+        width: 100%;
+        height: 40dvh;
+        max-width: 40em;
+    }
+
+    .prizes > div > div:first-of-type img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .prizes div ul {
@@ -72,6 +99,11 @@
     .prizes div ul li div:first-of-type {
         grid-column: 1 / 2;
         grid-row: 1 / 3;
+    }
+
+    .prizes div ul li p {
+        grid-column: 1 / 3;
+        grid-row: 3 / 3;
     }
 
     .prizes div ul li div:last-of-type {
@@ -103,6 +135,36 @@
     .prizes div ul li div:first-of-type {
         display: flex;
         justify-content: flex-end;
+    }
+
+    .prizes div ul li div:last-of-type {
+        position: relative;
+    }
+
+    .prizes div ul li div h2:last-of-type:after {
+        content: '';
+        position: absolute;
+        background-image: url('/arrow-side.svg');
+        background-size: contain;
+        margin-left: 2%;
+    }
+
+    .prizes div ul li:nth-of-type(1) div h2:last-of-type:after {
+        width: 20px;
+        height: 20px;
+        margin-top: 4%;
+    }
+
+    .prizes div ul li:nth-of-type(2) div h2:last-of-type:after {
+        width: 15px;
+        height: 15px;
+        margin-top: 4%;
+    }
+
+    .prizes div ul li:nth-of-type(3) div h2:last-of-type:after {
+        width: 15px;
+        height: 15px;
+        margin-top: 2%;
     }
 
     .prizes div ul li:nth-of-type(1) div img {
