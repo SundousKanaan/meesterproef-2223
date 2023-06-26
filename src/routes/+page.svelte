@@ -1,13 +1,15 @@
 <script lang="ts">
-	import Input from '$lib/Input.svelte';
-    import DragenDropp from '$lib/DragenDropp.svelte';
-    let placeholder_Text: string = "write ...";
-
-
-	function test() {
-		console.log('test');
-	}
+    import Hero from '$lib/Hero.svelte';
+    import SubmittedChallenges from '$lib/submittedChallenges.svelte';
+    import FeaturedCreators from '$lib/featuredCreators.svelte';
 </script>
 
-<Input inputType="url" placeholder_Text = {placeholder_Text} />
+<Hero />
+<SubmittedChallenges />
+<FeaturedCreators />
+
 <!-- <DragenDropp /> -->
+
+<style>
+
+</style>
