@@ -2,8 +2,6 @@
 	import Icon from '$lib/Icon.svelte';
 	import { IconSize } from '$lib/Icon';
 
-	export let editable: boolean = false;
-
 	export let dates: {
 		date: Date;
 		icon: string | undefined;
@@ -146,51 +144,26 @@
 	});
 </script>
 
-{#if !editable}
-	<div class="timeline">
-		{#if dates}
-			{#each processedDates as date}
-				<div class="timeline-point-wrapper">
-					<span class={date.stage}>{date.title}</span>
-					<div class="timeline-point circle color-{date.stage}">
-						<Icon size={IconSize.SMALL} icon={date.icon != null ? date.icon : ''} />
-					</div>
-					<span>{date.date.getDate()} / {monthNames[date.date.getMonth()]}</span>
+<div class="timeline">
+	{#if dates}
+		{#each processedDates as date}
+			<div class="timeline-point-wrapper">
+				<span class={date.stage}>{date.title}</span>
+				<div class="timeline-point circle color-{date.stage}">
+					<Icon size={IconSize.SMALL} icon={date.icon != null ? date.icon : ''} />
 				</div>
+				<span>{date.date.getDate()} / {monthNames[date.date.getMonth()]}</span>
+			</div>
 
-				<!-- Kan possibly progress bar zijn (html element)-->
-				<div
-					class="timeline-line"
-					style:--progress="{date.progress}%"
-					style:flex-basis="{spaceRelativeToTime ? date.distanceToNext : '100'}%"
-				/>
-			{/each}
-		{/if}
-	</div>
-{/if}
-
-{#if editable}
-	<div class="timeline">
-		{#if dates}
-			{#each processedDates as date}
-				<div class="timeline-point-wrapper">
-					<span class={date.stage}>{date.title}</span>
-					<div class="timeline-point circle color-{date.stage}">
-						<Icon size={IconSize.SMALL} icon={date.icon != null ? date.icon : ''} />
-					</div>
-					<span>{date.date.getDate()} / {monthNames[date.date.getMonth()]}</span>
-				</div>
-
-				<!-- Kan possibly progress bar zijn (html element)-->
-				<div
-					class="timeline-line"
-					style:--progress="{date.progress}%"
-					style:flex-basis="{spaceRelativeToTime ? date.distanceToNext : '100'}%"
-				/>
-			{/each}
-		{/if}
-	</div>
-{/if}
+			<!-- Kan possibly progress bar zijn (html element)-->
+			<div
+				class="timeline-line"
+				style:--progress="{date.progress}%"
+				style:flex-basis="{spaceRelativeToTime ? date.distanceToNext : '100'}%"
+			/>
+		{/each}
+	{/if}
+</div>
 
 <style>
 	.timeline {

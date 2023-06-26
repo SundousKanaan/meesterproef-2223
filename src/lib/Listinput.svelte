@@ -1,33 +1,36 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+	export let inputType: string = 'url';
+	const videoLinkPattern =
+		/^(http(s)?:\/\/)?(www\.)?(youtube\.com|youtu\.be|vimeo\.com|dailymotion\.com|twitch\.tv|...)\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)$/;
 
-	export let placeholder_Text = 'Enter item...';
-	export let placeholder_Description = 'Enter item description...';
+	export let placeholderText = 'Enter item...';
+	export let placeholderDescription = 'Enter item description...';
 
 	let inputValue: string = '';
-	let Description_inputValue: string = '';
+	let descriptionInputValue: string = '';
 	export let listWithDescription: boolean = false;
-
-	// let itemList: string[] = [];
 
 	let itemList: (string | Item)[] = [];
 
 	type Item = {
 		inputValue: string;
-		Description_inputValue: string | undefined;
+		descriptionInputValue: string | undefined;
 	};
 
 	const dispatch = createEventDispatcher();
 
 	function addItem() {
-		if (inputValue && Description_inputValue) {
-			itemList = [...itemList, { inputValue, Description_inputValue }];
+		if (inputValue && descriptionInputValue) {
+			itemList = [...itemList, { inputValue, descriptionInputValue: descriptionInputValue }];
 			inputValue = '';
-			Description_inputValue = '';
+			descriptionInputValue = '';
+
+			// console.log(inputType);
 		} else if (inputValue && listWithDescription == false) {
 			itemList = [...itemList, inputValue];
 			inputValue = '';
-			Description_inputValue = '';
+			descriptionInputValue = '';
 		}
 	}
 
@@ -46,12 +49,11 @@
 	<div class="input-list">
 		<input
 			type="text"
-			class="input"
-			placeholder={placeholder_Text}
+			class="input {inputType}"
+			placeholder={placeholderText}
 			bind:value={inputValue}
 			on:keydown={handleKeyDown}
 		/>
-
 		<button class="button" on:click={addItem}> + </button>
 	</div>
 
@@ -71,15 +73,15 @@
 			<input
 				type="text"
 				class="input"
-				placeholder={placeholder_Text}
+				placeholder={placeholderText}
 				bind:value={inputValue}
 				on:keydown={handleKeyDown}
 			/>
 			<input
 				type="text"
-				class="input"
-				placeholder={placeholder_Description}
-				bind:value={Description_inputValue}
+				class="input {inputType}"
+				placeholder={placeholderDescription}
+				bind:value={descriptionInputValue}
 				on:keydown={handleKeyDown}
 			/>
 		</span>
@@ -92,7 +94,7 @@
 				<span>
 					{#if typeof item !== 'string'}
 						<p>🗸 {item.inputValue}</p>
-						<p>{item.Description_inputValue}</p>
+						<p>{item.descriptionInputValue}</p>
 					{/if}
 				</span>
 
@@ -116,6 +118,10 @@
 		flex: 1;
 		height: 3em;
 		margin-right: 1em;
+	}
+
+	.input.url {
+		color: blue;
 	}
 
 	.button {
@@ -144,7 +150,7 @@
 		border-bottom: solid 0.1em var(--neutral-500);
 	}
 
-	.item:last-of-type{
+	.item:last-of-type {
 		border-bottom: none;
 	}
 

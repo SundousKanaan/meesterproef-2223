@@ -2,9 +2,11 @@
 	export let placeholder_Text: string = 'Write somthing ...';
 
 	export let inputType: 'text' | 'date' | 'url' | 'textarea';
+
+	export let timelineCheck: string =" ";
 </script>
 
-<input type={inputType} class={inputType} placeholder={placeholder_Text} />
+<input type={inputType} class={inputType}{timelineCheck} placeholder={placeholder_Text} />
 
 <style>
 	input,

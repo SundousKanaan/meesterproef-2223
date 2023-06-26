@@ -2,6 +2,7 @@
 	import Stapone from './components/Stapone.svelte';
 	import Staptwo from './components/Staptwo.svelte';
     import Stapthree from './components/Stapthree.svelte';
+    import Stapfour from './components/Stapfour.svelte'
 	import Buttons from '$lib/Buttons.svelte';
 </script>
 
@@ -22,6 +23,12 @@
         3
         <Stapthree />
     </div>
+
+    <div>
+        4
+        <Stapfour />
+    </div>
+
 </section>
 
 <!-- style:display = "none" -->
