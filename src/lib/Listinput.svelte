@@ -1,20 +1,31 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import Buttons from '$lib/Buttons.svelte';
-	import type { Attribute } from 'svelte/types/compiler/interfaces';
 
 	export let placeholder_Text = 'Enter item...';
 	export let placeholder_Description = 'Enter item description...';
 
 	let inputValue: string = '';
 	let Description_inputValue: string = '';
-	let itemList: { inputValue: string, Description_inputValue: string }[] = [];
+	export let listWithDescription: boolean = false;
+
+	// let itemList: string[] = [];
+
+	let itemList: (string | Item)[] = [];
+
+	type Item = {
+		inputValue: string;
+		Description_inputValue: string | undefined;
+	};
 
 	const dispatch = createEventDispatcher();
 
 	function addItem() {
 		if (inputValue && Description_inputValue) {
-			itemList = [...itemList, {inputValue , Description_inputValue}];
+			itemList = [...itemList, { inputValue, Description_inputValue }];
+			inputValue = '';
+			Description_inputValue = '';
+		} else if (inputValue && listWithDescription == false) {
+			itemList = [...itemList, inputValue];
 			inputValue = '';
 			Description_inputValue = '';
 		}
@@ -29,11 +40,9 @@
 			addItem();
 		}
 	}
-
-	export let listWithDescription: boolean = false;
 </script>
 
-{#if (!listWithDescription)}
+{#if !listWithDescription}
 	<div class="input-list">
 		<input
 			type="text"
@@ -56,7 +65,7 @@
 	</ul>
 {/if}
 
-{#if (listWithDescription)}
+{#if listWithDescription}
 	<div class="input-list">
 		<span class="listWithDescription_container">
 			<input
@@ -64,12 +73,14 @@
 				class="input"
 				placeholder={placeholder_Text}
 				bind:value={inputValue}
+				on:keydown={handleKeyDown}
 			/>
 			<input
 				type="text"
 				class="input"
 				placeholder={placeholder_Description}
 				bind:value={Description_inputValue}
+				on:keydown={handleKeyDown}
 			/>
 		</span>
 		<button class="button" on:click={addItem}> + </button>
@@ -79,8 +90,10 @@
 		{#each itemList as item, i}
 			<li class="item Description">
 				<span>
-					<p>🗸 {item.inputValue}</p>
-					<p>{item.Description_inputValue}</p>
+					{#if typeof item !== 'string'}
+						<p>🗸 {item.inputValue}</p>
+						<p>{item.Description_inputValue}</p>
+					{/if}
 				</span>
 
 				<button class="remove-button" on:click={() => removeItem(i)}> X </button>
@@ -126,9 +139,13 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: .5em 1em;
+		padding: 0.5em 1em;
 
 		border-bottom: solid 0.1em var(--neutral-500);
+	}
+
+	.item:last-of-type{
+		border-bottom: none;
 	}
 
 	.remove-button {
@@ -142,14 +159,13 @@
 	}
 
 	.listWithDescription_container {
-		width:100%;
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		gap: 0.5em;
 	}
 
-	.item.Description span{
+	.item.Description span {
 		width: calc(100% - 4em);
 	}
-
 </style>
