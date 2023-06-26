@@ -1,5 +1,4 @@
-<script>
-    import { currentIndex } from './stores.js';
+<script lang="ts">
     export let title = '';
     export let subtitle = '';
     export let description = '';
@@ -7,15 +6,24 @@
     export let image = '';
     export let totalItems = 0;
 
-    const next = () => {
-      currentIndex.update(n => Math.min(n + 1, totalItems - 1));
-    }
-
-    const previous = () => {
-      currentIndex.update(n => Math.max(n - 1, 0));
-    }
-</script>
+    export let currentIndex = 0;
   
+    const next = () => {
+        if(currentIndex < totalItems - 1){
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+    }
+  
+    const previous = () => {
+        if(currentIndex > 0){
+            currentIndex--;
+        } else {
+            currentIndex = totalItems - 1;
+        }
+    }
+  </script>
 <section class="heroItem">
     <div>
         <h3>{title}</h3>
@@ -33,6 +41,8 @@
 </section>
   
   <style>
+
+
 
 section.heroItem > button{
     position:absolute;
