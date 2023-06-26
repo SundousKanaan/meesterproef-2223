@@ -4,6 +4,7 @@
 	import Buttons from '$lib/Buttons.svelte';
 
 	export let participants: Participant[] = [];
+	const pageSize: number = 10;
 
 	let activeSortMode: 'status' | 'yesno' = 'status';
 
@@ -12,11 +13,31 @@
 	let yesnoSort: 'ascending' | 'descending' = 'descending';
 	let feedbackSort: 'ascending' | 'descending' = 'descending';
 
-	// Calculate how many pages there are based on the number of participants and the max per page
-	function calculatePages(participants: Participant[], maxPerPage: number) {
-		return Math.ceil(participants.length / maxPerPage);
+	let shownParticipants: Participant[] = participants.slice(0, pageSize);
+	let currentPage: number = 1;
+	let totalPages: number = Math.ceil(participants.length / pageSize);
+	function nextPage() {
+		if (currentPage < totalPages) {
+			currentPage++;
+			shownParticipants = participants.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+		}
 	}
 
+	function previousPage() {
+		if (currentPage > 1) {
+			currentPage--;
+			shownParticipants = participants.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+		}
+	}
+
+	function recalculateShownParticipants() {
+		totalPages = Math.ceil(participants.length / pageSize);
+		if (currentPage > totalPages) {
+			currentPage = totalPages;
+		}
+		shownParticipants = participants.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+	}
+	
 	function sortStatus() {
 		// Change statusSort
 		if (statusSort == 'ascending') {
@@ -47,6 +68,8 @@
 				}
 			});
 		}
+
+		recalculateShownParticipants();
 	}
 
 	function sortYesno() {
@@ -79,6 +102,8 @@
 				}
 			});
 		}
+
+		recalculateShownParticipants();
 	}
 
 	function sortFeedback() {
@@ -104,6 +129,15 @@
 				else return 0;
 			});
 		}
+
+		participants = participants.sort((a, b) => {
+			if (a.feedback == undefined && b.feedback == undefined) return 0;
+			else if (a.feedback == undefined) return 1;
+			else if (b.feedback == undefined) return -1;
+			else return 0;
+		})
+
+		recalculateShownParticipants();
 	}
 </script>
 
@@ -145,7 +179,7 @@
 			</th>
 			<th>&nbsp;</th>
 		</tr>
-		{#each participants as participant}
+		{#each shownParticipants as participant}
 			<tr>
 				<td>
 					<div class="creator-td">
@@ -198,10 +232,10 @@
 		{/each}
 	</table>
 	<section class="pager">
-		1 - 1 van de 1
+		Page: {currentPage} / {totalPages}
 		<div class="buttons">
-			<Buttons variant="start-grey" size="small">&lt</Buttons>
-			<Buttons variant="start-grey" size="small">&gt;</Buttons>
+			<Buttons variant="start-grey" size="small" handleClick={previousPage}>&lt</Buttons>
+			<Buttons variant="start-grey" size="small" handleClick={nextPage}>&gt;</Buttons>
 		</div>
 	</section>
 </article>
