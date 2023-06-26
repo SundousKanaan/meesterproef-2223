@@ -68,7 +68,7 @@
         justify-content: space-between;
 		margin-bottom: 0.5em;
 
-        background-color: bisque;
+        background-color: var(--neutral-200);
 	}
 
 	.remove-button {
