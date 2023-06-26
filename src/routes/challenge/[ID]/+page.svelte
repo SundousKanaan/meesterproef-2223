@@ -226,12 +226,11 @@
 	];
 </script>
 
-<div class="ultra-wrapper">
-	<div class="tyfus">
-		<img src={challenge.image} alt="hero or something" />
-	</div>
-
 	<div class="wrapper">
+		<div class="tyfus">
+			<img src={challenge.image} alt="hero or something" />
+		</div>
+
 		<div class="bovenste-stukje">
 			<h1>{challenge.title}</h1>
 			<div class="timeline-wrapper">
@@ -284,23 +283,22 @@
 	<div class="participants-wrapper">
 		<ParticipantTable {participants} />
 	</div>
-</div>
 
 <style>
 	* {
 		max-width: 100vw;
 	}
 
-	.ultra-wrapper {
-		max-width: 80rem;
-		margin-right: auto;
-		margin-left: auto;
+	.tyfus {
+		grid-column: 1/3;
+		margin-bottom: 48px;
 	}
+	
 	.wrapper {
 		display: grid;
 		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr;
-		padding: 3rem 2rem;
+		padding: 0 2rem 3rem 2rem;
 		/* background-color: #d6d6d6; */
 	}
 
