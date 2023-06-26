@@ -2,6 +2,12 @@
 	import Team_users from '../feedback/components/Team_users.svelte';
 	import Usercard from '../feedback/components/Usercard.svelte';
 	import Buttons from "$lib/Buttons.svelte";
+	import Firstplace from './components/Firstplace.svelte';
+
+function scroll(){
+    window.scrollTo(0,0);
+}
+
 </script>
 
 <section>
@@ -11,13 +17,14 @@
 	</div>
 
 	<div class="previous">
-	<Buttons buttonType="left"/>
-	</div>
-	<div class="next">	
-	<Buttons buttonType="right"/>
-	</div>
+        <Buttons variant="left"/>
+        </div>
+        <div class="next">	
+        <Buttons variant="right"/>
+        </div>
 	<Usercard/>
 	
+    <Firstplace />
 	
 	<div class="members">
 		<h3>Team members:</h3>
@@ -26,8 +33,7 @@
 		</ul>
 	</div>
 
-    <Buttons buttonType="left"/>
-<a href='#top'>hier</a>
+    <Buttons variant="up" handleClick={scroll}/>
 
 </section>
 

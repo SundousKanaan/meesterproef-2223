@@ -11,6 +11,7 @@
     "edit" |
     "left" |
     "right" |
+    "up" |
     "yes" |
     "no";
 
@@ -59,8 +60,6 @@ button{
 button:hover{
   background-color: #32a5c3;
 }
-
-
 
 .start-yellow,
 .primary {
@@ -192,6 +191,32 @@ button:hover{
   }
 
 .right:hover{
+  background-color: #D8D7D4;
+}
+
+.up{
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  position: fixed;
+  top: 80%;
+  right: 5%;
+  z-index: 100;
+}
+
+.up::after {
+    content: "\f062";
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    right: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+.up:hover{
   background-color: #D8D7D4;
 }
 
