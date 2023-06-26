@@ -82,7 +82,6 @@
 		height: var(--size);
 		border-radius: 50%;
 		background-color: white;
-
 		flex-shrink: 0;
 	}
 
