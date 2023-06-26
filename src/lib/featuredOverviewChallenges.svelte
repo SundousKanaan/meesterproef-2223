@@ -7,6 +7,55 @@
     import shoe from '$lib/assets/shoe.webp'
     import AllChallenges from "$lib/allChallenges.svelte";
 
+    let PaidArticles = [
+    {
+      title: 'Asics',
+      caption: 'Asics',
+      content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit...',
+      imageUrl: '/Img.png',
+      altText: 'The project logo of Asics',
+    },
+    {
+      title: 'Web development',
+      caption: 'test',
+      content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit...',
+      imageUrl: '/eye.png',
+      altText: 'Alternative text for web development image',
+    },
+  ];
+  let topArticles = [
+  {
+    art: "/art.png",
+    deelnemers: 250,
+    title: "Web development",
+    caption: "test",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit...",
+    meerInformatie: "#",
+    enroll: "#",
+    deadline: "2023-07-26"
+  },
+  {
+    art: "/Img.png",
+    deelnemers: 300,
+    title: "Data Science",
+    caption: "course",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit...",
+    meerInformatie: "#",
+    enroll: "#",
+    deadline: "2023-07-30"
+  },
+  {
+    art: "/shoe.webp",
+    deelnemers: 150,
+    title: "Fashion Design",
+    caption: "class",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit...",
+    meerInformatie: "#",
+    enroll: "#",
+    deadline: "2023-08-15"
+  }
+];
+
 </script>
 <div class="grouping">
 <section class="boxed">
@@ -15,10 +64,12 @@
 </section>
 
 <section class="boxed">
+    {#each PaidArticles as article, index}
     <article>
         <figure class="featured-border">
-                <img src="{asics}" alt="The project logo of Asics"/>
+            <img src={article.imageUrl} alt={article.altText}/>
             <figcaption >
+
                 <div class="bookmark">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M27.7867 6.14666C27.1057 5.46533 26.2971 4.92485 25.4071 4.5561C24.5172 4.18735 23.5633 3.99756 22.6 3.99756C21.6367 3.99756 20.6828 4.18735 19.7929 4.5561C18.9029 4.92485 18.0943 5.46533 17.4133 6.14666L16 7.55999L14.5867 6.14666C13.2111 4.77107 11.3454 3.99827 9.4 3.99827C7.45462 3.99827 5.58892 4.77107 4.21333 6.14666C2.83774 7.52225 2.06494 9.38795 2.06494 11.3333C2.06494 13.2787 2.83774 15.1444 4.21333 16.52L5.62666 17.9333L16 28.3067L26.3733 17.9333L27.7867 16.52C28.468 15.839 29.0085 15.0304 29.3772 14.1405C29.746 13.2505 29.9358 12.2966 29.9358 11.3333C29.9358 10.37 29.746 9.41613 29.3772 8.52619C29.0085 7.63624 28.468 6.82767 27.7867 6.14666V6.14666Z"
@@ -26,7 +77,9 @@
                               stroke-linejoin="round"/>
                     </svg>
                 </div>
+
                 <div class="sponsorLogo">
+                    {#if index === 0}
                     <p>Sponsored by:</p>
                     <svg
                             width="145"
@@ -40,6 +93,7 @@
                                 fill="white"
                         />
                     </svg>
+                    {/if}
                 </div>
                 <div class="deelnemers">
                     <svg
@@ -70,15 +124,10 @@
         </figure>
         <div class="group">
             <div class="detail">
-                <h3>Asics</h3>
-                <caption>Asics</caption>
+              <h3>{article.title}</h3>
+              <caption>{article.caption}</caption>
             </div>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
-                vel? Incidunt a vero qui voluptate dolorem, temporibus iusto voluptatum modi excepturi
-                praesentium autem ut similique reprehenderit unde voluptatem saepe nemo, deleniti omnis
-                minus laboriosam laudantium nam.
-            </p>
+            <p>{article.content}</p>
             <div class="main-container">
                 <a href="#" class="meerInformatie">Meer informatie</a>
                 <a href="#" class="enroll">Enroll</a>
@@ -86,279 +135,77 @@
             <em>deadline:</em>
         </div>
     </article>
-    <article>
-        <figure>
-            <img src="{art}" alt=""/>
-            <figcaption>
-                <div class="bookmark">
-                    <svg
-                            width="33"
-                            height="32"
-                            viewBox="0 0 33 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                                d="M28.1197 6.14666C27.4387 5.46533 26.6301 4.92485 25.7401 4.5561C24.8502 4.18735 23.8963 3.99756 22.933 3.99756C21.9697 3.99756 21.0158 4.18735 20.1259 4.5561C19.2359 4.92485 18.4273 5.46533 17.7463 6.14666L16.333 7.55999L14.9197 6.14666C13.5441 4.77107 11.6784 3.99827 9.733 3.99827C7.78763 3.99827 5.92193 4.77107 4.54634 6.14666C3.17075 7.52225 2.39795 9.38795 2.39795 11.3333C2.39795 13.2787 3.17075 15.1444 4.54634 16.52L5.95967 17.9333L16.333 28.3067L26.7063 17.9333L28.1197 16.52C28.801 15.839 29.3415 15.0304 29.7102 14.1405C30.079 13.2505 30.2688 12.2966 30.2688 11.3333C30.2688 10.37 30.079 9.41613 29.7102 8.52619C29.3415 7.63624 28.801 6.82767 28.1197 6.14666V6.14666Z"
-                                stroke="black"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                </div>
-                <div class="deelnemers">
-                    <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                                d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                                stroke="black"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                        <path
-                                d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                                stroke="black"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                    <p>250</p>
-                </div>
-            </figcaption>
-        </figure>
-        <div class="group">
-            <div class="detail">
-                <h3>Web development</h3>
-                <caption>test</caption>
-            </div>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
-                vel? Incidunt a vero qui voluptate dolorem, temporibus iusto voluptatum modi excepturi
-                praesentium autem ut similique reprehenderit unde voluptatem saepe nemo, deleniti omnis
-                minus laboriosam laudantium nam.
-            </p>
-            <div class="side-container">
-                <a href="#" class="meerInformatie">Meer informatie</a>
-                <a href="#" class="enroll">Enroll</a>
-
-                <em>deadline:</em>
-            </div>
-        </div>
-    </article>
+    {/each}
 </section>
 
 <section class="boxed">
+    {#each topArticles as article}
     <article>
         <figure>
-            <img src="{art}" alt=""/>
-            <figcaption>
-                <div class="bookmark">
-                    <svg
-                            width="33"
-                            height="32"
-                            viewBox="0 0 33 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                                d="M28.1197 6.14666C27.4387 5.46533 26.6301 4.92485 25.7401 4.5561C24.8502 4.18735 23.8963 3.99756 22.933 3.99756C21.9697 3.99756 21.0158 4.18735 20.1259 4.5561C19.2359 4.92485 18.4273 5.46533 17.7463 6.14666L16.333 7.55999L14.9197 6.14666C13.5441 4.77107 11.6784 3.99827 9.733 3.99827C7.78763 3.99827 5.92193 4.77107 4.54634 6.14666C3.17075 7.52225 2.39795 9.38795 2.39795 11.3333C2.39795 13.2787 3.17075 15.1444 4.54634 16.52L5.95967 17.9333L16.333 28.3067L26.7063 17.9333L28.1197 16.52C28.801 15.839 29.3415 15.0304 29.7102 14.1405C30.079 13.2505 30.2688 12.2966 30.2688 11.3333C30.2688 10.37 30.079 9.41613 29.7102 8.52619C29.3415 7.63624 28.801 6.82767 28.1197 6.14666V6.14666Z"
-                                stroke="black"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                </div>
-                <div class="deelnemers">
-                    <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                                d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                                stroke="black"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                        <path
-                                d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                                stroke="black"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                    <p>250</p>
-                </div>
-            </figcaption>
+          <img src={article.art} alt=""/>
+          <figcaption>
+            <div class="bookmark">
+                <svg
+                        width="33"
+                        height="32"
+                        viewBox="0 0 33 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                            d="M28.1197 6.14666C27.4387 5.46533 26.6301 4.92485 25.7401 4.5561C24.8502 4.18735 23.8963 3.99756 22.933 3.99756C21.9697 3.99756 21.0158 4.18735 20.1259 4.5561C19.2359 4.92485 18.4273 5.46533 17.7463 6.14666L16.333 7.55999L14.9197 6.14666C13.5441 4.77107 11.6784 3.99827 9.733 3.99827C7.78763 3.99827 5.92193 4.77107 4.54634 6.14666C3.17075 7.52225 2.39795 9.38795 2.39795 11.3333C2.39795 13.2787 3.17075 15.1444 4.54634 16.52L5.95967 17.9333L16.333 28.3067L26.7063 17.9333L28.1197 16.52C28.801 15.839 29.3415 15.0304 29.7102 14.1405C30.079 13.2505 30.2688 12.2966 30.2688 11.3333C30.2688 10.37 30.079 9.41613 29.7102 8.52619C29.3415 7.63624 28.801 6.82767 28.1197 6.14666V6.14666Z"
+                            stroke="black"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                    />
+                </svg>
+            </div>
+            <div class="deelnemers">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+              <path
+              d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+      />
+      <path
+              d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+      />
+              </svg>
+              <p>{article.deelnemers}</p>
+            </div>
+          </figcaption>
         </figure>
         <div class="group">
-            <div class="detail">
-                <h3>Web development</h3>
-                <caption>test</caption>
-            </div>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
-                vel? Incidunt a vero qui voluptate dolorem, temporibus iusto voluptatum modi excepturi
-                praesentium autem ut similique reprehenderit unde voluptatem saepe nemo, deleniti omnis
-                minus laboriosam laudantium nam.
-            </p>
-            <div class="side-container">
-                <a href="#" class="meerInformatie">Meer informatie</a>
-                <a href="#" class="enroll">Enroll</a>
-
-                <em>deadline:</em>
-            </div>
+          <div class="detail">
+            <h3>{article.title}</h3>
+            <caption>{article.caption}</caption>
+          </div>
+          <p>
+            {article.description}
+          </p>
+          <div class="side-container">
+            <a href={article.meerInformatie} class="meerInformatie">Meer informatie</a>
+            <a href={article.enroll} class="enroll">Enroll</a>
+      
+            <em>deadline: {article.deadline}</em>
+          </div>
         </div>
-    </article>
-    <article>
-        <figure>
-            <img src="{art}" alt=""/>
-            <figcaption>
-                <div class="bookmark">
-                    <svg
-                            width="33"
-                            height="32"
-                            viewBox="0 0 33 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                                d="M28.1197 6.14666C27.4387 5.46533 26.6301 4.92485 25.7401 4.5561C24.8502 4.18735 23.8963 3.99756 22.933 3.99756C21.9697 3.99756 21.0158 4.18735 20.1259 4.5561C19.2359 4.92485 18.4273 5.46533 17.7463 6.14666L16.333 7.55999L14.9197 6.14666C13.5441 4.77107 11.6784 3.99827 9.733 3.99827C7.78763 3.99827 5.92193 4.77107 4.54634 6.14666C3.17075 7.52225 2.39795 9.38795 2.39795 11.3333C2.39795 13.2787 3.17075 15.1444 4.54634 16.52L5.95967 17.9333L16.333 28.3067L26.7063 17.9333L28.1197 16.52C28.801 15.839 29.3415 15.0304 29.7102 14.1405C30.079 13.2505 30.2688 12.2966 30.2688 11.3333C30.2688 10.37 30.079 9.41613 29.7102 8.52619C29.3415 7.63624 28.801 6.82767 28.1197 6.14666V6.14666Z"
-                                stroke="black"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                </div>
-                <div class="deelnemers">
-                    <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                                d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                                stroke="black"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                        <path
-                                d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                                stroke="black"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                    <p>250</p>
-                </div>
-            </figcaption>
-        </figure>
-        <div class="group">
-            <div class="detail">
-                <h3>Web development</h3>
-                <caption>test</caption>
-            </div>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
-                vel? Incidunt a vero qui voluptate dolorem, temporibus iusto voluptatum modi excepturi
-                praesentium autem ut similique reprehenderit unde voluptatem saepe nemo, deleniti omnis
-                minus laboriosam laudantium nam.
-            </p>
-            <div class="side-container">
-                <a href="#" class="meerInformatie">Meer informatie</a>
-                <a href="#" class="enroll">Enroll</a>
-
-                <em>deadline:</em>
-            </div>
-        </div>
-    </article>
-    <article>
-        <figure>
-            <img src="{beans}" alt=""/>
-            <figcaption>
-                <div class="bookmark">
-                    <svg
-                            width="33"
-                            height="32"
-                            viewBox="0 0 33 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                                d="M28.1197 6.14666C27.4387 5.46533 26.6301 4.92485 25.7401 4.5561C24.8502 4.18735 23.8963 3.99756 22.933 3.99756C21.9697 3.99756 21.0158 4.18735 20.1259 4.5561C19.2359 4.92485 18.4273 5.46533 17.7463 6.14666L16.333 7.55999L14.9197 6.14666C13.5441 4.77107 11.6784 3.99827 9.733 3.99827C7.78763 3.99827 5.92193 4.77107 4.54634 6.14666C3.17075 7.52225 2.39795 9.38795 2.39795 11.3333C2.39795 13.2787 3.17075 15.1444 4.54634 16.52L5.95967 17.9333L16.333 28.3067L26.7063 17.9333L28.1197 16.52C28.801 15.839 29.3415 15.0304 29.7102 14.1405C30.079 13.2505 30.2688 12.2966 30.2688 11.3333C30.2688 10.37 30.079 9.41613 29.7102 8.52619C29.3415 7.63624 28.801 6.82767 28.1197 6.14666V6.14666Z"
-                                stroke="black"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                </div>
-                <div class="deelnemers">
-                    <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                                d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-                                stroke="black"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                        <path
-                                d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-                                stroke="black"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                    <p>250</p>
-                </div>
-            </figcaption>
-        </figure>
-        <div class="group">
-            <div class="detail">
-                <h3>Web development</h3>
-                <caption>test</caption>
-            </div>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
-                vel? Incidunt a vero qui voluptate dolorem, temporibus iusto voluptatum modi excepturi
-                praesentium autem ut similique reprehenderit unde voluptatem saepe nemo, deleniti omnis
-                minus laboriosam laudantium nam.
-            </p>
-            <div class="side-container">
-                <a href="#" class="meerInformatie">Meer informatie</a>
-                <a href="#" class="enroll">Enroll</a>
-
-                <em>deadline:</em>
-            </div>
-        </div>
-    </article>
+      </article>
+      {/each}
 </section>
-
 
 <section class="boxed">
     <h2>My challenges</h2>
@@ -1122,8 +969,8 @@
     .featured-border:nth-child(2) > img:first-of-type  {
         width: 100%;
         height: 100%;
-        /object-fit: cover;
-        /object-position: 50% 50%;
+        object-fit: cover;
+        object-position: 50% 50%;
         transition: transform 0.5s ease;
     }
 
