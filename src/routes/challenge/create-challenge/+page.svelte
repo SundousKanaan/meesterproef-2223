@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Stapone from './components/Stapone.svelte';
 	import Staptwo from './components/Staptwo.svelte';
-	import Timeline from '$lib/Timeline.svelte';
+    import Stapthree from './components/Stapthree.svelte';
 	import Buttons from '$lib/Buttons.svelte';
 </script>
 
@@ -20,7 +20,7 @@
 
     <div>
         3
-        
+        <Stapthree />
     </div>
 </section>
 

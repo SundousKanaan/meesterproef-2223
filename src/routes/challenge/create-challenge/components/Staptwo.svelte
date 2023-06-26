@@ -35,7 +35,7 @@
 	}
 
 	div {
-		margin: 1em;
+		margin: 2em 1em;
 
 		display: flex;
 		flex-direction: column;

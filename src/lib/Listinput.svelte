@@ -58,7 +58,7 @@
 	<ul class="item-list">
 		{#each itemList as item, i}
 			<li class="item">
-				<p>{item}</p>
+				<p>🗸 {item}</p>
 				<button class="remove-button" on:click={() => removeItem(i)}> X </button>
 			</li>
 		{/each}
