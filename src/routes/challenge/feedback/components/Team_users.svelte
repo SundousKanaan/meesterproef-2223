@@ -1,9 +1,9 @@
 <script lang="ts">
-	export const firstName: string = 'Sundous';
-	export const lastName: string = 'Kanaan';
-	export const location: string = 'Japan';
-	export const userImage: string = '/fire-emoji.svg';
-	export const education: string = 'CMD';
+	export let firstName: string = 'Sundous';
+	export let lastName: string = 'Kanaan';
+	export let location: string = 'Japan';
+	export let userImage: string = '/fire-emoji.svg';
+	export let education: string = 'CMD';
 
 	interface Rol {
 		id: number;
