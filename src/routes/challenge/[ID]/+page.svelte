@@ -13,7 +13,7 @@
 	const challenge: Challenge = {
 		id: '1',
 		title: 'How to create an immersive experience for Retail?',
-		description: 'Description 1',
+		description: 'In this exciting event, we invite innovators, designers, and retail enthusiasts to showcase their creative ideas on transforming the traditional retail landscape into an immersive and unforgettable journey for customers. Participants will be tasked with leveraging cutting-edge technologies, such as augmented reality, virtual reality, interactive displays, and personalized experiences, to craft an engaging retail environment that captivates and delights shoppers.',
 		image: '/Hero.jpg',
 		start_date: '2023-06-02',
 		end_date: '2023-08-05',
@@ -226,12 +226,16 @@
 	];
 </script>
 
-	<div class="wrapper">
-		<div class="tyfus">
-			<img src={challenge.image} alt="hero or something" />
-		</div>
+<div class="wrapper">
+	<div class="tyfus">
+		<img src={challenge.image} alt="hero or something" />
+	</div>
 
-		<div class="bovenste-stukje">
+	<div class="bovenste-stukje">
+		<div class="challenge-information">
+			<span class="the-wtf-can-i-do-here-label"
+				>Dit is er tot dusver gebeurd met jouw challenge:</span
+			>
 			<h1>{challenge.title}</h1>
 			<div class="timeline-wrapper">
 				<h2>Project Timeline</h2>
@@ -261,7 +265,6 @@
 					spaceRelativeToTime={true}
 				/>
 			</div>
-			<p>{challenge.description}</p>
 			<Buttons variant="primary" size="small" hasIcon
 				>View Challenge <Icon icon="eye" size={IconSize.SMALL} /></Buttons
 			>
@@ -269,7 +272,7 @@
 				>Edit <Icon icon="edit" size={IconSize.SMALL} /></Buttons
 			>
 		</div>
-		<div>
+		<div class="challenge-diagrams">
 			<EntriesPie />
 		</div>
 	</div>
@@ -283,26 +286,28 @@
 	<div class="participants-wrapper">
 		<ParticipantTable {participants} />
 	</div>
+</div>
 
 <style>
 	* {
 		max-width: 100vw;
 	}
 
+	.the-wtf-can-i-do-here-label {
+		color: var(--primary-800);
+		margin-bottom: 2px;
+	}
+
 	.tyfus {
 		grid-column: 1/3;
-		margin-bottom: 48px;
 	}
-	
+
 	.wrapper {
 		display: grid;
 		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr;
 		padding: 0 2rem 3rem 2rem;
 		/* background-color: #d6d6d6; */
-	}
-
-	.bovenste-stukje {
 	}
 
 	img {
@@ -312,34 +317,53 @@
 		object-position: center;
 	}
 
-	.timeline-wrapper {
-		width: 90%;
-		margin-right: auto;
-		margin-left: 0.5rem;
-		margin-top: 2rem;
+	.bovenste-stukje {
+		grid-column: 1/3;
+		background-color: var(--neutral-200);
+		padding: 48px 0;
+		display: flex;
+	}
+
+	.bovenste-stukje h1 {
+		font-weight: 100;
+		margin-bottom: 16px;
+	}
+
+	.bovenste-stukje .challenge-information {
+		width: 50%;
+		padding: 0 2rem;
+	}
+
+	.bovenste-stukje .challenge-diagrams {
+		width: 50%;
+	}
+
+	.wrapper > *:not(.bovenste-stukje) {
+		grid-column: 1/3;
+	}
+
+	.wrapper > *:not(.tyfus):not(.bovenste-stukje) {
+		margin-top: 64px;
 	}
 
 	.timeline-wrapper > h2 {
-		margin-left: -0.5rem; /* I am sorry */
+		margin-left: -0.5rem; 
 		margin-bottom: 0.75rem;
 	}
 
 	.review-buttons-wrappertje {
-		padding: 2rem 2rem;
 		display: grid;
 		grid-template-rows: 1fr 1fr 1fr;
 		gap: 1rem;
 	}
 
 	.participants-wrapper {
-		margin: 0rem 2rem;
 		overflow-x: scroll;
 		overscroll-behavior-x: contain;
 	}
 
 	@media only screen and (min-width: 624px) {
 		.review-buttons-wrappertje {
-			padding: 2rem 4rem;
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
 			grid-template-rows: 1fr;
@@ -350,14 +374,6 @@
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: 1fr;
 			margin: 0rem 4rem;
-		}
-
-		.review-buttons-wrappertje {
-			padding: 2rem 4rem;
-		}
-
-		.participants-wrapper {
-			padding: 3rem 4rem;
 		}
 	}
 </style>
