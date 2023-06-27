@@ -1,29 +1,26 @@
 <script lang="ts">
-	import TeamUsers from './components/TeamUsers.svelte';
-	import Feedback from './components/Feedback-form.svelte';
-	import Usercard from './components/Usercard.svelte';
+	import TeamUsers from '../feedback/components/TeamUsers.svelte';
+	import Usercard from '../feedback/components/Usercard.svelte';
 	import Buttons from '$lib/Buttons.svelte';
-	import type { PageData } from './$types';
-	import type { SvelteComponent } from 'svelte';
-	import FeedbackTinder from './components/FeedbackTinder.svelte';
-	import Winners from '../medals/components/Winners.svelte';
+	import Winners from './components/Winners.svelte';
 
-	export let data: PageData;
+	function scroll() {
+		window.scrollTo(0, 0);
+	}
 </script>
 
 <section>
-	<div class="titel">
+	<div class="titel" id="top">
 		<h2>Entry project</h2>
 		<p>Extensive review</p>
 	</div>
 
 	<div class="previous">
-		<Buttons variant="left" />
-	</div>
-
-	<div class="next">
-		<Buttons variant="right" />
-	</div>
+        <Buttons variant="left"/>
+        </div>
+        <div class="next">	
+        <Buttons variant="right"/>
+        </div>
 
 	<div class="container">
 		<div class="datacontainer">
@@ -31,14 +28,8 @@
 				<Usercard />
 			</div>
 
-			<div class="speedfeedback">
-				{#if data.feedbackType == 'speed'}
-					<FeedbackTinder />
-				{:else if data.feedbackType == 'acc'}
-					<Feedback />
-				{:else if data.feedbackType == 'medals'}
-					<Winners/>
-				{/if}
+			<div class="medales">
+				<Winners />
 			</div>
 
 			<div class="members">
@@ -50,8 +41,9 @@
 		</div>
 
 		<div class="werkreview">
-			<iframe src="/challenge/feedback?feedback=medals" title="feedback" frameborder="0"></iframe>
+			<iframe src="challenge/feedback" title="portfolio" frameborder="0" />
 		</div>
+
 	</div>
 </section>
 
@@ -113,10 +105,6 @@
 		flex-direction: column;
 	}
 
-	.speedfeedback{
-		height: fit-content;
-	}
-
 	.container {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -129,18 +117,18 @@
 		gap: 1em;
 	}
 
-	/* .werkreview {
+	.werkreview {
 		border: solid 0.1em black;
-	} */
+	}
 
 	@media (min-width: 1200px) {
 		section {
 			width: 100%;
 			grid-template-columns: 6em 30em 1fr 6em;
 			grid-template-rows: 6em auto;
+
 			padding: 0;
 		}
-
 		.titel {
 			grid-area: 1/2/2/-2;
 			text-align: unset;
@@ -165,8 +153,8 @@
 			gap: 1em;
 		}
 
-		/* .werkreview {
+		.werkreview {
 			border: solid 0.1em black;
-		} */
+		}
 	}
 </style>
