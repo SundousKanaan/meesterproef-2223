@@ -6,7 +6,7 @@
         {
             imgSrc: 'https://images.pexels.com/photos/13730872/pexels-photo-13730872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             peopleCount: 25,
-            title: 'Web development',
+            title: 'Web developasdasdment',
             description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
             timeline: 'May 1, 2023 - June 30, 2023',
             organization: 'UAUS'
@@ -56,9 +56,9 @@
 </script>
 
 <section>
-    <h1>Your {route.params.section} challenges</h1>
-    <p>View and update the {route.params.section} challenges you signed up for</p>
-    {#each challenges as challenge (challenge.title)}
+    <h1>Your finished challenges</h1>
+    <p>View and update the finsihed challenges you signed up for</p>
+    {#each challenges as challenge}
         <Article
                 imgSrc={challenge.imgSrc}
                 peopleCount={challenge.peopleCount}

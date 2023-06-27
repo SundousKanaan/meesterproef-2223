@@ -6,7 +6,7 @@
         {
             imgSrc: 'https://images.pexels.com/photos/13730872/pexels-photo-13730872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             peopleCount: 25,
-            title: 'Web development',
+            title: 'Web devel123123opment',
             description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
             timeline: 'May 1, 2023 - June 30, 2023',
             organization: 'UAUS'
@@ -46,7 +46,7 @@
         {
             imgSrc: 'https://images.pexels.com/photos/1181356/pexels-photo-1181356.jpeg',
             peopleCount: 20,
-            title: 'Data Science',
+            title: 'Data Scie12nce',
             description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
             timeline: 'July 1, 2023 - August 31, 2023',
             organization: 'DataInc'

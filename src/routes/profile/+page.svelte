@@ -4,17 +4,27 @@
 
 <script>
 
-    import { Route } from '$app/route';
-    import Active from '$lib/Active.svelte';
-    import Finished from '$lib/Finished.svelte';
-    import SignedUp from '$lib/SignedUp.svelte';
-    import { goto } from '$app/navigation';
+    import { onMount } from 'svelte';
+    import Article from "$lib/Article.svelte";
+    import { writable } from 'svelte/store';
+    import Finished from "$lib/Finished.svelte";
+    import SignedUp from "$lib/SignedUp.svelte";
+    import Active from "$lib/Active.svelte"
 
-    function navigateTo(route) {
-        goto(route);
+    let visible = 'active';
+
+    function setActive() {
+        visible = 'active';
     }
 
-    import Article from '$lib/Article.svelte';
+    function setFinished() {
+        visible = 'finished';
+    }
+
+    function setSignedUp() {
+        visible = 'signedup';
+    }
+
     let challenges = [
         {
             imgSrc: 'https://images.pexels.com/photos/13730872/pexels-photo-13730872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -71,73 +81,70 @@
 
 <main>
 
-    <Route path="/profile/active" component={Active} />
-    <Route path="/profile/finished" component={Finished} />
-    <Route path="/profile/signed-up" component={SignedUp} />
 
-    <div>
-        <button on:click={() => navigateTo('/profile/active')}>Active challenges</button>
-        <button on:click={() => navigateTo('/profile/finished')}>Finished challenges</button>
-        <button on:click={() => navigateTo('/profile/signed-up')}>Signed up</button>
-    </div>
-
-
-
-    <section style="display:block;">
+    <section>
         <h1>Your challenges</h1>
         <p>View and update the current challenges you signed up for</p>
         <div>
-            <button id="active-button" class="active">
+            <button on:click={setActive} id="active-button" class="active">
                 Active challenges
             </button>
-            <button id="finished-button">
+            <button on:click={setFinished} id="finished-button">
                 Finished challenges
             </button>
-            <button id="signed-up-button">
+            <button on:click={setSignedUp} id="signed-up-button">
                 Signed up
             </button>
         </div>
-        {#each challenges as challenge (challenge.title)}
-            <Article
-                    imgSrc={challenge.imgSrc}
-                    peopleCount={challenge.peopleCount}
-                    title={challenge.title}
-                    description={challenge.description}
-                    timeline={challenge.timeline}
-                    organization={challenge.organization}
-            />
-        {/each}
+        {#if visible === 'active'}
+            <section>
+                <h1>Your Active challenges</h1>
+                <p>View and update the active challenges you signed up for</p>
+                {#each challenges as challenge}
+                    <Article
+                            imgSrc={challenge.imgSrc}
+                            peopleCount={challenge.peopleCount}
+                            title={challenge.title}
+                            description={challenge.description}
+                            timeline={challenge.timeline}
+                            organization={challenge.organization}
+                    />
+                {/each}
+            </section>
+        {:else if visible === 'finished'}
+            <section>
+                <h1>Your Finished challenges</h1>
+                <p>View and update the finished challenges you signed up for</p>
+                {#each challenges as challenge }
+                    <Finished
+                            imgSrc={challenge.imgSrc}
+                            peopleCount={challenge.peopleCount}
+                            title={challenge.title}
+                            description={challenge.description}
+                            timeline={challenge.timeline}
+                            organization={challenge.organization}
+                    />
+                {/each}
+            </section>
+        {:else if visible === 'signedup'}
+            <section>
+                <h1>Your Signed Up challenges</h1>
+                <p>View and update the challenges you have signed up for</p>
+                {#each challenges as challenge }
+                    <SignedUp
+                            imgSrc={challenge.imgSrc}
+                            peopleCount={challenge.peopleCount}
+                            title={challenge.title}
+                            description={challenge.description}
+                            timeline={challenge.timeline}
+                            organization={challenge.organization}
+                    />
+                {/each}
+            </section>
+        {/if}
     </section>
 
-    <section style="display:none;">
-        <h1>Your finished challenges</h1>
-        <p>View and update the finished challenges you signed up for back in the day</p>
-        {#each challenges as challenge (challenge.title)}
-            <Article
-                    imgSrc={challenge.imgSrc}
-                    peopleCount={challenge.peopleCount}
-                    title={challenge.title}
-                    description={challenge.description}
-                    timeline={challenge.timeline}
-                    organization={challenge.organization}
-            />
-        {/each}
-    </section>
 
-    <section  style="display:none;">
-        <h1>Your challenges</h1>
-        <p>View and update the current challenges you signed up for</p>
-        {#each challenges as challenge (challenge.title)}
-            <Article
-                    imgSrc={challenge.imgSrc}
-                    peopleCount={challenge.peopleCount}
-                    title={challenge.title}
-                    description={challenge.description}
-                    timeline={challenge.timeline}
-                    organization={challenge.organization}
-            />
-        {/each}
-    </section>
     <aside>
         <div>
             <img src="" alt="">
