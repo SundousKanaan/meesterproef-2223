@@ -37,7 +37,7 @@
 				{:else if data.feedbackType == 'acc'}
 					<Feedback />
 				{:else if data.feedbackType == 'medals'}
-					<Winners/>
+					<Winners />
 				{/if}
 			</div>
 
@@ -50,17 +50,12 @@
 		</div>
 
 		<div class="werkreview">
-			<iframe src="/challenge/feedback?feedback=medals" title="feedback" frameborder="0"></iframe>
+			<iframe src="/challenge/feedback?feedback=medals" title="feedback" frameborder="0" />
 		</div>
 	</div>
 </section>
 
 <style>
-	iframe{
-		width: 100%;
-		height: 100%;
-	}
-
 	section {
 		justify-self: center;
 		width: 90%;
@@ -101,7 +96,7 @@
 	.members {
 		padding: 1em;
 		border: solid 0.5px black;
-		border-radius: 0.5em;
+		/* border-radius: 0.5em; */
 	}
 
 	.members h3 {
@@ -113,7 +108,7 @@
 		flex-direction: column;
 	}
 
-	.speedfeedback{
+	.speedfeedback {
 		height: fit-content;
 	}
 
@@ -129,9 +124,14 @@
 		gap: 1em;
 	}
 
-	/* .werkreview {
-		border: solid 0.1em black;
-	} */
+	.werkreview {
+		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	iframe {
+		width: 100%;
+		height: 50em;
+	}
 
 	@media (min-width: 1200px) {
 		section {
@@ -149,11 +149,13 @@
 		.previous {
 			grid-area: 2/1/3/2;
 			position: fixed;
+			top: 12%;
 		}
 
 		.next {
 			grid-area: 2/4/3/-1;
 			position: fixed;
+			top: 12%;
 		}
 
 		.container {
@@ -164,9 +166,8 @@
 			grid-template-columns: 30em 1fr;
 			gap: 1em;
 		}
-
-		/* .werkreview {
-			border: solid 0.1em black;
-		} */
+		iframe {
+			height: 100%;
+		}
 	}
 </style>

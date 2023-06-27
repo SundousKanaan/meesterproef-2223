@@ -20,7 +20,7 @@
 
 	let rolls: Rol[] = [
 		{ id: 1, rol: ['film', 'frontender'] },
-		{ id: 2, rol: ['UX/UI', 'frontender', 'designer' ] }
+		{ id: 2, rol: ['UX/UI', 'frontender', 'designer'] }
 	];
 	let slider_concept: string;
 	let slider_proces: string;
@@ -130,9 +130,9 @@
 	.usercard {
 		width: 100%;
 		height: 100%;
-		border-radius: 2px;
-		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+		/* border-radius: 2px; */
+		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.1);
+
 		padding: 1em;
 		/* margin: 0 0 2em 0; */
 		background-color: #bae4e8;
@@ -142,13 +142,13 @@
 		color: black;
 	}
 
-	.usercard > span:first-of-type{
+	.usercard > span:first-of-type {
 		width: 100%;
 		display: flex;
 		align-items: center;
 	}
 
-	.usercard > span:first-of-type div  {
+	.usercard > span:first-of-type div {
 		--size: 6em;
 		width: var(--size);
 		height: var(--size);
@@ -175,14 +175,14 @@
 		position: relative;
 	}
 
-	.location-icon{
+	.location-icon {
 		display: flex;
 		align-items: end;
 		justify-content: space-between;
 		margin-bottom: 1em;
 	}
 
-	.location-icon p:nth-of-type(2){
+	.location-icon p:nth-of-type(2) {
 		text-align: end;
 	}
 
@@ -191,7 +191,7 @@
 		/* display: block; */
 		width: 1.5em;
 		height: 1.5em;
-		margin-right: .5em;
+		margin-right: 0.5em;
 		position: relative;
 		/* top: calc(50% - 1.5em / 2); */
 		/* left: -1.5em; */
