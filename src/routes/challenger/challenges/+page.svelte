@@ -131,7 +131,7 @@
 	</div>
 	
 	<div class="bar-boven-de-tabel-die-de-zoekbalk-bevat-enzo">
-		<h2>Challenges</h2>
+		<h2 class="the-wtf-can-i-do-here-label">Bekijk hier jouw challenges en bekijk hun details</h2>
 
 		<div>			
 			<select
@@ -174,6 +174,12 @@
 </main>
 
 <style>
+
+	.the-wtf-can-i-do-here-label {
+		color: var(--primary-800);
+		margin-bottom: 2px;
+	}
+
 	main {
 		width: 100vw;
 		padding: 1rem calc(calc(91 / 16) * 1rem);
@@ -206,7 +212,7 @@
 	}
 
 	.breadcrumb {
-		color: var(--primary-900);
+		color: var(--neutral-700);
 	}
 
 	.breadcrumb:not(:last-of-type):after {
@@ -270,6 +276,17 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
 		grid-gap: 32px;
+	}
+
+	.mobile-cards-section a {
+		color: inherit;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.mobile-cards-section a:hover {
+		text-decoration: none;
+		transform: scale(1.025);
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	}
 
 	/* tablet size */
