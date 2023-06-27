@@ -1,15 +1,16 @@
 <script lang="ts">
 	import Buttons from "$lib/Buttons.svelte";
-	export let type: 'speed' | 'extensive' | 'medals' = 'speed';
-
-	export let title: string = 'Speed Review';
-	export let description: string = "Be critical. We advice you to let a maximum of 20 designs pass.";
+	export let title: string = "";
+	export let size: string = "normal";
+	export let padding: string = "normal";
 </script>
 
-<article>
+<article class="size-{size} padding-{padding}">
+	{#if title}
 	<h2 class="title">
 		{title}
 	</h2>
+	{/if}
 	<slot />
 </article>
 
@@ -20,17 +21,29 @@
 		background-color: white;
 		padding: 3rem;
 
-		display: grid;
-		grid-template-rows: 4rem 1fr 1fr;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.padding-tiny {
+		padding: 30px;
+	}
+
+	.size-normal {
+		width: 100%;
+	}
+
+	.size-full {
+		width: 100%;
+		height: 100%;
+	}
+
+	.title {
+		margin-bottom: 24px;
 	}
 
 	h2 {
 		font-size: 1.1rem;
-	}
-
-	button {
-		margin-top: 1rem;
-		min-height: 4rem;
 	}
 
 	@media only screen and (max-width: 1000px) {
