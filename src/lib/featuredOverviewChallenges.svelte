@@ -6,7 +6,7 @@
     import kubus from '$lib/assets/kubus.png'
     import shoe from '$lib/assets/shoe.webp'
     import AllChallenges from "$lib/allChallenges.svelte";
-
+    import SubmittedChallenges from "$lib/submittedChallenges.svelte"
 </script>
 <div class="grouping">
 <section class="boxed">
@@ -970,6 +970,7 @@
 </section>
 </div>
 <AllChallenges/>
+<!--<SubmittedChallenges/>-->
 
 <style>
     em {
