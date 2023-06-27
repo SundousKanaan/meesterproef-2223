@@ -31,8 +31,6 @@
 
 </section>
 
-<!-- style:display = "none" -->
-
 <style>
 	section {
 		width: 90%;
