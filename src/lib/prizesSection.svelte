@@ -178,7 +178,7 @@
     .prizes div ul li:nth-of-type(3) div img {
         width: 50%;
     }
-
+    
     @media (max-width: 60em) { 
         .prizes {
             width: 100%;
@@ -188,12 +188,6 @@
         .prizes div {
             flex-direction: column;
             flex-wrap: wrap;
-        }
-
-        .prizes div > .projectImage {
-            margin: 0 auto;
-            margin-top: 1em;
-            width: 90%;
         }
 
         .prizes div ul li:not(:first-of-type) {

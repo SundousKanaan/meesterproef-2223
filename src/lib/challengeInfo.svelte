@@ -21,7 +21,7 @@
                 {item.charAt(0).toUpperCase() + item.slice(1)} challenge
               </li>
             {/each}
-          </ul>
+        </ul>
 
         {#if activeItem === 'detail'}
           <h2>About the Immersive Retail Experience Challenge</h2>
@@ -34,10 +34,11 @@
             As you’ve maybe read already you know that you need to know a thing or two about basic UX design and some basic skills. In the overview below we got a small overview of the skills you’ll need before you enter this challenge.
           </p>
         {:else if activeItem === 'resources'}
-          <h2>Challenge Resources</h2>
+          <h2>Resources</h2>
           <p>
             Download the files below for the project.
           </p>
+        <a href="/files/design-files.zip" download>Download the zip file</a>
         {/if}
     </article>
     <aside>
@@ -112,6 +113,7 @@
 
     .challenge-info article:first-of-type p {
         margin-top: .5em;
+        margin-bottom: .5em;
         width: 90%;
     }
 
@@ -129,6 +131,11 @@
         flex-wrap: wrap;
         margin-top: .4em;
         max-width: 25em;
+    }
+
+    .challenge-info article a {
+        display: block;
+        margin-top: .5em;
     }
 
     .challenge-info article:last-of-type ul li {
@@ -198,18 +205,30 @@
         background-repeat: no-repeat;
     }
 
-    @media (max-width: 60em) { 
-        .challenge-info {
-            margin: 0;
-            flex-direction: row;
-            padding-top: 1em;
-            width: 100%;
+    @media (max-width: 45em) { 
+        .challenge-info aside {
+           justify-content: flex-start;
         }
 
         .challenge-info article:first-of-type,
         .challenge-info article:last-of-type {
             width: unset;
             flex: 100%;
+        }
+    }
+
+    @media (max-width: 60em) { 
+        .challenge-info {
+            margin: 0;
+            flex-direction: row;
+            padding-top: 1em;
+            width: 100%;
+            padding: 1em;
+        }
+
+        .challenge-info article:first-of-type,
+        .challenge-info article:last-of-type {
+            flex: 40%;
         }
 
         .challenge-info article:first-of-type > ul {
@@ -226,23 +245,16 @@
         }
 
         .challenge-info aside {
-            justify-content: flex-start;
-            width: unset;
-            flex: 50%;
             margin: 1em;
         }
 
-        .challenge-info article:first-of-type h2 {
-            width: 14em;
-        }
-
         .challenge-info article:first-of-type p {
-            width: 23em;
+            width: 90%;
         }
 
-        
         .challenge-info article:first-of-type p,
-        .challenge-info article:last-of-type p {
+        .challenge-info article:last-of-type p,
+        .challenge-info article a {
             margin-left: .7em;
         }
 

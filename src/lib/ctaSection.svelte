@@ -51,7 +51,8 @@
     }
 
     .cta:hover {
-        background-color: var(--hover);
+        filter: saturate(1.5);
+        cursor: pointer;
     }
 
     @media (max-width: 60em) { 

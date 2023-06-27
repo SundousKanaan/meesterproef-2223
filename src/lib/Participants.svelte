@@ -155,6 +155,7 @@
         flex-direction: column;
         justify-content: center;
         margin-left: .5em;
+        padding-right: 1em;
     }
 
     .participantData .participant-block .user-block .wrapper span {
