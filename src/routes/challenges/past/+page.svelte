@@ -4,16 +4,16 @@
 	export let data: PageData;
 
 	import HeroPast from '$lib/heroPast.svelte';
-	// import PastChallenges from '$lib/pastChallenges.svelte';
-	// import WinnerScoreboard from '$lib/winnerScoreboard.svelte';
-	// import SubmittedChallenges from '$lib/submittedChallenges.svelte';
+	import PastChallenges from '$lib/pastChallenges.svelte';
+	import WinnerScoreboard from '$lib/winnerScoreboard.svelte';
+	import SubmittedChallenges from '$lib/submittedChallenges.svelte';
 </script>
 
 <main>
 	<HeroPast />
-	<!-- <WinnerScoreboard />
+	<WinnerScoreboard />
 	<PastChallenges />
-	<SubmittedChallenges /> -->
+	<SubmittedChallenges />
 </main>
 
 <style>

@@ -47,7 +47,7 @@
 		flex-wrap: wrap;
 		width: 100%;
 		margin-bottom: 2em;
-		background-image: url('/first.png');
+		background-image: url('/heroPast.png');
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
