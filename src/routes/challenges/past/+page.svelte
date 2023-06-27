@@ -6,7 +6,7 @@
 	import HeroPast from '$lib/heroPast.svelte';
 	import PastChallenges from '$lib/pastChallenges.svelte';
 	import WinnerScoreboard from '$lib/winnerScoreboard.svelte';
-	import SubmittedChallenges from '$lib/submittedChallenges.svelte';
+
 	import FeaturedWork from '$lib/featuredWork.svelte';
 </script>
 
@@ -14,7 +14,7 @@
 	<HeroPast />
 	<WinnerScoreboard />
 	<PastChallenges />
-	<SubmittedChallenges />
+
 	<FeaturedWork />
 </main>
 
