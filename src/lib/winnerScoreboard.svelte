@@ -14,34 +14,33 @@
 				<div class="prijsDetail">
 					<div class="prijsIcoon">
 						<svg
-							width="25"
-							height="25"
-							viewBox="0 0 25 25"
+							width="115"
+							height="84"
+							viewBox="0 0 115 84"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
 						>
-							<g clip-path="url(#clip0_1411_12962)">
-								<path
-									d="M12.5 15.5C16.366 15.5 19.5 12.366 19.5 8.5C19.5 4.63401 16.366 1.5 12.5 1.5C8.63401 1.5 5.5 4.63401 5.5 8.5C5.5 12.366 8.63401 15.5 12.5 15.5Z"
-									stroke="#3A3C43"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M8.71 14.39L7.5 23.5L12.5 20.5L17.5 23.5L16.29 14.38"
-									stroke="#3A3C43"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</g>
-							<defs>
-								<clipPath id="clip0_1411_12962">
-									<rect width="24" height="24" fill="white" transform="translate(0.5 0.5)" />
-								</clipPath>
-							</defs>
-						</svg>
+							<g filter="url(#filter0_d_1411_12961)">
+								<rect width="99" height="67" transform="translate(8 8)" fill="url(#pattern0)" />
+								<g clip-path="url(#clip0_1411_12961)">
+									<path
+										d="M57.5 44.5C61.366 44.5 64.5 41.366 64.5 37.5C64.5 33.634 61.366 30.5 57.5 30.5C53.634 30.5 50.5 33.634 50.5 37.5C50.5 41.366 53.634 44.5 57.5 44.5Z"
+										stroke="#3A3C43"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+									<path
+										d="M53.71 43.39L52.5 52.5L57.5 49.5L62.5 52.5L61.29 43.38"
+										stroke="#3A3C43"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</g></g
+							></svg
+						>
 					</div>
 					<div>
 						<p class="prijsNummer">Third place</p>
@@ -55,26 +54,30 @@
 				<div class="prijsDetail">
 					<div class="prijsIcoon">
 						<svg
-							width="65"
-							height="65"
-							viewBox="0 0 65 65"
+							width="116"
+							height="108"
+							viewBox="0 0 116 108"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
 						>
-							<path
-								d="M32.5002 40.5C42.8095 40.5 51.1668 32.1426 51.1668 21.8333C51.1668 11.524 42.8095 3.16663 32.5002 3.16663C22.1908 3.16663 13.8335 11.524 13.8335 21.8333C13.8335 32.1426 22.1908 40.5 32.5002 40.5Z"
-								stroke="#3A3C43"
-								stroke-width="3"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-							<path
-								d="M22.3932 37.54L19.1665 61.8333L32.4998 53.8333L45.8332 61.8333L42.6065 37.5133"
-								stroke="#3A3C43"
-								stroke-width="3"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
+							<g filter="url(#filter0_d_1411_12952)">
+								<rect width="99" height="99" transform="translate(8.5)" fill="url(#pattern0)" />
+								<path
+									d="M58.0002 57.5C68.3095 57.5 76.6668 49.1426 76.6668 38.8333C76.6668 28.524 68.3095 20.1666 58.0002 20.1666C47.6908 20.1666 39.3335 28.524 39.3335 38.8333C39.3335 49.1426 47.6908 57.5 58.0002 57.5Z"
+									stroke="#3A3C43"
+									stroke-width="3"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M47.8932 54.54L44.6665 78.8333L57.9998 70.8333L71.3332 78.8333L68.1065 54.5133"
+									stroke="#3A3C43"
+									stroke-width="3"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</g>
 						</svg>
 					</div>
 					<div>
@@ -90,26 +93,30 @@
 				<div class="prijsDetail">
 					<div class="prijsIcoon">
 						<svg
-							width="33"
-							height="32"
-							viewBox="0 0 33 32"
+							width="117"
+							height="97"
+							viewBox="0 0 117 97"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
 						>
-							<path
-								d="M16.4998 20C21.6545 20 25.8332 15.8213 25.8332 10.6666C25.8332 5.51199 21.6545 1.33331 16.4998 1.33331C11.3452 1.33331 7.1665 5.51199 7.1665 10.6666C7.1665 15.8213 11.3452 20 16.4998 20Z"
-								stroke="#3A3C43"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-							<path
-								d="M11.4468 18.52L9.8335 30.6667L16.5002 26.6667L23.1668 30.6667L21.5535 18.5067"
-								stroke="#3A3C43"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
+							<g filter="url(#filter0_d_1411_12943)">
+								<rect width="101" height="80" transform="translate(8 8)" fill="url(#pattern0)" />
+								<path
+									d="M58.4998 52C63.6545 52 67.8332 47.8213 67.8332 42.6666C67.8332 37.512 63.6545 33.3333 58.4998 33.3333C53.3452 33.3333 49.1665 37.512 49.1665 42.6666C49.1665 47.8213 53.3452 52 58.4998 52Z"
+									stroke="#3A3C43"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M53.4468 50.52L51.8335 62.6667L58.5002 58.6667L65.1668 62.6667L63.5535 50.5067"
+									stroke="#3A3C43"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</g>
 						</svg>
 					</div>
 					<div>
