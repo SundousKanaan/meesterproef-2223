@@ -323,6 +323,16 @@ button:hover{
     opacity: 1!important;
 }
 
+section > section{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5em;
+}
+
+section > section h1, section > section p{
+    width:100%;
+}
+
 @media (max-width:792px){
     aside{
         flex:1 1 100%!important;

@@ -31,6 +31,7 @@
         <p>{timeline}</p>
         <div>
             <button>Add your journey</button>
+            <span>or</span>
             <button>Miss your chance of winning</button>
         </div>
         <h3>{organization}</h3>
@@ -47,7 +48,6 @@
         position: relative;
         box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        max-height: 30em;
 }
 
 article:after{
@@ -73,7 +73,16 @@ article > div{
     display:flex;
     flex-direction:column;
     gap:.5em;
+    height:100%;
+}
 
+margin > div p:last-of-type{
+    margin-top:auto;
+}
+
+article div div{
+    flex-direction:column;
+    margin-top:auto;
 }
 article figure{
     height:12em;
@@ -137,7 +146,7 @@ div > div button{
     padding:0 1em;
     border:none;
     background:yellow;
-    flex:1 1 10em;
+    width:100%;
 }
 div > div button:last-of-type{
     background:transparent;
@@ -166,21 +175,21 @@ div > div button:last-of-type:hover::after{
 
 div div span{
     position:relative;
+    width:100%;
+    text-align: center;
 }
-div div span::before, div div span::after{
-    position:absolute;
-    height:40%;
-    width:.1em;
-    top:0;
-    left:.25em;
-    content:"|";
-}
-div div span::before{
-    top:-1em;
-}
-div div span::after{
-    top:1em;
-}
+/*div div span::before, div div span::after{*/
+/*    position:absolute;*/
+/*    height:40%;*/
+/*    width:.1em;*/
+/*    top:0;*/
+/*    left:.25em;*/
+/*    content:"|";*/
+/*}*/
+/*div div span::before{*/
+/*    top:-1em;*/
+/*}*/
+
 h3{
     position:absolute;
     top:1em;
