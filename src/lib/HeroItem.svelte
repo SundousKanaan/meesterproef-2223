@@ -120,11 +120,21 @@ section.heroItem div a{
     font-size:.8em;
     width:max-content;
     margin-top:.5em;
+    width:auto;
 }
 h3{
     background:black;
     padding: 1em 2em;
     text-align: left;
     max-width:15em;
+}
+
+@media (max-width:800px){
+    section.heroItem div{
+        width:90vw;
+    }
+    section.heroItem > button{
+        bottom:0;
+    }
 }
   </style>
