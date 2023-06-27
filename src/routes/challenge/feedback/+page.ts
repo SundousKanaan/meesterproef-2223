@@ -13,9 +13,9 @@ export const load = (async ({ url }) => {
 			return {
 				feedbackType: 'acc'
 			}
-		case 'medal':
+		case 'medals':
 			return {
-				feedbackType: 'medal'
+				feedbackType: 'medals'
 			}
 		default:
 			return {

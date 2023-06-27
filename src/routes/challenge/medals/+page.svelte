@@ -1,13 +1,12 @@
 <script lang="ts">
-	import Team_users from '../feedback/components/Team_users.svelte';
+	import TeamUsers from '../feedback/components/TeamUsers.svelte';
 	import Usercard from '../feedback/components/Usercard.svelte';
-	import Buttons from "$lib/Buttons.svelte";
-	import Firstplace from './components/Firstplace.svelte';
+	import Buttons from '$lib/Buttons.svelte';
+	import Winners from './components/Winners.svelte';
 
-function scroll(){
-    window.scrollTo(0,0);
-}
-
+	function scroll() {
+		window.scrollTo(0, 0);
+	}
 </script>
 
 <section>
@@ -22,28 +21,43 @@ function scroll(){
         <div class="next">	
         <Buttons variant="right"/>
         </div>
-	<Usercard/>
-	
-    <Firstplace />
-	
-	<div class="members">
-		<h3>Team members:</h3>
-		<ul>
-			<Team_users />
-		</ul>
+
+	<div class="container">
+		<div class="datacontainer">
+			<div class="usercard">
+				<Usercard />
+			</div>
+
+			<div class="medales">
+				<Winners />
+			</div>
+
+			<div class="members">
+				<h3>Team members:</h3>
+				<ul>
+					<TeamUsers />
+				</ul>
+			</div>
+		</div>
+
+		<div class="werkreview">
+			<iframe src="challenge/feedback" title="portfolio" frameborder="0" />
+		</div>
+
 	</div>
-
-    <Buttons variant="up" handleClick={scroll}/>
-
 </section>
 
 <style>
+	iframe{
+		width: 100%;
+		height: 100%;
+	}
+
 	section {
 		justify-self: center;
 		width: 90%;
 		height: fit-content;
 		padding-top: 1em;
-
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1em;
@@ -91,6 +105,22 @@ function scroll(){
 		flex-direction: column;
 	}
 
+	.container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1em;
+	}
+
+	.datacontainer {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+
+	.werkreview {
+		border: solid 0.1em black;
+	}
+
 	@media (min-width: 1200px) {
 		section {
 			width: 100%;
@@ -114,8 +144,17 @@ function scroll(){
 			position: fixed;
 		}
 
-		.members {
-			grid-area: 4/2/5/3;
+		.container {
+			width: 100%;
+			grid-column: 2/4;
+			grid-row-start: 2;
+
+			grid-template-columns: 30em 1fr;
+			gap: 1em;
+		}
+
+		.werkreview {
+			border: solid 0.1em black;
 		}
 	}
 </style>

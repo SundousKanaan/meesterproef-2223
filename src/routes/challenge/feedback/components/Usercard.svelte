@@ -20,7 +20,7 @@
 
 	let rolls: Rol[] = [
 		{ id: 1, rol: ['film', 'frontender'] },
-		{ id: 2, rol: ['UX/UI', 'frontender', 'designer'] }
+		{ id: 2, rol: ['UX/UI', 'frontender', 'designer' ] }
 	];
 	let slider_concept: string;
 	let slider_proces: string;
@@ -134,7 +134,7 @@
 		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 		padding: 1em;
-		margin: 0 0 2em 0;
+		/* margin: 0 0 2em 0; */
 		background-color: #bae4e8;
 		grid-area: 2/2/3/-2;
 		display: flex;
@@ -237,11 +237,5 @@
 
 	.stars li img {
 		height: 100%;
-	}
-
-	@media (min-width: 1200px) {
-		.usercard {
-			grid-area: 2/2/3/3;
-		}
 	}
 </style>

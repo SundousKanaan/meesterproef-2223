@@ -1,15 +1,14 @@
 <script lang="ts">
-	import TeamUsers from './components/Team_users.svelte';
+	import TeamUsers from './components/TeamUsers.svelte';
 	import Feedback from './components/Feedback-form.svelte';
 	import Usercard from './components/Usercard.svelte';
-	import Buttons from "$lib/Buttons.svelte";
+	import Buttons from '$lib/Buttons.svelte';
 	import type { PageData } from './$types';
 	import type { SvelteComponent } from 'svelte';
 	import FeedbackTinder from './components/FeedbackTinder.svelte';
+	import Winners from '../medals/components/Winners.svelte';
 
 	export let data: PageData;
-
-
 </script>
 
 <section>
@@ -19,37 +18,54 @@
 	</div>
 
 	<div class="previous">
-	<Buttons variant="left"/>
+		<Buttons variant="left" />
 	</div>
-	<div class="next">	
-	<Buttons variant="right"/>
-	</div>
-	<Usercard />
-	<div class="REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE">
-	{#if data.feedbackType == "speed"}
 
-		<FeedbackTinder></FeedbackTinder>
-	{:else if data.feedbackType == "acc" }
-		<Feedback />
-	{:else if data.feedbackType == "medals"}
-		nothing
-	{/if}
+	<div class="next">
+		<Buttons variant="right" />
 	</div>
-	<div class="members">
-		<h3>Team members:</h3>
-		<ul>
-			<TeamUsers />
-		</ul>
+
+	<div class="container">
+		<div class="datacontainer">
+			<div class="usercard">
+				<Usercard />
+			</div>
+
+			<div class="speedfeedback">
+				{#if data.feedbackType == 'speed'}
+					<FeedbackTinder />
+				{:else if data.feedbackType == 'acc'}
+					<Feedback />
+				{:else if data.feedbackType == 'medals'}
+					<Winners/>
+				{/if}
+			</div>
+
+			<div class="members">
+				<h3>Team members:</h3>
+				<ul>
+					<TeamUsers />
+				</ul>
+			</div>
+		</div>
+
+		<div class="werkreview">
+			<iframe src="/challenge/feedback?feedback=medals" title="feedback" frameborder="0"></iframe>
+		</div>
 	</div>
 </section>
 
 <style>
+	iframe{
+		width: 100%;
+		height: 100%;
+	}
+
 	section {
 		justify-self: center;
 		width: 90%;
 		height: fit-content;
 		padding-top: 1em;
-
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 1em;
@@ -97,18 +113,34 @@
 		flex-direction: column;
 	}
 
-	.REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE {
-		grid-area: 3/1/4/-1;
+	.speedfeedback{
+		height: fit-content;
 	}
+
+	.container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1em;
+	}
+
+	.datacontainer {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+
+	/* .werkreview {
+		border: solid 0.1em black;
+	} */
 
 	@media (min-width: 1200px) {
 		section {
 			width: 100%;
 			grid-template-columns: 6em 30em 1fr 6em;
 			grid-template-rows: 6em auto;
-
 			padding: 0;
 		}
+
 		.titel {
 			grid-area: 1/2/2/-2;
 			text-align: unset;
@@ -124,11 +156,17 @@
 			position: fixed;
 		}
 
-		.members {
-			grid-area: 4/2/5/3;
+		.container {
+			width: 100%;
+			grid-column: 2/4;
+			grid-row-start: 2;
+
+			grid-template-columns: 30em 1fr;
+			gap: 1em;
 		}
-		.REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE {
-			grid-area: 3/2/4/3;
-		}
+
+		/* .werkreview {
+			border: solid 0.1em black;
+		} */
 	}
 </style>
