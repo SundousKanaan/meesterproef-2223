@@ -109,7 +109,7 @@
 	.popup {
     position: fixed;
     top: 8.5%;
-    right: 1%;
+    right: 1.75%;
 	height: fit-content;
 	width: fit-content;
 	border-radius: 5px;
@@ -133,4 +133,10 @@
   .popup p:nth-of-type(2){
 	margin-bottom: 5%;
   }
+
+  @media (min-width: 1200px) {
+	.popup {
+    right: 1%;
+  }
+}
 </style>
