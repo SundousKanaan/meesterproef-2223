@@ -1,18 +1,12 @@
 <script lang="ts">
+	import Buttons from '$lib/Buttons.svelte';
 	let showing: string;
 	let stap: string;
 	let statuscheck: string;
-
 	let imagesCount: number = 1;
 
-	interface image {
-		src: string;
-	}
-
-	// let images: image[] = [ { src: 'mob2' }, { src: 'mob3' }];
-
 	let imageNumber: number = imagesCount;
-	function setImageSource(): void {
+	function setImageSource() {
 		imagesCount += 1;
 		imageNumber = imagesCount;
 		console.log('imagesCount', imagesCount, imageNumber);
@@ -23,11 +17,17 @@
 			imagesCount = 1;
 		}
 	}
+
+	function skiptheinfo() {
+		console.log('skip');
+		statuscheck = 'close';
+		imageNumber = 1;
+		imagesCount = 1;
+	}
 </script>
 
-<section class={statuscheck}>
+<section class="status {statuscheck}">
 	<div class="mobimagecontainer">
-		<!-- images src -->
 		<img src="/zero-state-mob{imageNumber}.svg" alt="zero stat {stap}" class={showing} />
 	</div>
 
@@ -38,9 +38,16 @@
 	</div>
 
 	<div>
-		<button on:click={setImageSource}>click</button>
+		<Buttons variant="savexit" handleClick={setImageSource}>Next</Buttons>
+	</div>
+
+	<div class="skip">
+		<Buttons variant="skipcancel" handleClick={skiptheinfo}><u>Skip</u></Buttons>
 	</div>
 </section>
+
+<!-- /* background-image: url(/theme-form.svg); background-position: center; background-repeat:
+no-repeat; */ -->
 
 <style>
 	section {
@@ -58,12 +65,7 @@
 		right: 0;
 		z-index: 9999999;
 
-		/* 
-        background-image: url(/theme-form.svg);
-        background-position: center;
-        background-repeat: no-repeat; */
-
-		background-color: rgb(126, 126, 126);
+		background-color: white;
 	}
 
 	.close {
@@ -106,13 +108,9 @@
 		background-color: var(--blue-button);
 	}
 
-	/* all: unset;
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    background: rgb(0 0 0 /0.5);
-    display: none;
-    backdrop-filter: blur(0.1em); */
+	.skip {
+		position: fixed;
+		top: 1em;
+		right: 1em;
+	}
 </style>
