@@ -10,7 +10,7 @@
 </script>
 
 <section>
-	<div class="titel" id="top">
+	<div class="titel">
 		<h2>Entry project</h2>
 		<p>Extensive review</p>
 	</div>
@@ -41,16 +41,28 @@
 		</div>
 
 		<div class="werkreview">
-			<iframe src="challenge/feedback" title="portfolio" frameborder="0" />
+			<iframe src="/challenge/feedback?feedback=medals" title="portfolio" frameborder="0" />
 		</div>
-
 	</div>
+
+    <div><Buttons variant="savexit">SAVE</Buttons>	
+        <!-- <Buttons variant="savexit"/> -->
+    </div>
+
+    <div><Buttons variant="skipcancel">SAVE</Buttons>	
+        <!-- <Buttons variant="savexit"/> -->
+    </div>
+
+    <div>	
+        <Buttons variant="up" handleClick={scroll}/>
+    </div>
+
 </section>
 
 <style>
 	iframe{
 		width: 100%;
-		height: 100%;
+		height: 50em;
 	}
 
 	section {
