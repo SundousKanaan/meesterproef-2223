@@ -7,17 +7,22 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+main {
+    background-color: #FFFFFF;
+
+}
+
 @font-face {
     font-family: "Optima";
     src: url('/fonts/optima_bold.woff') format('woff'),
-         url('/fonts/optima_bold.woff2') format('woff2'),
-         url('/fonts/optima_regular.woff') format('woff'),
-         url('/fonts/optima_regular.woff2') format('woff2'),
-         url('/fonts/optima_italic.woff') format('woff'),
-         url('/fonts/optima_italic.woff2') format('woff2');
+        url('/fonts/optima_bold.woff2') format('woff2'),
+        url('/fonts/optima_regular.woff') format('woff'),
+        url('/fonts/optima_regular.woff2') format('woff2'),
+        url('/fonts/optima_italic.woff') format('woff'),
+        url('/fonts/optima_italic.woff2') format('woff2');
 }
 
-body{
+body {
     display: grid;
     overflow-x: hidden;
 }
@@ -26,11 +31,13 @@ body{
     overflow: hidden;
 }
 
-:root{
+:root {
     --optima: Optima;
     --gray-font: #73738C;
     --blue-button: #21BDE5;
     --theme-color: #F7CE46;
+    --theme-color-secondary: #FFF19D;
+    --theme-secondary: #32A5C3;
     --black: #000000;
     --white: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.199);
@@ -85,7 +92,7 @@ body{
     --accent-warning-700: #BE9409;
     --accent-warning-600: #E1B114;
     --accent-warning-500: #F7CE46;
-    --accent-warning-400: #F8D254;  
+    --accent-warning-400: #F8D254;
     --accent-warning-300: #F9DE85;
     --accent-warning-200: #FEF3CD;
     --accent-warning-100: #FFF9E6;
@@ -106,6 +113,14 @@ body{
 
     --pi: 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535940812848111745028410270193852110555964462294895493038196442881097566593344612847564823378678316527;
 
+    --font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    /* padding: 2em 1em; */
+    /* background: */
 }
 
 /* Wat the fuck is dit, please remove ASAP dit is echt matig bro */
