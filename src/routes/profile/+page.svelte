@@ -4,6 +4,12 @@
 
 <script>
     import Article from '$lib/Article.svelte';
+    let selectedState = 'active'; // Default to showing active challenges
+
+    function selectState(state) {
+        selectedState = state;
+    }
+
     let challenges = [
         {
             imgSrc: 'https://images.pexels.com/photos/13730872/pexels-photo-13730872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -11,7 +17,8 @@
             title: 'Web development',
             description: 'Within the AUAS program, people are only expected to create a safe online environment. Some people don\'t know what XXS vulnerability is. That\'s why this challenge has been added for people who need to make their applications more secure.',
             timeline: 'May 1, 2023 - June 30, 2023',
-            organization: 'UAUS'
+            organization: 'UAUS',
+            state:'active'
         },
         {
             imgSrc: 'https://images.pexels.com/photos/261628/pexels-photo-261628.jpeg',
@@ -19,7 +26,8 @@
             title: 'Graphic design',
             description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
             timeline: 'June 1, 2023 - July 31, 2023',
-            organization: 'DesignCo'
+            organization: 'DesignCo',
+            state:'active'
         },
         {
             imgSrc: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg',
@@ -27,7 +35,8 @@
             title: 'Mobile App Development',
             description: 'The challenge is to build a mobile app that helps users manage their time and tasks more effectively. We are looking for unique and user-friendly solutions.',
             timeline: 'July 1, 2023 - August 31, 2023',
-            organization: 'AppDev'
+            organization: 'AppDev',
+            state:'signed up'
         },
         {
             imgSrc: 'https://images.pexels.com/photos/1181356/pexels-photo-1181356.jpeg',
@@ -35,9 +44,13 @@
             title: 'Data Science',
             description: 'The challenge is to use our provided dataset to build a machine learning model that can predict customer churn. We are looking for accurate and efficient solutions.',
             timeline: 'August 1, 2023 - September 30, 2023',
-            organization: 'DataInc'
+            organization: 'DataInc',
+            state:'finished'
         }
     ];
+
+    $: filteredChallenges = challenges.filter(challenge => challenge.state === selectedState);
+    
 </script>
 
 <main>
@@ -45,15 +58,17 @@
         <h1>Your challenges</h1>
         <p>View and update the current challenges you signed up for</p>
         <div>
-            <button class="active">
+            <button class:selected={selectedState === 'active'} on:click={() => selectState('active')}>
                 Active challenges
-            </button><button>
+            </button>
+            <button class:selected={selectedState === 'finished'} on:click={() => selectState('finished')}>
                 Finished challenges
-            </button><button>
+            </button>
+            <button class:selected={selectedState === 'signed up'} on:click={() => selectState('signed up')}>
                 Signed up
             </button>
         </div>
-        {#each challenges as challenge (challenge.title)}
+        {#each filteredChallenges as challenge (challenge.title)}
         <Article 
             imgSrc={challenge.imgSrc} 
             peopleCount={challenge.peopleCount} 

@@ -41,12 +41,18 @@
 <style>
    article{
     margin-bottom:1em;
-    flex:1 1 22em;
+    flex:1 1 30%;
     display:flex;
     flex-direction: column;
     position: relative;
     box-shadow:0px 0.4px 8px rgba(0, 0, 0, 0.1);
     overflow:hidden;
+    height:38em;
+    min-width:14em;
+}
+
+article span{
+    display:none;
 }
 
 article:after{
@@ -72,6 +78,15 @@ article > div{
     display:flex;
     flex-direction:column;
     gap:.5em;
+    justify-content: space-between;
+    height:100%;
+}
+
+article > div > p:first-of-type{
+    margin-bottom:auto;
+}
+article > div > p:last-of-type{
+    margin-top:auto;
 }
 article figure{
     height:12em;
