@@ -138,7 +138,7 @@ h3{
     }
 }
 
-@media (max-width:555px){
+@media (max-width:400px){
     section.heroItem{
         justify-content: unset;
     }
