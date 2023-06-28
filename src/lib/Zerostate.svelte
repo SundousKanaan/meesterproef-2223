@@ -4,8 +4,9 @@
 	import Buttons from '$lib/Buttons.svelte';
 	let showing: string;
 	let stap: string;
-	let statuscheck: string;
+	export let statuscheck: string = '';
 	let imagesCount: number = 1;
+	export let open: boolean = true;
 
 	let imageNumber: number = imagesCount;
 	function setImageSource() {
@@ -17,6 +18,8 @@
 			statuscheck = 'close';
 			imageNumber = 1;
 			imagesCount = 1;
+
+			open = false;
 		}
 	}
 
@@ -25,6 +28,8 @@
 		statuscheck = 'close';
 		imageNumber = 1;
 		imagesCount = 1;
+
+		open = false;
 	}
 
 	function handleKeyDown(event: KeyboardEvent) {
