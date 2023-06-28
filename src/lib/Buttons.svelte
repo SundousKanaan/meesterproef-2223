@@ -80,24 +80,24 @@ button:hover{
 }
 
 .start-grey{
-  background-color: #B1AFA9;
+  background-color: var(--neutral-500);
   color: var(--black);
   cursor: pointer;
 }
 
 .details{
-  background-color: #F7CE46;
+  background-color: var(--primary-500);
   color: var(--black);
   min-width: 8rem;
   height: 4rem;
 }
 
 .details:hover{
-  background-color: #e1b114;
+  background-color: var(--primary-600);
 }
 
 .view-yellow{
-  background-color: #F7CE46;
+  background-color: var(--primary-500);
   color: var(--black);
   min-width: 10rem;
   height: 4rem;
@@ -108,14 +108,14 @@ button:hover{
 }
 
 .view-grey{
-  background-color: #B1AFA9;
+  background-color: var(--neutral-600);
   color: var(--black);
   min-width: 10rem;
   height: 4rem;
 }
 
 .view-challenge {
-    background-color: #F7CE46;
+    background-color: var(--primary-500);
     color: var(--black);
     width: 22rem;
     height: 4rem;
@@ -194,7 +194,7 @@ button:hover{
   }
 
 .right:hover{
-  background-color: #D8D7D4;
+  background-color: var(--neutral-300);
 }
 
 .up{
@@ -220,18 +220,18 @@ button:hover{
   }
 
 .up:hover{
-  background-color: #D8D7D4;
+  background-color: var(--neutral-300);
 }
 
 .yes{
-  background-color: #38D248;
+  background-color: var(--accent-success-500);
   width: 10rem;
   height: 4rem;
   position: relative;
 }
 
 .yes:hover{
-  background-color: #269560;
+  background-color: var(--accent-success-700);
 }
 
 .yes::after {
@@ -244,14 +244,14 @@ button:hover{
   }
 
 .no{
-  background-color: #FF3939;
+  background-color: var(--accent-danger-500);
   width: 10rem;
   height: 4rem;
   position: relative;
 }
 
 .no:hover{
-  background-color: #AD1F1F;
+  background-color: var(--accent-danger-700);
 }
 
 .no::after {
@@ -264,21 +264,20 @@ button:hover{
   }
 
 .savexit{
-  border: 5px solid #21bde5;
+  border: 5px solid var(--blue-button);
   background-color: var(--white);
   color: var(--black);
 }
 
 .skipcancel{
   border: none;
-  color: #73738C;
+  color: var(--gray-font);
   background-color: var(--white);
   font-weight: lighter;
 }
 
 .skipcancel:hover{
   background-color: var(--white);
-  color: #21bde5;
+  color: var(--blue-button);
 }
-
 </style>
