@@ -134,7 +134,7 @@ h3{
         width:90vw;
     }
     section.heroItem > button{
-        bottom:0;
+        bottom:1em;
     }
 }
   </style>
