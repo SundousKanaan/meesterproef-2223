@@ -176,6 +176,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		width: 2rem;
 	}
 
 	.timeline-point {
@@ -216,11 +217,33 @@
 	}
 
 	.color-approaching {
-		background-color: var(--neutral-200);
+		/* background-color: transparent; */
+		background-color: #fff;
 		border: 2px solid #21bde5;
 	}
 
 	.color-future {
 		background-color: #b8c0cc;
+	}
+
+	@media (max-width: 60em) { 
+		.timeline {
+			flex-wrap: wrap;
+		}
+
+		.timeline .timeline-point-wrapper {
+			flex: 1 1 100%;
+			margin: 1em;
+		}
+
+		.timeline-point {
+			order: -1;
+		}
+
+		.timeline-line {
+			margin: 0 auto;
+			transform: rotateZ(90deg);
+			z-index: -1;
+		}
 	}
 </style>
