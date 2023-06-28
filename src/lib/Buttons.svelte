@@ -6,6 +6,8 @@
 		| 'start-blue'
 		| 'start-grey'
 		| 'details'
+		| 'savexit'
+		| 'skipcancel'
 		| 'view-yellow'
 		| 'view-grey'
 		| 'view-challenge'

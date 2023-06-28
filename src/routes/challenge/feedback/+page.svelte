@@ -24,15 +24,6 @@
 	<Buttons variant="right"/>
 	</div>
 	<Usercard />
-	<div class="REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE">
-	{#if data.feedbackType == "speed"}
-		<FeedbackTinder></FeedbackTinder>
-	{:else if data.feedbackType == "acc" }
-		<Feedback />
-	{:else if data.feedbackType == "medals"}
-		nothing
-	{/if}
-	</div>
 
 	<div class="container">
 		<div class="datacontainer">
@@ -137,11 +128,6 @@
 
 	.werkreview {
 		box-shadow: var(--shadow-cards);
-	}
-
-	iframe {
-		width: 100%;
-		height: 50em;
 	}
 
 	.submission {
