@@ -361,12 +361,5 @@ button:hover{
     background: white;
     padding:1em 0;
 }
-header{
-    position:sticky;
-    top:0;
-    z-index:2;
-    background:white;
-    padding:1em 0;
-}
 }
 </style>
