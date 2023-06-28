@@ -75,8 +75,8 @@ button:hover{
 }
 
 .start-blue{
-  min-width: 12rem;
-  height: 4rem;
+  background-color: var(--blue-button);
+  color: var(--white);
 }
 
 .start-grey{
@@ -85,11 +85,13 @@ button:hover{
   cursor: pointer;
 }
 
+.start-grey:hover{
+  background-color: var(--neutral-500);
+}
+
 .details{
   background-color: var(--primary-500);
   color: var(--black);
-  min-width: 8rem;
-  height: 4rem;
 }
 
 .details:hover{
@@ -99,8 +101,6 @@ button:hover{
 .view-yellow{
   background-color: var(--primary-500);
   color: var(--black);
-  min-width: 10rem;
-  height: 4rem;
 }
 
 .view-yellow:hover{
@@ -110,17 +110,12 @@ button:hover{
 .view-grey{
   background-color: var(--neutral-600);
   color: var(--black);
-  min-width: 10rem;
-  height: 4rem;
 }
 
 .view-challenge {
     background-color: var(--primary-500);
     color: var(--black);
-    width: 22rem;
-    height: 4rem;
     position: relative;
-    padding-right: 2rem;
   }
 
   .view-challenge::after {
@@ -137,8 +132,6 @@ button:hover{
 }
 
 .edit{
-  width: 22rem;
-  height: 4rem;
   position: relative;
   padding-right: 2rem;
 }

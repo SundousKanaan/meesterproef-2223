@@ -5,7 +5,11 @@
 	import Winners from './components/Winners.svelte';
 
 	function scroll() {
-		window.scrollTo(0, 0);
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+		
 	}
 </script>
 
@@ -48,6 +52,8 @@
     <div>	
         <Buttons variant="up" handleClick={scroll}/>
     </div>
+	  
+	  <!-- <button on:click={() => toast.push('Hello world!')}>SHOW TOAST</button> -->
 
 </section>
 
