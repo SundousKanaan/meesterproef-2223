@@ -96,7 +96,7 @@
 
 	.members {
 		padding: 1em;
-		border: solid 0.5px black;
+		border: solid 0.5px var(--black);
 		border-radius: 0.5em;
 	}
 
@@ -122,7 +122,7 @@
 	}
 
 	.werkreview {
-		border: solid 0.1em black;
+		border: solid 0.1em var(--black);
 	}
 
 	@media (min-width: 1200px) {
@@ -158,7 +158,7 @@
 		}
 
 		.werkreview {
-			border: solid 0.1em black;
+			border: solid 0.1em var(--black);
 		}
 	}
 </style>

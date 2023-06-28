@@ -95,8 +95,7 @@
 
 	.members {
 		padding: 1em;
-		border: solid 0.5px black;
-		/* border-radius: 0.5em; */
+		border: solid 0.5px var(--black);
 	}
 
 	.members h3 {
@@ -125,7 +124,7 @@
 	}
 
 	.werkreview {
-		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: var(--shadow-cards);
 	}
 
 	iframe {

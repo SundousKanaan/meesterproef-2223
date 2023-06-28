@@ -87,7 +87,6 @@
 <a class="usercard" href="/">
 	<span>
 		<div><img src={user.userImage} alt="{user.firstName} {user.lastName} profile image" /></div>
-		<!-- <div> -->
 		<span>
 			<h3 class="name">{user.firstName} {user.lastName}</h3>
 			<p class="education">{user.education}</p>
@@ -123,23 +122,19 @@
 			</li>
 		</ul>
 	</span>
-	<!-- </div> -->
 </a>
 
 <style>
 	.usercard {
 		width: 100%;
 		height: 100%;
-		/* border-radius: 2px; */
-		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.1);
-
+		box-shadow: var(--shadow-cards);
 		padding: 1em;
-		/* margin: 0 0 2em 0; */
-		background-color: #bae4e8;
+		background-color: var(--primary300b);
 		grid-area: 2/2/3/-2;
 		display: flex;
 		flex-direction: column;
-		color: black;
+		color: var(--black);
 	}
 
 	.usercard > span:first-of-type {
@@ -153,7 +148,7 @@
 		width: var(--size);
 		height: var(--size);
 		border-radius: 50%;
-		background-color: white;
+		background-color: var(--white);
 		flex-shrink: 0;
 	}
 
@@ -188,13 +183,10 @@
 
 	.location-icon .location::before {
 		content: url(/location-icon.svg);
-		/* display: block; */
 		width: 1.5em;
 		height: 1.5em;
 		margin-right: 0.5em;
 		position: relative;
-		/* top: calc(50% - 1.5em / 2); */
-		/* left: -1.5em; */
 	}
 
 	.usercard > span:last-of-type {
@@ -222,7 +214,7 @@
 		padding: 0.2em 0.5em;
 		border-radius: 0.5em;
 		background-color: var(--theme-secondary);
-		color: white;
+		color: var(--white);
 	}
 
 	.stars {

@@ -46,8 +46,8 @@
 	label {
 		width: calc(100% / 4.5);
 		height: 100%;
-		background-color: #fef3cd;
-		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+		background-color: var(--primary-200);
+		box-shadow: var(--shadow-cards);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -67,12 +67,12 @@
 	}
 
 	label:focus-within {
-		border: 5px solid #18cc18;
-		background-color: #9efb9e;
+		border: 5px solid var(--accent-success-500);
+		background-color: var(--accent-success-100);
 	}
 	label:has(input:checked) {
-		border: 5px solid #18cc18;
-		background-color: #9efb9e;
+		border: 5px solid var(--accent-success-500);
+		background-color: var(--accent-success-100);
 	}
 
 	.image {
