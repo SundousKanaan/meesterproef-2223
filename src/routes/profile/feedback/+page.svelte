@@ -31,7 +31,7 @@
   
   <main>
     <section>
-      <h2>Feedback</h2>
+      <h1>Feedback</h1>
       <p>Here you'll see the submissions you got feedback on.</p>
       <ul>
         {#each data as item (item.link)}
@@ -198,12 +198,13 @@ aside nav a {
 }
 
 main > section {
-    flex:1 1 20em;
-    padding:1em;
     display:flex;
+    flex-direction: column;
     flex-wrap:wrap;
     align-items:start;
     align-content:start;
+    flex:1 1 20em;
+    padding:1em;
     gap:1.5em;
     border: 1px solid rgb(196, 196, 196);
     border-left: unset;
@@ -274,8 +275,8 @@ section ul li a {
     position:relative;
 }
 
-section h3,
-section p {
+section ul p,
+section h3 {
     color:white;
     z-index:4;    
     text-shadow:0 0 black;    
