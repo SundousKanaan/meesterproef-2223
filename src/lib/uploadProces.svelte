@@ -1,11 +1,17 @@
 <script>
 	import DragenDroppUploadProces from '$lib/DragenDroppUploadProces.svelte';
-	import { showInviteModal } from '$lib/inviteModal.svelte';
 
 	let showInviteModal = false;
 
 	function openInviteModal() {
 		showInviteModal = true;
+	}
+
+	import InviteModal from '$lib/inviteModal.svelte';
+
+
+	function closeModal() {
+		showInviteModal = false;
 	}
 </script>
 
@@ -36,7 +42,6 @@
 		</fieldset>
 		<div class="members">
 			<div class="addMember">
-				<button class="submit-button" on:click={openInviteModal}>++</button>
 				<img class="profilePic" src="" alt="" />
 				<p class="profileName">Bart-Jan</p>
 			</div>
@@ -49,7 +54,7 @@
 				<p class="profileName">Bart-Jan</p>
 			</div>
 			<div class="addMember">
-				<button class="submit-button">+</button>
+				<button class="submit-button" on:click={() => showInviteModal = true}>+</button>
 				<p class="profileName">Bart-Jan</p>
 			</div>
 		</div>
@@ -59,6 +64,7 @@
 		</div>
 	</form>
 </div>
+<InviteModal {showInviteModal} {closeModal} />
 
 <style>
 	label {
