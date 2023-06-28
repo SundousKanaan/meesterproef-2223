@@ -96,4 +96,10 @@ section.hero::-webkit-scrollbar {
 .hero div{
   display:flex;
 }
+
+@media (max-width:555px){
+  section.hero{
+    
+  }
+}
 </style>
