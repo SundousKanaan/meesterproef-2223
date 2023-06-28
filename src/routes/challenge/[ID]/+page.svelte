@@ -305,13 +305,13 @@
 		</ReviewCard>
 
 		<ReviewCard title="Extensive Review">
-			<p class="description">You give extensive feedback to everyone about their work.</p>
-			<Buttons variant="start-blue">Extensive review</Buttons>
+			<p>You give extensive feedback to everyone about their work.</p>
+			<Buttons href="/challenge/feedback?feedback=acc" variant="start-blue">Extensive review</Buttons>
 		</ReviewCard>
 
 		<ReviewCard title="Give Medals">
-			<p class="description">When you are done with reviewing all the designs, you can give medals to the bests.</p>
-			<Buttons variant="start-grey">Give medals</Buttons>
+			<p>When you are done with reviewing all the designs, you can give medals to the bests.</p>
+			<Buttons href="/challenge/feedback?feedback=medal" variant="start-grey">Give medals</Buttons>
 		</ReviewCard>
 	</div>
 
