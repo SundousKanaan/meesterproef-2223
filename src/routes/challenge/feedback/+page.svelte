@@ -20,9 +20,18 @@
 	<div class="previous">
 		<Buttons variant="left" />
 	</div>
-
-	<div class="next">
-		<Buttons variant="right" />
+	<div class="next">	
+	<Buttons variant="right"/>
+	</div>
+	<Usercard />
+	<div class="REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE">
+	{#if data.feedbackType == "speed"}
+		<FeedbackTinder></FeedbackTinder>
+	{:else if data.feedbackType == "acc" }
+		<Feedback />
+	{:else if data.feedbackType == "medals"}
+		nothing
+	{/if}
 	</div>
 
 	<div class="container">
@@ -53,6 +62,9 @@
 			<iframe src="/challenge/feedback?feedback=medals" title="feedback" frameborder="0" />
 		</div>
 	</div>
+	<article class="submission">
+		<iframe src="https://tioc.nl" frameborder="0"></iframe>
+	</article>
 </section>
 
 <style>
@@ -130,6 +142,15 @@
 	iframe {
 		width: 100%;
 		height: 50em;
+	}
+
+	.submission {
+		grid-area: 2/3/5/4;
+	}
+
+	iframe {
+		width: 100%;
+		height: 100%;
 	}
 
 	@media (min-width: 1200px) {

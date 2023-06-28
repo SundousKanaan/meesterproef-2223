@@ -8,20 +8,21 @@
 }
 
 main {
-    background-color: #EDF2F2;
+    background-color: #FFFFFF;
+
 }
 
 @font-face {
     font-family: "Optima";
     src: url('/fonts/optima_bold.woff') format('woff'),
-         url('/fonts/optima_bold.woff2') format('woff2'),
-         url('/fonts/optima_regular.woff') format('woff'),
-         url('/fonts/optima_regular.woff2') format('woff2'),
-         url('/fonts/optima_italic.woff') format('woff'),
-         url('/fonts/optima_italic.woff2') format('woff2');
+        url('/fonts/optima_bold.woff2') format('woff2'),
+        url('/fonts/optima_regular.woff') format('woff'),
+        url('/fonts/optima_regular.woff2') format('woff2'),
+        url('/fonts/optima_italic.woff') format('woff'),
+        url('/fonts/optima_italic.woff2') format('woff2');
 }
 
-body{
+body {
     display: grid;
     overflow-x: hidden;
 }
@@ -30,7 +31,7 @@ body{
     overflow: hidden;
 }
 
-:root{
+:root {
     --optima: Optima;
     --gray-font: #73738C;
     --blue-button: #21BDE5;
@@ -38,6 +39,7 @@ body{
     --theme-color-secondary: #FFF19D;
     --theme-secondary:#32A5C3;
     --primary300b: #BAE4E8;
+    --theme-secondary: #32A5C3;
     --black: #000000;
     --white: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.199);
@@ -92,7 +94,7 @@ body{
     --accent-warning-700: #BE9409;
     --accent-warning-600: #E1B114;
     --accent-warning-500: #F7CE46;
-    --accent-warning-400: #F8D254;  
+    --accent-warning-400: #F8D254;
     --accent-warning-300: #F9DE85;
     --accent-warning-200: #FEF3CD;
     --accent-warning-100: #FFF9E6;
@@ -119,7 +121,8 @@ body{
 main {
     display: flex;
     flex-direction: column;
-    padding: 2em 1em;
+    /* padding: 2em 1em; */
+    /* background: */
 }
 
 .boxed {

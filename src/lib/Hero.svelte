@@ -75,6 +75,7 @@
     section.hero{
     position:relative;
     width: 100vw;
+    max-width:100vw;
     height:37.5em;
     overflow-x:scroll;
     display:flex;

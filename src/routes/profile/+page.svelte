@@ -123,6 +123,8 @@ main{
     gap:0;
     max-width:75em;
     margin:0 auto;
+    background:white;
+    padding:unset;
 }
 main aside{
     border:1px solid rgb(196, 196, 196);

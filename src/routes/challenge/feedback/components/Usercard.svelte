@@ -230,4 +230,10 @@
 	.stars li img {
 		height: 100%;
 	}
+
+	@media (min-width: 1200px) {
+		.usercard {
+			grid-area: 2/2/3/3;
+		}
+	}
 </style>
