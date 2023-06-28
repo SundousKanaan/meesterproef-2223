@@ -4,8 +4,7 @@
 	export let data: PageData;
 
 	import HeroPast from '$lib/heroPast.svelte';
-	import Timeline from '$lib/Timeline.svelte';
-	import PastChallenges from '$lib/pastChallenges.svelte';
+	// import Timeline from '$lib/Timeline.svelte';
 	import WinnerScoreboard from '$lib/winnerScoreboard.svelte';
 	import FeaturedWork from '$lib/featuredWork.svelte';
 </script>
@@ -13,7 +12,7 @@
 <main>
 	<HeroPast />
 	<section>
-		<Timeline
+		<!-- <Timeline
 			dates={[
 				{
 					date: new Date('2023-06-01'),
@@ -36,7 +35,7 @@
 					title: 'Winners Announced'
 				}
 			]}
-		/>
+		/> -->
 	</section>
 	<WinnerScoreboard />
 	<section class="featuredWork">
