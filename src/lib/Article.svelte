@@ -1,10 +1,10 @@
-<script>
-    export let imgSrc;
-    export let peopleCount;
-    export let title;
-    export let description;
-    export let timeline;
-    export let organization;
+<script lang="ts">
+    export let imgSrc: string;
+    export let peopleCount:string;
+    export let title:string;
+    export let description:string;
+    export let timeline:string;
+    export let organization:string;
 </script>
 
 <article>

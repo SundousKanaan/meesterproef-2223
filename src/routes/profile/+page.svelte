@@ -2,11 +2,11 @@
     <title>Your challenges</title> 
 </svelte:head>
 
-<script>
+<script lang="ts">
     import Article from '$lib/Article.svelte';
     let selectedState = 'active'; // Default to showing active challenges
 
-    function selectState(state) {
+    function selectState(state: string) {
         selectedState = state;
     }
 

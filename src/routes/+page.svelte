@@ -13,8 +13,6 @@
     <FeaturedCreators />
 </main>
 
-<!-- <DragenDropp /> -->
-
 <style>
     main{
         max-width:75em;
