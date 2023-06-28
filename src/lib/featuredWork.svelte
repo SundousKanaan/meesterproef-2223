@@ -82,7 +82,7 @@
 		flex: 1 1 20em;
 		overflow: hidden;
 		position: relative;
-		box-shadow: 0px 0.4000000059604645px 8px 0px rgb(0 0 0 / 15%);
+		/* box-shadow: 0px 0.4000000059604645px 8px 0px rgb(0 0 0 / 15%); */
 	}
 
 	section ul li:hover img {

@@ -1,8 +1,15 @@
 <script lang="ts">
+	import TeamUsers from './components/Team_users.svelte';
 	import Feedback from './components/Feedback-form.svelte';
-	import Team_users from './components/Team_users.svelte';
 	import Usercard from './components/Usercard.svelte';
 	import Buttons from "$lib/Buttons.svelte";
+	import type { PageData } from './$types';
+	import type { SvelteComponent } from 'svelte';
+	import FeedbackTinder from './components/FeedbackTinder.svelte';
+
+	export let data: PageData;
+
+
 </script>
 
 <section>
@@ -12,19 +19,30 @@
 	</div>
 
 	<div class="previous">
-	<Buttons buttonType="left"/>
+	<Buttons variant="left"/>
 	</div>
 	<div class="next">	
-	<Buttons buttonType="right"/>
+	<Buttons variant="right"/>
 	</div>
 	<Usercard />
-	<Feedback />
+	<div class="REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE">
+	{#if data.feedbackType == "speed"}
+		<FeedbackTinder></FeedbackTinder>
+	{:else if data.feedbackType == "acc" }
+		<Feedback />
+	{:else if data.feedbackType == "medals"}
+		nothing
+	{/if}
+	</div>
 	<div class="members">
 		<h3>Team members:</h3>
 		<ul>
-			<Team_users />
+			<TeamUsers />
 		</ul>
 	</div>
+	<article class="submission">
+		<iframe src="https://tioc.nl" frameborder="0"></iframe>
+	</article>
 </section>
 
 <style>
@@ -54,6 +72,7 @@
 		--size: 5em;
 		width: var(--size);
 		height: var(--size);
+		position: fixed;
 	}
 
 	.previous {
@@ -81,11 +100,24 @@
 		flex-direction: column;
 	}
 
+	.REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE {
+		grid-area: 3/1/4/-1;
+	}
+
+	.submission {
+		grid-area: 2/3/5/4;
+	}
+
+	iframe {
+		width: 100%;
+		height: 100%;
+	}
+
 	@media (min-width: 1200px) {
 		section {
 			width: 100%;
 			grid-template-columns: 6em 30em 1fr 6em;
-			grid-template-rows: 6em 8em 40em auto;
+			grid-template-rows: 6em auto;
 
 			padding: 0;
 		}
@@ -104,6 +136,9 @@
 
 		.members {
 			grid-area: 4/2/5/3;
+		}
+		.REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE {
+			grid-area: 3/2/4/3;
 		}
 	}
 </style>

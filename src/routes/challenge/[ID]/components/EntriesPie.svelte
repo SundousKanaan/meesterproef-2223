@@ -1,6 +1,8 @@
+<script lang="ts">
+  export let style: string = "";
+</script>
 
-
-<section>
+<section style="{style}">
 	<div class="clock">
 		<svg viewBox="0 0 36 36" class="circular-chart">
   <path class="circle-bg"
@@ -23,8 +25,8 @@
 	.circular-chart {
   display: block;
   margin: 10px auto;
-  max-width: 80%;
-  max-height: 250px;
+  width: 100%;
+  aspect-ratio: 1/1;
 }
 
 .circle-bg {
@@ -35,7 +37,7 @@
 
 .circle {
   fill: none;
-  stroke: #4bc0c0;
+  stroke: var(--color, #4bc0c0);
   stroke-width: 2.8;
   stroke-linecap: round;
   animation: progress 1s ease-out forwards;
@@ -46,7 +48,7 @@
     stroke-dasharray: 0 100;
   }
   100% {
-    stroke-dasharray: 50 100; /* The first number should be the percentage of the circle you want to fill */
+    stroke-dasharray: var(--progress) 100; /* The first number should be the percentage of the circle you want to fill */
   }
 }
 

@@ -209,6 +209,19 @@
 	article {
 		background-color: white;
 		box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
+		position: relative;
+	}
+
+	article::before {
+		position: absolute;
+		content: '';
+		bottom: 0;
+		left: 0;
+		height: 40%;
+		width: 100%;
+		background: linear-gradient(0deg, #000000e0, transparent);
+		z-index: 1;
+		pointer-events: none;
 	}
 
 	article figure {
@@ -271,7 +284,6 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		background-color: rgba(0, 0, 0, 0.7);
 		padding: 10px;
 		color: white;
 		transition: visibility, opacity 0.1s;
@@ -290,7 +302,6 @@
 	.challenge-block {
 		/* height: 100%; */
 		background-color: #edf2f2;
-		box-shadow: none;
 	}
 
 	.categories > select {
@@ -342,5 +353,9 @@
 
 	.meerInformatie {
 		width: 15%;
+	}
+
+	figure > div {
+		z-index: 1;
 	}
 </style>

@@ -1,0 +1,191 @@
+[
+    {
+        title: "XSS Vulnarability Challenge",
+        link: "https://tioc.nl",
+        description: "This is a challenge to test your XSS skills",
+        creator: {
+            profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
+            creator: 'Safouane',
+            creatorhandle: '@Safou',
+            status: 'registered',
+            submitDate: new Date(),
+            yesno: true,
+            feedback: undefined
+        },
+        assigned: false,
+        medal: null,
+        feedback: {
+            concept: 5,
+            proces: 1,
+            creativity: 3
+        }
+    },
+    {
+        title: "How to create an immersive experience",
+        link: "https://tioc.nl",
+        description: "A challenge to test your skills in creating an immersive experience",
+        creator: {
+            profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
+            creator: 'Safouane',
+            creatorhandle: '@Safou',
+            status: 'registered',
+            submitDate: new Date(),
+            yesno: true,
+            feedback: undefined
+        },
+        assigned: false,
+        medal: null,
+        feedback: {
+            concept: 2,
+            proces: 5,
+            creativity: 1
+        }
+    },
+    {
+        title: "Crowd Storming Challenge",
+        link: "https://tioc.nl",
+        description: "This challenge is to test your skills in crowd storming",
+        creator: {
+            profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000000',
+            creator: 'Safouane',
+            creatorhandle: '@Safou',
+            status: 'registered',
+            submitDate: new Date(),
+            yesno: true,
+            feedback: undefined
+        },
+        assigned: false,
+        medal: null,
+        feedback: {
+            concept: 0,
+            proces: 1,
+            creativity: 5
+        }
+    },
+    {
+        title: "Web Scraping Challenge",
+        link: "https://tioc.nl",
+        description: "This challenge is to test your skills in web scraping",
+        creator: {
+            profilePicture: 'https://www.gravatar.com/avatar/000000000000000000000000000000',
+            creator: 'Safouane',
+            creatorhandle: '@Safou',
+            status: 'registered',
+            submitDate: new Date(),
+            yesno: true,
+            feedback: undefined
+        },
+        assigned: false,
+        medal: null,
+        feedback: {
+            concept: 3,
+            proces: 5,
+            creativity: 1
+        }
+    },
+    {
+        title: "Mind Reading Challenge",
+        link: "https://tioc.nl",
+        description: "This challenge is to test your skills in mind reading",
+        creator: {
+            profilePicture: 'https://www.gravatar.com/avatar/0000000000000000000000000000000',
+            creator: 'Safouane',
+            creatorhandle: '@Safou',
+            status: 'registered',
+            submitDate: new Date(),
+            yesno: true,
+            feedback: undefined
+        },
+        assigned: false,
+        medal: null,
+        feedback: {
+            concept: 2,
+            proces: 5,
+            creativity: 3
+        }
+    },
+    {
+        title: "Remote Control Challenge",
+        link: "https://tioc.nl",
+        description: "This challenge is to test your skills in remote control",
+        creator: {
+            profilePicture: 'https://www.gravatar.com/avatar/000000000000000000000000000000',
+            creator: 'Safouane',
+            creatorhandle: '@Safou',
+            status: 'registered',
+            submitDate: new Date(),
+            yesno: true,
+            feedback: undefined
+        },
+        assigned: false,
+        medal: null,
+        feedback: {
+            concept: 3,
+            proces: 5,
+            creativity: 1
+        }
+    },
+    {
+        title: "HTML5 Video Challenge",
+        link: "https://tioc.nl",
+        description: "This challenge is to test your skills in HTML5 video",
+        creator: {
+            profilePicture: 'https://www.gravatar.com/avatar/000000000000000000000000000000',
+            creator: 'Safouane',
+            creatorhandle: '@Safou',
+            status: 'registered',
+            submitDate: new Date(),
+            yesno: true,
+            feedback: undefined
+        },
+        assigned: false,
+        medal: null,
+        feedback: {
+            concept: 4,
+            proces: 5,
+            creativity: 3
+        }
+    },
+    {
+        title: "Ruby on Rails Challenge",
+        link: "https://tioc.nl",
+        description: "This challenge is to test your skills in Ruby on Rails",
+        creator: {
+            profilePicture: 'https://www.gravatar.com/avatar/00000000000000000000000000000',
+            creator: 'Safouane',
+            creatorhandle: '@Safou',
+            status: 'registered',
+            submitDate: new Date(),
+            yesno: true,
+            feedback: undefined
+        },
+        assigned: false,
+        medal: null,
+        feedback: {
+            concept: 5,
+            proces: 1,
+            creativity: 3
+        }
+    },
+    {
+        title: "Puzzle Solving Challenge",
+        link: "https://tioc.nl",
+        description: "This challenge is to test your skills in puzzle solving",
+        creator: {
+            profilePicture: 'https://www.gravatar.com/avatar/0000000000000000000000000000',
+            creator: 'Safouane',
+            creatorhandle: '@Safou',
+            status: 'registered',
+            submitDate: new Date(),
+            yesno: true,
+            feedback: undefined
+        },
+        assigned: false,
+        medal: null,
+        feedback: {
+            concept: 2,
+            proces: 5,
+            creativity: 4
+        }
+    }
+]
