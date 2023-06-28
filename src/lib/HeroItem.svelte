@@ -50,6 +50,8 @@ section.heroItem > button{
     border:none;
     background-image:url("/blobForArrow.png");
     background-size: cover;
+    cursor:pointer;
+    transition:.2s;
 }
 section.heroItem > button img{
     width:6em;
@@ -57,6 +59,9 @@ section.heroItem > button img{
 }
 button.previous{
     left:2em;
+}
+button:hover{
+    transform:scale(1.1);
 }
 button.next{
     right:2em;

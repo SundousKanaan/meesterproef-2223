@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let variant:
 		| 'primary'
+		| 'secondary'
 		| 'start-yellow'
 		| 'start-blue'
 		| 'start-grey'
@@ -17,7 +18,7 @@
 	export let handleClick = () => {};
 	export let href: string = '';
 
-	export let size: 'small' | 'medium' | 'large' | 'none' = 'none';
+	export let size: 'small' | 'medium' | 'large' | 'full-width' | 'none' = 'none';
 	export let hasIcon: boolean = false;
 </script>
 
@@ -31,6 +32,13 @@
 	.size-small {
 		font-size: 1rem;
 		padding: 8px 21px !important;
+	}
+
+	.size-full-width {
+		width: 100%;
+		font-size: 1rem;
+		padding: 8px 21px !important;
+		justify-content: center;
 	}
 
 	.icon-true {
@@ -53,6 +61,89 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+	button {
+	background-color: #21bde5;
+	color: #fff;
+	font-size: 1.2rem;
+	padding: 1rem;
+	font-weight: 700;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	}
+
+button:hover{
+  background-color: #32a5c3;
+}
+
+.start-yellow,
+.primary {
+  background-color: #F7CE46;
+  color: #000000;
+}
+
+.start-yellow:hover,
+.primary:hover{
+  background-color: #e1b114;
+}
+
+.secondary {
+	background-color: #21bde5;
+  	color: #000000;
+}
+
+.start-blue{
+  min-width: 12rem;
+}
+
+.start-grey{
+  background-color: #B1AFA9;
+  color: #000000;
+  cursor: pointer;
+}
+
+.details{
+  background-color: #F7CE46;
+  color: #000000;
+  min-width: 8rem;
+  height: 4rem;
+}
+
+.details:hover{
+  background-color: #e1b114;
+}
+
+.view-yellow{
+  background-color: #F7CE46;
+  color: #000000;
+  min-width: 10rem;
+  height: 4rem;
+}
+
+.view-yellow:hover{
+  background-color: #e1b114;
+}
+
+.view-grey{
+  background-color: #B1AFA9;
+  color: #000000;
+  min-width: 10rem;
+  height: 4rem;
+}
+
+.start-grey:hover {
+	background-color: #a09f9a;
+}
+
+.view-challenge {
+    background-color: #F7CE46;
+    color: #000000;
+    width: 22rem;
+    height: 4rem;
+    position: relative;
+    padding-right: 2rem;
   }
 
 	button, a {
@@ -78,11 +169,6 @@
 
 	.start-yellow:hover {
 		background-color: #e1b114;
-	}
-
-	.start-blue {
-		min-width: 12rem;
-		height: 4rem;
 	}
 
 	.start-grey {

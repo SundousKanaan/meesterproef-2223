@@ -266,21 +266,41 @@
 					spaceRelativeToTime={true}
 				/>
 			</div>
-			<Buttons variant="primary" size="small" hasIcon
-				>View Challenge <Icon icon="eye" size={IconSize.SMALL} /></Buttons
-			>
-			<Buttons variant="primary" size="small" hasIcon
-				>Edit <Icon icon="edit" size={IconSize.SMALL} /></Buttons
-			>
+			<div class="buttons-wrapper">
+				<Buttons variant="primary" size="full-width" hasIcon
+					>View Challenge <Icon icon="eye" size={IconSize.SMALL} /></Buttons
+				>
+				<Buttons variant="secondary" size="full-width" hasIcon
+					>Edit <Icon icon="edit" size={IconSize.SMALL} /></Buttons
+				>
+			</div>
 		</div>
+
 		<div class="challenge-diagrams">
-			<EntriesPie />
-		</div>
+			<div>
+				<ReviewCard size="full" padding="tiny">
+					<span class="title">Total Entries</span>
+					<div class="content">
+						<span class="amount">20/100</span>
+						<EntriesPie style="--progress: 20; --color: var(--primary-400)" />
+					</div>
+				</ReviewCard>
+			</div>
+			<div>
+				<ReviewCard size="full" padding="tiny">
+					<span class="title">Creators</span>
+					<div class="content">
+						<span class="amount">90/100</span>
+						<EntriesPie style="--progress: 90" />
+					</div>
+				</ReviewCard>
+			</div>
+		</div>	
 	</div>
 
 	<div class="review-buttons-wrappertje">
 		<ReviewCard title="Speed Review">
-			<p>Be critical. We advice you to let a maximum of 20 designs pass.</p>
+			<p class="description">Be critical. We advice you to let a maximum of 20 designs pass.</p>
 			<Buttons href="/challenge/feedback?feedback=speed" variant="start-yellow">Speed review</Buttons>
 		</ReviewCard>
 
@@ -310,6 +330,35 @@
 		margin-bottom: 2px;
 	}
 
+	.title {
+		display: inline-block;
+		font-weight: 900;
+		color: #000;
+	}
+
+	.content {
+		height: 100%;
+		width: 100%;
+		display: grid;
+		place-items: center;
+		padding: 16px;
+		position: relative;
+	}
+
+	.description {
+		margin-bottom: 36px;
+	}
+
+	.amount {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 18px;
+		font-weight: 900;
+		color: var(--neutral-800);
+	}
+
 	.tyfus {
 		grid-column: 1/3;
 	}
@@ -319,7 +368,6 @@
 		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr;
 		padding: 0 2rem 3rem 2rem;
-		/* background-color: #d6d6d6; */
 	}
 
 	img {
@@ -332,8 +380,10 @@
 	.bovenste-stukje {
 		grid-column: 1/3;
 		background-color: var(--neutral-200);
-		padding: 48px 0;
+		padding: 48px 48px;
 		display: flex;
+		color: var(--neutral-900);
+		gap: 48px;
 	}
 
 	.bovenste-stukje h1 {
@@ -343,10 +393,20 @@
 
 	.bovenste-stukje .challenge-information {
 		width: 50%;
-		padding: 0 2rem;
+	}
+
+	.buttons-wrapper {
+		display: flex;
+		gap: 24px;
 	}
 
 	.bovenste-stukje .challenge-diagrams {
+		width: 50%;
+		display: flex;
+		gap: 48px;
+	}
+
+	.bovenste-stukje .challenge-diagrams > div {
 		width: 50%;
 	}
 
@@ -358,9 +418,15 @@
 		margin-top: 64px;
 	}
 
+	.timeline-wrapper {
+		margin-top: 24px;
+		margin-bottom: 36px;
+	}
+
 	.timeline-wrapper > h2 {
-		margin-left: -0.5rem;
 		margin-bottom: 0.75rem;
+		font-size: 21px;
+		font-weight: 900;
 	}
 
 	.review-buttons-wrappertje {
