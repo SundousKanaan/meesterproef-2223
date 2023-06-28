@@ -27,7 +27,6 @@
 	<Usercard />
 	<div class="REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE">
 	{#if data.feedbackType == "speed"}
-
 		<FeedbackTinder></FeedbackTinder>
 	{:else if data.feedbackType == "acc" }
 		<Feedback />
@@ -41,6 +40,9 @@
 			<TeamUsers />
 		</ul>
 	</div>
+	<article class="submission">
+		<iframe src="https://tioc.nl" frameborder="0"></iframe>
+	</article>
 </section>
 
 <style>
@@ -100,6 +102,15 @@
 
 	.REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE {
 		grid-area: 3/1/4/-1;
+	}
+
+	.submission {
+		grid-area: 2/3/5/4;
+	}
+
+	iframe {
+		width: 100%;
+		height: 100%;
 	}
 
 	@media (min-width: 1200px) {
