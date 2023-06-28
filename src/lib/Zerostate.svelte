@@ -22,7 +22,7 @@
             statuscheck = "close";
             imageNumber = 1;
             imagesCount = 1;
-            
+
         }
         
 	}
@@ -31,6 +31,7 @@
 
 <section class="{statuscheck}">
 	<div class="mobimagecontainer">
+        <!-- images src -->
 		<img src="/zero-state-mob{imageNumber}.svg" alt="zero stat {stap}" class={showing} />
 	</div>
 
