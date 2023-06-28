@@ -34,7 +34,7 @@
 	{/if}
 	<div>
 		<p>Drag and drop images, or</p>
-		<input class="file-input" type="file" on:change={handleInputChange} multiple />
+		<input class="file-input" type="file" on:change={handleInputChange} multiple required/>
 		<button class="browse-button" on:click={() => inputRef.click()}>Browse</button>
 	</div>
 
@@ -42,7 +42,7 @@
 		<p>Max 6MB each (12MB for video's)</p>
 
 		<ul>
-			<li>aspect ratio 16:9</li>
+			<li>Aspect ratio 16:9</li>
 			<li>Recommended size 1024x576</li>
 		</ul>
 	</div>
@@ -69,18 +69,18 @@
 		transition: border-color 0.3s ease;
 		position: relative;
 		overflow: hidden;
-        padding: 1em;
+		padding: 1em;
 	}
 
-    @media (min-width: 1050px){
-	@supports (aspect-ratio: 16/9) {
-		.drop-area {
-			height: 20em;
-			/* aspect-ratio: 16/9; */
-            padding: 0;
+	@media (min-width: 1050px) {
+		@supports (aspect-ratio: 16/9) {
+			.drop-area {
+				height: 20em;
+				/* aspect-ratio: 16/9; */
+				padding: 0;
+			}
 		}
 	}
-    }
 
 	.drop-area:hover {
 		border-color: #555;
@@ -103,13 +103,12 @@
 
 		background-color: transparent;
 		border: none;
-		padding: 0 0.5em;
+		padding: 0 0.35em;
 		color: var(--blue-button);
 		font-size: 1em;
 		font-weight: bold;
 
 		position: relative;
-		z-index: 2;
 	}
 
 	.drop-area:hover .browse-button {
@@ -170,5 +169,4 @@
 		color: #6e6e6e;
 		list-style: inside;
 	}
-
 </style>

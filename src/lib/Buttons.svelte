@@ -19,6 +19,7 @@
 
 	export let handleClick = () => {};
 	export let href: string = '';
+	export let type: any = 'button';
 
 	export let size: 'small' | 'medium' | 'large' | 'full-width' | 'none' = 'none';
 	export let hasIcon: boolean = false;
@@ -27,7 +28,7 @@
 {#if href != ''}
 	<a class="{variant} size-{size} icon-{hasIcon}" {href}><slot /></a>
 {:else}
-	<button class="{variant} size-{size} icon-{hasIcon}" on:click={handleClick}><slot /></button>
+	<button type={type} class="{variant} size-{size} icon-{hasIcon}" on:click={handleClick}><slot /></button>
 {/if}
 
 <style>
@@ -91,9 +92,9 @@ button:hover{
   background-color: #e1b114;
 }
 
-.start-blue{
+/* .start-blue{ */
   /* min-width: 12rem; */
-}
+/* } */
 
 .start-grey{
   background-color: var(--neutral-500);

@@ -1,9 +1,10 @@
 <script lang="ts">
-	import Stapone from './components/Stapone.svelte';
-	import Staptwo from './components/Staptwo.svelte';
-	import Stapthree from './components/Stapthree.svelte';
-	import Stapfour from './components/Stapfour.svelte';
+	import Stepone from './components/Stepone.svelte';
+	import Steptwo from './components/Steptwo.svelte';
+	import Stepthree from './components/Stepthree.svelte';
+	import Stepfour from './components/Stepfour.svelte';
 	import Buttons from '$lib/Buttons.svelte';
+	import isValidForm from './components/Stepone.svelte'
 
 	let processCounter: number = 1;
 	let value: string = '0.5';
@@ -47,6 +48,11 @@
 
 		console.log('processCounter', processCounter, value);
 	}
+
+	function test() {
+		console.log("jojo", isValidForm); // Is this a Jojo reference?????
+		
+	}
 </script>
 
 <section>
@@ -60,24 +66,24 @@
 	<h1>Create your challenge</h1>
 
 	<div class={processCounter == 1 ? 'open' : 'close'}>
-		<Stapone />
+		<Stepone />
 	</div>
 
 	<div class={processCounter == 2 ? 'open' : 'close'}>
-		<Staptwo />
+		<Steptwo />
 	</div>
 
 	<div class={processCounter == 3 ? 'open' : 'close'}>
-		<Stapthree />
+		<Stepthree />
 	</div>
 
 	<div class={processCounter == 4 ? 'open' : 'close'}>
-		<Stapfour />
+		<Stepfour />
 	</div>
 
 	<div class="buttons">
 		<div class={processCounter == 1 ? 'noButton' : 'button back'}>
-			<Buttons handleClick={minCount} variant="start-grey" size="full-width">back</Buttons>
+			<Buttons handleClick={minCount} variant="start-grey" size="full-width">Back</Buttons>
 		</div>
 
 		<div class={processCounter == 4 ? 'noButton' : 'button next'}>
@@ -88,11 +94,11 @@
 		</div>
 
 		<div class="skipcancel">
-			<Buttons variant="skipcancel" size="full-width">cancel</Buttons>
+			<Buttons variant="skipcancel" size="full-width">Cancel</Buttons>
 		</div>
 
 		<div class="send">
-			<Buttons variant="primary" size="full-width">Send</Buttons>
+			<Buttons handleClick={test} variant="primary" size="full-width" type="submit">Send</Buttons>
 		</div>
 	</div>
 </section>

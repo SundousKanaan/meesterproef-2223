@@ -2,7 +2,7 @@
 	export let options: string[];
 </script>
 
-<select id="options">
+<select id="options" required>
 	{#each options as option}
 		<option value={option}>{option}</option>
 	{/each}

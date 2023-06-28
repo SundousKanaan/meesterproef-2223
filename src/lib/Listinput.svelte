@@ -53,6 +53,7 @@
 			placeholder={placeholderText}
 			bind:value={inputValue}
 			on:keydown={handleKeyDown}
+			required
 		/>
 		<button class="button" on:click={addItem}> + </button>
 	</div>
@@ -76,6 +77,7 @@
 				placeholder={placeholderText}
 				bind:value={inputValue}
 				on:keydown={handleKeyDown}
+				required
 			/>
 			<input
 				type="text"
@@ -83,6 +85,7 @@
 				placeholder={placeholderDescription}
 				bind:value={descriptionInputValue}
 				on:keydown={handleKeyDown}
+				required
 			/>
 		</span>
 		<button class="button" on:click={addItem}> + </button>
