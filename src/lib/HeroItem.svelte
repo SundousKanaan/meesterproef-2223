@@ -137,4 +137,13 @@ h3{
         bottom:1em;
     }
 }
+
+@media (max-width:555px){
+    section.heroItem{
+        justify-content: unset;
+    }
+    section.heroItem div{
+        margin-top:1em;
+    }
+}
   </style>
