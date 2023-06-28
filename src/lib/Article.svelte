@@ -39,15 +39,20 @@
 </article>
 
 <style>
+   article{
+    margin-bottom:1em;
+    flex:1 1 30%;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow:0px 0.4px 8px rgba(0, 0, 0, 0.1);
+    overflow:hidden;
+    height:38em;
+    min-width:14em;
+}
 
-    article{
-        margin-bottom: 1em;
-        flex: 0 1 calc(33.33% - 1em); /* Updated property */
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
+article span{
+    display:none;
 }
 
 article:after{
@@ -82,6 +87,14 @@ margin > div p:last-of-type{
 
 article div div{
     flex-direction:column;
+    justify-content: space-between;
+    height:100%;
+}
+
+article > div > p:first-of-type{
+    margin-bottom:auto;
+}
+article > div > p:last-of-type{
     margin-top:auto;
 }
 article figure{

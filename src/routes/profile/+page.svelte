@@ -12,6 +12,7 @@
     import Active from "$lib/Active.svelte"
 
     let visible = 'active';
+    let selectedState = 'active';
 
     function setActive() {
         visible = 'active';
@@ -25,6 +26,10 @@
         visible = 'signedup';
     }
 
+    function selectState(state) {
+        selectedState = state;
+    }
+
     let challenges = [
         {
             imgSrc: 'https://images.pexels.com/photos/13730872/pexels-photo-13730872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -32,7 +37,8 @@
             title: 'Web development',
             description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
             timeline: 'May 1, 2023 - June 30, 2023',
-            organization: 'UAUS'
+            organization: 'UAUS',
+            state:'active'
         },
         {
             imgSrc: 'https://images.pexels.com/photos/261628/pexels-photo-261628.jpeg',
@@ -40,7 +46,8 @@
             title: 'Graphic design',
             description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
             timeline: 'June 1, 2023 - July 31, 2023',
-            organization: 'DesignCo'
+            organization: 'DesignCo',
+            state:'active'
         },
         {
             imgSrc: 'https://images.pexels.com/photos/261628/pexels-photo-261628.jpeg',
@@ -64,19 +71,22 @@
             title: 'Graphic design',
             description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
             timeline: 'July 1, 2023 - August 31, 2023',
-            organization: 'AppDev'
+            organization: 'AppDev',
+            state:'signed up'
         },
         {
             imgSrc: 'https://images.pexels.com/photos/1181356/pexels-photo-1181356.jpeg',
             peopleCount: 20,
             title: 'Data Science',
-            description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
-            timeline: 'July 1, 2023 - August 31, 2023',
-            organization: 'DataInc'
+            description: 'The challenge is to use our provided dataset to build a machine learning model that can predict customer churn. We are looking for accurate and efficient solutions.',
+            timeline: 'August 1, 2023 - September 30, 2023',
+            organization: 'DataInc',
+            state:'finished'
         }
     ];
 
-
+    $: filteredChallenges = challenges.filter(challenge => challenge.state === selectedState);
+    
 </script>
 
 <main>
@@ -86,62 +96,26 @@
         <h1>Your challenges</h1>
         <p>View and update the current challenges you signed up for</p>
         <div>
-            <button on:click={setActive} id="active-button" class="active">
+            <button class:selected={selectedState === 'active'} on:click={() => selectState('active')}>
                 Active challenges
             </button>
-            <button on:click={setFinished} id="finished-button">
+            <button class:selected={selectedState === 'finished'} on:click={() => selectState('finished')}>
                 Finished challenges
             </button>
-            <button on:click={setSignedUp} id="signed-up-button">
+            <button class:selected={selectedState === 'signed up'} on:click={() => selectState('signed up')}>
                 Signed up
             </button>
         </div>
-        {#if visible === 'active'}
-            <section>
-                <h1>Your Active challenges</h1>
-                <p>View and update the active challenges you signed up for</p>
-                {#each challenges as challenge}
-                    <Article
-                            imgSrc={challenge.imgSrc}
-                            peopleCount={challenge.peopleCount}
-                            title={challenge.title}
-                            description={challenge.description}
-                            timeline={challenge.timeline}
-                            organization={challenge.organization}
-                    />
-                {/each}
-            </section>
-        {:else if visible === 'finished'}
-            <section>
-                <h1>Your Finished challenges</h1>
-                <p>View and update the finished challenges you signed up for</p>
-                {#each challenges as challenge }
-                    <Finished
-                            imgSrc={challenge.imgSrc}
-                            peopleCount={challenge.peopleCount}
-                            title={challenge.title}
-                            description={challenge.description}
-                            timeline={challenge.timeline}
-                            organization={challenge.organization}
-                    />
-                {/each}
-            </section>
-        {:else if visible === 'signedup'}
-            <section>
-                <h1>Your Signed Up challenges</h1>
-                <p>View and update the challenges you have signed up for</p>
-                {#each challenges as challenge }
-                    <SignedUp
-                            imgSrc={challenge.imgSrc}
-                            peopleCount={challenge.peopleCount}
-                            title={challenge.title}
-                            description={challenge.description}
-                            timeline={challenge.timeline}
-                            organization={challenge.organization}
-                    />
-                {/each}
-            </section>
-        {/if}
+        {#each filteredChallenges as challenge (challenge.title)}
+        <Article 
+            imgSrc={challenge.imgSrc} 
+            peopleCount={challenge.peopleCount} 
+            title={challenge.title} 
+            description={challenge.description} 
+            timeline={challenge.timeline} 
+            organization={challenge.organization}
+        />
+    {/each}
     </section>
 
 
@@ -171,7 +145,7 @@
             <a href="#">Profile</a>
             <a href="#">Settings</a>
             <a class="active" href="/profile">Your challenges</a>
-            <a href="./feedback">Feedback</a>
+            <a href="./profile/feedback">Feedback</a>
             <a href="#">Sign out</a>
         </nav>
     </aside>
