@@ -95,7 +95,7 @@ button:hover{
 }
 
 .start-blue{
-  min-width: 12rem;
+  /* min-width: 12rem; */
 }
 
 .start-grey{
