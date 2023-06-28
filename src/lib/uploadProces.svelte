@@ -1,5 +1,12 @@
-<script lang="ts">
+<script>
 	import DragenDroppUploadProces from '$lib/DragenDroppUploadProces.svelte';
+	import { showInviteModal } from '$lib/inviteModal.svelte';
+
+	let showInviteModal = false;
+
+	function openInviteModal() {
+		showInviteModal = true;
+	}
 </script>
 
 <div class="grouping">
@@ -29,6 +36,7 @@
 		</fieldset>
 		<div class="members">
 			<div class="addMember">
+				<button class="submit-button" on:click={openInviteModal}>++</button>
 				<img class="profilePic" src="" alt="" />
 				<p class="profileName">Bart-Jan</p>
 			</div>
