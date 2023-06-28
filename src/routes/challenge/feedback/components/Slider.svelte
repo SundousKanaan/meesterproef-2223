@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let titel: string;
 	export let icon: string = 'hearteyes';
-	export let level: string = 'So bad';
+	export let level: string = 'incomplete';
 	let iconURL: string;
 
 	switch (icon) {
@@ -33,9 +33,9 @@
 	}
 
 	let rankings: Ranking[] = [
-		{ rank: 'so bad' },
-		{ rank: 'bad' },
-		{ rank: 'good' },
+		{ rank: 'incomplete' },
+		{ rank: 'improveable'},
+		{ rank: 'good' },	
 		{ rank: 'super' },
 		{ rank: 'amazing' },
 		{ rank: 'So amazing' }
@@ -130,7 +130,7 @@
 		padding: 0.25em 0.5em;
 		border-radius: 0.5em;
 
-		background-color: white;
+		background-color: var(--white);
 	}
 
 	label input[type='range'] {
@@ -145,7 +145,7 @@
 		background: repeating-linear-gradient(
 				to right,
 				transparent calc(1em - 2px),
-				black 0 calc(1em + 2px),
+				var(--black) 0 calc(1em + 2px),
 				transparent 0 calc((100% - 2em) / 5 + 1em - 2px)
 			),
 			/* vulling */

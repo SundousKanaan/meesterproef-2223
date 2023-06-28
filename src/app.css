@@ -9,7 +9,6 @@
 
 main {
     background-color: #EDF2F2;
-
 }
 
 @font-face {
@@ -121,15 +120,11 @@ main {
     display: flex;
     flex-direction: column;
     padding: 2em 1em;
-    /* background: */
 }
 
-/* Wat the fuck is dit, please remove ASAP dit is echt matig bro */
 .boxed {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
     padding: 1em 0;
 }
-
-/* TODO: Get yo shit together bro */
