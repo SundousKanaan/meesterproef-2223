@@ -83,11 +83,11 @@
 
 	<div class="buttons">
 		<div class={processCounter == 1 ? 'noButton' : 'button back'}>
-			<Buttons handleClick={minCount} variant="start-grey" size="full-width">Back</Buttons>
+			<Buttons handleClick={minCount} variant="start-blue" size="full-width">Back</Buttons>
 		</div>
 
 		<div class={processCounter == 4 ? 'noButton' : 'button next'}>
-			<Buttons handleClick={plusCount} variant="start-grey" size="full-width">Next</Buttons>
+			<Buttons handleClick={plusCount} variant="start-blue" size="full-width">Next</Buttons>
 		</div>
 		<div class="savexit">
 			<Buttons variant="savexit" size="full-width">Save & Exit</Buttons>
@@ -216,7 +216,6 @@
 		}
 
 		.buttons {
-			background-color: antiquewhite;
 			grid-template-columns: repeat(6, 1fr);
 		}
 
