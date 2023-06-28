@@ -361,5 +361,9 @@ button:hover{
     background: white;
     padding:1em 0;
 }
+aside{
+    height:100%;
+    min-height:100vh;
+}
 }
 </style>
