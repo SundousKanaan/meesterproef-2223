@@ -49,8 +49,9 @@
 }
 
 button{
-  background-color: #21bde5;
-  color: #fff;
+  background-color: var(--blue-button);
+  color: var(--white);
+  font-family: var(--font-family);
   font-size: 1.2rem;
   padding: 1rem;
   font-weight: 700;
@@ -60,17 +61,17 @@ button{
 }
 
 button:hover{
-  background-color: #32a5c3;
+  background-color: var(--theme-secondary);
 }
 
 .start-yellow,
 .primary {
-  background-color: #F7CE46;
-  color: #000000;
+  background-color: var(--theme-color);
+  color: var(--black);
 }
 
 .start-yellow:hover{
-  background-color: #e1b114;
+  background-color: var(--primary-600);
 }
 
 .start-blue{
@@ -80,13 +81,13 @@ button:hover{
 
 .start-grey{
   background-color: #B1AFA9;
-  color: #000000;
+  color: var(--black);
   cursor: pointer;
 }
 
 .details{
   background-color: #F7CE46;
-  color: #000000;
+  color: var(--black);
   min-width: 8rem;
   height: 4rem;
 }
@@ -97,25 +98,25 @@ button:hover{
 
 .view-yellow{
   background-color: #F7CE46;
-  color: #000000;
+  color: var(--black);
   min-width: 10rem;
   height: 4rem;
 }
 
 .view-yellow:hover{
-  background-color: #e1b114;
+  background-color: var(--primary-600);
 }
 
 .view-grey{
   background-color: #B1AFA9;
-  color: #000000;
+  color: var(--black);
   min-width: 10rem;
   height: 4rem;
 }
 
 .view-challenge {
     background-color: #F7CE46;
-    color: #000000;
+    color: var(--black);
     width: 22rem;
     height: 4rem;
     position: relative;
@@ -132,7 +133,7 @@ button:hover{
   }
 
 .view-challenge:hover{
-  background-color: #e1b114;
+  background-color: var(--primary-600);
 }
 
 .edit{
@@ -155,9 +156,9 @@ button:hover{
   width: 5rem;
   height: 5rem;
   position: relative;
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #000000;
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
 }
 
 .left:hover{
@@ -178,9 +179,9 @@ button:hover{
   width: 5rem;
   height: 5rem;
   position: relative;
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #000000;
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
 }
 
 .right::after {
@@ -200,9 +201,9 @@ button:hover{
   width: 5rem;
   height: 5rem;
   position: relative;
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #000000;
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
   position: fixed;
   top: 80%;
   right: 5%;
@@ -264,14 +265,20 @@ button:hover{
 
 .savexit{
   border: 5px solid #21bde5;
-  background-color: #FFFFFF;
-  color: #000000;
+  background-color: var(--white);
+  color: var(--black);
 }
 
 .skipcancel{
   border: none;
   color: #73738C;
-  background-color: #FFFFFF;
+  background-color: var(--white);
+  font-weight: lighter;
+}
+
+.skipcancel:hover{
+  background-color: var(--white);
+  color: #21bde5;
 }
 
 </style>

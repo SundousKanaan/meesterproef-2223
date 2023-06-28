@@ -49,6 +49,10 @@
         <!-- <Buttons variant="savexit"/> -->
     </div>
 
+    <div><Buttons variant="skipcancel">SAVE</Buttons>	
+        <!-- <Buttons variant="savexit"/> -->
+    </div>
+
     <div>	
         <Buttons variant="up" handleClick={scroll}/>
     </div>
