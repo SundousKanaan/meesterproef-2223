@@ -137,6 +137,11 @@
 		display: none;
 	}
 
+	header > button{
+		background:unset;
+		border:unset;
+	}
+
 	header nav > ul {
 		display: flex;
 		flex-direction: row;
@@ -375,4 +380,11 @@
 			color: yellow;
 		}
 	}
+
+	@media (max-width:800px) {
+    header {
+        position: sticky;
+        top: 0;
+    }
+}
 </style>

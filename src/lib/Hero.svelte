@@ -83,6 +83,7 @@
     flex-wrap:nowrap;
     scroll-snap-type: x mandatory;
     scroll-snap-align: center;
+    max-height: calc(100dvh - 5em);
 }
 section.hero > h2 {
     position: absolute;
