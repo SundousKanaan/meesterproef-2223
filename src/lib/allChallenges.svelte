@@ -882,15 +882,15 @@
 </section>
 
 <section class="boxed">
-    <article class="challenge-block">
-        <figure>
-            <img src={eye} alt=""/>
-            <div class="overlay">
-                <h4>Idolish drawing</h4>
-                <p>Sundous</p>
-            </div>
-        </figure>
-    </article>
+        <article class="challenge-block">
+            <figure>
+                <img src={eye} alt=""/>
+                <div class="overlay">
+                    <h4>Idolish drawing</h4>
+                    <p>Sundous</p>
+                </div>
+            </figure>
+        </article>
     <article class="challenge-block">
         <figure>
             <img src={eye} alt=""/>
