@@ -1,35 +1,17 @@
 <script lang="ts">
 	import Buttons from "$lib/Buttons.svelte";
-	export let type: 'speed' | 'extensive' | 'medals' = 'speed';
+	export let title: string = "";
+	export let size: string = "normal";
+	export let padding: string = "normal";
 </script>
 
-<article>
+<article class="size-{size} padding-{padding}">
+	{#if title}
 	<h2 class="title">
-		{#if type == 'speed'}
-			Speed Review
-		{:else if type == 'extensive'}
-			Extensive Review
-		{:else}
-			Give Medals
-		{/if}
+		{title}
 	</h2>
-	<p class="description">
-		{#if type == 'speed'}
-			Be critical. We advice you to let a maximum of 20 designs pass.
-		{:else if type == 'extensive'}
-			You give extensive feedback to everyone about their work.
-		{:else}
-			When you are done with reviewing all the designs, you can give medals to the bests.
-		{/if}
-	</p>
-
-	{#if type == 'speed'}
-		<Buttons variant="start-yellow">Speed review</Buttons>
-	{:else if type == 'extensive'}
-		<Buttons variant="start-blue">Extensive review</Buttons>
-	{:else}
-		<Buttons variant="start-grey">Give medals</Buttons>
 	{/if}
+	<slot />
 </article>
 
 <style>
@@ -39,17 +21,29 @@
 		background-color: white;
 		padding: 3rem;
 
-		display: grid;
-		grid-template-rows: 4rem 1fr 1fr;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.padding-tiny {
+		padding: 30px;
+	}
+
+	.size-normal {
+		width: 100%;
+	}
+
+	.size-full {
+		width: 100%;
+		height: 100%;
+	}
+
+	.title {
+		margin-bottom: 24px;
 	}
 
 	h2 {
 		font-size: 1.1rem;
-	}
-
-	button {
-		margin-top: 1rem;
-		min-height: 4rem;
 	}
 
 	@media only screen and (max-width: 1000px) {

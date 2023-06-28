@@ -201,12 +201,14 @@ a:hover{
 }
 
 main{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; /* Updated property */
-    gap: 0;
-    max-width: 75em;
-    margin: 0 auto;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:0;
+    max-width:75em;
+    margin:0 auto;
+    background:white;
+    padding:unset;
 }
 main aside{
     border:1px solid rgb(196, 196, 196);
