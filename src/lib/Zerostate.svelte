@@ -1,10 +1,9 @@
 <script lang="ts">
 	let showing: string;
 	let stap: string;
-	let fullpoint: string;
-    let statuscheck: string;
+	let statuscheck: string;
 
-    let imagesCount: number = 1; 
+	let imagesCount: number = 1;
 
 	interface image {
 		src: string;
@@ -14,31 +13,28 @@
 
 	let imageNumber: number = imagesCount;
 	function setImageSource(): void {
-        imagesCount += 1;
-        imageNumber = imagesCount;
-        console.log("imagesCount", imagesCount, imageNumber);
+		imagesCount += 1;
+		imageNumber = imagesCount;
+		console.log('imagesCount', imagesCount, imageNumber);
 
-        if (imagesCount === 4) {
-            statuscheck = "close";
-            imageNumber = 1;
-            imagesCount = 1;
-
-        }
-        
+		if (imagesCount === 4) {
+			statuscheck = 'close';
+			imageNumber = 1;
+			imagesCount = 1;
+		}
 	}
-
 </script>
 
-<section class="{statuscheck}">
+<section class={statuscheck}>
 	<div class="mobimagecontainer">
-        <!-- images src -->
+		<!-- images src -->
 		<img src="/zero-state-mob{imageNumber}.svg" alt="zero stat {stap}" class={showing} />
 	</div>
 
 	<div class="points">
-		<span class={(fullpoint = 'full')} />
-		<span class={(fullpoint = ' ')} />
-		<span class={(fullpoint = ' ')} />
+		<span class="full" />
+		<span class={imagesCount >= 2 ? 'full' : ''} />
+		<span class={imagesCount == 3 ? 'full' : ''} />
 	</div>
 
 	<div>
@@ -70,9 +66,9 @@
 		background-color: rgb(126, 126, 126);
 	}
 
-    .close{
-        display: none;
-    }
+	.close {
+		display: none;
+	}
 
 	.mobimagecontainer {
 		width: 90%;
