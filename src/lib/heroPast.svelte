@@ -45,6 +45,7 @@
 		justify-content: flex-start;
 		flex-direction: column;
 		flex-wrap: wrap;
+		align-items: center;
 		width: 100%;
 		margin-bottom: 2em;
 		background-image: url('/heroPast.png');
@@ -59,8 +60,9 @@
 	.hero > div {
 		display: flex;
 		flex-direction: column;
-		padding: 1.3em;
+		padding: 1em;
 		padding-top: 3.5em;
+		width: 1200px;
 	}
 
 	.hero > div:first-of-type {
@@ -69,6 +71,7 @@
 
 	.hero > div:last-of-type {
 		justify-content: center;
+		width: 90%;
 	}
 
 	.hero > div h1 {
@@ -91,7 +94,6 @@
 
 	.hero div .breadcrumbs {
 		display: flex;
-		/* width: 50%; */
 		gap: 1.5em;
 		list-style: none;
 		padding: 0;

@@ -201,6 +201,10 @@
 	}
 
 	@media (max-width: 60em) {
+		h2 {
+			padding-left: 1em;
+		}
+
 		.plaatsing {
 			flex-direction: column;
 			align-items: center;
