@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	import Buttons from '$lib/Buttons.svelte';
 	let showing: string;
 	let stap: string;
@@ -24,11 +26,28 @@
 		imageNumber = 1;
 		imagesCount = 1;
 	}
+
+	function handleKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			skiptheinfo();
+		}
+	}
+
+	onMount(() => {
+		document.addEventListener('keydown', handleKeyDown);
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown);
+		};
+	});
 </script>
 
-<section class="status {statuscheck}">
+<section class="mob {statuscheck}">
 	<div class="mobimagecontainer">
 		<img src="/zero-state-mob{imageNumber}.svg" alt="zero stat {stap}" class={showing} />
+	</div>
+
+	<div class="pcimagecontainer">
+		<img src="/zero-state-pc.svg" alt="zero stat {stap}" class={showing} />
 	</div>
 
 	<div class="points">
@@ -37,7 +56,7 @@
 		<span class={imagesCount == 3 ? 'full' : ''} />
 	</div>
 
-	<div>
+	<div class="nextButton">
 		<Buttons variant="savexit" handleClick={setImageSource}>Next</Buttons>
 	</div>
 
@@ -51,6 +70,9 @@ no-repeat; */ -->
 
 <style>
 	section {
+		width: 100vw;
+		height: 100vh;
+
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -74,7 +96,7 @@ no-repeat; */ -->
 
 	.mobimagecontainer {
 		width: 90%;
-		height: fit-content;
+		height: 80%;
 
 		/* position: absolute; */
 
@@ -83,7 +105,8 @@ no-repeat; */ -->
 	}
 
 	img {
-		width: 100%;
+		height: 100%;
+		object-fit: contain;
 	}
 
 	.showing {
@@ -112,5 +135,27 @@ no-repeat; */ -->
 		position: fixed;
 		top: 1em;
 		right: 1em;
+	}
+
+	.pcimagecontainer {
+		display: none;
+	}
+
+	@media (min-width: 1250px) {
+		.mobimagecontainer {
+			display: none;
+		}
+
+		.pcimagecontainer {
+			display: flex;
+		}
+
+		.points {
+			display: none;
+		}
+
+		.nextButton {
+			display: none;
+		}
 	}
 </style>
