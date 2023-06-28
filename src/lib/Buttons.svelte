@@ -13,7 +13,9 @@
     "right" |
     "up" |
     "yes" |
-    "no";
+    "no" |
+    "savexit" |
+    "skipcancel";
 
     export let handleClick = () => {};
 
@@ -259,5 +261,17 @@ button:hover{
     top: 50%;
     transform: translateY(-50%);
   }
+
+.savexit{
+  border: 5px solid #21bde5;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.skipcancel{
+  border: none;
+  color: #73738C;
+  background-color: #FFFFFF;
+}
 
 </style>
