@@ -31,7 +31,7 @@
 <!-- <svelte:window on:resize={() => windowWidth = window.innerWidth} /> -->
 
 <header class={active ? 'active' : ''}>
-    <a href="../../../"><img src="logo_tioc_yellow.svg" alt=""></a>
+    <a href="../../../"><img src="/logo_tioc_yellow.svg" alt=""></a>
     <!-- {#if menuShown} -->
     <!-- A button with the class to hide the navigation. it must be readable for people with screenreaders by using aria-->
     <button class="menu-hider" aria-label="hide navigation" on:click={() => active = !active}></button>

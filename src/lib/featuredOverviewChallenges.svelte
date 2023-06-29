@@ -1,5 +1,6 @@
 <script>
     import AllChallenges from "$lib/allChallenges.svelte";
+    import SubmittedChallenges from "$lib/submittedChallenges.svelte"
 	import MyChallenges from './myChallenges.svelte';
 	import Top3Challenges from './top3Challenges.svelte';
 
@@ -206,6 +207,7 @@
 <MyChallenges />
 <Top3Challenges />
 <AllChallenges/>
+<!--<SubmittedChallenges/>-->
 </div>
 
 

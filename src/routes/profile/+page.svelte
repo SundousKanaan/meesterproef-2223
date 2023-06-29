@@ -3,8 +3,8 @@
 </svelte:head>
 
 <script lang="ts">
-    import Article from '$lib/Article.svelte';
-    let selectedState = 'active'; // Default to showing active challenges
+    import Article from "$lib/Article.svelte";
+    let selectedState = 'active';
 
     function selectState(state: string) {
         selectedState = state;
@@ -15,7 +15,7 @@
             imgSrc: 'https://images.pexels.com/photos/13730872/pexels-photo-13730872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             peopleCount: 25,
             title: 'Web development',
-            description: 'Within the AUAS program, people are only expected to create a safe online environment. Some people don\'t know what XXS vulnerability is. That\'s why this challenge has been added for people who need to make their applications more secure.',
+            description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
             timeline: 'May 1, 2023 - June 30, 2023',
             organization: 'UAUS',
             state:'active',
@@ -32,10 +32,26 @@
             userState:'waiting'
         },
         {
+            imgSrc: 'https://images.pexels.com/photos/261628/pexels-photo-261628.jpeg',
+            peopleCount: 30,
+            title: 'Graphic design',
+            description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
+            timeline: 'June 1, 2023 - July 31, 2023',
+            organization: 'DesignCo'
+        },
+        {
+            imgSrc: 'https://images.pexels.com/photos/261628/pexels-photo-261628.jpeg',
+            peopleCount: 30,
+            title: 'Graphic design',
+            description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
+            timeline: 'June 1, 2023 - July 31, 2023',
+            organization: 'DesignCo'
+        },
+        {
             imgSrc: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg',
             peopleCount: 15,
-            title: 'Mobile App Development',
-            description: 'The challenge is to build a mobile app that helps users manage their time and tasks more effectively. We are looking for unique and user-friendly solutions.',
+            title: 'Graphic design',
+            description: 'The challenge is to create a new logo for our brand. We are looking for innovative and creative designs.',
             timeline: 'July 1, 2023 - August 31, 2023',
             organization: 'AppDev',
             state:'signed up',
@@ -142,6 +158,8 @@
 </script>
 
 <main>
+
+
     <section>
         <h1>Your challenges</h1>
         <p>View and update the current challenges you signed up for</p>
@@ -169,6 +187,8 @@
         />
     {/each}
     </section>
+
+
     <aside>
         <div>
             <img src={currentUser.profilePicture} alt="">
@@ -195,12 +215,15 @@
             <a href="#">Profile</a>
             <a href="#">Settings</a>
             <a class="active" href="/profile">Your challenges</a>
+            <a href="./profile/feedback">Feedback</a>
             <a href="#">Sign out</a>
         </nav>
     </aside>
 </main>
 
 <style>
+
+
 
 aside{
     order:-1;
@@ -346,6 +369,16 @@ button:hover{
     transform:scale(1.05);
     cursor:pointer;
     opacity: 1!important;
+}
+
+section > section{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5em;
+}
+
+section > section h1, section > section p{
+    width:100%;
 }
 
 @media (max-width:792px){

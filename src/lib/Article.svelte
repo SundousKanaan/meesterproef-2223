@@ -91,6 +91,15 @@ article > div{
     display:flex;
     flex-direction:column;
     gap:.5em;
+    height:100%;
+}
+
+margin > div p:last-of-type{
+    margin-top:auto;
+}
+
+article div div{
+    flex-direction:column;
     justify-content: space-between;
     height:100%;
 }
@@ -196,21 +205,21 @@ div > div button:last-of-type:hover::after{
 
 div div span{
     position:relative;
+    width:100%;
+    text-align: center;
 }
-div div span::before, div div span::after{
-    position:absolute;
-    height:40%;
-    width:.1em;
-    top:0;
-    left:.25em;
-    content:"|";    
-}
-div div span::before{
-    top:-1em;
-}
-div div span::after{
-    top:1em;
-}
+/*div div span::before, div div span::after{*/
+/*    position:absolute;*/
+/*    height:40%;*/
+/*    width:.1em;*/
+/*    top:0;*/
+/*    left:.25em;*/
+/*    content:"|";*/
+/*}*/
+/*div div span::before{*/
+/*    top:-1em;*/
+/*}*/
+
 h3{
     position:absolute;
     top:1em;
