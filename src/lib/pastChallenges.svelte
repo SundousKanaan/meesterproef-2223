@@ -6,6 +6,14 @@
 	import kubus from '$lib/assets/kubus.png';
 	import AllChallenges from '$lib/allChallenges.svelte';
 	import SubmittedChallenges from '$lib/submittedChallenges.svelte';
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
+
+	let enrolled = false;
+
+	function cancelEnroll() {
+		enrolled = !enrolled;
+	}
 </script>
 
 <div class="grouping">
@@ -91,8 +99,18 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="main-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="http://localhost:5173/challenges/asics-challenge" class="meerInformatie">Meer informatie</a>
+					{#if enrolled}
+						<a class="enrollDisabled" on:click={() => {
+    					cancelEnroll();
+    					dispatch('enrollmentStatusChanged', enrolled);
+  						}}>Enrolled</a>
+					{:else}
+						<a href="#" class="enroll" on:click={() => {
+    					cancelEnroll();
+    					dispatch('enrollmentStatusChanged', enrolled);
+  						}}>Enroll</a>
+					{/if}
 				</div>
 				<em>deadline:</em>
 			</div>
