@@ -6,8 +6,12 @@
     import Article from '$lib/Article.svelte';
     let selectedState = 'active'; // Default to showing active challenges
 
-    function selectState(state: string) {
-        selectedState = state;
+    function selectState(state: string, liked?: boolean) {
+        if(liked) {
+            selectedState = 'liked';
+        } else {
+            selectedState = state;
+        }
     }
 
     let challenges = [
@@ -19,7 +23,8 @@
             timeline: 'May 1, 2023 - June 30, 2023',
             organization: 'UAUS',
             state:'active',
-            userState:'uploaded'
+            userState:'uploaded',
+            liked: true
         },
         {
             imgSrc: 'https://images.pexels.com/photos/261628/pexels-photo-261628.jpeg',
@@ -29,7 +34,8 @@
             timeline: 'June 1, 2023 - July 31, 2023',
             organization: 'DesignCo',
             state:'active',
-            userState:'waiting'
+            userState:'waiting',
+            liked: true
         },
         {
             imgSrc: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg',
@@ -39,7 +45,8 @@
             timeline: 'July 1, 2023 - August 31, 2023',
             organization: 'AppDev',
             state:'signed up',
-            userState:'Challenge has not started yet'
+            userState:'Challenge has not started yet',
+            liked: true
         },
         {
             imgSrc: 'https://images.pexels.com/photos/1181356/pexels-photo-1181356.jpeg',
@@ -79,7 +86,8 @@
             timeline: 'November 1, 2023 - December 31, 2023',
             organization: 'RoboticsLab',
             state:'active',
-            userState:'waiting'
+            userState:'waiting',
+            liked: true
         },
         {
             imgSrc: 'https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg',
@@ -89,7 +97,8 @@
             timeline: 'December 1, 2023 - January 31, 2024',
             organization: 'SmartHome',
             state:'active',
-            userState:'waiting'
+            userState:'waiting',
+            liked: true
         },
         {
             imgSrc: 'https://images.pexels.com/photos/929245/pexels-photo-929245.jpeg',
@@ -110,7 +119,8 @@
             timeline: 'February 1, 2024 - March 31, 2024',
             organization: 'VRLearn',
             state:'active',
-            userState:'uploaded'
+            userState:'uploaded',
+            liked: true
         },
         {
             imgSrc: 'https://images.pexels.com/photos/459654/pexels-photo-459654.jpeg',
@@ -130,10 +140,14 @@
             timeline: 'April 1, 2024 - May 31, 2024',
             organization: 'FinServe',
             state:'finished',
-            userState:'finished'
+            userState:'finished',
+            liked: true
         }];
 
-    $: filteredChallenges = challenges.filter(challenge => challenge.state === selectedState);
+        $: filteredChallenges = selectedState === 'liked' ?
+    challenges.filter(challenge => challenge.liked === true) :
+    challenges.filter(challenge => challenge.state === selectedState);
+    
     
     let currentUser = {
         name: 'John Doe',
@@ -155,6 +169,9 @@
             <button class:selected={selectedState === 'signed up'} on:click={() => selectState('signed up')}>
                 Signed up
             </button>
+            <button class:selected={selectedState === 'liked'} on:click={() => selectState(null, true)}>
+                Liked challenges
+            </button>
         </div>
         {#each filteredChallenges as challenge (challenge.title)}
         <Article 
@@ -166,6 +183,7 @@
             organization={challenge.organization}
             state={challenge.state}
             userState={challenge.userState}
+            liked={challenge.liked}
         />
     {/each}
     </section>
