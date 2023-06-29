@@ -1,4 +1,5 @@
 <script lang="ts">
+      import { goto } from '$app/navigation';
     export let imgSrc: string;
     export let peopleCount:string;
     export let title:string;
@@ -7,6 +8,10 @@
     export let organization:string;
     export let state: string; // active, finished, signed up
     export let userState:string;
+
+    function handleClick() {
+    goto('/challenges/upload');
+  }
 </script>
 
 <article>
@@ -34,9 +39,9 @@
         <div>
             {#if state === 'active'}
                 {#if userState.toLowerCase() === 'uploaded'}
-                    <button>Add more</button>
+                    <button on:click={handleClick}>Add more</button>
                 {:else}
-                    <button>Add your journey</button>
+                    <button on:click={handleClick}>Add your journey</button>
                 {/if}
                 <span>or</span>
                 <button>Miss your chance of winning</button>

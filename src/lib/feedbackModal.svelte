@@ -118,7 +118,7 @@
         height: 90%;
         box-shadow: 0 0.4rem 1.2rem rgba(0,0,0,.1);
         background-color: var(--white);
-        z-index: 5;
+        z-index: 15!important;
     }
 
     .modal .prize-section {

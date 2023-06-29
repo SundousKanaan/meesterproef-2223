@@ -83,6 +83,7 @@ let currentUser = {
                             <li><a href="/profile">My profile</a></li>
 							<li><a href="/profile/feedback">Your feedback</a></li>
                             <li><a href="#">Settings</a></li>
+							<li><a href="/challenger/challenges">Dashboard</a></li>
                             <li><a href="#" on:click={logOut}>Sign out</a></li> <!-- add on:click event -->
                         </ul>
                     </div>
@@ -123,7 +124,7 @@ let currentUser = {
 		min-height: 5em;
 		padding: 0 1em;
 		position: relative;
-		z-index: 10;
+		z-index: 5;
 	}
 
 	header button.menu-hider {
