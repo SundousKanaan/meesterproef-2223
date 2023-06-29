@@ -55,7 +55,6 @@
 		padding: 8px 42px;
 	}
 
-<<<<<<< HEAD
 button{
   background-color: var(--blue-button);
   color: var(--white);
@@ -67,29 +66,6 @@ button{
   border: none;
   cursor: pointer;
 }
-=======
-	.size-large {
-		font-size: 1.2rem !important;
-		padding: 1.5rem !important;
-	}
-
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-	button {
-	background-color: #21bde5;
-	color: #fff;
-	font-size: 1.2rem;
-	padding: 1rem;
-	font-weight: 700;
-	outline: none;
-	border: none;
-	cursor: pointer;
-	}
->>>>>>> development
 
 button:hover{
   background-color: var(--theme-secondary);
@@ -101,14 +77,8 @@ button:hover{
   color: var(--black);
 }
 
-<<<<<<< HEAD
 .start-yellow:hover{
   background-color: var(--primary-600);
-=======
-.start-yellow:hover,
-.primary:hover{
-  background-color: #e1b114;
->>>>>>> development
 }
 
 .secondary {
@@ -117,12 +87,7 @@ button:hover{
 }
 
 .start-blue{
-<<<<<<< HEAD
-  background-color: var(--blue-button);
-  color: var(--white);
-=======
   /* min-width: 12rem; */
->>>>>>> development
 }
 
 .start-grey{
@@ -185,7 +150,6 @@ button:hover{
 		cursor: pointer;
 	}
 
-<<<<<<< HEAD
 .view-challenge:hover{
   background-color: var(--primary-600);
 }
@@ -196,23 +160,11 @@ button:hover{
   position: relative;
   padding-right: 2rem;
 }
-=======
-	button:hover, a:hover {
-		background-color: #32a5c3;
-	}
-
-	.start-yellow,
-	.primary {
-		background-color: #f7ce46;
-		color: #000000;
-	}
->>>>>>> development
 
 	.start-yellow:hover {
 		background-color: #e1b114;
 	}
 
-<<<<<<< HEAD
 .left{
   width: 5rem;
   height: 5rem;
@@ -221,13 +173,6 @@ button:hover{
   color: var(--black);
   border: 1px solid var(--black);
 }
-=======
-	.start-grey {
-		background-color: #b1afa9;
-		color: #000000;
-		cursor: pointer;
-	}
->>>>>>> development
 
 	.details {
 		background-color: #f7ce46;
@@ -240,90 +185,17 @@ button:hover{
 		background-color: #e1b114;
 	}
 
-<<<<<<< HEAD
-.right{
-  width: 5rem;
-  height: 5rem;
-  position: relative;
-  background-color: var(--white);
-  color: var(--black);
-  border: 1px solid var(--black);
-}
-=======
 	.view-yellow {
 		background-color: #f7ce46;
 		color: #000000;
 		min-width: 10rem;
 		height: 4rem;
 	}
->>>>>>> development
 
 	.view-yellow:hover {
 		background-color: #e1b114;
 	}
 
-<<<<<<< HEAD
-.right:hover{
-  background-color: var(--neutral-300);
-}
-
-.up{
-  width: 5rem;
-  height: 5rem;
-  position: relative;
-  background-color: var(--white);
-  color: var(--black);
-  border: 1px solid var(--black);
-  position: fixed;
-  top: 80%;
-  right: 5%;
-  z-index: 100;
-}
-
-.up::after {
-    content: "\f062";
-    font-family: "Font Awesome 5 Free";
-    position: absolute;
-    right: 40%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-.up:hover{
-  background-color: var(--neutral-300);
-}
-
-.yes{
-  background-color: var(--accent-success-500);
-  width: 10rem;
-  height: 4rem;
-  position: relative;
-}
-
-.yes:hover{
-  background-color: var(--accent-success-700);
-}
-
-.yes::after {
-    content: "\f00c";
-    font-family: "Font Awesome 5 Free";
-    position: absolute;
-    right: 45%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-.no{
-  background-color: var(--accent-danger-500);
-  width: 10rem;
-  height: 4rem;
-  position: relative;
-}
-
-.no:hover{
-  background-color: var(--accent-danger-700);
-}
-=======
 	.view-grey {
 		background-color: #b1afa9;
 		color: #000000;
@@ -368,7 +240,6 @@ button:hover{
 		top: 50%;
 		transform: translateY(-50%);
 	}
->>>>>>> development
 
 	.left {
 		width: 5rem;
@@ -379,25 +250,6 @@ button:hover{
 		border: 1px solid #000000;
 	}
 
-<<<<<<< HEAD
-.savexit{
-  border: 5px solid var(--blue-button);
-  background-color: var(--white);
-  color: var(--black);
-}
-
-.skipcancel{
-  border: none;
-  color: var(--gray-font);
-  background-color: var(--white);
-  font-weight: lighter;
-}
-
-.skipcancel:hover{
-  background-color: var(--white);
-  color: var(--blue-button);
-}
-=======
 	.left:hover {
 		background-color: #d8d7d4;
 	}
@@ -472,5 +324,4 @@ button:hover{
 		top: 50%;
 		transform: translateY(-50%);
 	}
->>>>>>> development
 </style>

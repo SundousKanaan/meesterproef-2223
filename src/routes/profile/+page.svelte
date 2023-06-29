@@ -56,7 +56,8 @@
             timeline: 'August 1, 2023 - September 30, 2023',
             organization: 'DataInc',
             state:'finished',
-            userState:'finished'
+            userState:'finished',
+            liked:false
         },
         {
             imgSrc: 'https://images.pexels.com/photos/1420709/pexels-photo-1420709.jpeg',
@@ -66,7 +67,8 @@
             timeline: 'September 1, 2023 - October 31, 2023',
             organization: 'SecureNet',
             state:'active',
-            userState:'uploaded'
+            userState:'uploaded',
+            liked:false
         },
         {
             imgSrc: 'https://images.pexels.com/photos/2768878/pexels-photo-2768878.jpeg',
@@ -76,7 +78,8 @@
             timeline: 'October 1, 2023 - November 30, 2023',
             organization: 'GameDev',
             state:'signed up',
-            userState:'Challenge has not started yet'
+            userState:'Challenge has not started yet',
+            liked:false
         },
         {
             imgSrc: 'https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg',
@@ -108,8 +111,8 @@
             timeline: 'January 1, 2024 - February 28, 2024',
             organization: 'MarketingInc',
             state:'signed up',
-            userState:'Challenge has not started yet'
-
+            userState:'Challenge has not started yet',
+            liked:false
         },
         {
             imgSrc: 'https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg',
@@ -130,7 +133,8 @@
             timeline: 'March 1, 2024 - April 30, 2024',
             organization: 'HealthTech',
             state:'finished',
-            userState:'finished'
+            userState:'finished',
+            liked:false
         },
         {
             imgSrc: 'https://images.pexels.com/photos/1000324/pexels-photo-1000324.jpeg',
@@ -163,14 +167,14 @@
             <button class:selected={selectedState === 'active'} on:click={() => selectState('active')}>
                 Active challenges
             </button>
-            <button class:selected={selectedState === 'finished'} on:click={() => selectState('finished')}>
-                Finished challenges
-            </button>
             <button class:selected={selectedState === 'signed up'} on:click={() => selectState('signed up')}>
                 Signed up
             </button>
             <button class:selected={selectedState === 'liked'} on:click={() => selectState(null, true)}>
                 Liked challenges
+            </button>
+            <button class:selected={selectedState === 'finished'} on:click={() => selectState('finished')}>
+                Finished challenges
             </button>
         </div>
         {#each filteredChallenges as challenge (challenge.title)}
