@@ -27,6 +27,12 @@
     function openFeedbackModal() {
       showModal = true;
     }
+
+    let currentUser = {
+        name: 'John Doe',
+        profilePicture: 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg',
+        country:'The Netherlands'}
+
   </script>
   
   <main>
@@ -54,11 +60,11 @@
 
     <aside>
         <div>
-            <img src="" alt="">
-            <button>Remove image</button>
+            <img src={currentUser.profilePicture} alt="">
+            <button>Remove image</button> 
         </div>
-        <h2>username</h2>
-        <p>The Netherlands</p>
+        <h2>{currentUser.name}</h2>
+        <p>{currentUser.country}</p>
         <ul>
             <li>
                 <p>Followers</p>
@@ -145,7 +151,7 @@ aside div img {
     border-radius:50%;
     width:8em;
     height:8em;
-    background:yellow;
+    background:var(--theme-color);
     border:inset 2px #ffeb004f;
 }
 
@@ -155,7 +161,7 @@ aside div button {
     right:2em;
     height:3em;
     width:3em;
-    background:yellow;
+    background:var(--theme-color);
     border-radius:50%;
     border:none;
     cursor:pointer;

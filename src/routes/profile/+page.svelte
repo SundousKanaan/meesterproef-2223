@@ -195,6 +195,7 @@
             <a href="#">Profile</a>
             <a href="#">Settings</a>
             <a class="active" href="/profile">Your challenges</a>
+            <a href="/profile/feedback">Feedback</a>
             <a href="#">Sign out</a>
         </nav>
     </aside>

@@ -1,4 +1,10 @@
 <script>
+
+let currentUser = {
+        name: 'John Doe',
+        profilePicture: 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg',
+}
+
 	import { browser } from '$app/environment';
 
 	let active = false;
@@ -38,26 +44,20 @@
     <nav>
         <ul>
             <li class={openItem === 'item1' ? 'open' : ''} on:click={() => toggleOpen('item1')}>
-                <a href="../../../">Home</a>
+                <a href="/">Home</a>
             </li>
             <li class={openItem === 'item2' ? 'open' : ''} on:click={() => toggleOpen('item2')}>
-                <p>Learn</p>
+                <p>Challenge</p>
                 <div>
-                    <a href="#">Articles</a>
+                    <a href="challenges">Overview challenges</a>
+					<a href="challenges/past">Finished challenges</a>
                 </div>
             </li>
             <li class={openItem === 'item3' ? 'open' : ''} on:click={() => toggleOpen('item3')}>
                 <p>Discover</p>
                 <div>
-                    <a href="#">Creatives</a>
                     <a href="#">Inspiration</a>
-                </div>
-            </li>
-            <li class={openItem === 'item4' ? 'open' : ''} on:click={() => toggleOpen('item4')}>
-                <p>Grow</p>
-                <div>
-                    <a href="/overview">Challenges</a>
-                    <a href="#">Workshops</a>
+                    <a href="#">Articles</a>
                 </div>
             </li>
             <li class={openItem === 'item5' ? 'open' : ''} on:click={() => toggleOpen('item5')}>
@@ -68,23 +68,19 @@
                     <a href="#">Partners</a>
                     <a href="#">Sponsors</a>
                     <a href="#">Contact</a>
+					<a href="#">Why join</a>
+					<a href="#">Contact</a>
                 </div>
-                </li>
-                <li class={openItem === 'item6' ? 'open' : ''} on:click={() => toggleOpen('item6')}>
-                    <p>Register</p>
-                    <div>
-                        <a href="#">Why join?</a>
-                        <a href="#">FAQ</a>
-                    </div>
                 </li>
                 {#if loggedIn}
                 <li>
-                    <img src="" alt="" class="avatar">
-                    <p>Naam hier</p>
+                    <img src={currentUser.profilePicture} alt="Profile picture" class="avatar">
+                    <p>{currentUser.name}</p>
                     <div>
                         <ul>
                             <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">My profile</a></li>
+                            <li><a href="/profile">My profile</a></li>
+							<li><a href="/profile/feedback">Your feedback</a></li>
                             <li><a href="#">Settings</a></li>
                             <li><a href="#" on:click={logOut}>Sign out</a></li> <!-- add on:click event -->
                         </ul>
@@ -153,6 +149,10 @@
 	header nav ul p,
 	header a {
 		color: white;
+	}
+
+	.avatar{
+		object-fit:cover;
 	}
 
 	header nav ul li > div {
