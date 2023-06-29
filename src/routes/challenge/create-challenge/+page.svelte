@@ -55,6 +55,8 @@
 	}
 
 	function closePage() {
+		console.log("close page");
+		
 		window.location.href = "/challenger/challenges";
 	}
 </script>
@@ -98,7 +100,7 @@
 		</div>
 
 		<div class="skipcancel">
-			<Buttons variant="skipcancel" size="full-width" on:click={closePage}>Cancel</Buttons>
+			<Buttons variant="skipcancel" size="full-width" handleClick={closePage}>Cancel</Buttons>
 		</div>
 
 		<div class="send">
