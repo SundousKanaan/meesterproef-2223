@@ -53,6 +53,10 @@
 		console.log("jojo", isValidForm); // Is this a Jojo reference?????
 		
 	}
+
+	function closePage() {
+		window.location.href = "/challenger/challenges";
+	}
 </script>
 
 <section>
@@ -94,7 +98,7 @@
 		</div>
 
 		<div class="skipcancel">
-			<Buttons variant="skipcancel" size="full-width">Cancel</Buttons>
+			<Buttons variant="skipcancel" size="full-width" on:click={closePage}>Cancel</Buttons>
 		</div>
 
 		<div class="send">
