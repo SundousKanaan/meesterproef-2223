@@ -48,7 +48,7 @@
 		align-items: center;
 		width: 100%;
 		margin-bottom: 2em;
-		background-image: url('/heroPast.png');
+		background-image: url('/HeroPast.png');
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
