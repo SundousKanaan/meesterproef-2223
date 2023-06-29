@@ -23,13 +23,13 @@
 		inputRef = document.getElementById('file-input') as HTMLInputElement;
 	});
 
-	export let DragType: 'image' | 'zip';
+	export let DragType: 'image' | 'file';
 </script>
 
 <div class="drop-area" on:dragover={handleDragOver} on:drop={handleDrop}>
 	{#if DragType === 'image'}
 		<img src="/image-icon.svg" alt="svg icon" />
-	{:else if DragType === 'zip'}
+	{:else if DragType === 'file'}
 		<img src="/folder-icon.svg" alt="svg icon" />
 	{/if}
 	<div>

@@ -9,7 +9,6 @@
 
 main {
     background-color: #FFFFFF;
-
 }
 
 @font-face {
@@ -37,13 +36,14 @@ body {
     --blue-button: #21BDE5;
     --theme-color: #F7CE46;
     --theme-color-secondary: #FFF19D;
-    --theme-secondary: #32A5C3;
+    --theme-secondary:#32A5C3;
+    --primary300b: #BAE4E8;
     --black: #000000;
     --white: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.199);
     --shadow-button: 0 0 .5em var(--shadow-color);
     --padding-button: .5em 1em;
-
+    --shadow-cards: 2px 2px 8px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.1);
     /*
     ** THEME
     */
@@ -110,25 +110,20 @@ body {
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-
-    --pi: 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535940812848111745028410270193852110555964462294895493038196442881097566593344612847564823378678316527;
-
     --font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 main {
     display: flex;
     flex-direction: column;
-    /* padding: 2em 1em; */
-    /* background: */
 }
 
-/* Wat the fuck is dit, please remove ASAP dit is echt matig bro */
 .boxed {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
     padding: 1em 0;
+
 }
 
 /* TODO: Get yo shit together bro */
@@ -139,5 +134,5 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--optima)
+    font-family: var(--optima);
 }

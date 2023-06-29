@@ -1,14 +1,16 @@
 <script lang="ts">
-	import TeamUsers from './components/TeamUsers.svelte';
-	import Feedback from './components/Feedback-form.svelte';
-	import Usercard from './components/Usercard.svelte';
+	import TeamUsers from '../feedback/components/TeamUsers.svelte';
+	import Usercard from '../feedback/components/Usercard.svelte';
 	import Buttons from '$lib/Buttons.svelte';
-	import type { PageData } from './$types';
-	import type { SvelteComponent } from 'svelte';
-	import FeedbackTinder from './components/FeedbackTinder.svelte';
-	import Winners from '../medals/components/Winners.svelte';
+	import Winners from './components/Winners.svelte';
 
-	export let data: PageData;
+	function scroll() {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	}
+	
 </script>
 
 <section>
@@ -18,12 +20,11 @@
 	</div>
 
 	<div class="previous">
-		<Buttons variant="left" />
-	</div>
-
-	<div class="next">
-		<Buttons variant="right" />
-	</div>
+        <Buttons variant="left"/>
+        </div>
+        <div class="next">	
+        <Buttons variant="right"/>
+        </div>
 
 	<div class="container">
 		<div class="datacontainer">
@@ -31,14 +32,8 @@
 				<Usercard />
 			</div>
 
-			<div class="speedfeedback">
-				{#if data.feedbackType == 'speed'}
-					<FeedbackTinder />
-				{:else if data.feedbackType == 'acc'}
-					<Feedback />
-				{:else if data.feedbackType == 'medals'}
-					<Winners />
-				{/if}
+			<div class="medales">
+				<Winners />
 			</div>
 
 			<div class="members">
@@ -50,15 +45,24 @@
 		</div>
 
 		<div class="werkreview">
-			<iframe src="/challenge/feedback?feedback=medals" title="feedback" frameborder="0" />
+			<iframe src="/challenge/feedback?feedback=medals" title="portfolio" frameborder="0" />
 		</div>
 	</div>
-	<article class="submission">
-		<iframe src="https://tioc.nl" frameborder="0"></iframe>
-	</article>
+
+    <div>	
+        <Buttons variant="up" handleClick={scroll}/>
+    </div>
+	  
+	  <!-- <button on:click={() => toast.push('Hello world!')}>SHOW TOAST</button> -->
+
 </section>
 
 <style>
+	iframe{
+		width: 100%;
+		height: 50em;
+	}
+
 	section {
 		justify-self: center;
 		width: 90%;
@@ -99,6 +103,7 @@
 	.members {
 		padding: 1em;
 		border: solid 0.5px var(--black);
+		border-radius: 0.5em;
 	}
 
 	.members h3 {
@@ -108,10 +113,6 @@
 	.members ul {
 		display: flex;
 		flex-direction: column;
-	}
-
-	.speedfeedback {
-		height: fit-content;
 	}
 
 	.container {
@@ -127,21 +128,7 @@
 	}
 
 	.werkreview {
-		box-shadow: var(--shadow-cards);
-	}
-
-	iframe {
-		width: 100%;
-		height: 50em;
-	}
-
-	.submission {
-		grid-area: 2/3/5/4;
-	}
-
-	iframe {
-		width: 100%;
-		height: 100%;
+		border: solid 0.1em var(--black);
 	}
 
 	@media (min-width: 1200px) {
@@ -149,9 +136,9 @@
 			width: 100%;
 			grid-template-columns: 6em 30em 1fr 6em;
 			grid-template-rows: 6em auto;
+
 			padding: 0;
 		}
-
 		.titel {
 			grid-area: 1/2/2/-2;
 			text-align: unset;
@@ -160,13 +147,11 @@
 		.previous {
 			grid-area: 2/1/3/2;
 			position: fixed;
-			top: 12%;
 		}
 
 		.next {
 			grid-area: 2/4/3/-1;
 			position: fixed;
-			top: 12%;
 		}
 
 		.container {
@@ -177,8 +162,9 @@
 			grid-template-columns: 30em 1fr;
 			gap: 1em;
 		}
-		iframe {
-			height: 100%;
+
+		.werkreview {
+			border: solid 0.1em var(--black);
 		}
 	}
 </style>

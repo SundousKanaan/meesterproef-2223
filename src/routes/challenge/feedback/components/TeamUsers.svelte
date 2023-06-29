@@ -28,7 +28,7 @@
 			</span>
 			<p>{education}</p>
 			<span>
-				<h3>Rol:</h3>
+				<h3>Rolls:</h3>
 				<ul>
 					<li>
 						{#each rolls as rol (rol.id)}

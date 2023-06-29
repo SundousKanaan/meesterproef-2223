@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let titel: string;
 	export let icon: string = 'hearteyes';
-	export let level: string = 'So bad';
+	export let level: string = 'incomplete';
 	let iconURL: string;
 
 	switch (icon) {
@@ -33,9 +33,9 @@
 	}
 
 	let rankings: Ranking[] = [
-		{ rank: 'so bad' },
-		{ rank: 'bad' },
-		{ rank: 'good' },
+		{ rank: 'incomplete' },
+		{ rank: 'improveable'},
+		{ rank: 'good' },	
 		{ rank: 'super' },
 		{ rank: 'amazing' },
 		{ rank: 'So amazing' }
@@ -44,6 +44,20 @@
 	$: {
 		console.log('sliderValue:', sliderValue);
 	}
+
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		const ranges = document.querySelectorAll('input[type="range"]');
+
+		ranges.forEach((range) => {
+			const updateRange = (e: Event) => {
+				const currentRange = e.currentTarget as HTMLInputElement;
+				currentRange.style.setProperty('--value', currentRange.value);
+			};
+			range.addEventListener('input', updateRange);
+		});
+	});
 
 	function handleSliderInput(event: Event) {
 		sliderValue = Number((event.target as HTMLInputElement).value);
@@ -92,9 +106,7 @@
 	/>
 </label>
 
-<!-- min="1" max="5" step="1" -->
 <style>
-
 	label {
 		width: 100%;
 		height: fit-content;
@@ -115,10 +127,10 @@
 		text-transform: capitalize;
 		justify-self: end;
 
-		padding: .25em .5em;
-		border-radius: .5em;
+		padding: 0.25em 0.5em;
+		border-radius: 0.5em;
 
-		background-color: white;
+		background-color: var(--white);
 	}
 
 	label input[type='range'] {
@@ -130,26 +142,23 @@
 		grid-column: 1/-1;
 		border-radius: 5em;
 
-		background: rgba(145, 145, 145, 0.198);
-		background-image: linear-gradient(
-			to right,
-			rgba(145, 145, 145, 0.198) 0 23%,
-			black 0 23.5%,
-			rgba(145, 145, 145, 0.198) 0 41%,
-			black 0 41.5%,
-			rgba(145, 145, 145, 0.198) 0 60%,
-			black 0 60.5%,
-			rgba(145, 145, 145, 0.198) 0 77%,
-			black 0 77.5%,
-			rgba(255, 255, 255, 0.198) 0 99%,
-			black 0 99.5%
-		);
+		background: repeating-linear-gradient(
+				to right,
+				transparent calc(1em - 2px),
+				var(--black) 0 calc(1em + 2px),
+				transparent 0 calc((100% - 2em) / 5 + 1em - 2px)
+			),
+			/* vulling */
+				linear-gradient(to right, #f95b5b calc(1em + (100% - 2em) / 5 * var(--value, 0)), #0000 0),
+			/* default achtergrond */ linear-gradient(to right, rgba(145, 145, 145, 0.198) 0 0);
 
 		overscroll-behavior-x: contain;
 	}
+
 	label input[type='range']:focus {
 		outline: none;
 	}
+	
 	label input[type='range']::-webkit-slider-runnable-track {
 		width: 100%;
 		height: 1em;
@@ -229,8 +238,4 @@
 	label input[type='range'].rocket:hover::-moz-range-thumb {
 		transform: scale(1.8);
 	}
-
-	/* @media (prefers-reduced-motion) {
-		styles to apply if a user's device settings are set to reduced motion
-	} */
 </style>

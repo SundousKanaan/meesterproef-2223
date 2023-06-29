@@ -11,6 +11,7 @@
 	let slider_concept_value: number;
 	let slider_proces_value: number;
 	let slider_creativity_value: number;
+	let starscheck: string = '';
 
 	// Make sure the total doesn't exceed 10
 	$: {
@@ -21,6 +22,16 @@
 			if (slider_concept_value >= excess) slider_concept_value -= excess;
 			else if (slider_proces_value >= excess) slider_proces_value -= excess;
 			else if (slider_creativity_value >= excess) slider_creativity_value -= excess;
+		}
+
+		console.log("total" , total);
+		
+		if (total >= 10) {
+			starscheck = 'fullstars';
+
+			setTimeout(() => {
+				starscheck = '';
+			}, 2000);
 		}
 	}
 
@@ -70,7 +81,7 @@
 	<Slider icon="rocket" titel={slider_creativity} on:sliderInput={handleCreativitySliderInput} />
 	<h3>The final result:</h3>
 	<!-- <p>{slider_concept_value + slider_proces_value + slider_creativity_value}</p> -->
-	<ul class="stars">
+	<ul class="stars {starscheck}">
 		{#each Array.from({ length: 10 }) as _, i}
 			{#if i < slider_concept_value + slider_proces_value + slider_creativity_value}
 				<li>
@@ -148,6 +159,21 @@
 		margin-top: 0.5em;
 		align-self: center;
 		display: flex;
+
+		transform: scale(1);
+	}
+
+	.fullstars {
+		animation: fullstars 0.5s 0.2s infinite linear both alternate;
+	}
+
+	@keyframes fullstars {
+		from {
+			transform: scale(0.8);
+		}
+		to {
+			transform: scale(1.2);
+		}
 	}
 
 	.stars li {

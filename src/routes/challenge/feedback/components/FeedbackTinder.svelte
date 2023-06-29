@@ -6,3 +6,12 @@
 	<Buttons variant="no"></Buttons>
 	<Buttons variant="yes"></Buttons>
 </div>
+
+<style>
+	div{
+		display: flex;
+		flex-direction: row;
+
+		justify-content: space-around;
+	}
+</style>

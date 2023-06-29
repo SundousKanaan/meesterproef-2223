@@ -8,5 +8,6 @@
     textarea{
         padding: .5em;
         font-size: 1em;
+        width: 100%;
     }
 </style>
