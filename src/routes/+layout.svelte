@@ -4,6 +4,9 @@
 	import Footer from "$lib/Footer.svelte";
     import { goto } from '$app/navigation';
 
+    /**
+	 * @param {string | URL} route
+	 */
     function navigateTo(route) {
         goto(route);
     }
