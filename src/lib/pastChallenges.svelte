@@ -1062,9 +1062,9 @@
 		margin-top: 8px;
 	}
 
-	.boxed:first-of-type {
+	/* .boxed:first-of-type {
 		margin-top: 4em;
-	}
+	} */
 
 	.boxed:nth-child(2) {
 		display: grid;
@@ -1233,6 +1233,12 @@
 		gap: 0.5em;
 		box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
 		cursor: pointer;
+	}
+
+	@media (min-width:60em){
+		.grouping{
+			padding:1em;
+		}
 	}
 
 	@media (max-width: 60em) {
