@@ -176,8 +176,8 @@
 				</div>
 				<p>
 					Prepare yourself for the most thrilling web development challenge proudly sponsored by
-					Almere City FC! Are you ready to showcase your coding skills and create an extraordinary online experience?
-					This is your chance to be a part of something truly remarkable in the world of web development.
+					Almere City FC! Are you ready to showcase your coding skills and create an "profecta" online experience so you can share all your -solutions with the world?
+					Then this is your chance to be a part of something truly remarkable in the world of web development!
 				</p>
 				<div class="side-container">
 					<a href="http://localhost:5173/challenges/asics-challenge" class="meerInformatie">Meer informatie</a>
