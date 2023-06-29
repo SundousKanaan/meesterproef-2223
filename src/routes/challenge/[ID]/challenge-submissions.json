@@ -1,0 +1,275 @@
+[
+    {
+       "title":"XSS Vulnarability Challenge",
+       "link":"https://tioc.nl",
+       "description":"This is a challenge to test your XSS skills",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Safouane",
+          "creatorhandle":"@Safou",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":5,
+          "proces":1,
+          "creativity":3
+       }
+    },
+    {
+       "title":"How to create an immersive experience",
+       "link":"https://tioc.nl",
+       "description":"A challenge to test your skills in creating an immersive experience",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Safouane",
+          "creatorhandle":"@Safou",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":2,
+          "proces":5,
+          "creativity":1
+       }
+    },
+    {
+       "title":"Crowd Storming Challenge",
+       "link":"https://tioc.nl",
+       "description":"This challenge is to test your skills in crowd storming",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Safouane",
+          "creatorhandle":"@Safou",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":0,
+          "proces":1,
+          "creativity":5
+       }
+    },
+    {
+       "title":"Cryptocurrency Tracking App Challenge",
+       "link":"https://tioc.nl",
+       "description":"This challenge will test your skills in creating a cryptocurrency tracking application.",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Naomi",
+          "creatorhandle":"@Naomi",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":3,
+          "proces":4,
+          "creativity":5
+       }
+    },
+    {
+       "title":"Physical Computing with Arduino Challenge",
+       "link":"https://tioc.nl",
+       "description":"Test your physical computing skills with Arduino in this challenge.",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Zachary",
+          "creatorhandle":"@Zachary",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":4,
+          "proces":5,
+          "creativity":3
+       }
+    },
+    {
+       "title":"Chatbot Design Challenge",
+       "link":"https://tioc.nl",
+       "description":"In this challenge, you'll design an intuitive and responsive chatbot.",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Oliver",
+          "creatorhandle":"@Oliver",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":5,
+          "proces":4,
+          "creativity":4
+       }
+    },
+    {
+       "title":"Gesture-based UI Design Challenge",
+       "link":"https://tioc.nl",
+       "description":"This challenge will test your ability to design a UI that works with gesture-based inputs.",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Ella",
+          "creatorhandle":"@Ella",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":4,
+          "proces":4,
+          "creativity":5
+       }
+    },
+    {
+       "title":"Voice Assistant Design Challenge",
+       "link":"https://tioc.nl",
+       "description":"Design a voice assistant that can perform complex tasks in this challenge.",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Lucas",
+          "creatorhandle":"@Lucas",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":3,
+          "proces":4,
+          "creativity":5
+       }
+    },
+    {
+       "title":"XSS Vulnarability Challenge",
+       "link":"https://tioc.nl",
+       "description":"This is a challenge to test your XSS skills",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Safouane",
+          "creatorhandle":"@Safou",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":5,
+          "proces":1,
+          "creativity":3
+       }
+    },
+    {
+       "title":"How to create an immersive experience",
+       "link":"https://tioc.nl",
+       "description":"A challenge to test your skills in creating an immersive experience",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Safouane",
+          "creatorhandle":"@Safou",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":2,
+          "proces":5,
+          "creativity":1
+       }
+    },
+    {
+       "title":"Augmented Reality Application Design Challenge",
+       "link":"https://tioc.nl",
+       "description":"This challenge will test your skills in creating immersive augmented reality applications.",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Leah",
+          "creatorhandle":"@Leah",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":4,
+          "proces":3,
+          "creativity":4
+       }
+    },
+    {
+       "title":"Machine Learning for Design Challenge",
+       "link":"https://tioc.nl",
+       "description":"This challenge will test your ability to incorporate machine learning principles in design.",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Elijah",
+          "creatorhandle":"@Elijah",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":5,
+          "proces":4,
+          "creativity":5
+       }
+    },
+    {
+       "title":"Interactive Data Visualization Challenge",
+       "link":"https://tioc.nl",
+       "description":"This challenge tests your skills in creating interactive data visualizations.",
+       "creator":{
+          "profilePicture":"https://www.gravatar.com/avatar/00000000000000000000000000000000",
+          "creator":"Riley",
+          "creatorhandle":"@Riley",
+          "status":"registered",
+          "submitDate":"new Date()",
+          "yesno":true,
+          "feedback":"undefined"
+       },
+       "assigned":false,
+       "medal":null,
+       "feedback":{
+          "concept":3,
+          "proces":5,
+          "creativity":4
+       }
+    }
+ ]

@@ -1,13 +1,22 @@
-<!-- <script lang="ts">
-	import Input from '$lib/Input.svelte';
-    import DragenDropp from '$lib/DragenDropp.svelte';
-    let placeholder_Text: string = "write ...";
-
-
-	function test() {
-		console.log('test');
-	}
+<script lang="ts">
+    import Hero from '$lib/Hero.svelte';
+    import FeaturedCreators from '$lib/featuredCreators.svelte';
+    import FeaturedWork from '$lib/featuredWork.svelte';
+    import Recent from '$lib/recent.svelte';
 </script>
 
-<Input inputType="url" placeholder_Text = {placeholder_Text} />
- -->
+<Hero />
+
+<main>
+    <Recent />
+    <FeaturedWork />
+    <FeaturedCreators />
+</main>
+
+<style>
+    main{
+        max-width:75em;
+        margin: 0 auto;
+        padding: 0em 1em 1em 1em;
+    }
+</style>

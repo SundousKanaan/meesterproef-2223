@@ -1,4 +1,6 @@
 <script>
+	let winnerName = 'Bart-Jan';
+	let imagePath = '/first.png';
 </script>
 
 <section class="winner">
@@ -12,119 +14,113 @@
 				<div class="prijsDetail">
 					<div class="prijsIcoon">
 						<svg
-							width="25"
-							height="25"
-							viewBox="0 0 25 25"
+							width="67"
+							height="67"
+							viewBox="0 0 117 97"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
 						>
-							<g clip-path="url(#clip0_1411_12962)">
-								<path
-									d="M12.5 15.5C16.366 15.5 19.5 12.366 19.5 8.5C19.5 4.63401 16.366 1.5 12.5 1.5C8.63401 1.5 5.5 4.63401 5.5 8.5C5.5 12.366 8.63401 15.5 12.5 15.5Z"
-									stroke="#3A3C43"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M8.71 14.39L7.5 23.5L12.5 20.5L17.5 23.5L16.29 14.38"
-									stroke="#3A3C43"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</g>
 							<defs>
-								<clipPath id="clip0_1411_12962">
-									<rect width="24" height="24" fill="white" transform="translate(0.5 0.5)" />
-								</clipPath>
+								<pattern
+									id="backgroundPattern"
+									patternUnits="userSpaceOnUse"
+									width="100"
+									height="80"
+								>
+									<image xlink:href="/3e.png" width="100" height="80" />
+								</pattern>
 							</defs>
+							<rect
+								width="101"
+								height="80"
+								transform="translate(8 8)"
+								fill="url(#backgroundPattern)"
+							/>
 						</svg>
 					</div>
 					<div>
-						<p class="prijsNummer">Second place</p>
-						<p class="naamWinnaar">Bart-Jan</p>
+						<p class="prijsNummer">Third place</p>
+						<p class="naamWinnaar">{winnerName}</p>
 					</div>
 				</div>
-
-				<img src="" alt="" class="image-1" />
+				<img src={imagePath} alt="" class="image-1" />
 			</div>
 
 			<div class="plaatsing">
 				<div class="prijsDetail">
 					<div class="prijsIcoon">
 						<svg
-							width="65"
-							height="65"
-							viewBox="0 0 65 65"
+							width="117"
+							height="97"
+							viewBox="0 0 117 97"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
 						>
-							<path
-								d="M32.5002 40.5C42.8095 40.5 51.1668 32.1426 51.1668 21.8333C51.1668 11.524 42.8095 3.16663 32.5002 3.16663C22.1908 3.16663 13.8335 11.524 13.8335 21.8333C13.8335 32.1426 22.1908 40.5 32.5002 40.5Z"
-								stroke="#3A3C43"
-								stroke-width="3"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-							<path
-								d="M22.3932 37.54L19.1665 61.8333L32.4998 53.8333L45.8332 61.8333L42.6065 37.5133"
-								stroke="#3A3C43"
-								stroke-width="3"
-								stroke-linecap="round"
-								stroke-linejoin="round"
+							<defs>
+								<pattern
+									id="backgroundPattern"
+									patternUnits="userSpaceOnUse"
+									width="100"
+									height="100"
+								>
+									<image xlink:href="/1e.png" width="100" height="80" />
+								</pattern>
+							</defs>
+							<rect
+								width="101"
+								height="80"
+								transform="translate(8 8)"
+								fill="url(#backgroundPattern)"
 							/>
 						</svg>
 					</div>
 					<div>
-						<p class="prijsNummer">Second place</p>
-						<p class="naamWinnaar">Bart-Jan</p>
+						<p class="prijsNummer">First place</p>
+						<p class="naamWinnaar">{winnerName}</p>
 					</div>
 				</div>
 
-				<img src="" alt="" class="image-2" />
+				<img src={imagePath} alt="" class="image-2" />
 			</div>
 
 			<div class="plaatsing">
 				<div class="prijsDetail">
 					<div class="prijsIcoon">
 						<svg
-							width="25"
-							height="25"
-							viewBox="0 0 25 25"
+							width="77"
+							height="80"
+							viewBox="0 0 117 97"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
 						>
-							<g clip-path="url(#clip0_1411_12962)">
-								<path
-									d="M12.5 15.5C16.366 15.5 19.5 12.366 19.5 8.5C19.5 4.63401 16.366 1.5 12.5 1.5C8.63401 1.5 5.5 4.63401 5.5 8.5C5.5 12.366 8.63401 15.5 12.5 15.5Z"
-									stroke="#3A3C43"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M8.71 14.39L7.5 23.5L12.5 20.5L17.5 23.5L16.29 14.38"
-									stroke="#3A3C43"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</g>
 							<defs>
-								<clipPath id="clip0_1411_12962">
-									<rect width="24" height="24" fill="white" transform="translate(0.5 0.5)" />
-								</clipPath>
+								<pattern
+									id="backgroundPattern"
+									patternUnits="userSpaceOnUse"
+									width="100"
+									height="80"
+								>
+									<image xlink:href="/2e.png" width="100" height="80" />
+								</pattern>
 							</defs>
+							<rect
+								width="101"
+								height="80"
+								transform="translate(8 8)"
+								fill="url(#backgroundPattern)"
+							/>
 						</svg>
 					</div>
 					<div>
 						<p class="prijsNummer">Second place</p>
-						<p class="naamWinnaar">Bart-Jan</p>
+						<p class="naamWinnaar">{winnerName}</p>
 					</div>
 				</div>
 
-				<img src="" alt="" class="image-3" />
+				<img src={imagePath} alt="" class="image-3" />
 			</div>
 		</div>
 	</section>
@@ -161,7 +157,6 @@
 		flex-direction: column;
 		justify-content: flex-end;
 		align-items: center;
-		gap: 1.5rem;
 		flex: 1 0 0;
 	}
 
@@ -183,16 +178,22 @@
 	.image-1 {
 		width: 100%;
 		height: 14em;
+		border: 6px solid #ffaf66;
+		/* background-image: url('/3e.png'); */
 	}
 
 	.image-2 {
 		width: 100%;
-		height: 22.4375em;
+		height: 22em;
+		border: 6px solid #ffeb66;
+		/* background-image: url('/1e.png'); */
 	}
 
 	.image-3 {
 		width: 100%;
-		height: 15em;
+		height: 17em;
+		border: 6px solid #b7b7b7;
+		/* background-image: url('/2e.png'); */
 	}
 
 	.grouping {
@@ -200,32 +201,67 @@
 	}
 
 	@media (max-width: 60em) {
+		h2 {
+			padding-left: 1em;
+		}
+
 		.plaatsing {
 			flex-direction: column;
 			align-items: center;
 			gap: 1em;
-			width: 30%;
+			width: 100%;
+		}
+
+		.plaatsing:nth-child(2) {
+			order: -1;
+		}
+
+		.plaatsing:last-of-type {
+			order: -1;
 		}
 
 		.prijsDetail {
-			flex-direction: column;
+			flex-direction: row;
 			align-items: center;
 			gap: 0.0625em;
 		}
 
+		.grouping {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-end;
+			padding: 0.5em;
+			gap: 2.25em;
+		}
+
+		.winner {
+			max-width: 75em;
+			margin: 0 auto;
+			width: 100%;
+			margin-bottom: 2em;
+			padding: 0;
+		}
+
 		.image-1 {
 			width: 100%;
-			height: 7em;
+			height: 15em;
 		}
 
 		.image-2 {
 			width: 100%;
-			height: 12em;
+			height: 15em;
 		}
 
 		.image-3 {
 			width: 100%;
-			height: 9em;
+			height: 15em;
+		}
+
+		.image-1,
+		.image-2,
+		.image-3 {
+			object-fit: cover;
 		}
 	}
 </style>

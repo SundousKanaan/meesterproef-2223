@@ -206,7 +206,7 @@
 		flex-wrap: wrap;
 		gap: 0.5em;
 		border: none;
-		margin: none;
+		margin: 0;
 	}
 	.usercard > span:last-of-type ul li p {
 		text-transform: capitalize;
@@ -229,5 +229,12 @@
 
 	.stars li img {
 		height: 100%;
+	}
+
+
+	@media (min-width: 1200px) {
+		.usercard {
+			grid-area: 2/2/3/3;
+		}
 	}
 </style>

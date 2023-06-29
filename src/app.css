@@ -8,20 +8,20 @@
 }
 
 main {
-    background-color: #EDF2F2;
+    background-color: #FFFFFF;
 }
 
 @font-face {
     font-family: "Optima";
     src: url('/fonts/optima_bold.woff') format('woff'),
-         url('/fonts/optima_bold.woff2') format('woff2'),
-         url('/fonts/optima_regular.woff') format('woff'),
-         url('/fonts/optima_regular.woff2') format('woff2'),
-         url('/fonts/optima_italic.woff') format('woff'),
-         url('/fonts/optima_italic.woff2') format('woff2');
+        url('/fonts/optima_bold.woff2') format('woff2'),
+        url('/fonts/optima_regular.woff') format('woff'),
+        url('/fonts/optima_regular.woff2') format('woff2'),
+        url('/fonts/optima_italic.woff') format('woff'),
+        url('/fonts/optima_italic.woff2') format('woff2');
 }
 
-body{
+body {
     display: grid;
     overflow-x: hidden;
 }
@@ -30,7 +30,7 @@ body{
     overflow: hidden;
 }
 
-:root{
+:root {
     --optima: Optima;
     --gray-font: #73738C;
     --blue-button: #21BDE5;
@@ -92,7 +92,7 @@ body{
     --accent-warning-700: #BE9409;
     --accent-warning-600: #E1B114;
     --accent-warning-500: #F7CE46;
-    --accent-warning-400: #F8D254;  
+    --accent-warning-400: #F8D254;
     --accent-warning-300: #F9DE85;
     --accent-warning-200: #FEF3CD;
     --accent-warning-100: #FFF9E6;
@@ -116,7 +116,6 @@ body{
 main {
     display: flex;
     flex-direction: column;
-    padding: 2em 1em;
 }
 
 .boxed {
@@ -124,4 +123,16 @@ main {
     margin: 0 auto;
     width: 100%;
     padding: 1em 0;
+
+}
+
+/* TODO: Get yo shit together bro */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--optima);
 }
