@@ -14,6 +14,12 @@
 	function cancelEnroll() {
 		enrolled = !enrolled;
 	}
+
+	let enrolledWeb = false;
+
+	function cancelWebEnroll() {
+		enrolledWeb = !enrolledWeb;
+	}
 </script>
 
 <div class="grouping">
@@ -89,14 +95,13 @@
 			</figure>
 			<div class="group">
 				<div class="detail">
-					<h3>Asics</h3>
+					<h3>Immersive Retail Experience
+					</h3>
 					<caption>Asics</caption>
 				</div>
 				<p>
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
-					vel? Incidunt a vero qui voluptate dolorem, temporibus iusto voluptatum modi excepturi
-					praesentium autem ut similique reprehenderit unde voluptatem saepe nemo, deleniti omnis
-					minus laboriosam laudantium nam.
+					Get ready for the most exciting challenge brought to you by Asics! We invite you to embark on a journey of innovation and creativity as you develop your very own pair of shoes. This challenge promises to push the boundaries of design and functionality,
+					giving you the opportunity to showcase your skills and create something truly remarkable.
 				</p>
 				<div class="main-container">
 					<a href="http://localhost:5173/challenges/asics-challenge" class="meerInformatie">Meer informatie</a>
@@ -165,18 +170,28 @@
 			</figure>
 			<div class="group">
 				<div class="detail">
-					<h3>Web development</h3>
-					<caption>test</caption>
+					<h3>Almere City FC's Ultimate Web Development Challenge
+					</h3>
+					<caption>Almere</caption>
 				</div>
 				<p>
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
-					vel? Incidunt a vero qui voluptate dolorem, temporibus iusto voluptatum modi excepturi
-					praesentium autem ut similique reprehenderit unde voluptatem saepe nemo, deleniti omnis
-					minus laboriosam laudantium nam.
+					Prepare yourself for the most thrilling web development challenge proudly sponsored by
+					Almere City FC! Are you ready to showcase your coding skills and create an extraordinary online experience?
+					This is your chance to be a part of something truly remarkable in the world of web development.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="http://localhost:5173/challenges/asics-challenge" class="meerInformatie">Meer informatie</a>
+					{#if enrolledWeb}
+						<a class="enrollDisabled" on:click={() => {
+    					cancelWebEnroll();
+    					dispatch('enrollmentStatusChanged', enrolledWeb);
+  						}}>Enrolled</a>
+					{:else}
+						<a href="#" class="enroll" on:click={() => {
+    					cancelWebEnroll();
+    					dispatch('enrollmentStatusChanged', enrolledWeb);
+  						}}>Enroll</a>
+					{/if}
 
 					<em>deadline:</em>
 				</div>
