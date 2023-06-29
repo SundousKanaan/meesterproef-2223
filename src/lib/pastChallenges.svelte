@@ -1217,8 +1217,8 @@
 	.featured-border:nth-child(2) > img:first-of-type {
 		width: 100%;
 		height: 100%;
-		/object-fit: cover;
-		/object-position: 50% 50%;
+		object-fit: cover;
+		object-position: 50% 50%;
 		transition: transform 0.5s ease;
 	}
 

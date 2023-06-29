@@ -11,6 +11,7 @@
 <div class="grouping">
 	<section class="boxed">
 		<h2>Past challenges</h2>
+		<span>Get inspirated by all the previous challenges</span>
 	</section>
 
 	<section class="boxed">
@@ -90,7 +91,7 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="main-container">
-					<a href="#" class="meerInformatie">More information</a>
+					<a href="/challenges/past" class="meerInformatie">More information</a>
 				</div>
 				<em>deadline: Expired</em>
 			</div>
@@ -1036,9 +1037,9 @@
 		margin-top: 8px;
 	}
 
-	.boxed:first-of-type {
+	/* .boxed:first-of-type {
 		margin-top: 4em;
-	}
+	} */
 
 	.boxed:nth-child(2) {
 		display: grid;
@@ -1158,8 +1159,8 @@
 	.featured-border:nth-child(2) > img:first-of-type {
 		width: 100%;
 		height: 100%;
-		/object-fit: cover;
-		/object-position: 50% 50%;
+		object-fit: cover;
+		object-position: 50% 50%;
 		transition: transform 0.5s ease;
 	}
 
@@ -1208,7 +1209,11 @@
 		box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
 		cursor: pointer;
 	}
-
+	@media (min-width:60em){
+		.grouping{
+			padding:1em;
+		}
+	}
 	@media (max-width: 60em) {
 		.sponsorLogo > p {
 			display: none;

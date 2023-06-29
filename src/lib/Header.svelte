@@ -51,7 +51,7 @@ let currentUser = {
                 <div>
 
                     <a href="/challenges/featured">Overview challenges</a>
-					<a href="/challenges/past">Finished challenges</a>
+					<a href="/challenges/pastchallengeoverview">Finished challenges</a>
                 </div>
             </li>
             <li class={openItem === 'item3' ? 'open' : ''} on:click={() => toggleOpen('item3')}>
