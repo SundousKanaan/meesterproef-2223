@@ -1,29 +1,27 @@
-<script lang="ts">
-    import { createEventDispatcher } from 'svelte';
-  
-    export let showInviteModal: boolean;
-    export let closeModal: () => void;
-  
-    interface SubmitEvent {
-      detail: string[];
-    }
-  
-    const dispatch = createEventDispatcher<SubmitEvent>();
-    let inputValue: string = '';
-    let submittedValues: string[] = [];
-  
-    function handleSubmit() {
-      submittedValues = [...submittedValues, inputValue];
-      inputValue = '';
-      dispatch('detail', submittedValues);
-    }
-  
-    function removeItem(index: number) {
-      submittedValues = submittedValues.filter((_, i) => i !== index);
-    }
-  </script>
-  
-  {#if showInviteModal}
+<script>
+  export let showInviteModal = false;
+
+  import { createEventDispatcher } from 'svelte';
+
+  export let closeModal;
+
+  const dispatch = createEventDispatcher();
+  let inputValue = '';
+  let submittedValues = [];
+
+  function handleSubmit() {
+    submittedValues = [...submittedValues, inputValue];
+    inputValue = '';
+    dispatch('detail', submittedValues);
+  }
+
+  function removeItem(index) {
+    submittedValues = submittedValues.filter((_, i) => i !== index);
+  }
+</script>
+
+
+{#if showInviteModal}
   <div class="background">
     <section class="modal" aria-label="Invite people modal">
       <div class="modal-header">

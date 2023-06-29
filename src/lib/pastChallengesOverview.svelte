@@ -10,8 +10,7 @@
 
 <div class="grouping">
 	<section class="boxed">
-		<h2>Featured challenges</h2>
-		<span>Join the challenges</span>
+		<h2>Past challenges</h2>
 	</section>
 
 	<section class="boxed">
@@ -91,10 +90,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="main-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 				</div>
-				<em>deadline:</em>
+				<em>deadline: Expired</em>
 			</div>
 		</article>
 		<article>
@@ -148,7 +146,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -157,10 +155,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -218,7 +215,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -227,10 +224,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -285,7 +281,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -294,10 +290,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -352,7 +347,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -361,18 +356,12 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
-	</section>
-
-	<section class="boxed">
-		<h2>My challenges</h2>
-		<span>Your current, liked and past challenges in a list</span>
 	</section>
 
 	<section class="boxed">
@@ -428,7 +417,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -437,10 +426,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -495,7 +483,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -504,10 +492,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enrollDisabled">Enrolled</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -562,7 +549,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -571,10 +558,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enrollDisabled">Enrolled</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -631,7 +617,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -640,10 +626,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enrollDisabled">Enrolled</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -698,7 +683,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -707,10 +692,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enrollDisabled">Finished</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -765,7 +749,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -774,18 +758,12 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enrollDisabled">Finished</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
-	</section>
-
-	<section class="boxed">
-		<h2>Top 3 challenges</h2>
-		<span>Join the top 3 weekly challenges</span>
 	</section>
 
 	<section class="boxed">
@@ -840,7 +818,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -849,10 +827,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -907,7 +884,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -916,10 +893,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -974,7 +950,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -983,15 +959,13 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
 	</section>
-	<AllChallenges />
 </div>
 
 <!-- <AllChallenges /> -->
