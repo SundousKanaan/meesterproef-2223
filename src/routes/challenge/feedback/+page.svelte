@@ -7,6 +7,7 @@
 	import type { SvelteComponent } from 'svelte';
 	import FeedbackTinder from './components/FeedbackTinder.svelte';
 	import Winners from '../medals/components/Winners.svelte';
+	import UploadedWork from '$lib/uploadedWork.svelte';
 
 	export let data: PageData;
 </script>
@@ -50,12 +51,9 @@
 		</div>
 
 		<div class="werkreview">
-			<iframe src="/challenge/feedback?feedback=medals" title="feedback" frameborder="0" />
+			<UploadedWork/>
 		</div>
 	</div>
-	<article class="submission">
-		<iframe src="https://tioc.nl" frameborder="0"></iframe>
-	</article>
 </section>
 
 <style>
@@ -130,20 +128,6 @@
 		box-shadow: var(--shadow-cards);
 	}
 
-	iframe {
-		width: 100%;
-		height: 50em;
-	}
-
-	.submission {
-		grid-area: 2/3/5/4;
-	}
-
-	iframe {
-		width: 100%;
-		height: 100%;
-	}
-
 	@media (min-width: 1200px) {
 		section {
 			width: 100%;
@@ -176,9 +160,6 @@
 
 			grid-template-columns: 30em 1fr;
 			gap: 1em;
-		}
-		iframe {
-			height: 100%;
 		}
 	}
 </style>
