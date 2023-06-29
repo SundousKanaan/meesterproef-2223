@@ -9,7 +9,6 @@
 
 	import InviteModal from '$lib/inviteModal.svelte';
 
-
 	function closeModal() {
 		showInviteModal = false;
 	}
@@ -47,15 +46,15 @@
 			</div>
 			<div class="addMember">
 				<img class="profilePic" src="" alt="" />
-				<p class="profileName">Bart-Jan</p>
+				<p class="profileName">Sundous</p>
 			</div>
 			<div class="addMember">
 				<img class="profilePic" src="" alt="" />
-				<p class="profileName">Bart-Jan</p>
+				<p class="profileName">Bram</p>
 			</div>
 			<div class="addMember">
-				<button class="submit-button" on:click={() => showInviteModal = true}>+</button>
-				<p class="profileName">Bart-Jan</p>
+				<button class="submit-button" on:click={() => (showInviteModal = true)}>+</button>
+				<p class="profileName">+ add members</p>
 			</div>
 		</div>
 		<div class="combineButtons">
