@@ -34,7 +34,7 @@
 	{/if}
 	<div>
 		<p>Drag and drop images, or</p>
-		<input class="file-input" type="file" on:change={handleInputChange} multiple required/>
+		<input class="file-input" type="file" on:change={handleInputChange} multiple />
 		<button class="browse-button" on:click={() => inputRef.click()}>Browse</button>
 	</div>
 
@@ -107,8 +107,6 @@
 		color: var(--blue-button);
 		font-size: 1em;
 		font-weight: bold;
-
-		position: relative;
 	}
 
 	.drop-area:hover .browse-button {

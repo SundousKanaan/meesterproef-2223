@@ -6,12 +6,12 @@
 <h2>Resources</h2>
 <form>
 	<div>
-		<label for="video">Video</label>
+		<label for="video">Online resources (video's & online pages)</label>
 		<Listinput
 			inputType="url"
-			listWithDescription
+			variant="link"
 			placeholderText="The video title"
-			placeholderDescription="The video link"
+			placeholderDescription="YouTube video or online page link"
 		/>
 	</div>
 

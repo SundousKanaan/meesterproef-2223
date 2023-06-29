@@ -31,10 +31,10 @@
 				evaluationValue.getTime() < winnersValue.getTime()
 			) {
 				console.log('Elke waarde is groter dan de vorige.');
-				timelineCheck = 'Good';
+				timelineCheck = 'good';
 			} else {
 				console.log('Niet elke waarde is groter dan de vorige.');
-				timelineCheck = ' ';
+				timelineCheck = 'bad';
 			}
 		}
 	}
@@ -73,15 +73,15 @@
 			</span>
 			<span>
 				<label for="Deadline">Deadline</label>
-				<input type="date" bind:value={deadline} on:input={timelineTest} required />
+				<input type="date" bind:value={deadline} on:input={timelineTest} class={timelineCheck} required />
 			</span>
 			<span>
 				<label for="Evaluation">Evaluation</label>
-				<input type="date" bind:value={evaluation} on:input={timelineTest} required />
+				<input type="date" bind:value={evaluation} on:input={timelineTest} class={timelineCheck} required />
 			</span>
 			<span>
 				<label for="Winners">Winners</label>
-				<input type="date" bind:value={winners} on:input={timelineTest} required />
+				<input type="date" bind:value={winners} on:input={timelineTest} class={timelineCheck} required />
 			</span>
 		</div>
 	</div>
@@ -112,7 +112,6 @@
 	}
 
 	.Timeline div span {
-		/* width: 80%; */
 		align-self: center;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -120,14 +119,23 @@
 		gap: 0.5em;
 	}
 
-	input.good {
-		background-color: greenyellow;
-	}
-
 	input[type=date]{
 		height: 4em;
 		padding: 0 1em;
 		border: solid .1em rgba(128, 128, 128, 0.39);
-		/* background-color: red; */
+	}
+
+	input[type=date]:focus-visible{
+		outline-color: var(--blue-button);
+	}
+
+	input[type=date].good {
+		background-color: var(--accent-success-100);
+		border-color: var(--accent-success-100);
+	}
+
+	input[type=date].bad {
+		background-color: var(--accent-danger-100);
+		border-color: var(--accent-danger-100);
 	}
 </style>

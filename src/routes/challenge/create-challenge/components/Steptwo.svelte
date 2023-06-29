@@ -17,12 +17,12 @@
 
 	<div>
 		<label for="challenge_cover">Skills after the challenge:</label>
-		<Listinput inputType="text" />
+		<Listinput variant='none' inputType="text" />
 	</div>
 
 	<div>
 		<label for="challenge_cover">Prizes</label>
-		<Listinput listWithDescription inputType="text" />
+		<Listinput variant='text' inputType="text" />
 	</div>
 
 	<div>

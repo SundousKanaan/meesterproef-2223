@@ -6,7 +6,7 @@
 	export let timelineCheck: string =" ";
 </script>
 
-<input type={inputType} class={inputType}{timelineCheck} placeholder={placeholder_Text} required/>
+<input type={inputType} class={inputType}{timelineCheck} placeholder={placeholder_Text} />
 
 <style>
 	input,
