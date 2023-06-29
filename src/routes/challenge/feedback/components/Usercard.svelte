@@ -206,7 +206,7 @@
 		flex-wrap: wrap;
 		gap: 0.5em;
 		border: none;
-		margin: none;
+		margin: 0;
 	}
 	.usercard > span:last-of-type ul li p {
 		text-transform: capitalize;

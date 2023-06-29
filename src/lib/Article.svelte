@@ -1,25 +1,32 @@
-<script>
-    export let imgSrc;
-    export let peopleCount;
-    export let title;
-    export let description;
-    export let timeline;
-    export let organization;
+<script lang="ts">
+      import { goto } from '$app/navigation';
+    export let imgSrc: string;
+    export let peopleCount:string;
+    export let title:string;
+    export let description:string;
+    export let timeline:string;
+    export let organization:string;
+    export let state: string; // active, finished, signed up
+    export let userState:string;
+
+    function handleClick() {
+    goto('/challenges/upload');
+  }
 </script>
 
 <article>
     <figure>
-        <img src={imgSrc} alt="">
+        <img src={imgSrc} alt="" loading="lazy">
         <figcaption>
             <div>
                 <span>
-                    <img src="" alt="">
+                    <img src="" alt="" loading="lazy">
                 </span>
                 <span>
-                    <img src="" alt="">
+                    <img src="" alt="" loading="lazy">
                 </span>
                 <span>
-                    <img src="" alt="">
+                    <img src="" alt="" loading="lazy">
                 </span>
                 <p>{peopleCount} people already uploaded their work</p>
             </div>
@@ -30,23 +37,40 @@
         <p>{description}</p>
         <p>{timeline}</p>
         <div>
-            <button>Add your journey</button>
-            <span>or</span>
-            <button>Miss your chance of winning</button>
+            {#if state === 'active'}
+                {#if userState.toLowerCase() === 'uploaded'}
+                    <button on:click={handleClick}>Add more</button>
+                {:else}
+                    <button on:click={handleClick}>Add your journey</button>
+                {/if}
+                <span>or</span>
+                <button>Miss your chance of winning</button>
+            {:else if state === 'finished'}
+                <button class="viewResult">View Results</button>
+            {:else if state === 'signed up'}
+                <button class="cancel">Cancel Sign Up</button>
+            {/if}
         </div>
         <h3>{organization}</h3>
     </div>
+    <p class="simple">{userState}</p>
 </article>
 
 <style>
    article{
     margin-bottom:1em;
-    flex:1 1 22em;
+    flex:1 1 30%;
     display:flex;
     flex-direction: column;
     position: relative;
     box-shadow:0px 0.4px 8px rgba(0, 0, 0, 0.1);
     overflow:hidden;
+    height:38em;
+    min-width:14em;
+}
+
+article span{
+    display:none;
 }
 
 article:after{
@@ -72,9 +96,21 @@ article > div{
     display:flex;
     flex-direction:column;
     gap:.5em;
+    justify-content: space-between;
+    height:100%;
+}
+
+article > div > p:first-of-type{
+    margin-bottom:auto;
+    margin-bottom: auto;
+    height: 8em;
+    overflow: hidden;
+}
+article > div > p:last-of-type{
+    margin-top:auto;
 }
 article figure{
-    height:12em;
+    height:10em;
     background:red;
     order:-1;
     position:relative;
@@ -83,6 +119,7 @@ article > figure > img{
     height:100%;
     width:100%;
     object-fit:cover;
+    height:10em;
 }
 article figure figcaption{
     position:absolute;
@@ -101,7 +138,7 @@ article figure figcaption div span{
     height:60%;
     aspect-ratio:1/1;
     border-radius:50%;
-    background:yellow;
+    background:var(--theme-color);
     border:inset 2px #ffeb004f;
 }
 article figure figcaption div span:first-of-type{
@@ -134,7 +171,7 @@ div > div button{
     height:4em;
     padding:0 1em;
     border:none;
-    background:yellow;
+    background:var(--theme-color);
     flex:1 1 10em;
 }
 div > div button:last-of-type{
@@ -183,7 +220,7 @@ h3{
     position:absolute;
     top:1em;
     right:1em;
-    padding: .5em 3em;
+    padding: .5em;
     background:white;
     font-size:1em;
     color:#6E98FF;
@@ -195,4 +232,38 @@ button:hover{
     cursor:pointer;
     opacity: 1!important;
 }
+
+.simple{
+    width: 100%;
+    background: var(--theme-secondary);
+    color: white;
+    padding: .2em 1em;
+    text-align: center;
+    position: absolute;
+    top: 1.05em;
+    left: -8.05em;
+    z-index: 0;
+    transform: rotate(320deg);
+    font-size: .7em;
+}
+div:last-of-type > button.viewResult:hover::after, div:last-of-type > button.cancel:hover::after{
+    content:unset;
+}
+
+div:last-of-type > button.viewResult, div:last-of-type > button.cancel{
+    opacity:unset;
+    background:var(--theme-color);
+}
+
+@media (max-width:504px){
+   .simple{
+    all: unset;
+    top: 1em;
+    left: 1em;
+    position: absolute;
+    background: var(--theme-color-secondary);
+    padding: .4em 1em;
+    }
+}
+
 </style>

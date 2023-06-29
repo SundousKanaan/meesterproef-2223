@@ -1,7 +1,25 @@
+<script>
+	let showToast = false;
+
+	function showPopup() {
+	showToast = true;
+	setTimeout(() => {
+		showToast = false;
+	}, 2000);
+	}
+</script>
+
+{#if showToast}
+  <div class="popup">
+	<p>Already given</p>
+    <p>You've already given a golden medal.</p>
+  </div>
+{/if}
+
 <span>
-	<label for="firstplace">
+	<label for="firstplace" on:click={showPopup} on:keydown={showPopup}>
 		<p>First</p>
-		<span class="image">
+		<span class="image" >
 			<img src="/medal1.svg" alt="First place" />
 		</span>
 		<input type="radio" id="firstplace" name="medales" />
@@ -87,4 +105,38 @@
 		object-fit: cover;
 		object-position: center;
 	}
+
+	.popup {
+    position: fixed;
+    top: 8.5%;
+    right: 1.75%;
+	height: fit-content;
+	width: fit-content;
+	border-radius: 5px;
+	background: var(--accent-danger-100);
+	box-shadow: var(--shadow-cards);
+	display: flex;
+	flex-direction: column;
+	z-index: 4;
+  }
+
+  .popup p{
+	color: var(--accent-danger-900);
+	margin-left: 5%;
+  }
+
+  .popup p:first-of-type{
+	font-weight: bold;
+	margin-top: 5%;
+  }
+
+  .popup p:nth-of-type(2){
+	margin-bottom: 5%;
+  }
+
+  @media (min-width: 1200px) {
+	.popup {
+    right: 1%;
+  }
+}
 </style>

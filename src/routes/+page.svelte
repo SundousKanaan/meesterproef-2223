@@ -13,12 +13,10 @@
     <FeaturedCreators />
 </main>
 
-<!-- <DragenDropp /> -->
-
 <style>
     main{
         max-width:75em;
         margin: 0 auto;
-        padding: 0em 2em 1em 1em;
+        padding: 0em 1em 1em 1em;
     }
 </style>

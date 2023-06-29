@@ -3,10 +3,15 @@
 	import Usercard from '../feedback/components/Usercard.svelte';
 	import Buttons from '$lib/Buttons.svelte';
 	import Winners from './components/Winners.svelte';
+	import UploadedWork from '$lib/uploadedWork.svelte';
 
 	function scroll() {
-		window.scrollTo(0, 0);
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
 	}
+	
 </script>
 
 <section>
@@ -41,22 +46,19 @@
 		</div>
 
 		<div class="werkreview">
-			<iframe src="/challenge/feedback?feedback=medals" title="portfolio" frameborder="0" />
+			<UploadedWork />
 		</div>
 	</div>
 
     <div>	
         <Buttons variant="up" handleClick={scroll}/>
     </div>
+	  
+	  <!-- <button on:click={() => toast.push('Hello world!')}>SHOW TOAST</button> -->
 
 </section>
 
 <style>
-	iframe{
-		width: 100%;
-		height: 50em;
-	}
-
 	section {
 		justify-self: center;
 		width: 90%;

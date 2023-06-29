@@ -6,8 +6,6 @@
 		| 'start-blue'
 		| 'start-grey'
 		| 'details'
-		| 'savexit'
-		| 'skipcancel'
 		| 'view-yellow'
 		| 'view-grey'
 		| 'view-challenge'
@@ -99,14 +97,17 @@ button:hover{
 .start-grey{
   background-color: var(--neutral-500);
   color: var(--black);
-  cursor: pointer;
+}
+
+.start-grey:hover{
+  background-color: var(--neutral-500);
 }
 
 .details{
   background-color: var(--primary-500);
   color: var(--black);
-  min-width: 8rem;
-  height: 4rem;
+  width: 8rem;
+	height: 4rem;
 }
 
 .details:hover{
@@ -116,8 +117,6 @@ button:hover{
 .view-yellow{
   background-color: var(--primary-500);
   color: var(--black);
-  min-width: 10rem;
-  height: 4rem;
 }
 
 .view-yellow:hover{
@@ -127,8 +126,8 @@ button:hover{
 .view-grey{
   background-color: var(--neutral-600);
   color: var(--black);
-  min-width: 10rem;
-  height: 4rem;
+  width: 10rem;
+	height: 4rem;
 }
 
 .start-grey:hover {
@@ -138,9 +137,9 @@ button:hover{
 .view-challenge {
     background-color: var(--primary-500);
     color: var(--black);
-    width: 22rem;
-    height: 4rem;
     position: relative;
+    width: 22rem;
+		height: 4rem;
     padding-right: 2rem;
   }
 
@@ -155,28 +154,36 @@ button:hover{
 		cursor: pointer;
 	}
 
-	.view-challenge:hover {
-		background-color: var(--primary-600);
+
+	button:hover, a:hover {
+		background-color: #32a5c3;
 	}
 
-	.start-yellow,
-	.primary {
-		background-color: #f7ce46;
-		color: #000000;
-	}
+
+.edit{
+  width: 22rem;
+	height: 4rem;
+  position: relative;
+  padding-right: 2rem;
+}
 
 	.start-yellow:hover {
 		background-color: #e1b114;
 	}
 
-	.left {
-		width: 5rem;
-		height: 5rem;
-		position: relative;
-		background-color: var(--white);
-		color: var(--black);
-		border: 1px solid var(--black);
+	.start-grey {
+		background-color: #b1afa9;
+		color: #000000;
+		cursor: pointer;
 	}
+.left{
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
+}
 
 	.details {
 		background-color: #f7ce46;
@@ -189,19 +196,42 @@ button:hover{
 		background-color: #e1b114;
 	}
 
-.right{
-  width: 5rem;
-  height: 5rem;
-  position: relative;
-  background-color: var(--white);
-  color: var(--black);
-  border: 1px solid var(--black);
-}
+	.view-yellow {
+		background-color: #f7ce46;
+		color: #000000;
+		min-width: 10rem;
+		height: 4rem;
+	}
+
 
 	.view-yellow:hover {
 		background-color: #e1b114;
 	}
 
+	.view-grey {
+		background-color: #b1afa9;
+		color: #000000;
+		min-width: 10rem;
+		height: 4rem;
+	}
+
+	.view-challenge {
+		background-color: #f7ce46;
+		color: #000000;
+		width: 22rem;
+		height: 4rem;
+		position: relative;
+		padding-right: 2rem;
+	}
+
+	.view-challenge::after {
+		content: '\f06e';
+		font-family: 'Font Awesome 5 Free';
+		position: absolute;
+		right: 10%;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 .right:hover{
   background-color: var(--neutral-300);
 }
@@ -247,6 +277,21 @@ button:hover{
 		background-color: #e1b114;
 	}
 
+	.edit {
+		width: 22rem;
+		height: 4rem;
+		position: relative;
+		padding-right: 2rem;
+	}
+
+	.edit::after {
+		content: '\f044';
+		font-family: 'Font Awesome 5 Free';
+		position: absolute;
+		right: 10%;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 .no{
   background-color: var(--accent-danger-500);
   width: 10rem;

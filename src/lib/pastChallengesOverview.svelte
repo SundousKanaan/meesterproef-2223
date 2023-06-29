@@ -6,26 +6,12 @@
 	import kubus from '$lib/assets/kubus.png';
 	import AllChallenges from '$lib/allChallenges.svelte';
 	import SubmittedChallenges from '$lib/submittedChallenges.svelte';
-	import { createEventDispatcher } from 'svelte';
-	const dispatch = createEventDispatcher();
-
-	let enrolled = false;
-
-	function cancelEnroll() {
-		enrolled = !enrolled;
-	}
-
-	let enrolledWeb = false;
-
-	function cancelWebEnroll() {
-		enrolledWeb = !enrolledWeb;
-	}
 </script>
 
 <div class="grouping">
 	<section class="boxed">
-		<h2>Featured challenges</h2>
-		<span>Join the challenges</span>
+		<h2>Past challenges</h2>
+		<span>Get inspirated by all the previous challenges</span>
 	</section>
 
 	<section class="boxed">
@@ -95,29 +81,19 @@
 			</figure>
 			<div class="group">
 				<div class="detail">
-					<h3>Immersive Retail Experience
-					</h3>
+					<h3>Asics</h3>
 					<caption>Asics</caption>
 				</div>
 				<p>
-					Get ready for the most exciting challenge brought to you by Asics! We invite you to embark on a journey of innovation and creativity as you develop your very own pair of shoes. This challenge promises to push the boundaries of design and functionality,
-					giving you the opportunity to showcase your skills and create something truly remarkable.
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
+					vel? Incidunt a vero qui voluptate dolorem, temporibus iusto voluptatum modi excepturi
+					praesentium autem ut similique reprehenderit unde voluptatem saepe nemo, deleniti omnis
+					minus laboriosam laudantium nam.
 				</p>
 				<div class="main-container">
-					<a href="http://localhost:5173/challenges/asics-challenge" class="meerInformatie">Meer informatie</a>
-					{#if enrolled}
-						<a class="enrollDisabled" on:click={() => {
-    					cancelEnroll();
-    					dispatch('enrollmentStatusChanged', enrolled);
-  						}}>Enrolled</a>
-					{:else}
-						<a href="#" class="enroll" on:click={() => {
-    					cancelEnroll();
-    					dispatch('enrollmentStatusChanged', enrolled);
-  						}}>Enroll</a>
-					{/if}
+					<a href="/challenges/past" class="meerInformatie">More information</a>
 				</div>
-				<em>deadline:</em>
+				<em>deadline: Expired</em>
 			</div>
 		</article>
 		<article>
@@ -170,30 +146,19 @@
 			</figure>
 			<div class="group">
 				<div class="detail">
-					<h3>Almere City FC's Ultimate Web Development Challenge
-					</h3>
-					<caption>Almere</caption>
+					<h3>Web development</h3>
+					<caption>Company</caption>
 				</div>
 				<p>
-					Prepare yourself for the most thrilling web development challenge proudly sponsored by
-					Almere City FC! Are you ready to showcase your coding skills and create an "profecta" online experience so you can share all your -solutions with the world?
-					Then this is your chance to be a part of something truly remarkable in the world of web development!
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
+					vel? Incidunt a vero qui voluptate dolorem, temporibus iusto voluptatum modi excepturi
+					praesentium autem ut similique reprehenderit unde voluptatem saepe nemo, deleniti omnis
+					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="http://localhost:5173/challenges/asics-challenge" class="meerInformatie">Meer informatie</a>
-					{#if enrolledWeb}
-						<a class="enrollDisabled" on:click={() => {
-    					cancelWebEnroll();
-    					dispatch('enrollmentStatusChanged', enrolledWeb);
-  						}}>Enrolled</a>
-					{:else}
-						<a href="#" class="enroll" on:click={() => {
-    					cancelWebEnroll();
-    					dispatch('enrollmentStatusChanged', enrolledWeb);
-  						}}>Enroll</a>
-					{/if}
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -251,7 +216,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -260,10 +225,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -318,7 +282,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -327,10 +291,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -385,7 +348,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -394,18 +357,12 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
-	</section>
-
-	<section class="boxed">
-		<h2>My challenges</h2>
-		<span>Your current, liked and past challenges in a list</span>
 	</section>
 
 	<section class="boxed">
@@ -461,7 +418,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -470,10 +427,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -528,7 +484,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -537,10 +493,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enrollDisabled">Enrolled</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -595,7 +550,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -604,10 +559,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enrollDisabled">Enrolled</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -664,7 +618,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -673,10 +627,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enrollDisabled">Enrolled</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -731,7 +684,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -740,10 +693,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enrollDisabled">Finished</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -798,7 +750,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -807,18 +759,12 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enrollDisabled">Finished</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
-	</section>
-
-	<section class="boxed">
-		<h2>Top 3 challenges</h2>
-		<span>Join the top 3 weekly challenges</span>
 	</section>
 
 	<section class="boxed">
@@ -873,7 +819,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -882,10 +828,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -940,7 +885,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -949,10 +894,9 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
@@ -1007,7 +951,7 @@
 			<div class="group">
 				<div class="detail">
 					<h3>Web development</h3>
-					<caption>test</caption>
+					<caption>Company</caption>
 				</div>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio ut eaque itaque
@@ -1016,15 +960,13 @@
 					minus laboriosam laudantium nam.
 				</p>
 				<div class="side-container">
-					<a href="#" class="meerInformatie">Meer informatie</a>
-					<a href="#" class="enroll">Enroll</a>
+					<a href="#" class="meerInformatie">More information</a>
 
-					<em>deadline:</em>
+					<em>deadline: Expired</em>
 				</div>
 			</div>
 		</article>
 	</section>
-	<AllChallenges />
 </div>
 
 <!-- <AllChallenges /> -->
@@ -1267,13 +1209,11 @@
 		box-shadow: 0px 0.4px 8px rgba(0, 0, 0, 0.1);
 		cursor: pointer;
 	}
-
 	@media (min-width:60em){
 		.grouping{
 			padding:1em;
 		}
 	}
-
 	@media (max-width: 60em) {
 		.sponsorLogo > p {
 			display: none;
