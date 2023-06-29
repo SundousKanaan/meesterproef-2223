@@ -126,7 +126,7 @@
 		min-height: 5em;
 		padding: 0 1em;
 		position: relative;
-		z-index: 4;
+		z-index: 10;
 	}
 
 	header button.menu-hider {
