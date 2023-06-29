@@ -24,7 +24,6 @@
 			</div>
 			<div class="fieldsetCombine">
 				<label for="image">Picture</label>
-
 				<DragenDroppUploadProces DragType="image" />
 			</div>
 			<div class="fieldsetCombine">
@@ -41,15 +40,15 @@
 		</fieldset>
 		<div class="members">
 			<div class="addMember">
-				<img class="profilePic" src="" alt="" />
+				<img class="profilePic" src="/man1.jpg" alt="" />
 				<p class="profileName">Bart-Jan</p>
 			</div>
 			<div class="addMember">
-				<img class="profilePic" src="" alt="" />
+				<img class="profilePic" src="/man2.jpg" alt="" />
 				<p class="profileName">Sundous</p>
 			</div>
 			<div class="addMember">
-				<img class="profilePic" src="" alt="" />
+				<img class="profilePic" src="/man3.jpg" alt="" />
 				<p class="profileName">Bram</p>
 			</div>
 			<div class="addMember">
