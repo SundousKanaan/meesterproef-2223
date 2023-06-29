@@ -82,7 +82,6 @@ button:hover{
 .start-grey{
   background-color: var(--neutral-500);
   color: var(--black);
-  cursor: pointer;
 }
 
 .start-grey:hover{
@@ -92,6 +91,8 @@ button:hover{
 .details{
   background-color: var(--primary-500);
   color: var(--black);
+  width: 8rem;
+	height: 4rem;
 }
 
 .details:hover{
@@ -110,12 +111,17 @@ button:hover{
 .view-grey{
   background-color: var(--neutral-600);
   color: var(--black);
+  width: 10rem;
+	height: 4rem;
 }
 
 .view-challenge {
     background-color: var(--primary-500);
     color: var(--black);
     position: relative;
+    width: 22rem;
+		height: 4rem;
+    padding-right: 2rem;
   }
 
   .view-challenge::after {
@@ -132,6 +138,8 @@ button:hover{
 }
 
 .edit{
+  width: 22rem;
+	height: 4rem;
   position: relative;
   padding-right: 2rem;
 }
@@ -231,7 +239,7 @@ button:hover{
     content: "\f00c";
     font-family: "Font Awesome 5 Free";
     position: absolute;
-    right: 40%;
+    right: 45%;
     top: 50%;
     transform: translateY(-50%);
   }
