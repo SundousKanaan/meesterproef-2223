@@ -134,7 +134,16 @@ h3{
         width:90vw;
     }
     section.heroItem > button{
-        bottom:0;
+        bottom:1em;
+    }
+}
+
+@media (max-width:400px){
+    section.heroItem{
+        justify-content: unset;
+    }
+    section.heroItem div{
+        margin-top:1em;
     }
 }
   </style>

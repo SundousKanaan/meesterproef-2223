@@ -83,6 +83,7 @@
     flex-wrap:nowrap;
     scroll-snap-type: x mandatory;
     scroll-snap-align: center;
+    max-height: calc(100dvh - 5em);
 }
 section.hero > h2 {
     position: absolute;
@@ -94,5 +95,11 @@ section.hero::-webkit-scrollbar {
 
 .hero div{
   display:flex;
+}
+
+@media (max-width:555px){
+  section.hero{
+    
+  }
 }
 </style>

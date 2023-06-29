@@ -6,6 +6,7 @@
 	let PaidArticles = [
 		{
 			title: 'Asics',
+			readUrl: 'http://localhost:5173/challenges/asics-challenge',
 			caption: 'Asics',
 			content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit...',
 			imageUrl: '/Img.png',
@@ -13,6 +14,7 @@
 		},
 		{
 			title: 'Web development',
+			readUrl: 'http://localhost:5173/challenges/asics-challenge',
 			caption: 'test',
 			content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit...',
 			imageUrl: '/eye.png',
@@ -23,20 +25,20 @@
 		{
 			art: '/art.png',
 			deelnemers: 250,
+			readUrl: 'http://localhost:5173/challenges/asics-challenge',
 			title: 'Web development',
 			caption: 'test',
 			description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit...',
-			meerInformatie: '#',
 			enroll: '#',
 			deadline: '2023-07-26'
 		},
 		{
 			art: '/Img.png',
 			deelnemers: 300,
+			readUrl: 'http://localhost:5173/challenges/asics-challenge',
 			title: 'Data Science',
 			caption: 'course',
 			description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit...',
-			meerInformatie: '#',
 			enroll: '#',
 			deadline: '2023-07-30'
 		},
@@ -44,9 +46,9 @@
 			art: '/shoe.webp',
 			deelnemers: 150,
 			title: 'Fashion Design',
+			readUrl: 'http://localhost:5173/challenges/asics-challenge',
 			caption: 'class',
 			description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit...',
-			meerInformatie: '#',
 			enroll: '#',
 			deadline: '2023-08-15'
 		}
@@ -135,7 +137,7 @@
 					</div>
 					<p>{article.content}</p>
 					<div class="main-container">
-						<a href="#" class="meerInformatie">Meer informatie</a>
+						<a href="{article.readUrl}" class="meerInformatie">Meer informatie</a>
 						<a href="#" class="enroll">Enroll</a>
 					</div>
 					<em>deadline:</em>
@@ -203,7 +205,7 @@
 						{article.description}
 					</p>
 					<div class="side-container">
-						<a href={article.meerInformatie} class="meerInformatie">Meer informatie</a>
+						<a href="{article.readUrl}" class="meerInformatie">Meer informatie</a>
 						<a href={article.enroll} class="enroll">Enroll</a>
 
 						<em>deadline: {article.deadline}</em>

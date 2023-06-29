@@ -305,12 +305,12 @@
 		</ReviewCard>
 
 		<ReviewCard title="Extensive Review">
-			<p>You give extensive feedback to everyone about their work.</p>
+			<p class="description">You give extensive feedback to everyone about their work.</p>
 			<Buttons href="/challenge/feedback?feedback=acc" variant="start-blue">Extensive review</Buttons>
 		</ReviewCard>
 
 		<ReviewCard title="Give Medals">
-			<p>When you are done with reviewing all the designs, you can give medals to the bests.</p>
+			<p class="description">When you are done with reviewing all the designs, you can give medals to the bests.</p>
 			<Buttons href="/challenge/feedback?feedback=medal" variant="start-grey">Give medals</Buttons>
 		</ReviewCard>
 	</div>
@@ -384,6 +384,8 @@
 		display: flex;
 		color: var(--neutral-900);
 		gap: 48px;
+
+		flex-direction: column;
 	}
 
 	.bovenste-stukje h1 {
@@ -392,7 +394,7 @@
 	}
 
 	.bovenste-stukje .challenge-information {
-		width: 50%;
+		width: 100%;
 	}
 
 	.buttons-wrapper {
@@ -401,7 +403,7 @@
 	}
 
 	.bovenste-stukje .challenge-diagrams {
-		width: 50%;
+		width: 100%;
 		display: flex;
 		gap: 48px;
 	}
@@ -440,6 +442,20 @@
 		overscroll-behavior-x: contain;
 	}
 
+	@media only screen and (min-width: 1024px) {
+		.bovenste-stukje {
+			flex-direction: row;
+		}
+
+		.bovenste-stukje .challenge-information {
+			width: 50%;
+		}
+
+		.bovenste-stukje .challenge-diagrams {
+			width: 50%;
+		}
+	}
+
 	@media only screen and (min-width: 624px) {
 		.review-buttons-wrappertje {
 			display: grid;
@@ -453,5 +469,6 @@
 			grid-template-rows: 1fr;
 			margin: 0rem 4rem;
 		}
+
 	}
 </style>
