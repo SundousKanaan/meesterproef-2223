@@ -7,6 +7,7 @@
 	import type { SvelteComponent } from 'svelte';
 	import FeedbackTinder from './components/FeedbackTinder.svelte';
 	import Winners from '../medals/components/Winners.svelte';
+	import UploadedWork from '$lib/uploadedWork.svelte';
 
 	export let data: PageData;
 </script>
@@ -20,10 +21,10 @@
 	<div class="previous">
 		<Buttons variant="left" />
 	</div>
-
-	<div class="next">
-		<Buttons variant="right" />
+	<div class="next">	
+	<Buttons variant="right"/>
 	</div>
+
 
 	<div class="container">
 		<div class="datacontainer">
@@ -50,7 +51,7 @@
 		</div>
 
 		<div class="werkreview">
-			<iframe src="/challenge/feedback?feedback=medals" title="feedback" frameborder="0" />
+			<UploadedWork/>
 		</div>
 	</div>
 </section>
@@ -95,8 +96,7 @@
 
 	.members {
 		padding: 1em;
-		border: solid 0.5px black;
-		/* border-radius: 0.5em; */
+		border: solid 0.5px var(--black);
 	}
 
 	.members h3 {
@@ -125,12 +125,7 @@
 	}
 
 	.werkreview {
-		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.1);
-	}
-
-	iframe {
-		width: 100%;
-		height: 50em;
+		box-shadow: var(--shadow-cards);
 	}
 
 	@media (min-width: 1200px) {
@@ -165,9 +160,6 @@
 
 			grid-template-columns: 30em 1fr;
 			gap: 1em;
-		}
-		iframe {
-			height: 100%;
 		}
 	}
 </style>

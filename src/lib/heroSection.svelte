@@ -1,4 +1,22 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
+  let enrolled = false;
+
+  const dispatch = createEventDispatcher();
+
+  function openModal() {
+    dispatch('openModal');
+  }
+
+  function openEnrollModal() {
+    dispatch('openEnrollModal');
+    enrolled = true;
+  }
+
+  function cancelEnroll() {
+    enrolled = false;
+  }
+
     const pageTitle = 'Immersive Retail Experience'
     const pageDescription = 'How to create an Immersive Retail Experience for Asics shoes Europe'
     const participants = 123
@@ -21,8 +39,12 @@
         <h1>{pageTitle}</h1>
         <h2>{pageDescription}</h2>
         <div class="button-wrapper">
-            <button class="cta">Enroll</button>
-            <button class="secondary-cta">Cooperative enrollment</button>
+            {#if enrolled}
+                <button class="cta enrolled" on:click={cancelEnroll}>Enrolled</button>
+            {:else}
+                <button class="cta" on:click={openEnrollModal}>Enroll</button>
+            {/if}
+            <button class="secondary-cta" on:click={openModal}>Cooperative enrollment</button>
         </div>
         <div>
             <img src="/man1.jpg" alt=""/>
@@ -30,9 +52,6 @@
             <img src="/man3.jpg" alt=""/>
             <p><span>{participants}</span> have already enrolled!</p>
         </div>
-    </div>
-    <div>
-        <img src="/asics-logo.svg" alt=""/>
     </div>
 </section>
 
@@ -84,7 +103,19 @@
 
     .secondary-cta:hover,
     .cta:hover {
-        background-color: var(--hover);
+        filter: saturate(1.5);
+    }
+
+    .enrolled:before {
+        content: '✓ ';
+    }
+
+    .enrolled:hover {
+        filter: grayscale(60%);
+    }
+
+    .enrolled:hover:before {
+        content: '✖ ';
     }
 
     .hero > div {
@@ -102,13 +133,9 @@
         justify-content: center;
     }
 
-    .hero > div:last-of-type img {
-        width: 20em;
-    }
-
     .hero > div h1 {
         font-size: 2em;
-        width: 10em;
+        width: 70%;
         margin-bottom: .6em;
         padding-left: 0.2em;
         color: var(--white);
@@ -117,7 +144,7 @@
 
     .hero > div h2 {
         font-size: 2em;
-        width: 10em;
+        width: 70%;
         margin-bottom: .6em;
         padding-left: 0.2em;
         color: var(--yellow);
@@ -161,7 +188,6 @@
         flex-direction: row;
         align-items: flex-start;
         margin-top: 1em;
-        width: 100%;
     }
 
     .hero div > div img:nth-of-type(2) {
@@ -183,16 +209,20 @@
         color: var(--white);
     }
 
-    @media screen and (min-width: 768px) {
-        .hero {
-            justify-content: space-between;
-            flex-direction: row;
-            align-items: center;
+    @media screen and (min-width: 368px) {
+        .hero > div h1 {
+            width: 90%;
         }
 
+        .hero > div h2 {
+            width: 90%;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
         .hero > div {
             padding: 6em;
-            padding-bottom: 3.5em;
+            padding-bottom: 6em;
         }
 
         .hero > div h1 {
@@ -211,18 +241,6 @@
             padding-left: 0.2em;
             color: var(--yellow);
             background-color: var(--black);
-        }
-
-        .hero > div:first-of-type {
-            order: -1;
-        }
-
-        .hero > div:last-of-type {
-            justify-content: center;
-        }
-
-        .hero > div:last-of-type img {
-            width: 100%;
         }
 
         .hero div > div {

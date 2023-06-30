@@ -8,21 +8,21 @@
         title: "Asics is cool",
         subtitle: "Asics",
         description: "Help us find the right visual language for the natural beauty player’s tradespeople to showcase their product.",
-        link: "#",
+        link: "/challenges/asics-challenge",
         image: "https://images.unsplash.com/photo-1465859674575-26d1bbca2bc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8CXwyfHJyfGltZXN8MXx8fHwxNjM0OTM5NzIy&ixlib=rb-1.2.1&q=80&w=1080"
       },
       {
         title: "Adidas in action",
         subtitle: "Adidas",
         description: "The perfect blend of performance and style in modern sports fashion.",
-        link: "#",
+        link: "/challenges/asics-challenge",
         image: "https://images.unsplash.com/photo-1682695799561-033f55f75b25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
       },
       {
         title: "Nike's innovation",
         subtitle: "Nike",
         description: "Our approach to innovation is centered on the athlete's voice, and pushing the edges of what can be.",
-        link: "#",
+        link: "/challenges/asics-challenge",
         image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
       }
     ];
@@ -75,6 +75,7 @@
     section.hero{
     position:relative;
     width: 100vw;
+    max-width:100vw;
     height:37.5em;
     overflow-x:scroll;
     display:flex;
@@ -82,6 +83,7 @@
     flex-wrap:nowrap;
     scroll-snap-type: x mandatory;
     scroll-snap-align: center;
+    max-height: calc(100dvh - 5em);
 }
 section.hero > h2 {
     position: absolute;
@@ -93,5 +95,11 @@ section.hero::-webkit-scrollbar {
 
 .hero div{
   display:flex;
+}
+
+@media (max-width:555px){
+  section.hero{
+    
+  }
 }
 </style>

@@ -1,64 +1,79 @@
 <script lang="ts">
-    export let variant: 
-    "primary" |
-    "start-yellow" |	
-    "start-blue" |
-    "start-grey" |
-    "details" |
-    "view-yellow" |
-    "view-grey" |
-    "view-challenge" |
-    "edit" |
-    "left" |
-    "right" |
-    "up" |
-    "yes" |
-    "no" |
-    "savexit" |
-    "skipcancel";
+	export let variant:
+		| 'primary'
+		| 'secondary'
+		| 'start-yellow'
+		| 'start-blue'
+		| 'start-grey'
+		| 'details'
+		| 'view-yellow'
+		| 'view-grey'
+		| 'view-challenge'
+		| 'edit'
+		| 'left'
+		| 'right'
+		| 'yes'
+		| 'no';
 
-    export let handleClick = () => {};
+	export let handleClick = () => {};
+	export let href: string = '';
+	export let type: any = 'button';
 
-    export let size: "small" | "medium" | "large" | "none" = "none";
-    export let hasIcon: boolean = false;
-
+	export let size: 'small' | 'medium' | 'large' | 'full-width' | 'none' = 'none';
+	export let hasIcon: boolean = false;
 </script>
 
-<button class="{variant} size-{size} icon-{hasIcon}" on:click={handleClick}><slot/></button>
+{#if href != ''}
+	<a class="{variant} size-{size} icon-{hasIcon}" {href}><slot /></a>
+{:else}
+	<button type={type} class="{variant} size-{size} icon-{hasIcon}" on:click={handleClick}><slot /></button>
+{/if}
 
 <style>
-.size-small {
-  font-size: 1rem;
-  padding: 8px 21px !important;
-}
+	.size-small {
+		font-size: 1rem;
+		padding: 8px 21px !important;
+	}
 
-.icon-true {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
+	.size-full-width {
+		width: 100%;
+		font-size: 1rem;
+		padding: 8px 21px !important;
+		justify-content: center;
+	}
 
-.size-medium {
-  font-size: 1rem;
-  padding: 8px 42px;
-}
+	.icon-true {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+	}
 
-.size-large {
-  font-size: 1.2rem !important;
-  padding: 1.5rem !important;
-}
+	.size-medium {
+		font-size: 1rem;
+		padding: 8px 42px;
+	}
 
-button{
-  background-color: var(--blue-button);
-  color: var(--white);
-  font-family: var(--font-family);
-  font-size: 1.2rem;
-  padding: 1rem;
-  font-weight: 700;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
+	.size-large {
+		font-size: 1.2rem !important;
+		padding: 1.5rem !important;
+	}
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+	button {
+	background-color: #21bde5;
+	color: #fff;
+	font-size: 1.2rem;
+	padding: 1rem;
+	font-weight: 700;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	}
 
 button:hover{
   background-color: var(--theme-secondary);
@@ -70,37 +85,38 @@ button:hover{
   color: var(--black);
 }
 
-.start-yellow:hover{
-  background-color: var(--primary-600);
-}
-
-.start-blue{
-  min-width: 12rem;
-  height: 4rem;
-}
-
-.start-grey{
-  background-color: #B1AFA9;
-  color: var(--black);
-  cursor: pointer;
-}
-
-.details{
-  background-color: #F7CE46;
-  color: var(--black);
-  min-width: 8rem;
-  height: 4rem;
-}
-
-.details:hover{
+.start-yellow:hover,
+.primary:hover{
   background-color: #e1b114;
 }
 
-.view-yellow{
-  background-color: #F7CE46;
+/* .start-blue{ */
+  /* min-width: 12rem; */
+/* } */
+
+.start-grey{
+  background-color: var(--neutral-500);
   color: var(--black);
-  min-width: 10rem;
-  height: 4rem;
+}
+
+.start-grey:hover{
+  background-color: var(--neutral-500);
+}
+
+.details{
+  background-color: var(--primary-500);
+  color: var(--black);
+  width: 8rem;
+	height: 4rem;
+}
+
+.details:hover{
+  background-color: var(--primary-600);
+}
+
+.view-yellow{
+  background-color: var(--primary-500);
+  color: var(--black);
 }
 
 .view-yellow:hover{
@@ -108,50 +124,58 @@ button:hover{
 }
 
 .view-grey{
-  background-color: #B1AFA9;
+  background-color: var(--neutral-600);
   color: var(--black);
-  min-width: 10rem;
-  height: 4rem;
+  width: 10rem;
+	height: 4rem;
+}
+
+.start-grey:hover {
+	background-color: #a09f9a;
 }
 
 .view-challenge {
-    background-color: #F7CE46;
+    background-color: var(--primary-500);
     color: var(--black);
-    width: 22rem;
-    height: 4rem;
     position: relative;
+    width: 22rem;
+		height: 4rem;
     padding-right: 2rem;
   }
 
-  .view-challenge::after {
-    content: "\f06e";
-    font-family: "Font Awesome 5 Free";
-    position: absolute;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+	button, a {
+		background-color: #21bde5;
+		color: #fff;
+		font-size: 1.2rem;
+		padding: 1rem;
+		font-weight: 700;
+		outline: none;
+		border: none;
+		cursor: pointer;
+	}
 
-.view-challenge:hover{
-  background-color: var(--primary-600);
-}
+
+	button:hover, a:hover {
+		background-color: #32a5c3;
+	}
+
 
 .edit{
   width: 22rem;
-  height: 4rem;
+	height: 4rem;
   position: relative;
   padding-right: 2rem;
 }
 
-.edit::after {
-    content: "\f044";
-    font-family: "Font Awesome 5 Free";
-    position: absolute;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+	.start-yellow:hover {
+		background-color: #e1b114;
+	}
 
+	.start-grey {
+		background-color: #b1afa9;
+		color: #000000;
+		cursor: pointer;
+	}
 .left{
   width: 5rem;
   height: 5rem;
@@ -161,40 +185,55 @@ button:hover{
   border: 1px solid var(--black);
 }
 
-.left:hover{
-  background-color: #D8D7D4;
-}
+	.details {
+		background-color: #f7ce46;
+		color: #000000;
+		min-width: 8rem;
+		height: 4rem;
+	}
 
-.left::after {
-    content: "\f060";
-    font-family: "Font Awesome 5 Free";
-    position: absolute;
-    right: 40%;
-    top: 50%;
-    transform: translateY(-50%);
-    
-  }
+	.details:hover {
+		background-color: #e1b114;
+	}
 
-.right{
-  width: 5rem;
-  height: 5rem;
-  position: relative;
-  background-color: var(--white);
-  color: var(--black);
-  border: 1px solid var(--black);
-}
+	.view-yellow {
+		background-color: #f7ce46;
+		color: #000000;
+		min-width: 10rem;
+		height: 4rem;
+	}
 
-.right::after {
-    content: "\f061";
-    font-family: "Font Awesome 5 Free";
-    position: absolute;
-    right: 40%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
 
+	.view-yellow:hover {
+		background-color: #e1b114;
+	}
+
+	.view-grey {
+		background-color: #b1afa9;
+		color: #000000;
+		min-width: 10rem;
+		height: 4rem;
+	}
+
+	.view-challenge {
+		background-color: #f7ce46;
+		color: #000000;
+		width: 22rem;
+		height: 4rem;
+		position: relative;
+		padding-right: 2rem;
+	}
+
+	.view-challenge::after {
+		content: '\f06e';
+		font-family: 'Font Awesome 5 Free';
+		position: absolute;
+		right: 10%;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 .right:hover{
-  background-color: #D8D7D4;
+  background-color: var(--neutral-300);
 }
 
 .up{
@@ -220,65 +259,74 @@ button:hover{
   }
 
 .up:hover{
-  background-color: #D8D7D4;
+  background-color: var(--neutral-300);
 }
 
 .yes{
-  background-color: #38D248;
+  background-color: var(--accent-success-500);
   width: 10rem;
   height: 4rem;
   position: relative;
 }
 
 .yes:hover{
-  background-color: #269560;
+  background-color: var(--accent-success-700);
 }
 
-.yes::after {
-    content: "\f00c";
-    font-family: "Font Awesome 5 Free";
-    position: absolute;
-    right: 40%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+	.view-challenge:hover {
+		background-color: #e1b114;
+	}
 
+	.edit {
+		width: 22rem;
+		height: 4rem;
+		position: relative;
+		padding-right: 2rem;
+	}
+
+	.edit::after {
+		content: '\f044';
+		font-family: 'Font Awesome 5 Free';
+		position: absolute;
+		right: 10%;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 .no{
-  background-color: #FF3939;
+  background-color: var(--accent-danger-500);
   width: 10rem;
   height: 4rem;
   position: relative;
 }
 
 .no:hover{
-  background-color: #AD1F1F;
+  background-color: var(--accent-danger-700);
 }
 
-.no::after {
-    content: "\f00d";
-    font-family: "Font Awesome 5 Free";
-    position: absolute;
-    right: 45%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+	.left {
+		width: 5rem;
+		height: 5rem;
+		position: relative;
+		background-color: #ffffff;
+		color: #000000;
+		border: 1px solid #000000;
+	}
 
 .savexit{
-  border: 5px solid #21bde5;
+  border: 5px solid var(--blue-button);
   background-color: var(--white);
   color: var(--black);
 }
 
 .skipcancel{
   border: none;
-  color: #73738C;
+  color: var(--gray-font);
   background-color: var(--white);
   font-weight: lighter;
 }
 
 .skipcancel:hover{
   background-color: var(--white);
-  color: #21bde5;
+  color: var(--blue-button);
 }
-
 </style>

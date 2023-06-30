@@ -9,6 +9,7 @@
 
 	import Table from './components/Table.svelte';
 	import MobileCard from './components/MobileCard.svelte';
+	import Buttons from '$lib/Buttons.svelte';
 
 	const numChallenges = 2;
 
@@ -122,6 +123,11 @@
 		table = !table;
 	}
 
+	function goToCreateChallenge() {
+		window.location.href = "/challenge/create-challenge";
+		
+	}
+
 </script>
 
 <main>
@@ -171,6 +177,11 @@
 			{/each}
 		</section>
 	{/if}
+
+	<div class="addChallenge">
+		<Buttons variant='start-yellow' handleClick={goToCreateChallenge}>+ Add challenge</Buttons>
+
+	</div>
 </main>
 
 <style>
@@ -299,7 +310,13 @@
 	@media only screen and (max-width: 768px) {
 
 		main {
-			padding: 0 calc(calc(91 / 16) * 0.25rem);
+			padding: .5rem calc(calc(91 / 16) * 0.25rem);
 		}
+	}
+
+	.addChallenge{
+		position: absolute;
+		right: calc(calc(91 / 16) * 1rem);
+
 	}
 </style>

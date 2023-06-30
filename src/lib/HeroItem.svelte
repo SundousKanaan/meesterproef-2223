@@ -50,6 +50,8 @@ section.heroItem > button{
     border:none;
     background-image:url("/blobForArrow.png");
     background-size: cover;
+    cursor:pointer;
+    transition:.2s;
 }
 section.heroItem > button img{
     width:6em;
@@ -57,6 +59,9 @@ section.heroItem > button img{
 }
 button.previous{
     left:2em;
+}
+button:hover{
+    transform:scale(1.1);
 }
 button.next{
     right:2em;
@@ -115,11 +120,30 @@ section.heroItem div a{
     font-size:.8em;
     width:max-content;
     margin-top:.5em;
+    width:auto;
 }
 h3{
     background:black;
     padding: 1em 2em;
     text-align: left;
     max-width:15em;
+}
+
+@media (max-width:800px){
+    section.heroItem div{
+        width:90vw;
+    }
+    section.heroItem > button{
+        bottom:1em;
+    }
+}
+
+@media (max-width:400px){
+    section.heroItem{
+        justify-content: unset;
+    }
+    section.heroItem div{
+        margin-top:1em;
+    }
 }
   </style>

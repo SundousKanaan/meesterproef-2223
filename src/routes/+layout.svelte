@@ -3,15 +3,23 @@
 	import Header from '$lib/Header.svelte';
 	import Footer from '$lib/Footer.svelte';
 	import Zerostate from '$lib/Zerostate.svelte';
+  import { goto } from '$app/navigation';
 
 	let zeroStateOpen: boolean = true;
 
 	function showInfo() {
 		zeroStateOpen = !zeroStateOpen;
 	}
+
+
+    function navigateTo(route) {
+        goto(route);
+    }
 </script>
 
 <Header />
+
+
 
 <slot />
 <button on:click={showInfo}>i</button>
