@@ -104,7 +104,7 @@
 					giving you the opportunity to showcase your skills and create something truly remarkable.
 				</p>
 				<div class="main-container">
-					<a href="http://localhost:5173/challenges/asics-challenge" class="meerInformatie">Meer informatie</a>
+					<a href="/challenges/asics-challenge" class="meerInformatie">Meer informatie</a>
 					{#if enrolled}
 						<a class="enrollDisabled" on:click={() => {
     					cancelEnroll();
@@ -180,7 +180,7 @@
 					Then this is your chance to be a part of something truly remarkable in the world of web development!
 				</p>
 				<div class="side-container">
-					<a href="http://localhost:5173/challenges/asics-challenge" class="meerInformatie">Meer informatie</a>
+					<a href="/challenges/asics-challenge" class="meerInformatie">Meer informatie</a>
 					{#if enrolledWeb}
 						<a class="enrollDisabled" on:click={() => {
     					cancelWebEnroll();
