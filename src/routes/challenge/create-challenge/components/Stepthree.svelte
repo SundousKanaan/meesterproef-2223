@@ -16,7 +16,7 @@
 
 	<div>
 		<label for="required skills">Required skills for the challenge</label>
-		<Listinput variant="text" inputType="text" />
+		<Listinput variant="none" inputType="text" />
 	</div>
 </form>
 

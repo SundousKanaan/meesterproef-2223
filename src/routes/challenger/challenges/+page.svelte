@@ -310,7 +310,7 @@
 	@media only screen and (max-width: 768px) {
 
 		main {
-			padding: 0 calc(calc(91 / 16) * 0.25rem);
+			padding: .5rem calc(calc(91 / 16) * 0.25rem);
 		}
 	}
 
