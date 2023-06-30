@@ -21,12 +21,23 @@
 
 	export let size: "small" | "medium" | "large" | "none" = "none";
 	export let hasIcon: boolean = false;
+	export let href: string = "";
 
 </script>
 
-<button class="{variant} size-{size} icon-{hasIcon}" on:click={handleClick}><slot/></button>
+{#if href}
+	<a class="{variant} size-{size} icon-{hasIcon}" href={href}><slot/></a>
+{:else}
+	<button class="{variant} size-{size} icon-{hasIcon}" on:click={handleClick}><slot/></button>
+{/if}
 
 <style>
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
 	.size-small {
 		font-size: 1rem;
 		padding: 8px 21px !important;

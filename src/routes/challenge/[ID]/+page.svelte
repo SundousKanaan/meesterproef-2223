@@ -301,17 +301,17 @@
 	<div class="review-buttons-wrappertje">
 		<ReviewCard title="Speed Review">
 			<p class="description">Be critical. We advice you to let a maximum of 20 designs pass.</p>
-			<Buttons href="/challenge/feedback?feedback=speed" variant="start-yellow">Speed review</Buttons>
+			<Buttons href="/challenge/feedback?feedback=speed" variant="start-yellow" size="large">Speed review</Buttons>
 		</ReviewCard>
 
 		<ReviewCard title="Extensive Review">
 			<p class="description">You give extensive feedback to everyone about their work.</p>
-			<Buttons href="/challenge/feedback?feedback=acc" variant="start-blue">Extensive review</Buttons>
+			<Buttons href="/challenge/feedback?feedback=acc" variant="start-blue" size="large">Extensive review</Buttons>
 		</ReviewCard>
 
 		<ReviewCard title="Give Medals">
 			<p class="description">When you are done with reviewing all the designs, you can give medals to the bests.</p>
-			<Buttons href="/challenge/feedback?feedback=medal" variant="start-grey">Give medals</Buttons>
+			<Buttons href="/challenge/feedback?feedback=medal" variant="start-grey" size="large">Give medals</Buttons>
 		</ReviewCard>
 	</div>
 
