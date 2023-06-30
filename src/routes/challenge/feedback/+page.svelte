@@ -21,10 +21,10 @@
 	<div class="previous">
 		<Buttons variant="left" />
 	</div>
-
-	<div class="next">
-		<Buttons variant="right" />
+	<div class="next">	
+	<Buttons variant="right"/>
 	</div>
+
 
 	<div class="container">
 		<div class="datacontainer">

@@ -1,25 +1,23 @@
 <script lang="ts">
-    export let variant:
-    "primary" |
-    "start-yellow" |	
-    "start-blue" |
-    "start-grey" |
-    "details" |
-    "view-yellow" |
-    "view-grey" |
-    "view-challenge" |
-    "edit" |
-    "left" |
-    "right" |
-    "up" |
-    "yes" |
-    "no" |
-    "savexit" |
-    "skipcancel";
-
+	export let variant:
+		| 'primary'
+		| 'secondary'
+		| 'start-yellow'
+		| 'start-blue'
+		| 'start-grey'
+		| 'details'
+		| 'view-yellow'
+		| 'view-grey'
+		| 'view-challenge'
+		| 'edit'
+		| 'left'
+		| 'right'
+		| 'yes'
+		| 'no';
 
 	export let handleClick = () => {};
 	export let href: string = '';
+	export let type: any = 'button';
 
 	export let size: 'small' | 'medium' | 'large' | 'full-width' | 'none' = 'none';
 	export let hasIcon: boolean = false;
@@ -28,7 +26,7 @@
 {#if href != ''}
 	<a class="{variant} size-{size} icon-{hasIcon}" {href}><slot /></a>
 {:else}
-	<button class="{variant} size-{size} icon-{hasIcon}" on:click={handleClick}><slot /></button>
+	<button type={type} class="{variant} size-{size} icon-{hasIcon}" on:click={handleClick}><slot /></button>
 {/if}
 
 <style>
@@ -55,17 +53,27 @@
 		padding: 8px 42px;
 	}
 
-button{
-  background-color: var(--blue-button);
-  color: var(--white);
-  font-family: var(--font-family);
-  font-size: 1.2rem;
-  padding: 1rem;
-  font-weight: 700;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
+	.size-large {
+		font-size: 1.2rem !important;
+		padding: 1.5rem !important;
+	}
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+	button {
+	background-color: #21bde5;
+	color: #fff;
+	font-size: 1.2rem;
+	padding: 1rem;
+	font-weight: 700;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	}
 
 button:hover{
   background-color: var(--theme-secondary);
@@ -77,18 +85,14 @@ button:hover{
   color: var(--black);
 }
 
-.start-yellow:hover{
-  background-color: var(--primary-600);
+.start-yellow:hover,
+.primary:hover{
+  background-color: #e1b114;
 }
 
-.secondary {
-	background-color: #21bde5;
-  	color: #000000;
-}
-
-.start-blue{
+/* .start-blue{ */
   /* min-width: 12rem; */
-}
+/* } */
 
 .start-grey{
   background-color: var(--neutral-500);
@@ -150,9 +154,11 @@ button:hover{
 		cursor: pointer;
 	}
 
-.view-challenge:hover{
-  background-color: var(--primary-600);
-}
+
+	button:hover, a:hover {
+		background-color: #32a5c3;
+	}
+
 
 .edit{
   width: 22rem;
@@ -165,6 +171,11 @@ button:hover{
 		background-color: #e1b114;
 	}
 
+	.start-grey {
+		background-color: #b1afa9;
+		color: #000000;
+		cursor: pointer;
+	}
 .left{
   width: 5rem;
   height: 5rem;
@@ -191,6 +202,7 @@ button:hover{
 		min-width: 10rem;
 		height: 4rem;
 	}
+
 
 	.view-yellow:hover {
 		background-color: #e1b114;
@@ -220,6 +232,46 @@ button:hover{
 		top: 50%;
 		transform: translateY(-50%);
 	}
+.right:hover{
+  background-color: var(--neutral-300);
+}
+
+.up{
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
+  position: fixed;
+  top: 80%;
+  right: 5%;
+  z-index: 100;
+}
+
+.up::after {
+    content: "\f062";
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    right: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+.up:hover{
+  background-color: var(--neutral-300);
+}
+
+.yes{
+  background-color: var(--accent-success-500);
+  width: 10rem;
+  height: 4rem;
+  position: relative;
+}
+
+.yes:hover{
+  background-color: var(--accent-success-700);
+}
 
 	.view-challenge:hover {
 		background-color: #e1b114;
@@ -240,6 +292,16 @@ button:hover{
 		top: 50%;
 		transform: translateY(-50%);
 	}
+.no{
+  background-color: var(--accent-danger-500);
+  width: 10rem;
+  height: 4rem;
+  position: relative;
+}
+
+.no:hover{
+  background-color: var(--accent-danger-700);
+}
 
 	.left {
 		width: 5rem;
@@ -250,78 +312,21 @@ button:hover{
 		border: 1px solid #000000;
 	}
 
-	.left:hover {
-		background-color: #d8d7d4;
-	}
+.savexit{
+  border: 5px solid var(--blue-button);
+  background-color: var(--white);
+  color: var(--black);
+}
 
-	.left::after {
-		content: '\f060';
-		font-family: 'Font Awesome 5 Free';
-		position: absolute;
-		right: 40%;
-		top: 50%;
-		transform: translateY(-50%);
-	}
+.skipcancel{
+  border: none;
+  color: var(--gray-font);
+  background-color: var(--white);
+  font-weight: lighter;
+}
 
-	.right {
-		width: 5rem;
-		height: 5rem;
-		position: relative;
-		background-color: #ffffff;
-		color: #000000;
-		border: 1px solid #000000;
-	}
-
-	.right::after {
-		content: '\f061';
-		font-family: 'Font Awesome 5 Free';
-		position: absolute;
-		right: 40%;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.right:hover {
-		background-color: #d8d7d4;
-	}
-
-	.yes {
-		background-color: #38d248;
-		width: 10rem;
-		height: 4rem;
-		position: relative;
-	}
-
-	.yes:hover {
-		background-color: #269560;
-	}
-
-	.yes::after {
-		content: '\f00c';
-		font-family: 'Font Awesome 5 Free';
-		position: absolute;
-		right: 40%;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.no {
-		background-color: #ff3939;
-		width: 10rem;
-		height: 4rem;
-		position: relative;
-	}
-
-	.no:hover {
-		background-color: #ad1f1f;
-	}
-
-	.no::after {
-		content: '\f00d';
-		font-family: 'Font Awesome 5 Free';
-		position: absolute;
-		right: 45%;
-		top: 50%;
-		transform: translateY(-50%);
-	}
+.skipcancel:hover{
+  background-color: var(--white);
+  color: var(--blue-button);
+}
 </style>

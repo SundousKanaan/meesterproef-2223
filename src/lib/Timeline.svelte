@@ -200,15 +200,11 @@
 		width: 100%;
 		height: 2px;
 		align-self: center;
-		/* background-color: #3a3c43; */
-		background: linear-gradient(90deg, #21bde5 0 var(--progress), #3a3c43 0);
-		background: linear-gradient(90deg, #21bde5 0 var(--progress), #3a3c43 0);
-		background:
+		background: 
 			linear-gradient(90deg, #21bde5 0 var(--progress), #3a3c43 0);
 		margin-left: -1.5rem;
 		margin-right: -1.5rem;
 		z-index: 0;
-			
 	}
 
 	.timeline-line:last-of-type {
