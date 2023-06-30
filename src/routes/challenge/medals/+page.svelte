@@ -88,12 +88,12 @@
 
 	.previous {
 		grid-area: 1/1/2/-1;
-		justify-self: start;
+		justify-self: end;
 	}
 
 	.next {
 		grid-area: 1/1/2/-1;
-		justify-self: end;
+		justify-self: start;
 	}
 
 	.members {
