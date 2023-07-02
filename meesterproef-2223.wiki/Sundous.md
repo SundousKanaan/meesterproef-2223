@@ -6,7 +6,7 @@
 3. UI states ontwerpen/coderen
 4. Nieuwe dingen leren over figma
 
-<details open>
+<details>
 <summary><h1>Week 1</h1></summary>
 In week één zijn we op dinsdag gestart met een vergadering met de opdrachtgever op de locatie NDSM in Amsterdam. Tijdens deze bijeenkomst ontvingen we gedetailleerdere informatie over de opdracht. De opdrachtgever presenteerde ons gebruikersverhalen, ontwerpen die waren gemaakt in Figma en enkele assets die we konden gebruiken voor de website.
 
@@ -33,7 +33,7 @@ Door ons te verdiepen in het Svelte-framework en TypeScript, streven we ernaar o
 Deze week bestond ons werk voornamelijk uit het klonen van de bestaande pagina's die nodig waren voor de site. Hierdoor had ik het gevoel dat we geen significant vooruitgang boekten en misten we onderlinge organisatie.
 </details>
 
-<details open>
+<details>
 <summary><h1>Week 2</h1></summary>
 Sinds ik de basis ben gaan leren over Svelte en hoe ik in principe met hem om kan gaan, heb ik de persoonlijke pagina heb ik de footer als een test gemaakt.
 
@@ -49,13 +49,13 @@ Omdat we niet veel pagina's hadden om aan te werken, werd mijn werk hier gedaan.
 We moeten een beetje vergeten wat we nu hebben gedaan om het weer aan de praat te krijgen, maar het was niet zo erg omdat ik de basisprincipes die ik leerde over svelte en TypeScript mocht uitproberen.
 </details>
 
-<details open>
+<details>
 <summary><h1>Week 3</h1></summary>
 Deze week zijn we begonnen met het identificeren van de behoeften van de gebruiker op elke pagina en het omzetten van deze behoeften in schetsen.
 — SCHETS IMAGES
 
 Daarna begon ik een aantal van deze schetsen om te zetten in hifi-ontwerp
-<details open>
+<details>
 <summary>Challenger dashboard</summary>
 
 ![image](https://github.com/DutchEllie/meesterproef-2223/assets/94317411/794ec53f-4c27-41e5-95c6-66fa3b718fb6)
@@ -63,7 +63,7 @@ Daarna begon ik een aantal van deze schetsen om te zetten in hifi-ontwerp
 
 </details>
 
-<details open>
+<details>
 <summary>Challenger entries Ja/Nee view</summary>
 
 ![image](https://github.com/DutchEllie/meesterproef-2223/assets/94317411/eed12bb1-7f4f-4adc-b47b-c3a0888d0e5e)
@@ -71,7 +71,7 @@ Daarna begon ik een aantal van deze schetsen om te zetten in hifi-ontwerp
 
 </details>
 
-<details open>
+<details>
 <summary>Challenger entries uitgebreide view</summary>
 
 ![image](https://github.com/DutchEllie/meesterproef-2223/assets/94317411/53eb2b5c-c7ef-457b-99d9-3263f729bf29)
@@ -90,14 +90,14 @@ Het beoordelingsgesprek met de klant was positief en hij was tevreden met ons we
 
 </details>
 
-<details open>
+<details>
 <summary><h1>Week 4</h1></summary>
 Ik ben verheugd dat we officieel gestart zijn met het coderen. Ons hoofddoel is nu om onze ontwerpen om te zetten naar functionele codepagina's. Eerst hebben we een vergadering gehad om de rollen te bespreken en te bepalen wie verantwoordelijk zal zijn voor welk gedeelte van het project.
 
 Voor het coderen van de "Challenge upload" pagina heb ik de volgende componenten gemaakt om mijn hoofdpagina op te bouwen:
 - List van input
 
-<details open>
+<details>
   <summary>code</summary>
 
 ```JS
@@ -144,7 +144,7 @@ Voor het coderen van de "Challenge upload" pagina heb ik de volgende componenten
 
 - select menu
 
-<details open>
+<details>
   <summary>code</summary>
 
 ```JS
@@ -163,7 +163,7 @@ Voor het coderen van de "Challenge upload" pagina heb ik de volgende componenten
 
 - input (text , url  , date)
 
-<details open>
+<details>
   <summary>code</summary>
 
 ```JS
@@ -182,7 +182,7 @@ Voor het coderen van de "Challenge upload" pagina heb ik de volgende componenten
 
 - textarea
 
-<details open>
+<details>
   <summary>code</summary>
 
 ```JS
@@ -204,7 +204,7 @@ Voor het coderen van de "Challenge upload" pagina heb ik de volgende componenten
 
 - Drag en Dropp
 
-<details open>
+<details>
   <summary>code</summary>
 
 ```JS
@@ -277,7 +277,7 @@ Voor de beoordelingspagina heb ik de volgende componenten gemaakt:
  
 ![image](https://github.com/DutchEllie/meesterproef-2223/assets/94317411/8cbae4c8-7f77-4251-a226-d397d44d4cdc)
 
-<details open>
+<details>
 <summary>De slider code</summary>
 
 ```JS
@@ -519,7 +519,7 @@ Voor de beoordelingspagina heb ik de volgende componenten gemaakt:
 
 </details>
 
-<details open>
+<details>
 <summary>De formulier code</summary>
 
 ```JS
@@ -597,7 +597,7 @@ Voor de beoordelingspagina heb ik de volgende componenten gemaakt:
 
 ![image](https://github.com/DutchEllie/meesterproef-2223/assets/94317411/91de4772-ff57-4cca-8cf8-82809e31f2e4)
 
-<details open>
+<details>
 <summary>Code</summary>
 
 ```JS
@@ -651,7 +651,7 @@ Voor de beoordelingspagina heb ik de volgende componenten gemaakt:
 
 </details>
 
-<details open>
+<details>
 <summary><h1>Week 5</h1></summary>
 
 Dit is de laatste werkweek waarin we alles moeten voltooien en aan het einde van de week ons werk moeten indienen.
@@ -696,10 +696,10 @@ Ik heb
 
 5- De 3 soorten van de Listinput component aangepast
 
-<details open>
+<details>
 <summary>Zonder beschrijving</summary>
 
-<details open>
+<details>
 <summary>Code</summary>
 
 ```TypeScript
@@ -735,10 +735,10 @@ Ik heb
 </details>
 
 
-<details open>
+<details>
 <summary>Met tekstbeschrijving</summary>
 
-<details open>
+<details>
 <summary>Code</summary>
 
 ```
@@ -792,12 +792,12 @@ Ik heb
 
 </details>
 
-<details open>
+<details>
 <summary>Met linkbeschrijving</summary>
 
 Ik heb hier de code aangepast om een video review te maken als de link van een video is anders gaat het als link verschijnen
 
-<details open>
+<details>
 <summary>Code</summary>
 
 ```TypeScript
@@ -848,7 +848,7 @@ Ik heb hier de code aangepast om een video review te maken als de link van een v
 ```
 </details>
 
-<details open>
+<details>
 <summary>Het list maken event</summary>
 
 ```TypeScript
